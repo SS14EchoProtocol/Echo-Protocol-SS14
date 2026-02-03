@@ -1,7 +1,7 @@
 using Content.Server.Antag.Components;
 using Robust.Shared.Random;
 
-namespace Content.Server.Antag;
+namespace Content.Server.Antag.Systems;
 
 public sealed class AntagMultipleRoleSpawnerSystem : EntitySystem
 {
@@ -35,6 +35,6 @@ public sealed class AntagMultipleRoleSpawnerSystem : EntitySystem
         if (entProtos.Count == 0)
             return; // You will just get a normal job
 
-        args.Entity = Spawn(ent.Comp.PickAndTake ? _random.PickAndTake(entProtos) : _random.Pick(entProtos));
+        args.Entity = Spawn(ent.Comp.PickAndTake ? _random.PickAndTake(entProtos) : _random.Pick(entProtos), args.Coords);
     }
 }

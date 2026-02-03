@@ -1,5 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Content.Server.Antag.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.Antag;
@@ -13,6 +11,9 @@ using Robust.Shared.Audio;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using System.Collections.Frozen;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Content.Server.Antag;
 
@@ -172,7 +173,7 @@ public sealed partial class AntagSelectionSystem
             return true;
 
         if (roles.Count == 0)
-            return false;
+            return true;
 
         if (!_pref.TryGetCachedPreferences(session.UserId, out var pref))
             return false;
@@ -336,13 +337,14 @@ public sealed partial class AntagSelectionSystem
     /// This technically is a gamerule-ent-less way to make an entity an antag.
     /// You should almost never be using this.
     /// </summary>
-    public void ForceMakeAntag<T>(ICommonSession? player, string defaultRule) where T : Component
+    public void ForceMakeAntag<T>(ICommonSession player, string defaultRule) where T : Component
     {
         var rule = ForceGetGameRuleEnt<T>(defaultRule);
 
         if (!TryGetNextAvailableDefinition(rule, out var def))
             def = rule.Comp.Definitions.Last();
-        MakeAntag(rule, player, def.Value);
+
+        MakeSessionAntagonist(rule, player, def.Value);
     }
 
     /// <summary>

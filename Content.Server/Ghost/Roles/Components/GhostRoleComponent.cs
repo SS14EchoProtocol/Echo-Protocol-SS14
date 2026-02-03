@@ -1,5 +1,6 @@
 using Content.Server.Ghost.Roles.Raffles;
 using Content.Server.Mind.Commands;
+using Content.Shared.Antag;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
@@ -18,7 +19,7 @@ public sealed partial class GhostRoleComponent : Component
     /// <summary>
     /// Whether the <see cref="MakeSentientCommand"/> should run on the mob.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)] [DataField("makeSentient")]
+    [ViewVariables(VVAccess.ReadWrite)][DataField("makeSentient")]
     public bool MakeSentient = true;
 
     /// <summary>
@@ -67,10 +68,10 @@ public sealed partial class GhostRoleComponent : Component
     }
 
     /// <summary>
-    /// The mind roles that will be added to the mob's mind entity
+    /// If not null, the player will become the antagonist
     /// </summary>
     [DataField, Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)] // Don't make eye contact
-    public List<EntProtoId> MindRoles = new() { "MindRoleGhostRoleNeutral" };
+    public ProtoId<AntagLoadoutPrototype>? AntagLoadoutPrototype;
 
     [DataField]
     public bool AllowSpeech { get; set; } = true;
@@ -83,6 +84,24 @@ public sealed partial class GhostRoleComponent : Component
 
     [ViewVariables]
     public uint Identifier { get; set; }
+
+    /// <summary>
+    /// If true, adds a goal with the obedience of a specific player. The owner is selected by other components
+    /// </summary>
+    [DataField]
+    public bool Minion = false;
+
+    /// <summary>
+    /// Master of the minion.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? Master { get; set; }
+
+    /// <summary>
+    /// The objective of submission
+    /// </summary>
+    [DataField]
+    public EntProtoId MinionSubmissionObjective { get; set; } = "MinionSubmissionObjective";
 
     /// <summary>
     /// Reregisters the ghost role when the current player ghosts.

@@ -1,0 +1,72 @@
+- type: antagLoadout
+  id: Nukeops
+  startingGear: SyndicateOperativeGearFull
+  roleLoadout:
+  - RoleSurvivalNukie
+  addComponents:
+  - type: NukeOperative
+  - type: RandomMetadata
+    nameSegments:
+    - NamesSyndicateNormal
+    nameFormat: name-format-nukie-operator
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  mindRoles:
+  - MindRoleNukeops
+
+- type: antagLoadout
+  id: NukeopsCommander
+  parents: Nukeops
+  startingGear: SyndicateCommanderGearFull
+  addComponents:
+  - type: NukeOperative
+  - type: RandomMetadata
+    nameSegments:
+    - NamesSyndicateElite
+    nameFormat: name-format-nukie-commander
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  mindRoles:
+  - MindRoleNukeopsCommander
+
+- type: antagLoadout
+  id: NukeopsMedic
+  parents: Nukeops
+  startingGear: SyndicateOperativeMedicFull
+  addComponents:
+  - type: NukeOperative
+  - type: RandomMetadata
+    nameSegments:
+    - NamesSyndicateNormal
+    nameFormat: name-format-nukie-agent
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  mindRoles:
+  - MindRoleNukeopsMedic
+
+- type: antagLoadout
+  id: Loneops
+  parents: Nukeops
+  addComponents:
+  - type: NukeOperative
+  - type: RandomMetadata
+    nameSegments:
+    - NamesSyndicatePrefix
+    - NamesSyndicateNormal
+    nameFormat: name-format-nukie-generic
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  mindRoles:
+  - MindRoleLoneops
+
+- type: antagLoadout
+  id: NuclearOperativeReinforcement
+  mindRoles:
+  - MindRoleSyndicateReinforcement
+  briefing:
+    text: roles-antag-nuclear-operative-reinforcement-objective
+    sound: /Audio/Ambience/Antag/nukeops_start.ogg
