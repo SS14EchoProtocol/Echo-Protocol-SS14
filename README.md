@@ -60,7 +60,9 @@ Build the server using `dotnet build`.
 
 ## License
 
-All code for the content repository is licensed under the [MIT license](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).  
+Содержимое, добавленное в этот репозиторий после коммита 984ae89ebc44ac83f73d9636167f62f383d88013 (`5 февраля 2026 10:22 UTC`), распространяется по лицензии GNU Affero General Public License версии 3.0, если не указано иное. См. [LICENSE-AGPLv3](https://github.com/SS14EchoProtocol/Echo-Protocol-SS14/blob/master/LICENSE-AGPLv3.txt).
+
+Содержимое, добавленное в этот репозиторий до коммита 984ae89ebc44ac83f73d9636167f62f383d88013 (`5 февраля 2026 10:22 UTC`), распространяется по лицензии MIT если не указано иное. См. [LICENSE](https://github.com/SS14EchoProtocol/Echo-Protocol-SS14/blob/master/LICENSE.TXT).
 
 Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and copyright specified in the metadata file. For example, see the [metadata for a crowbar](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).  
 
