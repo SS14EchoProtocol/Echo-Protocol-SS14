@@ -8,7 +8,7 @@ import aiohttp
 import yaml
 
 FILE_PATH = Path(__file__).resolve()
-CHANGELOG_PATH = FILE_PATH.parents[2] / "Resources" / "Changelog" / "EchoChangelog.yml"
+CHANGELOG_PATH = FILE_PATH.parents[2] / "Resources" / "Changelog" / "UtopiaChangelog.yml"
 
 class NoDatesSafeLoader(yaml.SafeLoader):
     @classmethod
