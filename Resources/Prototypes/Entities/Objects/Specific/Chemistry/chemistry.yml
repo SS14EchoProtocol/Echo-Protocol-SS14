@@ -439,7 +439,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/syringe.rsi
+    sprite: _ECHO/Objects/Specific/Chemistry/syringe.rsi # ECHO-tweak: Objects/Specific/Chemistry/syringe.rsi --> _ECHO/Objects/Specific/Chemistry/syringe.rsi
     layers:
       - state: syringe1
         map: ["enum.SolutionContainerLayers.Fill"]
@@ -447,11 +447,11 @@
       - state: syringe_base0
         map: ["enum.SolutionContainerLayers.Base"]
   - type: Icon
-    sprite: Objects/Specific/Chemistry/syringe.rsi
+    sprite: _ECHO/Objects/Specific/Chemistry/syringe.rsi # ECHO-tweak: Objects/Specific/Chemistry/syringe.rsi --> _ECHO/Objects/Specific/Chemistry/syringe.rsi
     state: "syringe_base0"
   - type: Item
     size: Tiny
-    sprite: Objects/Specific/Chemistry/syringe.rsi
+    sprite: _ECHO/Objects/Specific/Chemistry/syringe.rsi # ECHO-tweak: Objects/Specific/Chemistry/syringe.rsi --> _ECHO/Objects/Specific/Chemistry/syringe.rsi
   - type: SolutionContainerManager
     solutions:
       injector:
