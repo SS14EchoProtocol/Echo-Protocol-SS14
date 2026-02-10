@@ -37,6 +37,21 @@ public static class ServerPackaging
         .Select(o => o.Rid)
         .ToList();
 
+    private static readonly List<string> CoreServerContentAssemblies = new()
+    {
+        "Content.Server.Database",
+        "Content.Server",
+        "Content.Shared",
+        "Content.Shared.Database",
+    };
+
+    private static readonly List<string> ServerExtraAssemblies = new()
+    {
+        // Python script had Npgsql. though we want Npgsql.dll as well soooo
+        "Npgsql",
+        "Microsoft",
+    };
+
     private static readonly List<string> ServerNotExtraAssemblies = new()
     {
         "JetBrains.Annotations",
@@ -97,22 +112,27 @@ public static class ServerPackaging
 
         if (!skipBuild)
         {
-            var startInfo = new ProcessStartInfo
+            var serverModules = FindServerModules();
+
+            foreach (var module in serverModules)
             {
-                FileName = "dotnet",
-                ArgumentList =
+                await ProcessHelpers.RunCheck(new ProcessStartInfo
                 {
-                    "build",
-                    Path.Combine("Content.Server", "Content.Server.csproj"),
-                    "-c", configuration,
-                    "--nologo",
-                    "/v:m",
-                    $"/p:TargetOs={platform.TargetOs}",
-                    "/t:Rebuild",
-                    "/p:FullRelease=true",
-                    "/m"
-                }
-            };
+                    FileName = "dotnet",
+                    ArgumentList =
+                    {
+                        "build",
+                        Path.Combine(module, $"{module}.csproj"),
+                        "-c", configuration,
+                        "--nologo",
+                        "/v:m",
+                        $"/p:TargetOs={platform.TargetOs}",
+                        "/t:Rebuild",
+                        "/p:FullRelease=true",
+                        "/m"
+                    }
+                });
+            }
 
             if (logBuild)
             {
@@ -140,6 +160,53 @@ public static class ServerPackaging
 
         logger.Info($"Finished packaging server in {sw.Elapsed}");
     }
+
+    private static List<string> FindServerModules(string path = ".")
+    {
+        var serverModules = new List<string> { "Content.Server" };
+
+        var directories = Directory.GetDirectories(path, "Content.*");
+        foreach (var dir in directories)
+        {
+            var dirName = Path.GetFileName(dir);
+
+            // Look for Content.{name}.Server projects
+            if (dirName != "Content.Server" && dirName.EndsWith(".Server"))
+            {
+                var projectPath = Path.Combine(dir, $"{dirName}.csproj");
+                if (File.Exists(projectPath))
+                {
+                    serverModules.Add(dirName);
+                }
+            }
+        }
+
+        return serverModules;
+    }
+
+    private static List<string> FindAllServerModules(string path = ".")
+    {
+        var modules = new List<string>(CoreServerContentAssemblies);
+
+        var directories = Directory.GetDirectories(path, "Content.*");
+        foreach (var dir in directories)
+        {
+            var dirName = Path.GetFileName(dir);
+
+            if ((dirName.EndsWith(".Server") || dirName.EndsWith(".Shared")) &&
+                !modules.Contains(dirName))
+            {
+                var projectPath = Path.Combine(dir, $"{dirName}.csproj");
+                if (File.Exists(projectPath))
+                {
+                    modules.Add(dirName);
+                }
+            }
+        }
+
+        return modules;
+    }
+
 
     private static async Task PublishClientServer(string runtime, string targetOs, string configuration)
     {
@@ -178,6 +245,7 @@ public static class ServerPackaging
 
         var inputPassCore = graph.InputCore;
         var inputPassResources = graph.InputResources;
+        var contentAssemblies = FindAllServerModules();
 
         // Additional assemblies that need to be copied such as EFCore.
         var sourcePath = Path.Combine(contentDir, "bin", "Content.Server");
