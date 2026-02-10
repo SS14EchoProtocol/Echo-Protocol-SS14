@@ -162,9 +162,9 @@
   description: A square piece of metal standing on four metal legs.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/generic.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/generic.rsi #PE-Tweak Было: Structures/Furniture/Tables/generic.rsi Стало: _ECHO/Structures/Furniture/Tables/generic.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/generic.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/generic.rsi #PE-Tweak Было: Structures/Furniture/Tables/generic.rsi Стало: _ECHO/Structures/Furniture/Tables/generic.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Metallic
@@ -206,9 +206,9 @@
   description: A square piece of metal standing on four metal legs. Extra robust.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/reinforced.rsi #PE-Tweak Было: Structures/Furniture/Tables/reinforced.rsi Стало: _ECHO/Structures/Furniture/Tables/reinforced.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/reinforced.rsi #PE-Tweak Было: Structures/Furniture/Tables/reinforced.rsi Стало: _ECHO/Structures/Furniture/Tables/reinforced.rsi
   - type: Destructible
     thresholds:
     - trigger:
