@@ -95,6 +95,7 @@
     radius: 1.5
     color: orange
     netsync: false
+  - type: WeldingSparks #PE-Tweak "Wielding Sparks Animation"
   - type: ItemTogglePointLight
   - type: Appearance
   - type: RequiresEyeProtection
@@ -165,6 +166,8 @@
     enabled: false
     radius: 1.5
     color: lightblue
+  - type: WeldingSparks # PE-Tweak "Wielding Sparks Animation"
+    effect: EchoEffectWeldingSparksExp
   - type: SolutionRegeneration
     solution: Welder
     generated:

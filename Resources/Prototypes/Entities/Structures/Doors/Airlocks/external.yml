@@ -20,6 +20,10 @@
     layoutId: AirlockExternal
   - type: Paintable
     group: null
+# PE-Tweak-Start 
+  - type: WeldingSparksAnimation # PE-Tweak "Wielding Sparks Animation"
+    startingOffset: -0.5, 0 
+# PE-Tweak-End
 
 - type: entity
   parent: AirlockExternal

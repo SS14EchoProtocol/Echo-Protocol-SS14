@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Airlock
   parent: BaseStructure
   name: airlock
@@ -183,6 +183,10 @@
     - Airlocks
     - WirePanels
     - Networking
+# PE-Tweak-Start 
+  - type: WeldingSparksAnimation # PE-Tweak "Wielding Sparks Animation"
+    startingOffset: 0, 0.5
+# PE-Tweak-End
   placement:
     mode: SnapgridCenter
 
