@@ -50,7 +50,7 @@
     - 0,0,9,3
     maxItemSize: Normal
   - type: Sprite
-    sprite: Structures/Storage/cabinets.rsi
+    sprite: _ECHO/Structures/Storage/cabinets.rsi #Pe-Tweak Было:Structures/Storage/cabinets.rsi Стало:_ECHO/Structures/Storage/cabinets.rsi
     noRot: true
   - type: Appearance
   - type: UserInterface

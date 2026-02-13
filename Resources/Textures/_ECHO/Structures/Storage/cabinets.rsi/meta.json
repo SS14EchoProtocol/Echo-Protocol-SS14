@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Tau Ceti from commit:c2ae749b457d27533b6b50fe5808fa76cee31acd | And modified by (Github-Firisi)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "chestdrawer"
+    },
+    {
+      "name": "chestdrawer-open"
+    },
+    {
+      "name": "filingcabinet"
+    },
+    {
+      "name": "filingcabinet-open"
+    },
+    {
+      "name": "tallcabinet"
+    },
+    {
+      "name": "tallcabinet-open"
+    }
+  ]
+}
