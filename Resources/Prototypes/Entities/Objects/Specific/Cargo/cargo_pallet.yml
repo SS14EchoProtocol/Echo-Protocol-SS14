@@ -26,7 +26,7 @@
   - type: Sprite
     drawdepth: FloorTiles
     layers:
-    - sprite: Structures/catwalk.rsi
+    - sprite: _ECHO/Structures/catwalk.rsi #PE-Tweak Было:Structures/catwalk.rsi Стало:_ECHO/Structures/catwalk.rsi
       state: catwalk_preview
   - type: GuideHelp
     guides:
@@ -68,9 +68,9 @@
   - type: CargoPallet
     palletType: sell
   - type: Sprite
-    sprite: Structures/cargo_pallets.rsi
+    sprite: _ECHO/Structures/cargo_pallets.rsi #PE-Tweak Было:Structures/cargo_pallets.rsi Стало:_ECHO/Structures/cargo_pallets.rsi
   - type: Icon
-    sprite: Structures/cargo_pallets.rsi
+    sprite: _ECHO/Structures/cargo_pallets.rsi #PE-Tweak Было:Structures/cargo_pallets.rsi Стало:_ECHO/Structures/cargo_pallets.rsi
     state: cargo_pallet_sell
   - type: IconSmooth
     key: cargo_pallet_sell
@@ -85,9 +85,9 @@
   - type: CargoPallet
     palletType: buy
   - type: Sprite
-    sprite: Structures/cargo_pallets.rsi
+    sprite: _ECHO/Structures/cargo_pallets.rsi #PE-Tweak Было:Structures/cargo_pallets.rsi Стало:_ECHO/Structures/cargo_pallets.rsi
   - type: Icon
-    sprite: Structures/cargo_pallets.rsi
+    sprite: _ECHO/Structures/cargo_pallets.rsi #PE-Tweak Было:Structures/cargo_pallets.rsi Стало:_ECHO/Structures/cargo_pallets.rsi
     state: cargo_pallet_buy
   - type: IconSmooth
     key: cargo_pallet_buy
