@@ -10,7 +10,7 @@
     - type: Transform
       noRot: true
     - type: Sprite
-      sprite: Structures/Storage/canister.rsi
+      sprite: _ECHO/Structures/Storage/canister.rsi #PE-Tweak Было:Structures/Storage/canister.rsi Стало:_ECHO/Structures/Storage/canister.rsi
       noRot: true
       layers:
         - state: grey
@@ -654,7 +654,7 @@
       damageModifierSet: Metallic
     - type: InteractionOutline
     - type: Sprite
-      sprite: Structures/Storage/canister.rsi
+      sprite: _ECHO/Structures/Storage/canister.rsi #PE-Tweak Было:Structures/Storage/canister.rsi Стало:_ECHO/Structures/Storage/canister.rsi
       state: grey-1
     - type: Physics
       bodyType: Dynamic
