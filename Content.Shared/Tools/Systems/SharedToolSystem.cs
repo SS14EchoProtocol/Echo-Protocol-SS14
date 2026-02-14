@@ -1,4 +1,4 @@
-using Content.Shared._ECHO.Tools; // Echo-Tweak "Wielding Sparks animation" 2
+using Content.Shared._ECHO.Tools; // Echo-Tweak "Wielding Sparks animation"
 using Robust.Shared.Audio; // Echo-Tweak "Wielding Sparks animation"
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chemistry.EntitySystems;
@@ -282,7 +282,7 @@ public abstract partial class SharedToolSystem : EntitySystem
     #region DoAfterEvents
 
     [Serializable, NetSerializable]
-    public sealed partial class ToolDoAfterEvent : DoAfterEvent // Echo-Tweak - Было: Protected sealed partial class -> Стало: Public sealed partial class "Wielding Sparks Animation"
+    internal sealed partial class ToolDoAfterEvent : DoAfterEvent // Echo-Tweak - Было: Protected sealed partial class -> Стало: Internal sealed partial class "Wielding Sparks Animation"
     {
         [DataField]
         public float Fuel;
