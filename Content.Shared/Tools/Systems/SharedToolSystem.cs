@@ -282,7 +282,7 @@ public abstract partial class SharedToolSystem : EntitySystem
     #region DoAfterEvents
 
     [Serializable, NetSerializable]
-    internal sealed partial class ToolDoAfterEvent : DoAfterEvent // Echo-Tweak - Было: Protected sealed partial class -> Стало: Internal sealed partial class "Wielding Sparks Animation"
+    public sealed partial class ToolDoAfterEvent : DoAfterEvent // Echo-Tweak - Было: Protected sealed partial class -> Стало: Public sealed partial class "Wielding Sparks Animation"
     {
         [DataField]
         public float Fuel;
