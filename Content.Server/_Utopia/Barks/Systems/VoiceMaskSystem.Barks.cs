@@ -1,0 +1,52 @@
+using Content.Shared.Utopia.CCVar;
+using Content.Shared.VoiceMask;
+using Content.Shared.Utopia.SpeechBarks;
+using Robust.Shared.Configuration;
+using Content.Shared.Inventory;
+
+namespace Content.Server.VoiceMask;
+
+public partial class VoiceMaskSystem
+{
+    private void InitializeBarks()
+    {
+        SubscribeLocalEvent<VoiceMaskComponent, InventoryRelayedEvent<TransformSpeakerBarkEvent>>(OnSpeakerVoiceTransform);
+        SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeBarkMessage>(OnChangeBark);
+        SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeBarkPitchMessage>(OnChangePitch);
+    }
+
+    private void OnSpeakerVoiceTransform(EntityUid uid, VoiceMaskComponent component, ref InventoryRelayedEvent<TransformSpeakerBarkEvent> args)
+    {
+        if (!_proto.TryIndex<BarkPrototype>(component.BarkId, out var proto))
+            return;
+
+        args.Args.Data.Pitch = Math.Clamp(component.BarkPitch, _cfgManager.GetCVar(UCCVars.BarksMinPitch), _cfgManager.GetCVar(UCCVars.BarksMaxPitch));
+        args.Args.Data.Sound = proto.Sound;
+    }
+
+    private void OnChangeBark(EntityUid uid, VoiceMaskComponent component, VoiceMaskChangeBarkMessage message)
+    {
+        if (!_proto.HasIndex<BarkPrototype>(message.Proto))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("voice-mask-voice-popup-invalid"), uid);
+            return;
+        }
+
+        component.BarkId = message.Proto;
+        _popupSystem.PopupEntity(Loc.GetString("voice-mask-voice-popup-success"), uid);
+        UpdateUI((uid, component));
+    }
+
+    private void OnChangePitch(EntityUid uid, VoiceMaskComponent component, VoiceMaskChangeBarkPitchMessage message)
+    {
+        if (!float.TryParse(message.Pitch, out var pitchValue))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("voice-mask-voice-popup-invalid-pitch"), uid);
+            return;
+        }
+
+        component.BarkPitch = pitchValue;
+        _popupSystem.PopupEntity(Loc.GetString("voice-mask-voice-popup-success"), uid);
+        UpdateUI((uid, component));
+    }
+}

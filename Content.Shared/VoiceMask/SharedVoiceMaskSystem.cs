@@ -15,13 +15,20 @@ public sealed class VoiceMaskBuiState : BoundUserInterfaceState
     public readonly string? Verb;
     public readonly bool Active;
     public readonly bool AccentHide;
-
-    public VoiceMaskBuiState(string name, string? verb, bool active, bool accentHide)
+ // Utopia-Tweak : Barks
+    public readonly string Bark;
+    public readonly float Pitch;
+    // Utopia-Tweak : Barks
+    public VoiceMaskBuiState(string name, string? verb, bool active, bool accentHide, string bark, float pitch) // Utopia-Tweak : Barks
     {
         Name = name;
         Verb = verb;
         Active = active;
         AccentHide = accentHide;
+        // Utopia-Tweak : Barks
+        Bark = bark;
+        Pitch = pitch;
+        // Utopia-Tweak : Barks
     }
 }
 

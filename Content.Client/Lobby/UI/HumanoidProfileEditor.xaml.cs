@@ -35,6 +35,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Shared.Utopia.CCVar;
 
 namespace Content.Client.Lobby.UI
 {
@@ -245,6 +246,18 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion
+
+             // Utopia-Tweak : Barks
+            #region Voice
+
+            if (configurationManager.GetCVar(UCCVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                InitializeBarks();
+            }
+
+            #endregion
+            // Utopia-Tweak : Barks
 
             #region SpawnPriority
 
@@ -654,6 +667,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateBarkVoicesControls(); // Utopia-Tweak : Barks
 
             RefreshAntags();
             RefreshJobs();
@@ -1062,6 +1076,36 @@ namespace Content.Client.Lobby.UI
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
         }
+
+        // Utopia-Tweak : Barks
+        private void SetBarkProto(string prototype)
+        {
+            Profile = Profile?.WithBarkProto(prototype);
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkPitch(float pitch)
+        {
+            Profile = Profile?.WithBarkPitch(Math.Clamp(pitch, _cfgManager.GetCVar(UCCVars.BarksMinPitch), _cfgManager.GetCVar(UCCVars.BarksMaxPitch)));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMinVariation(float variation)
+        {
+            Profile = Profile?.WithBarkMinVariation(Math.Clamp(variation, _cfgManager.GetCVar(UCCVars.BarksMinDelay), Profile.Bark.MaxVar));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMaxVariation(float variation)
+        {
+            Profile = Profile?.WithBarkMaxVariation(Math.Clamp(variation, Profile.Bark.MinVar, _cfgManager.GetCVar(UCCVars.BarksMaxDelay)));
+            ReloadPreview();
+            SetDirty();
+        }
+        // Utopia-Tweak : Barks
 
         private void SetSpecies(string newSpecies)
         {
