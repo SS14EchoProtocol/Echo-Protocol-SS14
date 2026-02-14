@@ -2,7 +2,6 @@
   id: EchoEffectWeldingSparks
   categories: [ HideSpawnMenu ]
   components:
-  - type: WeldingSparksVisuals
   - type: Transform
     anchored: true
   - type: Sprite
