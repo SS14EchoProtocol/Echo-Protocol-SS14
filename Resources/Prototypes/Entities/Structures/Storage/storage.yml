@@ -16,7 +16,7 @@
   - type: InteractionOutline
   - type: PlaceableSurface
   - type: Sprite
-    sprite: Structures/Furniture/furniture.rsi
+    sprite: _ECHO/Structures/Furniture/furniture.rsi # PE-Tweak Было: Structures/Furniture/furniture.rsi -> Стало: _ECHO/Structures/Furniture/furniture.rsi
     state: rack
     snapCardinals: true
   - type: Fixtures
