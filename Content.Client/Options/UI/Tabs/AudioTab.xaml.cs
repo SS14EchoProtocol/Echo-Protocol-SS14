@@ -7,7 +7,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared;
 using Robust.Shared.Configuration;
-using Content.Shared.Utopia.CCVar;
+using Content.Shared.ECHO.CCVar;
 
 namespace Content.Client.Options.UI.Tabs;
 
@@ -60,12 +60,12 @@ public sealed partial class AudioTab : Control
             _cfg.GetCVar(CCVars.MinMaxAmbientSourcesConfigured),
             _cfg.GetCVar(CCVars.MaxMaxAmbientSourcesConfigured));
             
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
         Control.AddOptionPercentSlider(
             UCCVars.BarksVolume,
             SliderVolumeBarks,
             scale: ContentAudioSystem.BarksMultiplier);
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
 
         Control.AddOptionCheckBox(CCVars.LobbyMusicEnabled, LobbyMusicCheckBox);
         Control.AddOptionCheckBox(CCVars.RestartSoundsEnabled, RestartSoundsCheckBox);

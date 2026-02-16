@@ -1,6 +1,6 @@
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
-using Content.Shared.Utopia.SpeechBarks;
+using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Server.Speech.Components;
 
@@ -33,8 +33,8 @@ public sealed partial class VoiceOverrideComponent : Component
     /// </summary>
     [DataField]
     public bool Enabled = true;
-    // Utopia-Tweak : Barks
+    // ECHO-Tweak : Barks
     [DataField]
     public BarkData? Bark;
-    // Utopia-Tweak : Barks
+    // ECHO-Tweak : Barks
 }

@@ -1046,7 +1046,7 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("age");
                     
-                    // Utopia-Tweak : Barks
+                    // ECHO-Tweak : Barks
                     b.Property<float>("BarkPitch")
                         .HasColumnType("real")
                         .HasColumnName("bark_pitch");
@@ -1055,7 +1055,7 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("bark_proto");
-                    // Utopia-Tweak : Barks
+                    // ECHO-Tweak : Barks
 
                     b.Property<string>("CharacterName")
                         .IsRequired()
@@ -1101,7 +1101,7 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
                     
-                    // Utopia-Tweak : Barks
+                    // ECHO-Tweak : Barks
                     b.Property<float>("HighBarkVar")
                         .HasColumnType("real")
                         .HasColumnName("high_bark_var");
@@ -1109,7 +1109,7 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<float>("LowBarkVar")
                         .HasColumnType("real")
                         .HasColumnName("low_bark_var");
-                    // Utopia-Tweak : Barks
+                    // ECHO-Tweak : Barks
 
                     b.Property<JsonDocument>("OrganMarkings")
                         .HasColumnType("jsonb")

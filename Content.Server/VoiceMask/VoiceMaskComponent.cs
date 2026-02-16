@@ -56,7 +56,7 @@ public sealed partial class VoiceMaskComponent : Component
     [DataField]
     public bool AccentHide = true;
 
-    // Utopia-Tweak : Barks
+    // ECHO-Tweak : Barks
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public string BarkId = "Human1";
@@ -64,6 +64,6 @@ public sealed partial class VoiceMaskComponent : Component
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public float BarkPitch = 1f;
-    // Utopia-Tweak : Barks
+    // ECHO-Tweak : Barks
 }
 

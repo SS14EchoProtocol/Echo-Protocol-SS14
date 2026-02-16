@@ -20,7 +20,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Robust.Shared;
 using YamlDotNet.RepresentationModel;
-using Content.Shared.Utopia.SpeechBarks;
+using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Shared.Preferences
 {
@@ -117,10 +117,10 @@ namespace Content.Shared.Preferences
         /// </summary>
         public IReadOnlySet<ProtoId<TraitPrototype>> TraitPreferences => _traitPreferences;
         
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
         [DataField]
         public BarkData Bark = new();
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
 
         /// <summary>
         /// If we're unable to get one of our preferred jobs do we spawn as a fallback job or do we stay in lobby.
@@ -143,7 +143,7 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts,
-            BarkData bark) // Utopia-Tweak : Barks
+            BarkData bark) // ECHO-Tweak : Barks
         {
             Name = name;
             FlavorText = flavortext;
@@ -461,7 +461,7 @@ namespace Content.Shared.Preferences
             };
         }
 
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
         public HumanoidCharacterProfile WithBarkProto(string bark)
         {
             return new(this)
@@ -493,7 +493,7 @@ namespace Content.Shared.Preferences
                 Bark = Bark.WithMaxVar(variation),
             };
         }
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
 
         public string Summary =>
             Loc.GetString(

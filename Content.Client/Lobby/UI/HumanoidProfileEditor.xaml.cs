@@ -35,7 +35,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
-using Content.Shared.Utopia.CCVar;
+using Content.Shared.ECHO.CCVar;
 
 namespace Content.Client.Lobby.UI
 {
@@ -247,7 +247,7 @@ namespace Content.Client.Lobby.UI
 
             #endregion
 
-             // Utopia-Tweak : Barks
+             // ECHO-Tweak : Barks
             #region Voice
 
             if (configurationManager.GetCVar(UCCVars.BarksEnabled))
@@ -257,7 +257,7 @@ namespace Content.Client.Lobby.UI
             }
 
             #endregion
-            // Utopia-Tweak : Barks
+            // ECHO-Tweak : Barks
 
             #region SpawnPriority
 
@@ -667,7 +667,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
-            UpdateBarkVoicesControls(); // Utopia-Tweak : Barks
+            UpdateBarkVoicesControls(); // ECHO-Tweak : Barks
 
             RefreshAntags();
             RefreshJobs();
@@ -1077,7 +1077,7 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
         private void SetBarkProto(string prototype)
         {
             Profile = Profile?.WithBarkProto(prototype);
@@ -1105,7 +1105,7 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
             SetDirty();
         }
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
 
         private void SetSpecies(string newSpecies)
         {

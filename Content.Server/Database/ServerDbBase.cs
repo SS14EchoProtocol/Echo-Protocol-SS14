@@ -25,7 +25,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
-using Content.Shared.Utopia.SpeechBarks;
+using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Server.Database
 {
@@ -325,7 +325,7 @@ namespace Content.Server.Database
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // Utopia-Tweak : Barks
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // ECHO-Tweak : Barks
             );
         }
 
@@ -415,12 +415,12 @@ namespace Content.Server.Database
 
                 profile.Loadouts.Add(dz);
             }
-            // Utopia-Tweak : Barks
+            // ECHO-Tweak : Barks
             profile.BarkProto = humanoid.Bark.Proto;
             profile.BarkPitch = humanoid.Bark.Pitch;
             profile.LowBarkVar = humanoid.Bark.MinVar;
             profile.HighBarkVar = humanoid.Bark.MaxVar;
-            // Utopia-Tweak : Barks
+            // ECHO-Tweak : Barks
 
             return profile;
         }

@@ -2,7 +2,7 @@ using Content.Shared.Examine;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Preferences;
-using Content.Shared.Utopia.SpeechBarks;
+using Content.Shared.ECHO.SpeechBarks;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Prototypes;
 
@@ -12,7 +12,7 @@ public sealed class HumanoidProfileSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly GrammarSystem _grammar = default!;
-    [Dependency] private readonly SharedSpeechBarksSystem _barks = default!;  // Utopia-Tweak : Barks
+    [Dependency] private readonly SharedSpeechBarksSystem _barks = default!;  // ECHO-Tweak : Barks
 
     public override void Initialize()
     {
@@ -40,9 +40,9 @@ public sealed class HumanoidProfileSystem : EntitySystem
             _grammar.SetGender((ent, grammar), profile.Gender);
         }
 
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
         _barks.SetBarkData(ent, profile.Bark);
-        // Utopia-Tweak : Barks
+        // ECHO-Tweak : Barks
     }
 
     private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)

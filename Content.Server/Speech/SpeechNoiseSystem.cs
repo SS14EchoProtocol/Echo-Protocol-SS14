@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
-using Content.Shared.Utopia.CCVar;
+using Content.Shared.ECHO.CCVar;
 
 namespace Content.Server.Speech
 {
@@ -72,12 +72,12 @@ namespace Content.Server.Speech
 
             var sound = GetSpeechSound((uid, component), args.Message);
             component.LastTimeSoundPlayed = currentTime;
-            // Utopia-Tweak : Barks
+            // ECHO-Tweak : Barks
             if (!IoCManager.Resolve<IConfigurationManager>().GetCVar(UCCVars.BarksEnabled))
             {
                 _audio.PlayPvs(sound, uid);
             }
-            // Utopia-Tweak : Barks
+            // ECHO-Tweak : Barks
         }
     }
 }

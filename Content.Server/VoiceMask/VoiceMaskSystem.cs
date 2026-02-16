@@ -54,7 +54,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
         SubscribeLocalEvent<VoiceMaskComponent, ImplantRelayEvent<TransformSpeechEvent>>(OnTransformSpeechImplant, before: [typeof(AccentSystem)]);
 
         Subs.CVar(_cfgManager, CCVars.MaxNameLength, value => _maxNameLength = value, true);
-        InitializeBarks(); // Utopia-Tweak : Barks
+        InitializeBarks(); // ECHO-Tweak : Barks
     }
 
     /// <summary>
