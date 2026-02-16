@@ -54,7 +54,7 @@ public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
                         ev.Data.Pitch,
                         ev.Data.MinVar,
                         ev.Data.MaxVar,
-                        args.IsWhisper), session);
+                        args.ObfuscatedMessage != null), session);
         }
     }
 }

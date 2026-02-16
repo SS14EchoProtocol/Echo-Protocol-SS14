@@ -325,7 +325,6 @@ namespace Content.Server.Database
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                languages.ToHashSet(), // Utopia-Tweak : Language
                 new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // Utopia-Tweak : Barks
             );
         }
@@ -422,7 +421,7 @@ namespace Content.Server.Database
             profile.LowBarkVar = humanoid.Bark.MinVar;
             profile.HighBarkVar = humanoid.Bark.MaxVar;
             // Utopia-Tweak : Barks
-            
+
             return profile;
         }
         #endregion

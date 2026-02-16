@@ -170,6 +170,18 @@ namespace Content.Shared.Localizations
         }
         // Utopia-Tweak
 
+        // Utopia-Tweak
+        private static ILocValue FormatPlaytimeMinutes(LocArgs args)
+        {
+            var time = TimeSpan.Zero;
+            if (args.Args is { Count: > 0 } && args.Args[0].Value is TimeSpan timeArg)
+            {
+                time = timeArg;
+            }
+            return new LocValueString(FormatPlaytimeMinutes(time));
+        }
+        // Utopia-Tweak
+
         private static ILocValue FormatLoc(LocArgs args)
         {
             var id = ((LocValueString) args.Args[0]).Value;
