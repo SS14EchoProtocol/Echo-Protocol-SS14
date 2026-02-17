@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Rack taken from Tau Ceti at commit 905f7b318ea61ec646025882e3750fe6dbf0aa9c",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "rack"
+        }
+    ]
+}

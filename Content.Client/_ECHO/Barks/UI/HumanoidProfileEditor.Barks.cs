@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Client._ECHO.Barks;
 using Content.Client._ECHO.SpeechBarks;
 using Content.Client.UserInterface.Controls;
+using Content.Shared.ECHO.CCVar;
 using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Client.Lobby.UI;
@@ -11,6 +12,36 @@ public sealed partial class HumanoidProfileEditor
 {
     private List<BarkPrototype> _barkList = new();
     private FancyWindow? _barkWindow;
+
+    // ECHO-Tweak : Barks
+    private void SetBarkProto(string prototype)
+    {
+        Profile = Profile?.WithBarkProto(prototype);
+        ReloadPreview();
+        SetDirty();
+    }
+
+    private void SetBarkPitch(float pitch)
+    {
+        Profile = Profile?.WithBarkPitch(Math.Clamp(pitch, _cfgManager.GetCVar(UCCVars.BarksMinPitch), _cfgManager.GetCVar(UCCVars.BarksMaxPitch)));
+        ReloadPreview();
+        SetDirty();
+    }
+
+    private void SetBarkMinVariation(float variation)
+    {
+        Profile = Profile?.WithBarkMinVariation(Math.Clamp(variation, _cfgManager.GetCVar(UCCVars.BarksMinDelay), Profile!.Bark.MaxVar));
+        ReloadPreview();
+        SetDirty();
+    }
+
+    private void SetBarkMaxVariation(float variation)
+    {
+        Profile = Profile?.WithBarkMaxVariation(Math.Clamp(variation, Profile!.Bark.MinVar, _cfgManager.GetCVar(UCCVars.BarksMaxDelay)));
+        ReloadPreview();
+        SetDirty();
+    }
+    // ECHO-Tweak : Barks
 
     private void InitializeBarks()
     {

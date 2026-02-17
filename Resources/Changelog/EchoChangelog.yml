@@ -1,6 +1,49 @@
 Entries:
-- author: Unlumy
-  changes:
-  - {message: "И да воздаяние их ждёт в новом мире, но что бы они знали, что их ждёт из самых недр ада явился им CHANGELOG нашего сервера", type: Add}
-  id: 1
-  time: '2026-02-08T09:07:19Z'
+  - author: Unlumy
+    changes:
+      - {message: 'И да воздаяние их ждёт в новом мире, но что бы они знали, что их
+          ждёт из самых недр ада явился им CHANGELOG нашего сервера', type: Add}
+    id: 1
+    time: '2026-02-08T09:07:19Z'
+  - author: Unlumy
+    changes:
+      - {message: Цветовая гамма стандартных светильников была, type: Tweak}
+      - {message: Эмбиент лампочек изменился для больше аутентичности 21XX году, type: Tweak}
+    time: '2026-02-05T05:50:09Z'
+    id: 2
+  - author: Unlumy
+    changes:
+      - {message: Спрайт аптечек приведён в вид Tau Ceti, type: Tweak}
+      - {message: Стальной стол и Укреплённый стол теперь выглядят нормально, type: Tweak}
+    time: '2026-02-08T23:41:35Z'
+    id: 3
+  - author: Mironium
+    changes:
+      - {message: изменил спрайты стен на аналоги с Тау Сети, type: Tweak}
+    time: '2026-02-11T20:03:29Z'
+    id: 4
+  - author: Firisi
+    changes:
+      - {message: Изменил спрайты комода и высокого шкафа на спрайты TauCeti, type: Tweak}
+    time: '2026-02-13T03:14:53Z'
+    id: 5
+  - author: FIRISI
+    changes:
+      - {message: Изменены спрайты газовых канистр на спрайты из TauCeti, type: Tweak}
+    time: '2026-02-13T06:33:59Z'
+    id: 6
+  - author: FIRISI
+    changes:
+      - {message: Заменил спрайты поддонов и мостиков на спрайты TauCeti, type: Tweak}
+    time: '2026-02-13T16:50:04Z'
+    id: 7
+  - author: Mintalit
+    changes:
+      - {message: Изменен спрайт стойки (rack), type: Tweak}
+    time: '2026-02-14T12:40:46Z'
+    id: 8
+  - author: Unlumy
+    changes:
+      - {message: Апстрим мастер-ветки до 16.02.2026, type: Add}
+    time: '2026-02-16T22:43:54Z'
+    id: 9

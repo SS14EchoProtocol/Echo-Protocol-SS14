@@ -6,9 +6,9 @@
   description: Pieces of metal that make the frame of a table.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/frame.rsi #PE-Tweak Было: Structures/Furniture/Tables/frame.rsi Стало: _ECHO/Structures/Furniture/Tables/frame.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/frame.rsi #PE-Tweak Было: Structures/Furniture/Tables/frame.rsi Стало: _ECHO/Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -63,9 +63,9 @@
   components:
   - type: SpriteFade
   - type: Sprite
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/frame.rsi #PE-Tweak Было: Structures/Furniture/Tables/frame.rsi Стало: _ECHO/Structures/Furniture/Tables/frame.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/frame.rsi #PE-Tweak Было: Structures/Furniture/Tables/frame.rsi Стало: _ECHO/Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -117,9 +117,9 @@
   description: Pieces of metal that make the frame of a table.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/frame.rsi #PE-Tweak Было: Structures/Furniture/Tables/frame.rsi Стало: _ECHO/Structures/Furniture/Tables/frame.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/frame.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/frame.rsi #PE-Tweak Было: Structures/Furniture/Tables/frame.rsi Стало: _ECHO/Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -253,9 +253,9 @@
   description: A square piece of glass, standing on four metal legs.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/glass.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/glass.rsi #PE-Tweak Было: Structures/Furniture/Tables/glass.rsi Стало: _ECHO/Structures/Furniture/Tables/glass.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/glass.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/glass.rsi #PE-Tweak Было: Structures/Furniture/Tables/glass.rsi Стало: _ECHO/Structures/Furniture/Tables/glass.rsi
   - type: GlassTable
     climberDamage:
       types:
@@ -519,9 +519,9 @@
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/wood.rsi #PE-Tweak Было: Structures/Furniture/Tables/wood.rsi Стало: _ECHO/Structures/Furniture/Tables/wood.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/wood.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/wood.rsi #PE-Tweak Было: Structures/Furniture/Tables/wood.rsi Стало: _ECHO/Structures/Furniture/Tables/wood.rsi
   - type: Damageable
     damageModifierSet: Wood
   - type: Destructible
@@ -568,9 +568,9 @@
   description: Play em' cowboy.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/carpet.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/carpet.rsi #PE-Tweak Было: Structures/Furniture/Tables/carpet.rsi Стало: _ECHO/Structures/Furniture/Tables/carpet.rsi
   - type: Icon
-    sprite: Structures/Furniture/Tables/carpet.rsi
+    sprite: _ECHO/Structures/Furniture/Tables/carpet.rsi #PE-Tweak Было: Structures/Furniture/Tables/carpet.rsi Стало: _ECHO/Structures/Furniture/Tables/carpet.rsi
   - type: Damageable
     damageModifierSet: Wood
   - type: Destructible
