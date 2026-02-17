@@ -5,7 +5,7 @@ Entries:
           ждёт из самых недр ада явился им CHANGELOG нашего сервера', type: Add}
     id: 1
     time: '2026-02-08T09:07:19Z'
-  - author: Illumy
+  - author: Unlumy
     changes:
       - {message: Цветовая гамма стандартных светильников была, type: Tweak}
       - {message: Эмбиент лампочек изменился для больше аутентичности 21XX году, type: Tweak}
