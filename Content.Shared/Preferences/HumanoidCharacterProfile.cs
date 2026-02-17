@@ -517,6 +517,7 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
+            if (!Bark.MemberwiseEquals(other.Bark)) return false; // ECHO-Tweak : Barks
             return Appearance.Equals(other.Appearance);
         }
 

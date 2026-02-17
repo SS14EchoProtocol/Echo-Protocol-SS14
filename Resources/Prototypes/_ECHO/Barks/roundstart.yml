@@ -100,7 +100,7 @@
   id: Mettaton
   name: bark-mettaton-name
   sound:
-    collection: ECHOMettaton
+    collection: MettatonCollection
   category: undertale
 
 - type: speechBark
@@ -149,7 +149,7 @@
   id: Temmie
   name: bark-temmie-name
   sound:
-    collection: ECHOtemmie
+    collection: temmieCollection
   category: undertale
 
 - type: speechBark
