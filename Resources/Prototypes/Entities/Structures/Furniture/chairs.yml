@@ -59,7 +59,7 @@
   components:
   - type: Anchorable
   - type: Rotatable
-  
+
 #Start anchored, cannot be rotated while anchored
 - type: entity
   name: chair
@@ -104,7 +104,6 @@
   parent: ChairBase
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: chair
   - type: Construction
     graph: Seat
@@ -117,7 +116,6 @@
   suffix: White
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: chair-greyscale
 
 - type: entity
@@ -160,7 +158,6 @@
   parent: OfficeChairBase
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: office-white
   - type: Construction
     graph: Seat
@@ -172,7 +169,6 @@
   parent: ChairOfficeLight
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: office-dark
   - type: Construction
     graph: Seat
@@ -185,7 +181,6 @@
   description: It looks comfy.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: comfy
   - type: Construction
     graph: Seat
@@ -209,7 +204,6 @@
   parent: UnanchoredChairBase
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: wooden
   - type: Construction
     graph: Seat
@@ -254,7 +248,6 @@
   description: Looks uncomfortable.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: ritual
   - type: Construction
     graph: RitualSeat
@@ -279,7 +272,6 @@
   description: It's staring back.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: cursed
   - type: Strap
     buckleSound:
