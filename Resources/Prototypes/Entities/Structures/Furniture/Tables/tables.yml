@@ -569,6 +569,7 @@
   components:
   - type: Sprite
     sprite: _ECHO/Structures/Furniture/Tables/carpet.rsi #PE-Tweak Было: Structures/Furniture/Tables/carpet.rsi Стало: _ECHO/Structures/Furniture/Tables/carpet.rsi
+  - type: Icon
     sprite: _ECHO/Structures/Furniture/Tables/carpet.rsi #PE-Tweak Было: Structures/Furniture/Tables/carpet.rsi Стало: _ECHO/Structures/Furniture/Tables/carpet.rsi
   - type: Damageable
     damageModifierSet: Wood
