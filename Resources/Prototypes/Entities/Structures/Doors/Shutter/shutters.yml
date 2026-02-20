@@ -14,7 +14,7 @@
   - type: StationAiWhitelist
   - type: Sprite
     sprite: Structures/Doors/Shutters/shutters.rsi
-    snapCardinals: true
+    snapCardinals: true # ECHO-Tweak
     drawdepth: BlastDoors
     layers:
     - state: closed
