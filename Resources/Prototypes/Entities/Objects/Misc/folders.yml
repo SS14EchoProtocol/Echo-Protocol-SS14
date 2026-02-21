@@ -285,9 +285,10 @@
   description: The weapon of choice for those on the front lines of bureaucracy.
   components:
   - type: Sprite
-    sprite: Objects/Misc/clipboard.rsi
+    sprite: _ECHO/Objects/Misc/clipboard.rsi #PE-Tweak Было: Objects/Misc/clipboard.rsi -> Стало: _ECHO/Objects/Misc/clipboard.rsi
     layers:
     - state: clipboard
+      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
     - state: clipboard_paper
       map: ["clipboard_paper"]
       visible: false
@@ -295,6 +296,26 @@
       map: ["clipboard_pen"]
       visible: false
     - state: clipboard_over
+      map: ["enum.ContainerSpriteState.State", "clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+#PE-Tweak-Start Стейты спрайтов в инвентаре
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+        clipboard_over:
+          True: {state: clipboard_over_storage}
+          False: {state: clipboard_over}
+        clipboard_pen:
+          True: {state: clipboard_pen_storage}
+          False: {state: clipboard_pen}
+        clipboard_paper:
+          True: {state: clipboard_paper_storage}
+          False: {state: clipboard_paper}
+        clipboard:
+          True: {state: clipboard_storage}
+          False: {state: clipboard}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -309,12 +330,12 @@
           - Write
         insertOnInteract: false
   - type: Item
-    sprite: Objects/Misc/clipboard.rsi
+    sprite: _ECHO/Objects/Misc/clipboard.rsi #PE-Tweak Было: Objects/Misc/clipboard.rsi -> Стало: _ECHO/Objects/Misc/clipboard.rsi
     size: Small
   - type: Clothing
     slots: [belt]
     quickEquip: false
-    sprite: Objects/Misc/clipboard.rsi
+    sprite: _ECHO/Objects/Misc/clipboard.rsi #PE-Tweak Было: Objects/Misc/clipboard.rsi -> Стало: _ECHO/Objects/Misc/clipboard.rsi
   - type: PhysicalComposition
     materialComposition: # half of autolathe printing cost
       Wood: 50
