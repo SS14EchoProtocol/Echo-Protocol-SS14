@@ -982,6 +982,17 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<int>("Age")
                         .HasColumnType("INTEGER")
                         .HasColumnName("age");
+                    
+                    // ECHO-Tweak : Barks
+                    b.Property<float>("BarkPitch")
+                        .HasColumnType("REAL")
+                        .HasColumnName("bark_pitch");
+
+                    b.Property<string>("BarkProto")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("bark_proto");
+                    // ECHO-Tweak : Barks
 
                     b.Property<string>("CharacterName")
                         .IsRequired()
@@ -1026,6 +1037,16 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
+                    
+                    // ECHO-Tweak : Barks
+                    b.Property<float>("HighBarkVar")
+                        .HasColumnType("REAL")
+                        .HasColumnName("high_bark_var");
+
+                    b.Property<float>("LowBarkVar")
+                        .HasColumnType("REAL")
+                        .HasColumnName("low_bark_var");
+                    // ECHO-Tweak : Barks
 
                     b.Property<byte[]>("OrganMarkings")
                         .HasColumnType("jsonb")

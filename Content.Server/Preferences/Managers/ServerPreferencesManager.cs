@@ -22,6 +22,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
+using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Server.Preferences.Managers
 {
@@ -185,7 +186,8 @@ namespace Content.Server.Preferences.Managers
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // ECHO-Tweak : Barks
             );
         }
 

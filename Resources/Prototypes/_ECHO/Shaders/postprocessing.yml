@@ -1,0 +1,4 @@
+- type: shader
+  id: FilmGrain
+  kind: source
+  path: "/Textures/_ECHO/Shaders/film_grain.swsl"

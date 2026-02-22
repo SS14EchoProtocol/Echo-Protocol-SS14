@@ -20,6 +20,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Robust.Shared;
 using YamlDotNet.RepresentationModel;
+using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Shared.Preferences
 {
@@ -115,6 +116,11 @@ namespace Content.Shared.Preferences
         /// <see cref="_traitPreferences"/>
         /// </summary>
         public IReadOnlySet<ProtoId<TraitPrototype>> TraitPreferences => _traitPreferences;
+        
+        // ECHO-Tweak : Barks
+        [DataField]
+        public BarkData Bark = new();
+        // ECHO-Tweak : Barks
 
         /// <summary>
         /// If we're unable to get one of our preferred jobs do we spawn as a fallback job or do we stay in lobby.
@@ -136,7 +142,8 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            Dictionary<string, RoleLoadout> loadouts)
+            Dictionary<string, RoleLoadout> loadouts,
+            BarkData bark) // ECHO-Tweak : Barks
         {
             Name = name;
             FlavorText = flavortext;
@@ -151,6 +158,7 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
+            Bark = bark;
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -181,7 +189,8 @@ namespace Content.Shared.Preferences
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
+                new Dictionary<string, RoleLoadout>(other.Loadouts),
+                other.Bark)
         {
         }
 
@@ -452,6 +461,40 @@ namespace Content.Shared.Preferences
             };
         }
 
+        // ECHO-Tweak : Barks
+        public HumanoidCharacterProfile WithBarkProto(string bark)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithProto(bark),
+            };
+        }
+
+        public HumanoidCharacterProfile WithBarkPitch(float pitch)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithPitch(pitch),
+            };
+        }
+
+        public HumanoidCharacterProfile WithBarkMinVariation(float variation)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithMinVar(variation),
+            };
+        }
+
+        public HumanoidCharacterProfile WithBarkMaxVariation(float variation)
+        {
+            return new(this)
+            {
+                Bark = Bark.WithMaxVar(variation),
+            };
+        }
+        // ECHO-Tweak : Barks
+
         public string Summary =>
             Loc.GetString(
                 "humanoid-character-profile-summary",
@@ -474,6 +517,7 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
+            if (!Bark.MemberwiseEquals(other.Bark)) return false; // ECHO-Tweak : Barks
             return Appearance.Equals(other.Appearance);
         }
 

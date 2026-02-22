@@ -44,6 +44,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
+            _loc.AddFunction(culture, "PLAYTIMEMINUTES", FormatPlaytimeMinutes); // ECHO-Tweak
 
 
             /*
@@ -159,6 +160,27 @@ namespace Content.Shared.Localizations
             var minutes = time.Minutes;
             return Loc.GetString($"zzzz-fmt-playtime", ("hours", hours), ("minutes", minutes));
         }
+
+         // ECHO-Tweak
+        public static string FormatPlaytimeMinutes(TimeSpan time)
+        {
+            time = TimeSpan.FromMinutes(Math.Ceiling(time.TotalMinutes));
+            var minutes = (int)Math.Ceiling(time.TotalMinutes);
+            return Loc.GetString($"zzzz-fmt-playtime-minutes", ("minutes", minutes));
+        }
+        // ECHO-Tweak
+
+        // ECHO-Tweak
+        private static ILocValue FormatPlaytimeMinutes(LocArgs args)
+        {
+            var time = TimeSpan.Zero;
+            if (args.Args is { Count: > 0 } && args.Args[0].Value is TimeSpan timeArg)
+            {
+                time = timeArg;
+            }
+            return new LocValueString(FormatPlaytimeMinutes(time));
+        }
+        // ECHO-Tweak
 
         private static ILocValue FormatLoc(LocArgs args)
         {

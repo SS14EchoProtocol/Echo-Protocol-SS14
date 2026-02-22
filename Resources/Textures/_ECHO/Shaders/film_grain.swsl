@@ -1,0 +1,22 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float GRAIN_AMOUNT;
+uniform highp float GRAIN_SIZE = 0.5; // Adjust the size of the grain
+uniform bool ANIMATE_GRAIN = true;
+
+void fragment() {
+	highp vec4 original_color = texture2D(SCREEN_TEXTURE, UV);
+
+	highp float noise = 0.0;
+
+	if (ANIMATE_GRAIN) {
+		// Generate random noise
+		noise = (fract(sin(dot(UV * TIME, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
+	} else {
+		 noise = (fract(sin(dot(UV, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
+	}
+	// Add noise to the original color
+	original_color.rgb += noise * GRAIN_AMOUNT * GRAIN_SIZE;
+
+	// Clamp the final color to make sure it stays in the valid range
+	COLOR = clamp(original_color, 0.0, 1.0);
+}

@@ -19,6 +19,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
+using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Server.Database
 {
@@ -203,6 +204,7 @@ namespace Content.Server.Database
             prefs.SelectedCharacterSlot = newSlot;
         }
 
+
         private Profile ConvertProfiles(HumanoidCharacterProfile humanoid, int slot, Profile? profile = null)
         {
             profile ??= new Profile();
@@ -289,6 +291,12 @@ namespace Content.Server.Database
 
                 profile.Loadouts.Add(dz);
             }
+            // ECHO-Tweak : Barks
+            profile.BarkProto = humanoid.Bark.Proto;
+            profile.BarkPitch = humanoid.Bark.Pitch;
+            profile.LowBarkVar = humanoid.Bark.MinVar;
+            profile.HighBarkVar = humanoid.Bark.MaxVar;
+            // ECHO-Tweak : Barks
 
             return profile;
         }

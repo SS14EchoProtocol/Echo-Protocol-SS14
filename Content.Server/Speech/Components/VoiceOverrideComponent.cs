@@ -1,5 +1,6 @@
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
+using Content.Shared.ECHO.SpeechBarks;
 
 namespace Content.Server.Speech.Components;
 
@@ -32,4 +33,8 @@ public sealed partial class VoiceOverrideComponent : Component
     /// </summary>
     [DataField]
     public bool Enabled = true;
+    // ECHO-Tweak : Barks
+    [DataField]
+    public BarkData? Bark;
+    // ECHO-Tweak : Barks
 }

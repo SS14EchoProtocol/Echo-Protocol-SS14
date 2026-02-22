@@ -1,7 +1,7 @@
 - type: species
   id: Vulpkanin
   name: species-name-vulpkanin
-  roundStart: true
+  roundStart: false #PE-Tweak Было: roundStart: true -> Стало: roundStart: false
   prototype: MobVulpkanin
   defaultSkinTone: "#5a3f2d"
   dollPrototype: AppearanceVulpkanin

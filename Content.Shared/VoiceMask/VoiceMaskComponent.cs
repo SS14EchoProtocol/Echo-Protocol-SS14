@@ -56,6 +56,16 @@ public sealed partial class VoiceMaskComponent : Component
     [DataField]
     public bool AccentHide = true;
 
+    // ECHO-Tweak : Barks
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string BarkId = "Human1";
+
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float BarkPitch = 1f;
+    // ECHO-Tweak : Barks
+
     /// <summary>
     ///     If user's equipped agent id name is getting changed.
     /// </summary>

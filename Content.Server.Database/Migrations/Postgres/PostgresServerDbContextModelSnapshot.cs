@@ -1045,6 +1045,17 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<int>("Age")
                         .HasColumnType("integer")
                         .HasColumnName("age");
+                    
+                    // ECHO-Tweak : Barks
+                    b.Property<float>("BarkPitch")
+                        .HasColumnType("real")
+                        .HasColumnName("bark_pitch");
+
+                    b.Property<string>("BarkProto")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("bark_proto");
+                    // ECHO-Tweak : Barks
 
                     b.Property<string>("CharacterName")
                         .IsRequired()
@@ -1089,6 +1100,16 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
+                    
+                    // ECHO-Tweak : Barks
+                    b.Property<float>("HighBarkVar")
+                        .HasColumnType("real")
+                        .HasColumnName("high_bark_var");
+
+                    b.Property<float>("LowBarkVar")
+                        .HasColumnType("real")
+                        .HasColumnName("low_bark_var");
+                    // ECHO-Tweak : Barks
 
                     b.Property<JsonDocument>("OrganMarkings")
                         .HasColumnType("jsonb")

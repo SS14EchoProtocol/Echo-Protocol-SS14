@@ -28,6 +28,10 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
         _window.OnVerbChange += verb => SendMessage(new VoiceMaskChangeVerbMessage(verb));
         _window.OnToggle += OnToggle;
         _window.OnAccentToggle += OnAccentToggle;
+        // ECHO-Tweak : Barks
+        _window.OnBarkChange += bark => SendMessage(new VoiceMaskChangeBarkMessage(bark));
+        _window.OnPitchChange += pitch => SendMessage(new VoiceMaskChangeBarkPitchMessage(pitch));
+        // ECHO-Tweak : Barks
     }
 
     private void OnNameSelected(string name)
@@ -52,7 +56,7 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
             return;
         }
 
-        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide);
+        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide, cast.Bark, cast.Pitch);
     }
 
     protected override void Dispose(bool disposing)

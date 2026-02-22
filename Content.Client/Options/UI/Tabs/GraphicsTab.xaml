@@ -15,6 +15,9 @@
                 <CheckBox Name="ViewportLowResCheckBox" Text="{Loc 'ui-options-vp-low-res'}" />
                 <CheckBox Name="ParallaxLowQualityCheckBox" Text="{Loc 'ui-options-parallax-low-quality'}" />
                 <CheckBox Name="AmbientOcclusionCheckBox" Text="{Loc 'ui-options-ambient-occlusion'}" />
+                <!-- PE-Tweak-start -->
+                <CheckBox Name="FilmGrainCheckBox" Text="{Loc 'ui-options-film-grain'}" />
+                <!-- PE-Tweak-end -->
 
                 <!-- Interface -->
                 <Label Text="{Loc 'ui-options-interface-label'}" StyleClasses="LabelKeyText"/>

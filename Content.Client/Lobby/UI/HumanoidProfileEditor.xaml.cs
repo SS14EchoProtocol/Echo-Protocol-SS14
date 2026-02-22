@@ -19,6 +19,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Shared.ECHO.CCVar;
 
 namespace Content.Client.Lobby.UI
 {
@@ -216,6 +217,18 @@ namespace Content.Client.Lobby.UI
 
             #endregion
 
+             // ECHO-Tweak : Barks
+            #region Voice
+
+            if (configurationManager.GetCVar(UCCVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                InitializeBarks();
+            }
+
+            #endregion
+            // ECHO-Tweak : Barks
+
             #region SpawnPriority
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
@@ -376,6 +389,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateBarkVoicesControls(); // ECHO-Tweak : Barks
 
             RefreshAntags();
             RefreshJobs();
@@ -420,6 +434,7 @@ namespace Content.Client.Lobby.UI
             base.EnteredTree();
             ReloadPreview();
         }
+
 
         private void UpdateSaveButton()
         {

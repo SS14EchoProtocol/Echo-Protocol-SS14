@@ -53,7 +53,7 @@
   - type: InputMover
   - type: MobMover
   - type: MovementSpeedModifier
-  - type: LagCompensation
+  - type: SpeechBarks # ECHO-Tweak : Barks
 
 - type: entity
   save: false

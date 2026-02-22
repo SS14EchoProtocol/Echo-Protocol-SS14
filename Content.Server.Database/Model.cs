@@ -294,7 +294,7 @@ namespace Content.Server.Database
                 .OwnsOne(p => p.HWId)
                 .Property(p => p.Type)
                 .HasDefaultValue(HwidType.Legacy);
-
+            
             ModelBan.OnModelCreating(modelBuilder);
         }
 
@@ -343,6 +343,12 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
+        // ECHO-Tweak : Barks
+        public string BarkProto { get; set; } = null!;
+        public float BarkPitch { get; set; } = 1f;
+        public float LowBarkVar { get; set; } = 0.1f;
+        public float HighBarkVar { get; set; } = 0.5f;
+        // ECHO-Tweak : Barks
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
