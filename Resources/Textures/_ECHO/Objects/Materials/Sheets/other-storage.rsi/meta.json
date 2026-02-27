@@ -15,14 +15,6 @@
     },
     {
       "name": "plastic_3"
-    },
-    {
-      "name": "plastic-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "plastic-inhand-right",
-      "directions": 4
     }
   ]
 }
