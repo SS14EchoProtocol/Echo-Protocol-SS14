@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from writing.dmi Tau Ceti and modified by Unlumy(Github), new sprites by Unlumy(Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "pen"
+    },
+    {
+      "name": "pen_storage"
+    },
+    {
+      "name": "pen_cap"
+    },
+    {
+      "name": "pen_cap_storage"
+    },
+    {
+      "name": "pen_centcom"
+    },
+    {
+      "name": "pen_centcom_storage"
+    },
+    {
+      "name": "pen_hop"
+    },
+    {
+      "name": "pen_hop_storage"
+    },
+    {
+      "name": "overpriced_pen"
+    },
+    {
+      "name": "overpriced_pen_storage"
+    },
+    {
+      "name": "luxury_pen"
+    },
+    {
+      "name": "luxury_pen_storage"
+    },
+    {
+      "name": "pen_blue"
+    },
+    {
+      "name": "pen_blue_storage"
+    },
+    {
+      "name": "pen_red"
+    },
+    {
+      "name": "pen_red_storage"
+    },
+	{
+	  "name": "pen_wizard"
+	},
+	{
+	  "name": "pen_wizard_storage"
+	},
+    {
+      "name": "pen-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "pen-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "overpriced_pen-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "overpriced_pen-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "pen_centcom-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "pen_centcom-inhand-right",
+      "directions": 4
+    }
+  ]
+}

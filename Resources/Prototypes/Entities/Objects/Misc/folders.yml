@@ -374,9 +374,10 @@
   description: A cheap clipboard made of blue plastic. For those who aren't yet ready to wield the bureaucratic might of a proper wooden clipboard.
   components:
   - type: Sprite
-    sprite: Objects/Misc/plastic_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi
     layers:
     - state: clipboard
+      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
     - state: clipboard_paper
       map: ["clipboard_paper"]
       visible: false
@@ -384,10 +385,30 @@
       map: ["clipboard_pen"]
       visible: false
     - state: clipboard_over
+      map: ["enum.ContainerSpriteState.State", "clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+#PE-Tweak-Start Стейты спрайтов в инвентаре (Да, это нужно в каждом случае, т.к. иначе не работает, shitcode)
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+        clipboard_over:
+          True: {state: clipboard_over_storage}
+          False: {state: clipboard_over}
+        clipboard_pen:
+          True: {state: clipboard_pen_storage}
+          False: {state: clipboard_pen}
+        clipboard_paper:
+          True: {state: clipboard_paper_storage}
+          False: {state: clipboard_paper}
+        clipboard:
+          True: {state: clipboard_storage}
+          False: {state: clipboard}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: Item
-    sprite: Objects/Misc/plastic_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi 
   - type: Clothing
-    sprite: Objects/Misc/plastic_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi
   - type: PhysicalComposition
     materialComposition: # half of autolathe printing cost
       Plastic: 50
@@ -408,9 +429,10 @@
   description: A luxurious clipboard upholstered with green velvet. Often seen carried by CentComm officials, seldom seen actually used.
   components:
   - type: Sprite
-    sprite: Objects/Misc/cc-clipboard.rsi
+    sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
     layers:
     - state: clipboard
+      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
     - state: clipboard_paper
       map: ["clipboard_paper"]
       visible: false
@@ -418,10 +440,30 @@
       map: ["clipboard_pen"]
       visible: false
     - state: clipboard_over
+      map: ["enum.ContainerSpriteState.State", "clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+#PE-Tweak-Start Стейты спрайтов в инвентаре (Да, это нужно в каждом случае, т.к. иначе не работает, shitcode)
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+        clipboard_over:
+          True: {state: clipboard_over_storage}
+          False: {state: clipboard_over}
+        clipboard_pen:
+          True: {state: clipboard_pen_storage}
+          False: {state: clipboard_pen}
+        clipboard_paper:
+          True: {state: clipboard_paper_storage}
+          False: {state: clipboard_paper}
+        clipboard:
+          True: {state: clipboard_storage}
+          False: {state: clipboard}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: Item
-    sprite: Objects/Misc/cc-clipboard.rsi
+    sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
   - type: Clothing
-    sprite: Objects/Misc/cc-clipboard.rsi
+    sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
   - type: PhysicalComposition
     materialComposition: # same composition as regular clipboard + bit of cloth because it's "upholstered with green velvet"
       Wood: 50
