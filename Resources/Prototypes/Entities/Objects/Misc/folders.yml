@@ -378,7 +378,6 @@
 # Закомментировано поскольку не нужный код, он наследуется
 #    layers:
 #    - state: clipboard
-#      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
 #    - state: clipboard_paper
 #      map: ["clipboard_paper"]
 #      visible: false
@@ -386,7 +385,6 @@
 #      map: ["clipboard_pen"]
 #      visible: false
 #    - state: clipboard_over
-#      map: ["enum.ContainerSpriteState.State", "clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
   - type: Item
     sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi 
   - type: Clothing
@@ -415,7 +413,6 @@
 # Закомментировано поскольку не нужный код, он наследуется
 #    layers: 
 #    - state: clipboard
-#      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
 #    - state: clipboard_paper
 #      map: ["clipboard_paper"]
 #      visible: false
@@ -423,7 +420,6 @@
 #      map: ["clipboard_pen"]
 #      visible: false
 #    - state: clipboard_over
-#      map: ["enum.ContainerSpriteState.State", "clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
   - type: Item
     sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
   - type: Clothing
