@@ -288,7 +288,7 @@
     sprite: _ECHO/Objects/Misc/clipboard.rsi #PE-Tweak Было: Objects/Misc/clipboard.rsi -> Стало: _ECHO/Objects/Misc/clipboard.rsi
     layers:
     - state: clipboard
-      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["clipboard"] #PE-Tweak ADD: map: ["clipboard"] для корректного отображения слоёв в GenericVisualizer
     - state: clipboard_paper
       map: ["clipboard_paper"]
       visible: false
@@ -296,7 +296,7 @@
       map: ["clipboard_pen"]
       visible: false
     - state: clipboard_over
-      map: ["clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректного отображения слоёв в GenericVisualizer
 #PE-Tweak-Start Стейты спрайтов в инвентаре
   - type: ContainerSprite
   - type: Appearance
@@ -448,7 +448,7 @@
     sprite: _ECHO/Objects/Misc/qm_clipboard.rsi #PE-Tweak Было: Objects/Misc/qm_clipboard.rsi -> Стало: _ECHO/Objects/Misc/qm_clipboard.rsi
     layers:
     - state: qm_clipboard
-      map: ["enum.ContainerSpriteState.State", "qm_clipboard"] #PE-Tweak ADD "      map: ["enum.ContainerSpriteState.State", "qm_clipboard"]" для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["qm_clipboard"] #PE-Tweak ADD "      map: ["qm_clipboard"]" для корректного отображения слоёв в GenericVisualizer
     - state: qm_clipboard_paper
       map: ["qm_clipboard_paper"] 
       visible: false
@@ -456,7 +456,7 @@
       map: ["qm_clipboard_pen"]
       visible: false
     - state: qm_clipboard_over
-      map: ["qm_clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["qm_clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректного отображения слоёв в GenericVisualizer
 #PE-Tweak-Start Стейты спрайтов в инвентаре
   - type: ContainerSprite
   - type: Appearance

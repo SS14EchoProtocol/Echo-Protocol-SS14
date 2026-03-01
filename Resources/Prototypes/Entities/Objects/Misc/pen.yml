@@ -10,7 +10,7 @@
 #PE-Tweak-Start Стейты спрайтов в инвентаре
     layers:
     - state: pen
-      map: ["enum.ContainerSpriteState.State", "pen"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["pen"] # требуется для работы слоёв
   - type: ContainerSprite
   - type: Appearance
   - type: GenericVisualizer
@@ -83,7 +83,7 @@
 #PE-Tweak-start Стейты спрайтов в инвентаре
     layers:
     - state: luxury_pen
-      map: ["enum.ContainerSpriteState.State", "luxury_pen"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["luxury_pen"] # требуется для работы слоёв
   - type: GenericVisualizer
     visuals:
       enum.ContainerSpriteState.State:
@@ -128,7 +128,7 @@
 #PE-Tweak-start Стейты спрайтов в инвентаре
     layers:
     - state: overpriced_pen
-      map: ["enum.ContainerSpriteState.State", "overpriced_pen"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["overpriced_pen"] # требуется для работы слоёв
   - type: GenericVisualizer
     visuals:
       enum.ContainerSpriteState.State:
@@ -152,7 +152,7 @@
 #PE-Tweak-start Стейты спрайтов в инвентаре
     layers:
     - state: pen_centcom
-      map: ["enum.ContainerSpriteState.State", "pen_centcom"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["pen_centcom"] # требуется для работы слоёв
   - type: GenericVisualizer
     visuals:
       enum.ContainerSpriteState.State:
@@ -174,7 +174,7 @@
 #PE-Tweak-start Стейты спрайтов в инвентаре
     layers:
     - state: pen_cap
-      map: ["enum.ContainerSpriteState.State", "pen_cap"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["pen_cap"] # требуется для работы слоёв
   - type: GenericVisualizer
     visuals:
       enum.ContainerSpriteState.State:
@@ -194,7 +194,7 @@
 #PE-Tweak-start Стейты спрайтов в инвентаре
     layers:
     - state: pen_hop
-      map: ["enum.ContainerSpriteState.State", "pen_hop"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["pen_hop"] # требуется для работы слоёв
   - type: GenericVisualizer
     visuals:
       enum.ContainerSpriteState.State:
@@ -214,7 +214,7 @@
 #PE-Tweak-start Стейты спрайтов в инвентаре
     layers:
     - state: pen_wizard
-      map: ["enum.ContainerSpriteState.State", "pen_wizard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["pen_wizard"] # требуется для работы слоёв
   - type: GenericVisualizer
     visuals:
       enum.ContainerSpriteState.State:
