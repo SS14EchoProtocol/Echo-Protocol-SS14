@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from writing.dmi Tau Ceti and modified by Unlumy(Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "pen"
+    },
+    {
+      "name": "pen_cap"
+    },
+    {
+      "name": "pen_centcom"
+    },
+    {
+      "name": "pen_hop"
+    },
+    {
+      "name": "overpriced_pen"
+    },
+    {
+      "name": "luxury_pen"
+    },
+    {
+      "name": "pen_blue"
+    },
+    {
+      "name": "pen_red"
+    },
+	{
+	  "name": "pen_wizard"
+	}
+  ]
+}
