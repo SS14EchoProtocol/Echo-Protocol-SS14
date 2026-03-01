@@ -296,7 +296,7 @@
       map: ["clipboard_pen"]
       visible: false
     - state: clipboard_over
-      map: ["clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
 #PE-Tweak-Start Стейты спрайтов в инвентаре
   - type: ContainerSprite
   - type: Appearance
@@ -375,6 +375,7 @@
   components:
   - type: Sprite
     sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi
+# Закомментировано поскольку не нужный код, он наследуется
 #    layers:
 #    - state: clipboard
 #      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
@@ -411,7 +412,8 @@
   components:
   - type: Sprite
     sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
-#    layers:
+# Закомментировано поскольку не нужный код, он наследуется
+#    layers: 
 #    - state: clipboard
 #      map: ["enum.ContainerSpriteState.State", "clipboard"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
 #    - state: clipboard_paper
@@ -447,16 +449,37 @@
   description: A bulky electric clipboard, filled with shipping orders and financing details. With so many compromising documents, you ought to keep this safe.
   components:
   - type: Sprite
-    sprite: Objects/Misc/qm_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/qm_clipboard.rsi #PE-Tweak Было: Objects/Misc/qm_clipboard.rsi -> Стало: _ECHO/Objects/Misc/qm_clipboard.rsi
     layers:
     - state: qm_clipboard
+      map: ["enum.ContainerSpriteState.State", "qm_clipboard"] #PE-Tweak ADD "      map: ["enum.ContainerSpriteState.State", "qm_clipboard"]" для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
     - state: qm_clipboard_paper
-      map: ["qm_clipboard_paper"]
+      map: ["qm_clipboard_paper"] 
       visible: false
     - state: qm_clipboard_pen
       map: ["qm_clipboard_pen"]
       visible: false
     - state: qm_clipboard_over
+      map: ["qm_clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+#PE-Tweak-Start Стейты спрайтов в инвентаре
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+        qm_clipboard_over:
+          True: {state: qm_clipboard_over_storage}
+          False: {state: qm_clipboard_over}
+        qm_clipboard_pen:
+          True: {state: qm_clipboard_pen_storage}
+          False: {state: qm_clipboard_pen}
+        qm_clipboard_paper:
+          True: {state: qm_clipboard_paper_storage}
+          False: {state: qm_clipboard_paper}
+        qm_clipboard:
+          True: {state: qm_clipboard_storage}
+          False: {state: qm_clipboard}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: ItemSlots
     slots:
       pen_slot:
@@ -466,10 +489,10 @@
           - Write
         insertOnInteract: true
   - type: Item
-    sprite: Objects/Misc/qm_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/qm_clipboard.rsi #PE-Tweak Было: Objects/Misc/qm_clipboard.rsi -> Стало: _ECHO/Objects/Misc/qm_clipboard.rsi
     size: Normal
   - type: Clothing
-    sprite: Objects/Misc/qm_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/qm_clipboard.rsi #PE-Tweak Было: Objects/Misc/qm_clipboard.rsi -> Стало: _ECHO/Objects/Misc/qm_clipboard.rsi
   - type: Storage
     grid:
     - 0,0,4,3
