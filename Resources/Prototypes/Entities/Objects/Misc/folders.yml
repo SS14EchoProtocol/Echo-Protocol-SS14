@@ -296,7 +296,7 @@
       map: ["clipboard_pen"]
       visible: false
     - state: clipboard_over
-      map: ["enum.ContainerSpriteState.State", "clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
+      map: ["clipboard_over"] #PE-Tweak ADD: map: ["enum.ContainerSpriteState.State", "clipboard_over"] для корректной работы GenericVisualizer с enum.ContainerSpriteState.State
 #PE-Tweak-Start Стейты спрайтов в инвентаре
   - type: ContainerSprite
   - type: Appearance
