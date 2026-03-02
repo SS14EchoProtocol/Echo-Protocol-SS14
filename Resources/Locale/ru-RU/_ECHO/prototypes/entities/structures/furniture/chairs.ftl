@@ -1,11 +1,3 @@
-ent-SeatBase = стул
-    .desc = Вы сидите на нём. Либо по вашей воле, либо по принуждению.
-ent-UnanchoredChairBase = стул
-    .desc = { ent-SeatBase.desc }
-ent-ChairBase = стул
-    .desc = { ent-UnanchoredChairBase.desc }
-ent-StoolBase = стул
-    .desc = { ent-OfficeChairBase.desc }
 ent-EchoComfyChairLime = лаймовое удобное кресло
     .desc = Выглядит удобным.
 ent-EchoComfyChairGreen = зелёное удобное кресло
