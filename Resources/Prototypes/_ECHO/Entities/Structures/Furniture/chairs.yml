@@ -1,0 +1,64 @@
+- type: entity
+  name: echo chair base
+  id: EchoChairBase
+  parent: [SeatBase, BaseStructure]
+  description: It looks comfy.
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+  - type: Rotatable
+  - type: Physics 
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+        density: 190
+        mask:
+        - TableMask
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Strap
+    position: Down
+    rotation: 0 
+
+- type: entity
+  name: comfy black chair
+  id: EchoChairComfyBlack
+  parent: EchoChairBase
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/comfychairs.rsi
+    state: comfy_black
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtchaircomfyblack
+
+- type: entity
+  name: comfy maroon chair
+  id: EchoChairComfyMaroon
+  parent: EchoChairBase
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/comfychairs.rsi
+    state: comfy_maroon
+
+- type: entity
+  name: comfy white chair
+  id: EchoChairComfyWhite
+  parent: EchoChairBase
+  description: This is a chair.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/comfychairs.rsi
+    state: comfy_white
+    graph: _ECHOSeat
+    node: adtchaircomfywhite

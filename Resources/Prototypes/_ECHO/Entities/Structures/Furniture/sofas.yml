@@ -1,0 +1,211 @@
+- type: entity
+  name: echo base sofa
+  id: EchoSofaBase
+  parent: [SeatBase, BaseStructure] 
+  description: It looks comfy.
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Anchorable
+  - type: Rotatable
+  - type: Fixtures 
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+        density: 190
+        mask:
+        - TableMask
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+  - type: Strap
+    position: Down
+    rotation: 0 
+  - type: StaticPrice
+    price: 50
+
+- type: entity
+  name: black sofa left side
+  id: EchoSofaCutBlackLeftSide
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_black_cut.rsi
+    state: sofa_left
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutblackleft
+
+- type: entity
+  name: black sofa middle
+  id: EchoSofaCutBlackMiddle
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_black_cut.rsi
+    state: sofa_middle
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutblackmiddle
+
+- type: entity
+  name: black sofa right side
+  id: EchoSofaCutBlackRightSide
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_black_cut.rsi
+    state: sofa_right
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutblackright
+
+- type: entity
+  name: black sofa left corner
+  id: EchoSofaCutBlackLeftCorner
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_black_cut.rsi
+    state: sofa_corner
+  - type: Construction
+    graph: EchoSeat
+    node: adtsofacutblackleftcorner
+
+- type: entity
+  name: black sofa right corner
+  id: EchoSofaCutBlackRightCorner
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_black_cut.rsi
+    state: sofa_corner
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutblackrightcorner
+
+- type: entity
+  name: comfy sofa left side
+  id: EchoSofaCutComfyLeftSide
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_comfy_cut.rsi
+    state: sofa_left
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutcomfyleft
+
+- type: entity
+  name: comfy sofa middle
+  id: EchoSofaCutComfyMiddle
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_comfy_cut.rsi
+    state: sofa_middle
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutcomfymiddle
+
+- type: entity
+  name: comfy sofa right side
+  id: EchoSofaCutComfyRightSide
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_comfy_cut.rsi
+    state: sofa_right
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutcomfyright
+
+- type: entity
+  name: comfy sofa left corner
+  id: EchoSofaCutComfyLeftCorner
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_comfy_cut.rsi
+    state: sofa_corner
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutcomfyleftcorner
+
+- type: entity
+  name: comfy sofa right corner
+  id: EchoSofaCutComfyRightCorner
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_comfy_cut.rsi
+    state: sofa_corner
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutcomfyrightcorner
+
+- type: entity
+  name: dainer sofa left side
+  id: EchoSofaCutDainerLeftSide
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_dainer_cut.rsi
+    state: sofa_left
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutdainerleft
+
+- type: entity
+  name: dainer sofa middle
+  id: EchoSofaCutDainerMiddle
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_dainer_cut.rsi
+    state: sofa_middle
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutdainermiddle
+
+- type: entity
+  name: dainer sofa right side
+  id: EchoSofaCutDainerRightSide
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_dainer_cut.rsi
+    state: sofa_right
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutdainerright
+
+- type: entity
+  name: dainer sofa left corner
+  id: EchoSofaCutDainerLeftCorner
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_dainer_cut.rsi
+    state: sofa_corner
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutdainerleftcorner
+
+- type: entity
+  name: dainer sofa right corner
+  id: EchoSofaCutDainerRightCorner
+  parent: EchoSofaBase
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Sofas/sofa_dainer_cut.rsi
+    state: sofa_corner
+  - type: Construction
+    graph: _ECHOSeat
+    node: adtsofacutdainerrightcorner
