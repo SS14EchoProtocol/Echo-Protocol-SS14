@@ -98,7 +98,7 @@
 
 - type: construction
   id: EchoChairYellow
-  graph: Echo Seat
+  graph: EchoSeat
   startNode: start
   targetNode: echoChairYellow
   category: construction-category-furniture
