@@ -27,6 +27,7 @@
     - alertType: Rooted
     - alertType: Pacified
     - alertType: Stealthy
+    - alertType: Offer # ECHO-Tweak добавление алерта оффера
 
 - type: entity
   id: AlertSpriteView

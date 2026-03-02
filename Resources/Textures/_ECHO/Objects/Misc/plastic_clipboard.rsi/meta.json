@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Clipboard sprites are by WJohn (Github) for tgstation, taken from https://github.com/tgstation/tgstation/commit/3cc10b1785bff95e861d722b5164189951761921. Inhand sprites by nmajask (Github) for SS14. Aforementioned sprites modified again by Hitlinemoss. All sprites modified to Tau Ceti Style by Unlumy + made new sprites without _storage prefix",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "clipboard"
+    },
+    {
+      "name": "clipboard_over"
+    },
+    {
+      "name": "clipboard_paper"
+    },
+    {
+      "name": "clipboard_pen"
+    },
+    {
+      "name": "clipboard_storage"
+    },
+    {
+      "name": "clipboard_over_storage"
+    },
+    {
+      "name": "clipboard_paper_storage"
+    },
+    {
+      "name": "clipboard_pen_storage"
+    },
+    {
+      "name": "equipped-BELT",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

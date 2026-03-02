@@ -102,6 +102,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction HotbarShift7 = "HotbarShift7";
         public static readonly BoundKeyFunction HotbarShift8 = "HotbarShift8";
         public static readonly BoundKeyFunction HotbarShift9 = "HotbarShift9";
+        public static readonly BoundKeyFunction OfferItem = "OfferItem"; // ECHO-Tweak
 
         public static BoundKeyFunction[] GetHotbarBoundKeys() =>
             new[]

@@ -5,10 +5,23 @@
   description: A dark ink pen.
   components:
   - type: Sprite
-    sprite: Objects/Misc/pens.rsi
-    state: pen
+    sprite: _ECHO/Objects/Misc/pens_storage.rsi #PE-Tweak Было: Objects/Misc/pens.rsi -> Стало: _ECHO/Objects/Misc/pens_storage.rsi
+#    state: pen #PE-Tweak-GenericVisualizer
+#PE-Tweak-Start Стейты спрайтов в инвентаре
+    layers:
+    - state: pen
+      map: ["pen"] # требуется для работы слоёв
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        pen:
+          True: {sprite: _ECHO/Objects/Misc/pens_storage.rsi}
+          False: {sprite: _ECHO/Objects/Misc/pens.rsi}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: Item
-    sprite: Objects/Misc/pens.rsi
+    sprite: _ECHO/Objects/Misc/pens.rsi #PE-Tweak Было: Objects/Misc/pens.rsi -> Стало: _ECHO/Objects/Misc/pens.rsi
     heldPrefix: pen
     size: Tiny
   - type: Tag
@@ -50,7 +63,7 @@
     offset: 0.3,0.0
     removalTime: 0.0
   - type: ThrowingAngle
-    angle: 315
+    angle: 270 #PE-Tweak Было: 315 -> Стало: 270
   - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
@@ -66,7 +79,18 @@
   description: A fancy and expensive pen that you only deserve to own if you're qualified to handle vast amounts of paperwork.
   components:
   - type: Sprite
-    state: luxury_pen
+#    state: luxury_pen #PE-Tweak-GenericVisualizer
+#PE-Tweak-start Стейты спрайтов в инвентаре
+    layers:
+    - state: luxury_pen
+      map: ["luxury_pen"] # требуется для работы слоёв
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        luxury_pen:
+          True: {sprite: _ECHO/Objects/Misc/pens_storage.rsi}
+          False: {sprite: _ECHO/Objects/Misc/pens.rsi}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: Item
     heldPrefix: luxury_pen
 
@@ -100,7 +124,18 @@
   description: A high-tech pen straight from Cybersun's legal department, capable of refracting hard-light at impossible angles through its diamond tip in order to write. So powerful, it's even able to rewrite officially stamped documents should the need arise.
   components:
   - type: Sprite
-    state: overpriced_pen
+#    state: overpriced_pen #PE-Tweak-GenericVisualizer
+#PE-Tweak-start Стейты спрайтов в инвентаре
+    layers:
+    - state: overpriced_pen
+      map: ["overpriced_pen"] # требуется для работы слоёв
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        overpriced_pen:
+          True: {sprite: _ECHO/Objects/Misc/pens_storage.rsi}
+          False: {sprite: _ECHO/Objects/Misc/pens.rsi}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: Item
     heldPrefix: overpriced_pen
   - type: StaticPrice
@@ -113,7 +148,18 @@
   description: In an attempt to keep up with the "power" of the cybersun bureaucracy, NT made a replica of cyber pen, in their corporate style.
   components:
   - type: Sprite
-    state: pen_centcom
+#    state: pen_centcom #PE-Tweak-GenericVisualizer
+#PE-Tweak-start Стейты спрайтов в инвентаре
+    layers:
+    - state: pen_centcom
+      map: ["pen_centcom"] # требуется для работы слоёв
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        pen_centcom:
+          True: {sprite: _ECHO/Objects/Misc/pens_storage.rsi}
+          False: {sprite: _ECHO/Objects/Misc/pens.rsi}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: Item
     heldPrefix: pen_centcom
 
@@ -124,7 +170,18 @@
   description: A luxurious fountain pen for the captain of the station.
   components:
   - type: Sprite
-    state: pen_cap
+#    state: pen_cap #PE-Tweak-GenericVisualizer
+#PE-Tweak-start Стейты спрайтов в инвентаре
+    layers:
+    - state: pen_cap
+      map: ["pen_cap"] # требуется для работы слоёв
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        pen_cap:
+          True: {sprite: _ECHO/Objects/Misc/pens_storage.rsi}
+          False: {sprite: _ECHO/Objects/Misc/pens.rsi}
+#PE-Tweak-End Стейты спрайтов в инвентаре
 
 - type: entity
   name: HoP's fountain pen
@@ -133,7 +190,18 @@
   description: A luxurious fountain pen for the HoP of the station.
   components:
   - type: Sprite
-    state: pen_hop
+#    state: pen_hop #PE-Tweak-GenericVisualizer
+#PE-Tweak-start Стейты спрайтов в инвентаре
+    layers:
+    - state: pen_hop
+      map: ["pen_hop"] # требуется для работы слоёв
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        pen_hop:
+          True: {sprite: _ECHO/Objects/Misc/pens_storage.rsi}
+          False: {sprite: _ECHO/Objects/Misc/pens.rsi}
+#PE-Tweak-End Стейты спрайтов в инвентаре
 
 - type: entity
   name: wizard's magical pen
@@ -142,7 +210,18 @@
   description: A luxurious fountain pen. Seems to have a magical crystal eraser.
   components:
   - type: Sprite
-    state: pen_wizard
+#    state: pen_wizard #PE-Tweak-GenericVisualizer
+#PE-Tweak-start Стейты спрайтов в инвентаре
+    layers:
+    - state: pen_wizard
+      map: ["pen_wizard"] # требуется для работы слоёв
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        pen_wizard:
+          True: {sprite: _ECHO/Objects/Misc/pens_storage.rsi}
+          False: {sprite: _ECHO/Objects/Misc/pens.rsi}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: Tag
     tags:
     - WriteIgnoreStamps
