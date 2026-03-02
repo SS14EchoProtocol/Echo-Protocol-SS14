@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "taken from Tau Ceti at commit ca7ac26db084b07d6fc94215cedc78b790081d8f",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "chair",
+            "directions": 4
+        },
+        {
+            "name": "chair-greyscale",
+            "directions": 4
+        },
+        {
+            "name": "comfy",
+            "directions": 4
+        },
+        {
+            "name": "comfychair_lime",
+            "directions": 4
+        },
+        {
+            "name": "comfychair_black",
+            "directions": 4
+        },
+        {
+            "name": "comfychair_brown",
+            "directions": 4
+        },
+        {
+            "name": "comfychair_green",
+            "directions": 4
+        },
+        {
+            "name": "office-dark",
+            "directions": 4
+        },
+        {
+            "name": "office-white",
+            "directions": 4
+        },
+        {
+            "name": "wooden",
+            "directions": 4
+        },
+        {
+            "name": "chair_black",
+            "directions": 4
+        },
+        {
+            "name": "chair_blue",
+            "directions": 4
+        },
+        {
+            "name": "chair_green",
+            "directions": 4
+        },
+        {
+            "name": "chair_red",
+            "directions": 4
+        },
+        {
+            "name": "chair_white",
+            "directions": 4
+        },
+        {
+            "name": "chair_yellow",
+            "directions": 4
+        }
+    ]
+}

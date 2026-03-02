@@ -105,6 +105,7 @@
   components:
   - type: Sprite
     state: chair
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
   - type: Construction
     graph: Seat
     node: chair
@@ -116,6 +117,7 @@
   suffix: White
   components:
   - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: chair-greyscale
 
 - type: entity
@@ -136,6 +138,7 @@
   parent: StoolBase
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: bar
   - type: Construction
     graph: Seat
@@ -147,6 +150,7 @@
   parent: StoolBase
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: brass_chair
   - type: Construction
     graph: Seat
@@ -158,6 +162,7 @@
   parent: OfficeChairBase
   components:
   - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: office-white
   - type: Construction
     graph: Seat
@@ -169,6 +174,7 @@
   parent: ChairOfficeLight
   components:
   - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: office-dark
   - type: Construction
     graph: Seat
@@ -181,6 +187,7 @@
   description: It looks comfy.
   components:
   - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: comfy
   - type: Construction
     graph: Seat
@@ -193,6 +200,7 @@
   description: The pilot seat of a prestigious ship.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: shuttle
   - type: Construction
     graph: Seat
@@ -204,6 +212,7 @@
   parent: UnanchoredChairBase
   components:
   - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi
     state: wooden
   - type: Construction
     graph: Seat
@@ -248,6 +257,7 @@
   description: Looks uncomfortable.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: ritual
   - type: Construction
     graph: RitualSeat
@@ -260,6 +270,7 @@
   description: Uncomfortably sweaty.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: meat
   - type: Construction
     graph: Seat
@@ -272,6 +283,7 @@
   description: It's staring back.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: cursed
   - type: Strap
     buckleSound:
@@ -396,6 +408,7 @@
   description: A long chair made for a metro. Really standard design.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: steel-bench
   - type: Construction
     graph: Seat
@@ -408,6 +421,7 @@
   description: Make sure you sit *really* gently.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: card-stool
   - type: Construction
     graph: Seat
@@ -442,6 +456,7 @@
   description: Did you get a splinter? Well, at least it’s eco friendly.
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: wooden-bench
   - type: Construction
     graph: Seat
@@ -480,4 +495,5 @@
   name: xeno chair
   components:
   - type: Sprite
+    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi
     state: xeno-chair
