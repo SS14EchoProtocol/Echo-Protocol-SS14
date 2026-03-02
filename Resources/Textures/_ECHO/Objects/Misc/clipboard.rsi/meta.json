@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Clipboard(_storage) sprites taken from https://github.com/goonstation/goonstation/pull/18361/changes/408a16390933e7f9a1c4c2fa6b94c2c40280093b. Inhand sprites by nmajask (Github) for SS14. clipboard_paper is a modified version of paper from bureaucracy.rsi.",
+  "copyright": "Every single sprite modified and every sprite without suffix _storage made by Unlumy.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "clipboard"
+    },
+    {
+      "name": "clipboard_over"
+    },
+    {
+      "name": "clipboard_paper"
+    },
+    {
+      "name": "clipboard_pen"
+    },
+    {
+      "name": "clipboard_storage"
+    },
+    {
+      "name": "clipboard_over_storage"
+    },
+    {
+      "name": "clipboard_paper_storage"
+    },
+    {
+      "name": "clipboard_pen_storage"
+    },
+    {
+      "name": "equipped-BELT",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

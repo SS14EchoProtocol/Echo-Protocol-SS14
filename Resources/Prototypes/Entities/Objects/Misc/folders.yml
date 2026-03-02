@@ -285,9 +285,10 @@
   description: The weapon of choice for those on the front lines of bureaucracy.
   components:
   - type: Sprite
-    sprite: Objects/Misc/clipboard.rsi
+    sprite: _ECHO/Objects/Misc/clipboard.rsi #PE-Tweak Было: Objects/Misc/clipboard.rsi -> Стало: _ECHO/Objects/Misc/clipboard.rsi
     layers:
     - state: clipboard
+      map: ["clipboard"] #PE-Tweak ADD: map: ["clipboard"] для корректного отображения слоёв в GenericVisualizer
     - state: clipboard_paper
       map: ["clipboard_paper"]
       visible: false
@@ -295,6 +296,26 @@
       map: ["clipboard_pen"]
       visible: false
     - state: clipboard_over
+      map: ["clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректного отображения слоёв в GenericVisualizer
+#PE-Tweak-Start Стейты спрайтов в инвентаре
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+        clipboard_over:
+          True: {state: clipboard_over_storage}
+          False: {state: clipboard_over}
+        clipboard_pen:
+          True: {state: clipboard_pen_storage}
+          False: {state: clipboard_pen}
+        clipboard_paper:
+          True: {state: clipboard_paper_storage}
+          False: {state: clipboard_paper}
+        clipboard:
+          True: {state: clipboard_storage}
+          False: {state: clipboard}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -309,12 +330,12 @@
           - Write
         insertOnInteract: false
   - type: Item
-    sprite: Objects/Misc/clipboard.rsi
+    sprite: _ECHO/Objects/Misc/clipboard.rsi #PE-Tweak Было: Objects/Misc/clipboard.rsi -> Стало: _ECHO/Objects/Misc/clipboard.rsi
     size: Small
   - type: Clothing
     slots: [belt]
     quickEquip: false
-    sprite: Objects/Misc/clipboard.rsi
+    sprite: _ECHO/Objects/Misc/clipboard.rsi #PE-Tweak Было: Objects/Misc/clipboard.rsi -> Стало: _ECHO/Objects/Misc/clipboard.rsi
   - type: PhysicalComposition
     materialComposition: # half of autolathe printing cost
       Wood: 50
@@ -353,20 +374,21 @@
   description: A cheap clipboard made of blue plastic. For those who aren't yet ready to wield the bureaucratic might of a proper wooden clipboard.
   components:
   - type: Sprite
-    sprite: Objects/Misc/plastic_clipboard.rsi
-    layers:
-    - state: clipboard
-    - state: clipboard_paper
-      map: ["clipboard_paper"]
-      visible: false
-    - state: clipboard_pen
-      map: ["clipboard_pen"]
-      visible: false
-    - state: clipboard_over
+    sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi
+# Закомментировано поскольку не нужный код, он наследуется
+#    layers:
+#    - state: clipboard
+#    - state: clipboard_paper
+#      map: ["clipboard_paper"]
+#      visible: false
+#    - state: clipboard_pen
+#      map: ["clipboard_pen"]
+#      visible: false
+#    - state: clipboard_over
   - type: Item
-    sprite: Objects/Misc/plastic_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi 
   - type: Clothing
-    sprite: Objects/Misc/plastic_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/plastic_clipboard.rsi #PE-Tweak Было: Objects/Misc/plastic_clipboard.rsi -> Стало: _ECHO/Objects/Misc/plastic_clipboard.rsi
   - type: PhysicalComposition
     materialComposition: # half of autolathe printing cost
       Plastic: 50
@@ -387,20 +409,21 @@
   description: A luxurious clipboard upholstered with green velvet. Often seen carried by CentComm officials, seldom seen actually used.
   components:
   - type: Sprite
-    sprite: Objects/Misc/cc-clipboard.rsi
-    layers:
-    - state: clipboard
-    - state: clipboard_paper
-      map: ["clipboard_paper"]
-      visible: false
-    - state: clipboard_pen
-      map: ["clipboard_pen"]
-      visible: false
-    - state: clipboard_over
+    sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
+# Закомментировано поскольку не нужный код, он наследуется
+#    layers: 
+#    - state: clipboard
+#    - state: clipboard_paper
+#      map: ["clipboard_paper"]
+#      visible: false
+#    - state: clipboard_pen
+#      map: ["clipboard_pen"]
+#      visible: false
+#    - state: clipboard_over
   - type: Item
-    sprite: Objects/Misc/cc-clipboard.rsi
+    sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
   - type: Clothing
-    sprite: Objects/Misc/cc-clipboard.rsi
+    sprite: _ECHO/Objects/Misc/cc_clipboard.rsi #PE-Tweak Было: Objects/Misc/cc-clipboard.rsi -> Стало: _ECHO/Objects/Misc/cc_clipboard.rsi !!!ОБРАТИТЕ ВНИМАНИЕ, НАЗВАНИЕ СЛЕГКА ОТЛИЧАЕТСЯ
   - type: PhysicalComposition
     materialComposition: # same composition as regular clipboard + bit of cloth because it's "upholstered with green velvet"
       Wood: 50
@@ -422,16 +445,37 @@
   description: A bulky electric clipboard, filled with shipping orders and financing details. With so many compromising documents, you ought to keep this safe.
   components:
   - type: Sprite
-    sprite: Objects/Misc/qm_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/qm_clipboard.rsi #PE-Tweak Было: Objects/Misc/qm_clipboard.rsi -> Стало: _ECHO/Objects/Misc/qm_clipboard.rsi
     layers:
     - state: qm_clipboard
+      map: ["qm_clipboard"] #PE-Tweak ADD "      map: ["qm_clipboard"]" для корректного отображения слоёв в GenericVisualizer
     - state: qm_clipboard_paper
-      map: ["qm_clipboard_paper"]
+      map: ["qm_clipboard_paper"] 
       visible: false
     - state: qm_clipboard_pen
       map: ["qm_clipboard_pen"]
       visible: false
     - state: qm_clipboard_over
+      map: ["qm_clipboard_over"] #PE-Tweak ADD: map: ["clipboard_over"] для корректного отображения слоёв в GenericVisualizer
+#PE-Tweak-Start Стейты спрайтов в инвентаре
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+        qm_clipboard_over:
+          True: {state: qm_clipboard_over_storage}
+          False: {state: qm_clipboard_over}
+        qm_clipboard_pen:
+          True: {state: qm_clipboard_pen_storage}
+          False: {state: qm_clipboard_pen}
+        qm_clipboard_paper:
+          True: {state: qm_clipboard_paper_storage}
+          False: {state: qm_clipboard_paper}
+        qm_clipboard:
+          True: {state: qm_clipboard_storage}
+          False: {state: qm_clipboard}
+#PE-Tweak-End Стейты спрайтов в инвентаре
   - type: ItemSlots
     slots:
       pen_slot:
@@ -441,10 +485,10 @@
           - Write
         insertOnInteract: true
   - type: Item
-    sprite: Objects/Misc/qm_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/qm_clipboard.rsi #PE-Tweak Было: Objects/Misc/qm_clipboard.rsi -> Стало: _ECHO/Objects/Misc/qm_clipboard.rsi
     size: Normal
   - type: Clothing
-    sprite: Objects/Misc/qm_clipboard.rsi
+    sprite: _ECHO/Objects/Misc/qm_clipboard.rsi #PE-Tweak Было: Objects/Misc/qm_clipboard.rsi -> Стало: _ECHO/Objects/Misc/qm_clipboard.rsi
   - type: Storage
     grid:
     - 0,0,4,3

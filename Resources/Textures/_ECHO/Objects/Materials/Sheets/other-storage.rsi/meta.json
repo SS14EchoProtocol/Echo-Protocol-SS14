@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by: Firisi and take referense from Colonian Marines and CEV-Eris",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "plastic"
+    },
+    {
+      "name": "plastic_2"
+    },
+    {
+      "name": "plastic_3"
+    }
+  ]
+}

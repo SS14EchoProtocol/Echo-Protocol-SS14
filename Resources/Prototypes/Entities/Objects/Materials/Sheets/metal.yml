@@ -41,6 +41,15 @@
   name: steel
   suffix: Full
   components:
+  #PE-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/metal-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/metal.rsi}
+  #PE-Tweak-End
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -53,6 +62,7 @@
     - steel_2
     - steel_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/metal.rsi #PE-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/metal.rsi
     state: steel_3
     layers:
     - state: steel_3
@@ -165,6 +175,15 @@
   name: plasteel
   suffix: Full
   components:
+  #PE-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/metal-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/metal.rsi}
+  #PE-Tweak-End
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -177,6 +196,7 @@
     - plasteel_2
     - plasteel_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/metal.rsi #PE-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/metal.rsi
     state: plasteel_3
     layers:
     - state: plasteel_3
