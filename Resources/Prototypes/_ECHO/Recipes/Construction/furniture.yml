@@ -1,3 +1,4 @@
+#Кресла
 - type: construction
   id: EchoComfyChairLime
   graph: EchoSeat
@@ -46,7 +47,7 @@
   conditions:
     - !type:TileNotBlocked
 
-
+#Обычные стулья
 - type: construction
   id: EchoChairBlack
   graph: EchoSeat
