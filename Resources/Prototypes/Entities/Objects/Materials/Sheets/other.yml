@@ -136,7 +136,7 @@
   name: plastic
   suffix: Full
   components:
-  #PE-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
   - type: ContainerSprite
   - type: GenericVisualizer
     visuals:
@@ -144,7 +144,7 @@
         base:
           True: {sprite: _ECHO/Objects/Materials/Sheets/other-storage.rsi}
           False: {sprite: _ECHO/Objects/Materials/Sheets/other.rsi}
-  #PE-Tweak-End
+  #ECHO-Tweak-End
   - type: Tag
     tags:
     - Plastic
@@ -162,7 +162,7 @@
     - plastic_2
     - plastic_3
   - type: Sprite
-    sprite: _ECHO/Objects/Materials/Sheets/other.rsi #PE-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/other.rsi
+    sprite: _ECHO/Objects/Materials/Sheets/other.rsi #ECHO-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/other.rsi
     state: plastic_3
     layers:
     - state: plastic_3

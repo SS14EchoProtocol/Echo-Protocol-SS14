@@ -105,7 +105,7 @@
   components:
   - type: Sprite
     state: chair
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
   - type: Construction
     graph: Seat
     node: chair
@@ -117,7 +117,7 @@
   suffix: White
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
     state: chair-greyscale
 
 - type: entity
@@ -138,7 +138,7 @@
   parent: StoolBase
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: bar
   - type: Construction
     graph: Seat
@@ -150,7 +150,7 @@
   parent: StoolBase
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: brass_chair
   - type: Construction
     graph: Seat
@@ -162,7 +162,7 @@
   parent: OfficeChairBase
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
     state: office-white
   - type: Construction
     graph: Seat
@@ -174,7 +174,7 @@
   parent: ChairOfficeLight
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
     state: office-dark
   - type: Construction
     graph: Seat
@@ -187,7 +187,7 @@
   description: It looks comfy.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
     state: comfy
   - type: Construction
     graph: Seat
@@ -200,7 +200,7 @@
   description: The pilot seat of a prestigious ship.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: shuttle
   - type: Construction
     graph: Seat
@@ -212,7 +212,7 @@
   parent: UnanchoredChairBase
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
     state: wooden
   - type: Construction
     graph: Seat
@@ -257,7 +257,7 @@
   description: Looks uncomfortable.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: ritual
   - type: Construction
     graph: RitualSeat
@@ -270,7 +270,7 @@
   description: Uncomfortably sweaty.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: meat
   - type: Construction
     graph: Seat
@@ -283,7 +283,7 @@
   description: It's staring back.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: cursed
   - type: Strap
     buckleSound:
@@ -408,7 +408,7 @@
   description: A long chair made for a metro. Really standard design.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: steel-bench
   - type: Construction
     graph: Seat
@@ -421,7 +421,7 @@
   description: Make sure you sit *really* gently.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: card-stool
   - type: Construction
     graph: Seat
@@ -456,7 +456,7 @@
   description: Did you get a splinter? Well, at least it’s eco friendly.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: wooden-bench
   - type: Construction
     graph: Seat
@@ -495,5 +495,5 @@
   name: xeno chair
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # PE-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
     state: xeno-chair

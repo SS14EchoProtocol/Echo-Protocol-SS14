@@ -70,9 +70,9 @@ public sealed partial class GraphicsTab : Control
         Control.AddOptionCheckBox(CCVars.ViewportScaleRender, ViewportLowResCheckBox, invert: true);
         Control.AddOptionCheckBox(CCVars.ParallaxLowQuality, ParallaxLowQualityCheckBox);
         Control.AddOptionCheckBox(CCVars.HudFpsCounterVisible, FpsCounterCheckBox);
-        // PE-Tweak-start
+        // ECHO-Tweak-start
         Control.AddOptionCheckBox(EchoCCVars.FilmGrain, FilmGrainCheckBox);
-        // PE-Tweak-end
+        // ECHO-Tweak-end
 
         Control.Initialize();
 

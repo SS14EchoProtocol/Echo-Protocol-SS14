@@ -14,7 +14,7 @@
   - type: StationAiWhitelist
   - type: Sprite
     sprite: Structures/Doors/Shutters/shutters.rsi
-    snapCardinals: true # PE-Tweak fix of wielding animation
+    snapCardinals: true # ECHO-Tweak fix of wielding animation
     drawdepth: BlastDoors
     layers:
     - state: closed
@@ -105,11 +105,11 @@
     interactSuccessSound:
       collection: FenceRattle
   - type: BlockWeather
-# PE-Tweak-Start 
-  - type: WeldingSparksAnimation # PE-Tweak "Wielding Sparks Animation"
+# ECHO-Tweak-Start 
+  - type: WeldingSparksAnimation # ECHO-Tweak "Wielding Sparks Animation"
     startingOffset: -0.5, -0.5
     endingOffset: 0.5, -0.5
-# PE-Tweak-End
+# ECHO-Tweak-End
 
 - type: entity
   id: ShuttersNormal

@@ -149,11 +149,11 @@
     hasLampOnSpawn: LightTube
   - type: AmbientOnPowered
   - type: AmbientSound
-    volume: -12 #PE-Tweak Было: -15 -> Стало: -12
-    range: 5 #PE-Tweak Было: 2 -> Стало: 5
+    volume: -12 #ECHO-Tweak Было: -15 -> Стало: -12
+    range: 5 #ECHO-Tweak Было: 2 -> Стало: 5
     sound:
-      path: /Audio/_ECHO/Ambience/Objects/light_hum.ogg #PE-Tweak Было: /Audio/Ambience/Objects/light_hum.ogg -> Стало: /Audio/_ECHO/Ambience/Objects/light_hum.ogg
-      params: #PE-Tweak Было: Стало: Добавлены аудио параметры
+      path: /Audio/_ECHO/Ambience/Objects/light_hum.ogg #ECHO-Tweak Было: /Audio/Ambience/Objects/light_hum.ogg -> Стало: /Audio/_ECHO/Ambience/Objects/light_hum.ogg
+      params: #ECHO-Tweak Было: Стало: Добавлены аудио параметры
         variation: 0.5
   - type: DamageOnInteract
     damage:
@@ -187,10 +187,10 @@
   suffix: Always Powered, LED
   components:
   - type: PointLight
-    radius: 9 #PE-Tweak Было: 10 -> Стало: 9
-    energy: 0.75 #PE-Tweak Было: 2.5 -> Стало: 0.75
+    radius: 9 #ECHO-Tweak Было: 10 -> Стало: 9
+    energy: 0.75 #ECHO-Tweak Было: 2.5 -> Стало: 0.75
     softness: 0.9
-    color: "#FAF6DF" #PE-Tweak Было: EEEEFF -> Стало: FAF6DF
+    color: "#FAF6DF" #ECHO-Tweak Было: EEEEFF -> Стало: FAF6DF
 
 #Exterior lights
 - type: entity
@@ -258,11 +258,11 @@
   parent: AlwaysPoweredWallLight
   components:
     - type: AmbientSound
-      volume: -12 #PE-Tweak Было: -15 -> Стало: -12
-      range: 5 #PE-Tweak Было: 2 -> Стало: 5
+      volume: -12 #ECHO-Tweak Было: -15 -> Стало: -12
+      range: 5 #ECHO-Tweak Было: 2 -> Стало: 5
       sound:
-        path: /Audio/_ECHO/Ambience/Objects/light_hum.ogg #PE-Tweak Было: /Audio/Ambience/Objects/light_hum.ogg -> Стало: /Audio/_ECHO/Ambience/Objects/light_hum.ogg
-        params: #PE-Tweak: Добавлены аудио параметры
+        path: /Audio/_ECHO/Ambience/Objects/light_hum.ogg #ECHO-Tweak Было: /Audio/Ambience/Objects/light_hum.ogg -> Стало: /Audio/_ECHO/Ambience/Objects/light_hum.ogg
+        params: #ECHO-Tweak: Добавлены аудио параметры
           variation: 0.5
     - type: Sprite
       sprite: Structures/Wallmounts/Lighting/light_small.rsi

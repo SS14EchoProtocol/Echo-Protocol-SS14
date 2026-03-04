@@ -50,10 +50,10 @@
     messagePerceivedByOthers: comp-window-knock
     interactSuccessSound:
       path: /Audio/Effects/glass_knock.ogg
-# PE-Tweak-Start 
-  - type: WeldingSparksAnimation # PE-Tweak "Wielding Sparks Animation"
+# ECHO-Tweak-Start 
+  - type: WeldingSparksAnimation # ECHO-Tweak "Wielding Sparks Animation"
     startingOffset: 0, 0.5
-# PE-Tweak-End
+# ECHO-Tweak-End
 
 - type: entity
   id: BlastDoorOpen
