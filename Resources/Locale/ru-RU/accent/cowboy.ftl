@@ -1,5 +1,6 @@
-accent-cowboy-words-1 = alcohol
-accent-cowboy-replacement-1 = firewater
+accent-cowboy-words-1 = wow
+accent-cowboy-replacement-1 = by gum
+
 accent-cowboy-words-2 = alien
 accent-cowboy-replacement-2 = space critter
 accent-cowboy-words-3 = aliens
@@ -44,39 +45,56 @@ accent-cowboy-words-22 = cyborg
 accent-cowboy-replacement-22 = tin man
 accent-cowboy-words-23 = dad
 accent-cowboy-replacement-23 = pappy
-accent-cowboy-words-24 = drunk
-accent-cowboy-replacement-24 = soaked
+
+accent-cowboy-words-24 = revolver
+accent-cowboy-replacement-24 = six-shooter
+
 accent-cowboy-words-25 = explosive
 accent-cowboy-replacement-25 = dynamite
-accent-cowboy-words-26 = fast
-accent-cowboy-replacement-26 = lickety split
-accent-cowboy-words-27 = fight
-accent-cowboy-replacement-27 = scrap
-accent-cowboy-words-28 = food
-accent-cowboy-replacement-28 = grub
-accent-cowboy-words-29 = friend
-accent-cowboy-replacement-29 = partner
-accent-cowboy-words-30 = goodbye
-accent-cowboy-replacement-30 = so long
-accent-cowboy-words-31 = greytide
-accent-cowboy-replacement-31 = varmints
-accent-cowboy-words-32 = greytider
-accent-cowboy-replacement-32 = varmint
-accent-cowboy-words-33 = greytiders
-accent-cowboy-replacement-33 = varmints
-accent-cowboy-words-34 = group
-accent-cowboy-replacement-34 = possee
-accent-cowboy-words-35 = guess
-accent-cowboy-replacement-35 = reckon
-accent-cowboy-words-36 = gun
-accent-cowboy-replacement-36 = big iron
-accent-cowboy-words-37 = handcuff
-accent-cowboy-replacement-37 = hog tie
-accent-cowboy-words-38 = handcuffed
-accent-cowboy-replacement-38 = hog tied
-accent-cowboy-words-39 = hell
-accent-cowboy-replacement-39 = tarnation
-accent-cowboy-words-40 = hello
+
+accent-cowboy-words-26 = a fight
+accent-cowboy-replacement-26 = a scrap
+
+accent-cowboy-words-27 = food
+accent-cowboy-replacement-27 = grub
+
+accent-cowboy-words-28 = friend
+accent-cowboy-replacement-28 = partner
+
+accent-cowboy-words-29 = goodbye
+accent-cowboy-replacement-29 = so long
+
+accent-cowboy-words-30 = greytide
+accent-cowboy-replacement-30 = varmints
+
+accent-cowboy-words-31 = greytider
+accent-cowboy-replacement-31 = varmint
+
+accent-cowboy-words-32 = greytiders
+accent-cowboy-replacement-32 = varmints
+
+accent-cowboy-words-33 = guess
+accent-cowboy-replacement-33 = reckon
+
+accent-cowboy-words-34 = gun
+accent-cowboy-replacement-34 = big iron
+
+accent-cowboy-words-35 = handcuff
+accent-cowboy-replacement-35 = hog tie
+
+accent-cowboy-words-36 = handcuffed
+accent-cowboy-replacement-36 = hog tied
+
+accent-cowboy-words-37 = what the hell
+accent-cowboy-replacement-37 = what in tarnation
+
+accent-cowboy-words-38 = hello
+accent-cowboy-replacement-38 = howdy
+
+accent-cowboy-words-39 = hey
+accent-cowboy-replacement-39 = howdy
+
+accent-cowboy-words-40 = hi
 accent-cowboy-replacement-40 = howdy
 accent-cowboy-words-41 = hey
 accent-cowboy-replacement-41 = howdy
@@ -194,5 +212,100 @@ accent-cowboy-words-97 = yell
 accent-cowboy-replacement-97 = holler
 accent-cowboy-words-98 = yelled
 accent-cowboy-replacement-98 = hollered
+accent-cowboy-words-99 = yelling
+accent-cowboy-replacement-99 = hollering
+
+accent-cowboy-words-84 = thank you
+accent-cowboy-replacement-84 = much obliged
+
+accent-cowboy-words-85 = thanks
+accent-cowboy-replacement-85 = much obliged
+
+accent-cowboy-words-86 = thief
+accent-cowboy-replacement-86 = rustler
+
+accent-cowboy-words-87 = thieves
+accent-cowboy-replacement-87 = rustlers
+
+accent-cowboy-words-88 = think
+accent-cowboy-replacement-88 = reckon
+
+accent-cowboy-words-89 = tired
+accent-cowboy-replacement-89 = dragged out
+
+accent-cowboy-words-90 = toilet
+accent-cowboy-replacement-90 = outhouse
+
+accent-cowboy-words-91 = totally
+accent-cowboy-replacement-91 = plumb
+
+accent-cowboy-words-92 = traitor
+accent-cowboy-replacement-92 = outlaw
+
+accent-cowboy-words-93 = traitors
+accent-cowboy-replacement-93 = outlaws
+
+accent-cowboy-words-94 = very
+accent-cowboy-replacement-94 = mighty
+
+accent-cowboy-words-95 = worried
+accent-cowboy-replacement-95 = rattled
+
+accent-cowboy-words-96 = wow
+accent-cowboy-replacement-96 = by gum
+
+accent-cowboy-words-97 = yell
+accent-cowboy-replacement-97 = holler
+
+accent-cowboy-words-98 = yelled
+accent-cowboy-replacement-98 = hollered
+
+accent-cowboy-words-99 = yelling
+accent-cowboy-replacement-99 = hollering
+accent-cowboy-words-84 = thank you
+accent-cowboy-replacement-84 = much obliged
+
+accent-cowboy-words-85 = thanks
+accent-cowboy-replacement-85 = much obliged
+
+accent-cowboy-words-86 = thief
+accent-cowboy-replacement-86 = rustler
+
+accent-cowboy-words-87 = thieves
+accent-cowboy-replacement-87 = rustlers
+
+accent-cowboy-words-88 = think
+accent-cowboy-replacement-88 = reckon
+
+accent-cowboy-words-89 = tired
+accent-cowboy-replacement-89 = dragged out
+
+accent-cowboy-words-90 = toilet
+accent-cowboy-replacement-90 = outhouse
+
+accent-cowboy-words-91 = totally
+accent-cowboy-replacement-91 = plumb
+
+accent-cowboy-words-92 = traitor
+accent-cowboy-replacement-92 = outlaw
+
+accent-cowboy-words-93 = traitors
+accent-cowboy-replacement-93 = outlaws
+
+accent-cowboy-words-94 = very
+accent-cowboy-replacement-94 = mighty
+
+accent-cowboy-words-95 = worried
+accent-cowboy-replacement-95 = rattled
+
+accent-cowboy-words-96 = wow
+accent-cowboy-replacement-96 = by gum
+
+accent-cowboy-words-97 = yell
+accent-cowboy-replacement-97 = holler
+
+accent-cowboy-words-98 = yelled
+accent-cowboy-replacement-98 = hollered
+
 accent-cowboy-words-99 = yelling
 accent-cowboy-replacement-99 = hollering
