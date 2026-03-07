@@ -419,6 +419,1570 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
+
+        private void OnSpeciesInfoButtonPressed(BaseButton.ButtonEventArgs args)
+        {
+            // TODO GUIDEBOOK
+            // make the species guide book a field on the species prototype.
+            // I.e., do what jobs/antags do.
+
+            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
+            var species = Profile?.Species ?? HumanoidCharacterProfile.DefaultSpecies;
+            var page = DefaultSpeciesGuidebook;
+            if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
+                page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
+
+            if (_prototypeManager.Resolve(DefaultSpeciesGuidebook, out var guideRoot))
+            {
+        }
+
+        }
+
+
+                guidebookController.OpenGuidebook(dict, includeChildren:true, selected: page);
+            }
+        }
+
+        /// <summary>
+        /// Refreshes all job selectors.
+        /// </summary>
+        public void RefreshJobs()
+        {
+            JobList.RemoveAllChildren();
+            _jobCategories.Clear();
+            _jobPriorities.Clear();
+            var firstCategory = true;
+
+            // Get all displayed departments
+            var departments = new List<DepartmentPrototype>();
+            foreach (var department in _prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
+            {
+                if (department.EditorHidden)
+                    continue;
+
+                departments.Add(department);
+            }
+
+            departments.Sort(DepartmentUIComparer.Instance);
+
+            var items = new[]
+            {
+                ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
+                ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Low),
+                ("humanoid-profile-editor-job-priority-medium-button", (int) JobPriority.Medium),
+                ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.High),
+            };
+
+            foreach (var department in departments)
+            {
+                var departmentName = Loc.GetString(department.Name);
+
+                if (!_jobCategories.TryGetValue(department.ID, out var category))
+                {
+                    category = new BoxContainer
+                    {
+                        Orientation = LayoutOrientation.Vertical,
+                        Name = department.ID,
+                        ToolTip = Loc.GetString("humanoid-profile-editor-jobs-amount-in-department-tooltip",
+                            ("departmentName", departmentName))
+                    };
+
+                    if (firstCategory)
+                    {
+                        firstCategory = false;
+                    }
+                    else
+                    {
+                        category.AddChild(new Control
+                        {
+                            MinSize = new Vector2(0, 23),
+                        });
+                    }
+
+                    category.AddChild(new PanelContainer
+                    {
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        Children =
+                        {
+                            new Label
+                            {
+                                Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
+                                    ("departmentName", departmentName)),
+                                Margin = new Thickness(5f, 0, 0, 0)
+                            }
+                        }
+                    });
+
+                    _jobCategories[department.ID] = category;
+                    JobList.AddChild(category);
+                }
+
+                var jobs = department.Roles.Select(jobId => _prototypeManager.Index(jobId))
+                    .Where(job => job.SetPreference)
+                    .ToArray();
+
+                Array.Sort(jobs, JobUIComparer.Instance);
+
+                foreach (var job in jobs)
+                {
+                    var jobContainer = new BoxContainer()
+                    {
+                        Orientation = LayoutOrientation.Horizontal,
+                    };
+
+                    var selector = new RequirementsSelector()
+                    {
+                        Margin = new Thickness(3f, 3f, 3f, 0f),
+                    };
+                    selector.OnOpenGuidebook += OnOpenGuidebook;
+
+                    var icon = new TextureRect
+                    {
+                        TextureScale = new Vector2(2, 2),
+                        VerticalAlignment = VAlignment.Center
+                    };
+                    var jobIcon = _prototypeManager.Index(job.Icon);
+                    icon.Texture = _sprite.Frame0(jobIcon.Icon);
+                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                    if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
+                    {
+                        selector.LockRequirements(reason);
+                    }
+                    else
+                    {
+                        selector.UnlockRequirements();
+                    }
+
+                    selector.OnSelected += selectedPrio =>
+                    {
+                        var selectedJobPrio = (JobPriority) selectedPrio;
+                        Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
+
+                        foreach (var (jobId, other) in _jobPriorities)
+                        {
+                            // Sync other selectors with the same job in case of multiple department jobs
+                            if (jobId == job.ID)
+                            {
+                                other.Select(selectedPrio);
+                                continue;
+                            }
+
+                            if (selectedJobPrio != JobPriority.High || (JobPriority) other.Selected != JobPriority.High)
+                                continue;
+
+                            // Lower any other high priorities to medium.
+                            other.Select((int)JobPriority.Medium);
+                            Profile = Profile?.WithJobPriority(jobId, JobPriority.Medium);
+                        }
+
+                        // TODO: Only reload on high change (either to or from).
+                        ReloadPreview();
+
+                        UpdateJobPriorities();
+                        SetDirty();
+                    };
+
+                    var loadoutWindowBtn = new Button()
+                    {
+                        Text = Loc.GetString("loadout-window"),
+                        HorizontalAlignment = HAlignment.Right,
+                        VerticalAlignment = VAlignment.Center,
+                        Margin = new Thickness(3f, 3f, 0f, 0f),
+                    };
+
+                    var collection = IoCManager.Instance!;
+                    var protoManager = collection.Resolve<IPrototypeManager>();
+
+                    // If no loadout found then disabled button
+                    if (!protoManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID), out var roleLoadoutProto))
+                    {
+                        loadoutWindowBtn.Disabled = true;
+                    }
+                    // else
+                    else
+                    {
+                        loadoutWindowBtn.OnPressed += args =>
+                        {
+                            RoleLoadout? loadout = null;
+
+                            // Clone so we don't modify the underlying loadout.
+                            Profile?.Loadouts.TryGetValue(LoadoutSystem.GetJobPrototype(job.ID), out loadout);
+                            loadout = loadout?.Clone();
+
+                            if (loadout == null)
+                            {
+                                loadout = new RoleLoadout(roleLoadoutProto.ID);
+                                loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                            }
+
+                            OpenLoadout(job, loadout, roleLoadoutProto);
+                        };
+                    }
+
+                    _jobPriorities.Add((job.ID, selector));
+                    jobContainer.AddChild(selector);
+                    jobContainer.AddChild(loadoutWindowBtn);
+                    category.AddChild(jobContainer);
+                }
+            }
+
+            UpdateJobPriorities();
+        }
+
+        private void OpenLoadout(JobPrototype? jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)
+        {
+            _loadoutWindow?.Dispose();
+            _loadoutWindow = null;
+            var collection = IoCManager.Instance;
+
+            if (collection == null || _playerManager.LocalSession == null || Profile == null)
+                return;
+
+            JobOverride = jobProto;
+            var session = _playerManager.LocalSession;
+
+            _loadoutWindow = new LoadoutWindow(Profile, roleLoadout, roleLoadoutProto, _playerManager.LocalSession, collection)
+            {
+                Title = Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto?.LocalizedName}")),
+            };
+
+            // Refresh the buttons etc.
+            _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+            _loadoutWindow.OpenCenteredLeft();
+
+            _loadoutWindow.OnNameChanged += name =>
+            {
+                roleLoadout.EntityName = name;
+                Profile = Profile.WithLoadout(roleLoadout);
+                SetDirty();
+            };
+
+            _loadoutWindow.OnLoadoutPressed += (loadoutGroup, loadoutProto) =>
+            {
+                roleLoadout.AddLoadout(loadoutGroup, loadoutProto, _prototypeManager);
+                _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+                Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
+            };
+
+            _loadoutWindow.OnLoadoutUnpressed += (loadoutGroup, loadoutProto) =>
+            {
+                roleLoadout.RemoveLoadout(loadoutGroup, loadoutProto, _prototypeManager);
+                _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+                Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
+            };
+
+            JobOverride = jobProto;
+            ReloadPreview();
+
+            _loadoutWindow.OnClose += () =>
+            {
+                JobOverride = null;
+                ReloadPreview();
+            };
+
+            if (Profile is null)
+                return;
+
+            UpdateJobPriorities();
+        }
+
+        private void OnFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnMarkingChange()
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(_markingsModel.Markings));
+            ReloadProfilePreview();
+            SetDirty();
+        }
+
+        private void OnSkinColorOnValueChanged()
+        {
+            if (Profile is null) return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
+
+            switch (strategy.InputType)
+            {
+                case SkinColorationStrategyInput.Unary:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    var color = strategy.FromUnary(Skin.Value);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+                case SkinColorationStrategyInput.Color:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+            }
+
+            ReloadProfilePreview();
+        }
+
+        private void OnSpeciesInfoButtonPressed(BaseButton.ButtonEventArgs args)
+        {
+            // TODO GUIDEBOOK
+            // make the species guide book a field on the species prototype.
+            // I.e., do what jobs/antags do.
+
+            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
+            var species = Profile?.Species ?? HumanoidCharacterProfile.DefaultSpecies;
+            var page = DefaultSpeciesGuidebook;
+            if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
+                page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
+
+            if (_prototypeManager.Resolve(DefaultSpeciesGuidebook, out var guideRoot))
+            {
+                var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
+                dict.Add(DefaultSpeciesGuidebook, guideRoot);
+                //TODO: Don't close the guidebook if its already open, just go to the correct page
+                guidebookController.OpenGuidebook(dict, includeChildren:true, selected: page);
+            }
+        }
+
+        /// <summary>
+        /// Refreshes all job selectors.
+        /// </summary>
+        public void RefreshJobs()
+        {
+            JobList.RemoveAllChildren();
+            _jobCategories.Clear();
+            _jobPriorities.Clear();
+            var firstCategory = true;
+
+            // Get all displayed departments
+            var departments = new List<DepartmentPrototype>();
+            foreach (var department in _prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
+            {
+                if (department.EditorHidden)
+                    continue;
+
+                departments.Add(department);
+            }
+
+            departments.Sort(DepartmentUIComparer.Instance);
+
+            var items = new[]
+            {
+                ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
+                ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Low),
+                ("humanoid-profile-editor-job-priority-medium-button", (int) JobPriority.Medium),
+                ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.High),
+            };
+
+            foreach (var department in departments)
+            {
+                var departmentName = Loc.GetString(department.Name);
+
+                if (!_jobCategories.TryGetValue(department.ID, out var category))
+                {
+                    category = new BoxContainer
+                    {
+                        Orientation = LayoutOrientation.Vertical,
+                        Name = department.ID,
+                        ToolTip = Loc.GetString("humanoid-profile-editor-jobs-amount-in-department-tooltip",
+                            ("departmentName", departmentName))
+                    };
+
+                    if (firstCategory)
+                    {
+                        firstCategory = false;
+                    }
+                    else
+                    {
+                        category.AddChild(new Control
+                        {
+                            MinSize = new Vector2(0, 23),
+                        });
+                    }
+
+                    category.AddChild(new PanelContainer
+                    {
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        Children =
+                        {
+                            new Label
+                            {
+                                Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
+                                    ("departmentName", departmentName)),
+                                Margin = new Thickness(5f, 0, 0, 0)
+                            }
+                        }
+                    });
+
+                    _jobCategories[department.ID] = category;
+                    JobList.AddChild(category);
+                }
+
+                var jobs = department.Roles.Select(jobId => _prototypeManager.Index(jobId))
+                    .Where(job => job.SetPreference)
+                    .ToArray();
+
+                Array.Sort(jobs, JobUIComparer.Instance);
+
+                foreach (var job in jobs)
+                {
+                    var jobContainer = new BoxContainer()
+                    {
+                        Orientation = LayoutOrientation.Horizontal,
+                    };
+
+                    var selector = new RequirementsSelector()
+                    {
+                        Margin = new Thickness(3f, 3f, 3f, 0f),
+                    };
+                    selector.OnOpenGuidebook += OnOpenGuidebook;
+
+                    var icon = new TextureRect
+                    {
+                        TextureScale = new Vector2(2, 2),
+                        VerticalAlignment = VAlignment.Center
+                    };
+                    var jobIcon = _prototypeManager.Index(job.Icon);
+                    icon.Texture = _sprite.Frame0(jobIcon.Icon);
+                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                    if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
+                    {
+                        selector.LockRequirements(reason);
+                    }
+                    else
+                    {
+                        selector.UnlockRequirements();
+                    }
+
+                    selector.OnSelected += selectedPrio =>
+                    {
+                        var selectedJobPrio = (JobPriority) selectedPrio;
+                        Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
+
+                        foreach (var (jobId, other) in _jobPriorities)
+                        {
+                            // Sync other selectors with the same job in case of multiple department jobs
+                            if (jobId == job.ID)
+                            {
+                                other.Select(selectedPrio);
+                                continue;
+                            }
+
+                            if (selectedJobPrio != JobPriority.High || (JobPriority) other.Selected != JobPriority.High)
+                                continue;
+
+                            // Lower any other high priorities to medium.
+                            other.Select((int)JobPriority.Medium);
+                            Profile = Profile?.WithJobPriority(jobId, JobPriority.Medium);
+                        }
+
+                        // TODO: Only reload on high change (either to or from).
+                        ReloadPreview();
+
+                        UpdateJobPriorities();
+                        SetDirty();
+                    };
+
+                    var loadoutWindowBtn = new Button()
+                    {
+                        Text = Loc.GetString("loadout-window"),
+                        HorizontalAlignment = HAlignment.Right,
+                        VerticalAlignment = VAlignment.Center,
+                        Margin = new Thickness(3f, 3f, 0f, 0f),
+                    };
+
+                    var collection = IoCManager.Instance!;
+                    var protoManager = collection.Resolve<IPrototypeManager>();
+
+                    // If no loadout found then disabled button
+                    if (!protoManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID), out var roleLoadoutProto))
+                    {
+                        loadoutWindowBtn.Disabled = true;
+                    }
+                    // else
+                    else
+                    {
+                        loadoutWindowBtn.OnPressed += args =>
+                        {
+                            RoleLoadout? loadout = null;
+
+                            // Clone so we don't modify the underlying loadout.
+                            Profile?.Loadouts.TryGetValue(LoadoutSystem.GetJobPrototype(job.ID), out loadout);
+                            loadout = loadout?.Clone();
+
+                            if (loadout == null)
+                            {
+                                loadout = new RoleLoadout(roleLoadoutProto.ID);
+                                loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                            }
+
+                            OpenLoadout(job, loadout, roleLoadoutProto);
+                        };
+                    }
+
+                    _jobPriorities.Add((job.ID, selector));
+                    jobContainer.AddChild(selector);
+                    jobContainer.AddChild(loadoutWindowBtn);
+                    category.AddChild(jobContainer);
+                }
+            }
+
+            UpdateJobPriorities();
+        }
+
+        private void OpenLoadout(JobPrototype? jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)
+        {
+            _loadoutWindow?.Dispose();
+            _loadoutWindow = null;
+            var collection = IoCManager.Instance;
+
+            if (collection == null || _playerManager.LocalSession == null || Profile == null)
+                return;
+
+            JobOverride = jobProto;
+            var session = _playerManager.LocalSession;
+
+            _loadoutWindow = new LoadoutWindow(Profile, roleLoadout, roleLoadoutProto, _playerManager.LocalSession, collection)
+            {
+                Title = Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto?.LocalizedName}")),
+            };
+
+            // Refresh the buttons etc.
+            _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+            _loadoutWindow.OpenCenteredLeft();
+
+            _loadoutWindow.OnNameChanged += name =>
+            {
+                roleLoadout.EntityName = name;
+                Profile = Profile.WithLoadout(roleLoadout);
+                SetDirty();
+            };
+
+            _loadoutWindow.OnLoadoutPressed += (loadoutGroup, loadoutProto) =>
+            {
+                roleLoadout.AddLoadout(loadoutGroup, loadoutProto, _prototypeManager);
+                _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+                Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
+            };
+
+            _loadoutWindow.OnLoadoutUnpressed += (loadoutGroup, loadoutProto) =>
+            {
+                roleLoadout.RemoveLoadout(loadoutGroup, loadoutProto, _prototypeManager);
+                _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+                Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
+            };
+
+            JobOverride = jobProto;
+            ReloadPreview();
+
+            _loadoutWindow.OnClose += () =>
+            {
+                JobOverride = null;
+                ReloadPreview();
+            };
+
+            if (Profile is null)
+                return;
+
+            UpdateJobPriorities();
+        }
+
+        private void OnFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnMarkingChange()
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(_markingsModel.Markings));
+            ReloadProfilePreview();
+            SetDirty();
+        }
+
+        private void OnSkinColorOnValueChanged()
+        {
+            if (Profile is null) return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
+
+            switch (strategy.InputType)
+            {
+                case SkinColorationStrategyInput.Unary:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    var color = strategy.FromUnary(Skin.Value);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+                case SkinColorationStrategyInput.Color:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+            }
+
+            ReloadProfilePreview();
+        }
+
+        private void OnSpeciesInfoButtonPressed(BaseButton.ButtonEventArgs args)
+        {
+            // TODO GUIDEBOOK
+            // make the species guide book a field on the species prototype.
+            // I.e., do what jobs/antags do.
+
+            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
+            var species = Profile?.Species ?? HumanoidCharacterProfile.DefaultSpecies;
+            var page = DefaultSpeciesGuidebook;
+            if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
+                page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
+
+            if (_prototypeManager.Resolve(DefaultSpeciesGuidebook, out var guideRoot))
+            {
+        }
+
+        private void SetAge(int newAge)
+        {
+            Profile = Profile?.WithAge(newAge);
+            ReloadPreview();
+        }
+
+        private void SetSex(Sex newSex)
+        {
+            Profile = Profile?.WithSex(newSex);
+            // for convenience, default to most common gender when new sex is selected
+            switch (newSex)
+            {
+                case Sex.Male:
+                    Profile = Profile?.WithGender(Gender.Male);
+                    break;
+                case Sex.Female:
+                    Profile = Profile?.WithGender(Gender.Female);
+                    break;
+                default:
+                    Profile = Profile?.WithGender(Gender.Epicene);
+                    break;
+            }
+
+            UpdateGenderControls();
+            _markingsModel.SetOrganSexes(newSex);
+            ReloadPreview();
+        }
+
+        private void SetGender(Gender newGender)
+        {
+            Profile = Profile?.WithGender(newGender);
+            ReloadPreview();
+        }
+
+        private void SetSpecies(string newSpecies)
+        {
+            Profile = Profile?.WithSpecies(newSpecies);
+            OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
+            _markingsModel.OrganData = _markingManager.GetMarkingData(newSpecies);
+            _markingsModel.ValidateMarkings();
+            // In case there's job restrictions for the species
+            RefreshJobs();
+            // In case there's species restrictions for loadouts
+            RefreshLoadouts();
+            UpdateSexControls(); // update sex for new species
+            UpdateSpeciesGuidebookIcon();
+            ReloadPreview();
+        }
+
+        private void SetName(string newName)
+        {
+            Profile = Profile?.WithName(newName);
+            SetDirty();
+
+            if (!IsDirty)
+                return;
+
+            SpriteView.SetName(newName);
+        }
+
+        private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
+        {
+            Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
+            SetDirty();
+        }
+
+        public bool IsDirty
+        {
+            get => _isDirty;
+            set
+            {
+                if (_isDirty == value)
+                    return;
+
+                _isDirty = value;
+                UpdateSaveButton();
+            }
+        }
+
+        private void UpdateNameEdit()
+        {
+            NameEdit.Text = Profile?.Name ?? "";
+        }
+
+        private void UpdateFlavorTextEdit()
+        {
+            if (_flavorTextEdit != null)
+            {
+                _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+            }
+        }
+
+        private void UpdateAgeEdit()
+        {
+            AgeEdit.Text = Profile?.Age.ToString() ?? "";
+        }
+
+        /// <summary>
+        /// Updates selected job priorities to the profile's.
+        /// </summary>
+        private void UpdateJobPriorities()
+        {
+            foreach (var (jobId, prioritySelector) in _jobPriorities)
+            {
+                var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
+                prioritySelector.Select((int) priority);
+            }
+        }
+
+        private void UpdateSexControls()
+        {
+            if (Profile == null)
+                return;
+
+            SexButton.Clear();
+
+            var sexes = new List<Sex>();
+
+            // add species sex options, default to just none if we are in bizzaro world and have no species
+            if (_prototypeManager.Resolve<SpeciesPrototype>(Profile.Species, out var speciesProto))
+            {
+                foreach (var sex in speciesProto.Sexes)
+                {
+                    sexes.Add(sex);
+                }
+            }
+            else
+            {
+                sexes.Add(Sex.Unsexed);
+            }
+
+            // add button for each sex
+            foreach (var sex in sexes)
+            {
+                SexButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+            }
+
+            if (sexes.Contains(Profile.Sex))
+                SexButton.SelectId((int) Profile.Sex);
+            else
+                SexButton.SelectId((int) sexes[0]);
+        }
+
+        private void UpdateSkinColor()
+        {
+            if (Profile == null)
+                return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
+
+            switch (strategy.InputType)
+            {
+                case SkinColorationStrategyInput.Unary:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
+
+                    break;
+                }
+                case SkinColorationStrategyInput.Color:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
+            }
+        }
+
+        public void UpdateSpeciesGuidebookIcon()
+        {
+            SpeciesInfoButton.StyleClasses.Clear();
+
+            var species = Profile?.Species;
+            if (species is null)
+                return;
+
+            if (!_prototypeManager.Resolve<SpeciesPrototype>(species, out var speciesProto))
+                return;
+
+            // Don't display the info button if no guide entry is found
+            if (!_prototypeManager.HasIndex<GuideEntryPrototype>(species))
+                return;
+
+            const string style = "SpeciesInfoDefault";
+            SpeciesInfoButton.StyleIdentifier = style;
+        }
+
+        private void UpdateMarkings()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            _markingsModel.OrganData = _markingManager.GetMarkingData(Profile.Species);
+            _markingsModel.OrganProfileData = _markingManager.GetProfileData(Profile.Species, Profile.Sex, Profile.Appearance.SkinColor, Profile.Appearance.EyeColor);
+            _markingsModel.Markings = Profile.Appearance.Markings;
+        }
+
+        private void UpdateGenderControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            PronounsButton.SelectId((int) Profile.Gender);
+        }
+
+        private void UpdateSpawnPriorityControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
+        }
+
+        private void UpdateEyePickers()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            _markingsModel.SetOrganEyeColor(Profile.Appearance.EyeColor);
+            EyeColorPicker.SetData(Profile.Appearance.EyeColor);
+        }
+
+        {
+            Profile = Profile?.WithAge(newAge);
+            ReloadPreview();
+        }
+
+        private void SetSex(Sex newSex)
+        {
+            Profile = Profile?.WithSex(newSex);
+            // for convenience, default to most common gender when new sex is selected
+            switch (newSex)
+            {
+                case Sex.Male:
+                    Profile = Profile?.WithGender(Gender.Male);
+                    break;
+                case Sex.Female:
+                    Profile = Profile?.WithGender(Gender.Female);
+                    break;
+                default:
+                    Profile = Profile?.WithGender(Gender.Epicene);
+                    break;
+            }
+
+            UpdateGenderControls();
+            _markingsModel.SetOrganSexes(newSex);
+            ReloadPreview();
+        }
+
+        private void SetGender(Gender newGender)
+        {
+            Profile = Profile?.WithGender(newGender);
+            ReloadPreview();
+        }
+
+        private void SetSpecies(string newSpecies)
+        {
+            Profile = Profile?.WithSpecies(newSpecies);
+            OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
+            _markingsModel.OrganData = _markingManager.GetMarkingData(newSpecies);
+            _markingsModel.ValidateMarkings();
+            // In case there's job restrictions for the species
+            RefreshJobs();
+            // In case there's species restrictions for loadouts
+            RefreshLoadouts();
+            UpdateSexControls(); // update sex for new species
+            UpdateSpeciesGuidebookIcon();
+            ReloadPreview();
+        }
+
+        private void SetName(string newName)
+        {
+            Profile = Profile?.WithName(newName);
+            SetDirty();
+
+            if (!IsDirty)
+                return;
+
+            SpriteView.SetName(newName);
+        }
+
+        private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
+        {
+            Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
+            SetDirty();
+        }
+
+        public bool IsDirty
+        {
+            get => _isDirty;
+            set
+            {
+                if (_isDirty == value)
+                    return;
+
+                _isDirty = value;
+                UpdateSaveButton();
+            }
+        }
+
+        private void UpdateNameEdit()
+        {
+            NameEdit.Text = Profile?.Name ?? "";
+        }
+
+        private void UpdateFlavorTextEdit()
+        {
+            if (_flavorTextEdit != null)
+            {
+                _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+            }
+        }
+
+        private void UpdateAgeEdit()
+        {
+            AgeEdit.Text = Profile?.Age.ToString() ?? "";
+        }
+
+        /// <summary>
+        /// Updates selected job priorities to the profile's.
+        /// </summary>
+        private void UpdateJobPriorities()
+        {
+            foreach (var (jobId, prioritySelector) in _jobPriorities)
+            {
+                var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
+                prioritySelector.Select((int) priority);
+            }
+        }
+
+        private void UpdateSexControls()
+        {
+            if (Profile == null)
+                return;
+
+            SexButton.Clear();
+
+            var sexes = new List<Sex>();
+
+            // add species sex options, default to just none if we are in bizzaro world and have no species
+            if (_prototypeManager.Resolve<SpeciesPrototype>(Profile.Species, out var speciesProto))
+            {
+                foreach (var sex in speciesProto.Sexes)
+                {
+                    sexes.Add(sex);
+                }
+            }
+            else
+            {
+                sexes.Add(Sex.Unsexed);
+            }
+
+            // add button for each sex
+            foreach (var sex in sexes)
+            {
+                SexButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+            }
+
+            if (sexes.Contains(Profile.Sex))
+                SexButton.SelectId((int) Profile.Sex);
+            else
+                SexButton.SelectId((int) sexes[0]);
+        }
+
+        private void UpdateSkinColor()
+        {
+            if (Profile == null)
+                return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
+
+            switch (strategy.InputType)
+            {
+                case SkinColorationStrategyInput.Unary:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
+
+                    break;
+                }
+                case SkinColorationStrategyInput.Color:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
+            }
+        }
+
+        public void UpdateSpeciesGuidebookIcon()
+        {
+            SpeciesInfoButton.StyleClasses.Clear();
+
+            var species = Profile?.Species;
+            if (species is null)
+                return;
+
+            if (!_prototypeManager.Resolve<SpeciesPrototype>(species, out var speciesProto))
+                return;
+
+            // Don't display the info button if no guide entry is found
+            if (!_prototypeManager.HasIndex<GuideEntryPrototype>(species))
+                return;
+
+            const string style = "SpeciesInfoDefault";
+            SpeciesInfoButton.StyleIdentifier = style;
+        }
+
+        private void UpdateMarkings()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            _markingsModel.OrganData = _markingManager.GetMarkingData(Profile.Species);
+            _markingsModel.OrganProfileData = _markingManager.GetProfileData(Profile.Species, Profile.Sex, Profile.Appearance.SkinColor, Profile.Appearance.EyeColor);
+            _markingsModel.Markings = Profile.Appearance.Markings;
+        }
+
+        private void UpdateGenderControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            PronounsButton.SelectId((int) Profile.Gender);
+        }
+
+        private void UpdateSpawnPriorityControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
+        }
+
+        private void UpdateEyePickers()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            _markingsModel.SetOrganEyeColor(Profile.Appearance.EyeColor);
+            EyeColorPicker.SetData(Profile.Appearance.EyeColor);
+        }
+
+                ReloadPreview();
+            };
+
+            if (Profile is null)
+                return;
+
+            UpdateJobPriorities();
+        }
+
+        private void OnFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnMarkingChange()
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(_markingsModel.Markings));
+            ReloadProfilePreview();
+            SetDirty();
+        }
+
+        private void OnSkinColorOnValueChanged()
+        {
+            if (Profile is null) return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
+
+            switch (strategy.InputType)
+            {
+                case SkinColorationStrategyInput.Unary:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    var color = strategy.FromUnary(Skin.Value);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+                case SkinColorationStrategyInput.Color:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+            }
+
+            ReloadProfilePreview();
+        }
+
+        private void OnSpeciesInfoButtonPressed(BaseButton.ButtonEventArgs args)
+        {
+            // TODO GUIDEBOOK
+            // make the species guide book a field on the species prototype.
+            // I.e., do what jobs/antags do.
+
+            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
+            var species = Profile?.Species ?? HumanoidCharacterProfile.DefaultSpecies;
+            var page = DefaultSpeciesGuidebook;
+            if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
+                page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
+
+            if (_prototypeManager.Resolve(DefaultSpeciesGuidebook, out var guideRoot))
+            {
+                var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
+                dict.Add(DefaultSpeciesGuidebook, guideRoot);
+                //TODO: Don't close the guidebook if its already open, just go to the correct page
+                guidebookController.OpenGuidebook(dict, includeChildren:true, selected: page);
+            }
+        }
+
+        /// <summary>
+        /// Refreshes all job selectors.
+        /// </summary>
+        public void RefreshJobs()
+        {
+            JobList.RemoveAllChildren();
+            _jobCategories.Clear();
+            _jobPriorities.Clear();
+            var firstCategory = true;
+
+            // Get all displayed departments
+            var departments = new List<DepartmentPrototype>();
+            foreach (var department in _prototypeManager.EnumeratePrototypes<DepartmentPrototype>())
+            {
+                if (department.EditorHidden)
+                    continue;
+
+                departments.Add(department);
+            }
+
+            departments.Sort(DepartmentUIComparer.Instance);
+
+            var items = new[]
+            {
+                ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
+                ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Low),
+                ("humanoid-profile-editor-job-priority-medium-button", (int) JobPriority.Medium),
+                ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.High),
+            };
+
+            foreach (var department in departments)
+            {
+                var departmentName = Loc.GetString(department.Name);
+
+                if (!_jobCategories.TryGetValue(department.ID, out var category))
+                {
+                    category = new BoxContainer
+                    {
+                        Orientation = LayoutOrientation.Vertical,
+                        Name = department.ID,
+                        ToolTip = Loc.GetString("humanoid-profile-editor-jobs-amount-in-department-tooltip",
+                            ("departmentName", departmentName))
+                    };
+
+                    if (firstCategory)
+                    {
+                        firstCategory = false;
+                    }
+                    else
+                    {
+                        category.AddChild(new Control
+                        {
+                            MinSize = new Vector2(0, 23),
+                        });
+                    }
+
+                    category.AddChild(new PanelContainer
+                    {
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        Children =
+                        {
+                            new Label
+                            {
+                                Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
+                                    ("departmentName", departmentName)),
+                                Margin = new Thickness(5f, 0, 0, 0)
+                            }
+                        }
+                    });
+
+                    _jobCategories[department.ID] = category;
+                    JobList.AddChild(category);
+                }
+
+                var jobs = department.Roles.Select(jobId => _prototypeManager.Index(jobId))
+                    .Where(job => job.SetPreference)
+                    .ToArray();
+
+                Array.Sort(jobs, JobUIComparer.Instance);
+
+                foreach (var job in jobs)
+                {
+                    var jobContainer = new BoxContainer()
+                    {
+                        Orientation = LayoutOrientation.Horizontal,
+                    };
+
+                    var selector = new RequirementsSelector()
+                    {
+                        Margin = new Thickness(3f, 3f, 3f, 0f),
+                    };
+                    selector.OnOpenGuidebook += OnOpenGuidebook;
+
+                    var icon = new TextureRect
+                    {
+                        TextureScale = new Vector2(2, 2),
+                        VerticalAlignment = VAlignment.Center
+                    };
+                    var jobIcon = _prototypeManager.Index(job.Icon);
+                    icon.Texture = _sprite.Frame0(jobIcon.Icon);
+                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                    if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
+                    {
+                        selector.LockRequirements(reason);
+                    }
+                    else
+                    {
+                        selector.UnlockRequirements();
+                    }
+
+                    selector.OnSelected += selectedPrio =>
+                    {
+                        var selectedJobPrio = (JobPriority) selectedPrio;
+                        Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
+
+                        foreach (var (jobId, other) in _jobPriorities)
+                        {
+                            // Sync other selectors with the same job in case of multiple department jobs
+                            if (jobId == job.ID)
+                            {
+                                other.Select(selectedPrio);
+                                continue;
+                            }
+
+                            if (selectedJobPrio != JobPriority.High || (JobPriority) other.Selected != JobPriority.High)
+                                continue;
+
+                            // Lower any other high priorities to medium.
+                            other.Select((int)JobPriority.Medium);
+                            Profile = Profile?.WithJobPriority(jobId, JobPriority.Medium);
+                        }
+
+                        // TODO: Only reload on high change (either to or from).
+                        ReloadPreview();
+
+                        UpdateJobPriorities();
+                        SetDirty();
+                    };
+
+                    var loadoutWindowBtn = new Button()
+                    {
+                        Text = Loc.GetString("loadout-window"),
+                        HorizontalAlignment = HAlignment.Right,
+                        VerticalAlignment = VAlignment.Center,
+                        Margin = new Thickness(3f, 3f, 0f, 0f),
+                    };
+
+                    var collection = IoCManager.Instance!;
+                    var protoManager = collection.Resolve<IPrototypeManager>();
+
+                    // If no loadout found then disabled button
+                    if (!protoManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID), out var roleLoadoutProto))
+                    {
+                        loadoutWindowBtn.Disabled = true;
+                    }
+                    // else
+                    else
+                    {
+                        loadoutWindowBtn.OnPressed += args =>
+                        {
+                            RoleLoadout? loadout = null;
+
+                            // Clone so we don't modify the underlying loadout.
+                            Profile?.Loadouts.TryGetValue(LoadoutSystem.GetJobPrototype(job.ID), out loadout);
+                            loadout = loadout?.Clone();
+
+                            if (loadout == null)
+                            {
+                                loadout = new RoleLoadout(roleLoadoutProto.ID);
+                                loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                            }
+
+                            OpenLoadout(job, loadout, roleLoadoutProto);
+                        };
+                    }
+
+                    _jobPriorities.Add((job.ID, selector));
+                    jobContainer.AddChild(selector);
+                    jobContainer.AddChild(loadoutWindowBtn);
+                    category.AddChild(jobContainer);
+                }
+            }
+
+            UpdateJobPriorities();
+        }
+
+        private void OpenLoadout(JobPrototype? jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)
+        {
+            _loadoutWindow?.Dispose();
+            _loadoutWindow = null;
+            var collection = IoCManager.Instance;
+
+            if (collection == null || _playerManager.LocalSession == null || Profile == null)
+                return;
+
+            JobOverride = jobProto;
+            var session = _playerManager.LocalSession;
+
+            _loadoutWindow = new LoadoutWindow(Profile, roleLoadout, roleLoadoutProto, _playerManager.LocalSession, collection)
+            {
+                Title = Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto?.LocalizedName}")),
+            };
+
+            // Refresh the buttons etc.
+            _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+            _loadoutWindow.OpenCenteredLeft();
+
+            _loadoutWindow.OnNameChanged += name =>
+            {
+                roleLoadout.EntityName = name;
+                Profile = Profile.WithLoadout(roleLoadout);
+                SetDirty();
+            };
+
+            _loadoutWindow.OnLoadoutPressed += (loadoutGroup, loadoutProto) =>
+            {
+                roleLoadout.AddLoadout(loadoutGroup, loadoutProto, _prototypeManager);
+                _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+                Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
+            };
+
+            _loadoutWindow.OnLoadoutUnpressed += (loadoutGroup, loadoutProto) =>
+            {
+                roleLoadout.RemoveLoadout(loadoutGroup, loadoutProto, _prototypeManager);
+                _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+                Profile = Profile?.WithLoadout(roleLoadout);
+                ReloadPreview();
+            };
+
+            JobOverride = jobProto;
+            ReloadPreview();
+
+            _loadoutWindow.OnClose += () =>
+            {
+                JobOverride = null;
+                ReloadPreview();
+            };
+
+            if (Profile is null)
+                return;
+
+            UpdateJobPriorities();
+        }
+
+        private void OnFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnMarkingChange()
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(_markingsModel.Markings));
+            ReloadProfilePreview();
+            SetDirty();
+        }
+
+        private void OnSkinColorOnValueChanged()
+        {
+            if (Profile is null) return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
+
+            switch (strategy.InputType)
+            {
+                case SkinColorationStrategyInput.Unary:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    var color = strategy.FromUnary(Skin.Value);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+                case SkinColorationStrategyInput.Color:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
+
+                    _markingsModel.SetOrganSkinColor(color);
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                    break;
+                }
+            }
+
+            ReloadProfilePreview();
+        }
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -435,6 +1999,247 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
+        private void SetAge(int newAge)
+        {
+            Profile = Profile?.WithAge(newAge);
+            ReloadPreview();
+        }
+
+        private void SetSex(Sex newSex)
+        {
+            Profile = Profile?.WithSex(newSex);
+            // for convenience, default to most common gender when new sex is selected
+            switch (newSex)
+            {
+                case Sex.Male:
+                    Profile = Profile?.WithGender(Gender.Male);
+                    break;
+                case Sex.Female:
+                    Profile = Profile?.WithGender(Gender.Female);
+                    break;
+                default:
+                    Profile = Profile?.WithGender(Gender.Epicene);
+                    break;
+            }
+
+            UpdateGenderControls();
+            _markingsModel.SetOrganSexes(newSex);
+            ReloadPreview();
+        }
+
+        private void SetGender(Gender newGender)
+        {
+            Profile = Profile?.WithGender(newGender);
+            ReloadPreview();
+        }
+
+        private void SetSpecies(string newSpecies)
+        {
+            Profile = Profile?.WithSpecies(newSpecies);
+            OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
+            _markingsModel.OrganData = _markingManager.GetMarkingData(newSpecies);
+            _markingsModel.ValidateMarkings();
+            // In case there's job restrictions for the species
+            RefreshJobs();
+            // In case there's species restrictions for loadouts
+            RefreshLoadouts();
+            UpdateSexControls(); // update sex for new species
+            UpdateSpeciesGuidebookIcon();
+            ReloadPreview();
+        }
+
+        private void SetName(string newName)
+        {
+            Profile = Profile?.WithName(newName);
+            SetDirty();
+
+            if (!IsDirty)
+                return;
+
+            SpriteView.SetName(newName);
+        }
+
+        private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
+        {
+            Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
+            SetDirty();
+        }
+
+        public bool IsDirty
+        {
+            get => _isDirty;
+            set
+            {
+                if (_isDirty == value)
+                    return;
+
+                _isDirty = value;
+                UpdateSaveButton();
+            }
+        }
+
+        private void UpdateNameEdit()
+        {
+            NameEdit.Text = Profile?.Name ?? "";
+        }
+
+        private void UpdateFlavorTextEdit()
+        {
+            if (_flavorTextEdit != null)
+            {
+                _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+            }
+        }
+
+        private void UpdateAgeEdit()
+        {
+            AgeEdit.Text = Profile?.Age.ToString() ?? "";
+        }
+
+        /// <summary>
+        /// Updates selected job priorities to the profile's.
+        /// </summary>
+        private void UpdateJobPriorities()
+        {
+            foreach (var (jobId, prioritySelector) in _jobPriorities)
+            {
+                var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
+                prioritySelector.Select((int) priority);
+            }
+        }
+
+        private void UpdateSexControls()
+        {
+            if (Profile == null)
+                return;
+
+            SexButton.Clear();
+
+            var sexes = new List<Sex>();
+
+            // add species sex options, default to just none if we are in bizzaro world and have no species
+            if (_prototypeManager.Resolve<SpeciesPrototype>(Profile.Species, out var speciesProto))
+            {
+                foreach (var sex in speciesProto.Sexes)
+                {
+                    sexes.Add(sex);
+                }
+            }
+            else
+            {
+                sexes.Add(Sex.Unsexed);
+            }
+
+            // add button for each sex
+            foreach (var sex in sexes)
+            {
+                SexButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+            }
+
+            if (sexes.Contains(Profile.Sex))
+                SexButton.SelectId((int) Profile.Sex);
+            else
+                SexButton.SelectId((int) sexes[0]);
+        }
+
+        private void UpdateSkinColor()
+        {
+            if (Profile == null)
+                return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
+
+            switch (strategy.InputType)
+            {
+                case SkinColorationStrategyInput.Unary:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
+
+                    break;
+                }
+                case SkinColorationStrategyInput.Color:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
+            }
+        }
+
+        public void UpdateSpeciesGuidebookIcon()
+        {
+            SpeciesInfoButton.StyleClasses.Clear();
+
+            var species = Profile?.Species;
+            if (species is null)
+                return;
+
+            if (!_prototypeManager.Resolve<SpeciesPrototype>(species, out var speciesProto))
+                return;
+
+            // Don't display the info button if no guide entry is found
+            if (!_prototypeManager.HasIndex<GuideEntryPrototype>(species))
+                return;
+
+            const string style = "SpeciesInfoDefault";
+            SpeciesInfoButton.StyleIdentifier = style;
+        }
+
+        private void UpdateMarkings()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            _markingsModel.OrganData = _markingManager.GetMarkingData(Profile.Species);
+            _markingsModel.OrganProfileData = _markingManager.GetProfileData(Profile.Species, Profile.Sex, Profile.Appearance.SkinColor, Profile.Appearance.EyeColor);
+            _markingsModel.Markings = Profile.Appearance.Markings;
+        }
+
+        private void UpdateGenderControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            PronounsButton.SelectId((int) Profile.Gender);
+        }
+
+        private void UpdateSpawnPriorityControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            SpawnPriorityButton.SelectId((int) Profile.SpawnPriority);
+        }
+
+        private void UpdateEyePickers()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            _markingsModel.SetOrganEyeColor(Profile.Appearance.EyeColor);
+            EyeColorPicker.SetData(Profile.Appearance.EyeColor);
+        }
 
         private void UpdateSaveButton()
         {
