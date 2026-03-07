@@ -1,0 +1,156 @@
+- type: constructionGraph
+  id: EchoSeat
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: echoChairBlack
+          steps:
+            - material: Steel
+              amount: 1
+              doAfter: 1
+        - to: echoChairGreen
+          steps:
+            - material: Steel
+              amount: 1
+              doAfter: 1
+        - to: echoChairRed
+          steps:
+            - material: Steel
+              amount: 1
+              doAfter: 1
+        - to: echoChairWhite
+          steps:
+            - material: Steel
+              amount: 1
+              doAfter: 1
+        - to: echoChairYellow
+          steps:
+            - material: Steel
+              amount: 1
+              doAfter: 1
+        - to: echoComfyChairLime
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: echoComfyChairGreen
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: echoComfyChairBrown
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: echoComfyChairBlack
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+
+    - node: echoChairBlack
+      entity: EchoChairBlack
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoChairGreen
+      entity: EchoChairGreen
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoChairRed
+      entity: EchoChairRed
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoChairWhite
+      entity: EchoChairWhite
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoChairYellow
+      entity: EchoChairYellow
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoComfyChairLime
+      entity: EchoComfyChairLime
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoComfyChairGreen
+      entity: EchoComfyChairGreen
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoComfyChairBrown
+      entity: EchoComfyChairBrown
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: echoComfyChairBlack
+      entity: EchoComfyChairBlack
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1

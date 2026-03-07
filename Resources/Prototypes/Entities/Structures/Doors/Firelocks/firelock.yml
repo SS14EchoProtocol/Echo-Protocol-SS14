@@ -148,10 +148,10 @@
       - Fires
       - Spacing
     - type: SyncSprite
-# PE-Tweak-Start 
-    - type: WeldingSparksAnimation # PE-Tweak "Wielding Sparks Animation"
+# ECHO-Tweak-Start 
+    - type: WeldingSparksAnimation # ECHO-Tweak "Wielding Sparks Animation"
       startingOffset: -0.5, 0
-# PE-Tweak-End
+# ECHO-Tweak-End
 
 - type: entity
   id: Firelock
@@ -235,8 +235,8 @@
     - type: Construction
       graph: Firelock
       node: FirelockEdge
-# PE-Tweak-Start 
-    - type: WeldingSparksAnimation # PE-Tweak "Wielding Sparks Animation"
+# ECHO-Tweak-Start 
+    - type: WeldingSparksAnimation # ECHO-Tweak "Wielding Sparks Animation"
       startingOffset: 0, -0.2
       endingOffset: 0, -0.5
-# PE-Tweak-End
+# ECHO-Tweak-End

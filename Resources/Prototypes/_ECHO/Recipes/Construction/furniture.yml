@@ -1,0 +1,109 @@
+#Кресла
+- type: construction
+  id: EchoComfyChairLime
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoComfyChairLime
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoComfyChairGreen
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoComfyChairGreen
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoComfyChairBrown
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoComfyChairBrown
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoComfyChairBlack
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoComfyChairBlack
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+#Обычные стулья
+- type: construction
+  id: EchoChairBlack
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoChairBlack
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoChairGreen
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoChairGreen
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoChairRed
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoChairRed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoChairWhite
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoChairWhite
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoChairYellow
+  graph: EchoSeat
+  startNode: start
+  targetNode: echoChairYellow
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

@@ -378,6 +378,8 @@
   parent: LockerBaseSecure
   name: gun safe
   components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/closet.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Storage/closet.rsi, так как путь изменён до нашего спрайта
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: shotguncase

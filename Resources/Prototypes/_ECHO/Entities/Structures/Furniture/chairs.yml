@@ -1,0 +1,105 @@
+- type: entity
+  name: comfy chair lime
+  id: EchoComfyChairLime
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: comfychair_lime
+  - type: Construction
+    graph: Seat
+    node: chairComfy
+
+- type: entity
+  name: comfy chair green
+  id: EchoComfyChairGreen
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: comfychair_green
+  - type: Construction
+    graph: Seat
+    node: chairComfy
+
+- type: entity
+  name: comfy chair brown
+  id: EchoComfyChairBrown
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: comfychair_brown
+  - type: Construction
+    graph: Seat
+    node: chairComfy
+
+- type: entity
+  name: comfy chair black
+  id: EchoComfyChairBlack
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: comfychair_black
+  - type: Construction
+    graph: Seat
+    node: chairComfy
+  
+- type: entity
+  name: chair black
+  id: EchoChairBlack
+  parent: Chair
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: chair_black
+
+- type: entity
+  name: chair blue
+  id: EchoChairBlue
+  parent: Chair
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: chair_blue
+
+- type: entity
+  name: chair green
+  id: EchoChairGreen
+  parent: Chair
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: chair_green
+
+- type: entity
+  name: chair red
+  id: EchoChairRed
+  parent: Chair
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: chair_red
+
+- type: entity
+  name: chair white
+  id: EchoChairWhite
+  parent: Chair
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: chair_white
+
+- type: entity
+  name: chair yellow
+  id: EchoChairYellow
+  parent: Chair
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/chairs.rsi
+    state: chair_yellow
