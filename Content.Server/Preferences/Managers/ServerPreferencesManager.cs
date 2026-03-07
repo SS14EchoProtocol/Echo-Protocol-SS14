@@ -89,13 +89,10 @@ namespace Content.Server.Preferences.Managers
             return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor), constructionFavorites);
         }
 
-            return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor), constructionFavorites);
-        }
-
         internal HumanoidCharacterProfile ConvertProfiles(Profile profile)
         {
 
-            var jobs = profile.Jobs.ToDictionary(j => new ProtoId<JobPrototype>(j.JobName), j => (JobPriority) j.Priority);
+            var jobs = profile.Jobs.ToDictionary(j => new ProtoId<JobPrototype>(j.JobName), j => (JobPriority)j.Priority);
             var antags = profile.Antags.Select(a => new ProtoId<AntagPrototype>(a.AntagName));
             var traits = profile.Traits.Select(t => new ProtoId<TraitPrototype>(t.TraitName));
 
@@ -103,7 +100,7 @@ namespace Content.Server.Preferences.Managers
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
                 sex = sexVal;
 
-            var spawnPriority = (SpawnPriorityPreference) profile.SpawnPriority;
+            var spawnPriority = (SpawnPriorityPreference)profile.SpawnPriority;
 
             var gender = sex == Sex.Male ? Gender.Male : Gender.Female;
             if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
@@ -186,10 +183,11 @@ namespace Content.Server.Preferences.Managers
                 ),
                 spawnPriority,
                 jobs,
-                (PreferenceUnavailableMode) profile.PreferenceUnavailable,
+                (PreferenceUnavailableMode)profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // ECHO-Tweak : Barks
             );
         }
 
