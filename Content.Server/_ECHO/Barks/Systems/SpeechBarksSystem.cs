@@ -15,11 +15,9 @@ public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
     private bool _isEnabled = false;
 
     public override void Initialize()
