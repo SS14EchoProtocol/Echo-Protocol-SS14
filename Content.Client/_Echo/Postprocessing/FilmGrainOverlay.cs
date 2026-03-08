@@ -18,7 +18,9 @@ public sealed class FilmGrainOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
-        _shader = _prototype.Index<ShaderPrototype>("FilmGrain").InstanceUnique();
+        ProtoId<ShaderPrototype> FGrainShader = "FilmGrain";
+
+        _shader = _prototype.Index(FGrainShader).InstanceUnique();
 
         ZIndex = (int) Shared.DrawDepth.DrawDepth.Overlays;
     }
