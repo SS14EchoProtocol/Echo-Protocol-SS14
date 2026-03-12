@@ -29,13 +29,15 @@
   id: FloorSteel
   parent: BaseStationTile
   name: tiles-steel-floor
-  sprite: /Textures/Tiles/steel.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel.png #ECHO-Tweak Было:/Textures/Tiles/steel.png Стало:/Textures/_ECHO/Tiles/steel.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteel
 
 - type: tile
@@ -68,111 +70,127 @@
   id: FloorSteelMini
   parent: BaseStationTile
   name: tiles-steel-floor-mini
-  sprite: /Textures/Tiles/steel_mini.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_mini.png #ECHO-Tweak Было:/Textures/Tiles/steel_mini.png Стало:/Textures/_ECHO/Tiles/steel_mini.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelMini
 
 - type: tile
   id: FloorSteelPavement
   parent: BaseStationTile
   name: tiles-steel-floor-pavement
-  sprite: /Textures/Tiles/steel_pavement.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_pavement.png #ECHO-Tweak Было:/Textures/Tiles/steel_pavement.png Стало:/Textures/_ECHO/Tiles/steel_pavement.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelPavement
 
 - type: tile
   id: FloorSteelDiagonal
   parent: BaseStationTile
   name: tiles-steel-floor-diagonal
-  sprite: /Textures/Tiles/steel_diagonal.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_diagonal.png #ECHO-Tweak Было:/Textures/Tiles/steel_diagonal.png Стало:/Textures/_ECHO/Tiles/steel_diagonal.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelDiagonal
 
 - type: tile
   id: FloorSteelOffset
   parent: BaseStationTile
   name: tiles-steel-floor-offset
-  sprite: /Textures/Tiles/steel_offset.png
+  sprite: /Textures/_ECHO/Tiles/steel_offset.png #ECHO-Tweak Было:/Textures/Tiles/steel_offset.png Стало:/Textures/_ECHO/Tiles/steel_offset.png
   itemDrop: FloorTileItemSteelOffset
 
 - type: tile
   id: FloorSteelMono
   parent: BaseStationTile
   name: tiles-steel-floor-mono
-  sprite: /Textures/Tiles/steel_mono.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_mono.png #ECHO-Tweak Было:/Textures/Tiles/steel_mono.png Стало:/Textures/_ECHO/Tiles/steel_mono.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelMono
 
 - type: tile
   id: FloorSteelPavementVertical
   parent: BaseStationTile
   name: tiles-steel-floor-pavement-vertical
-  sprite: /Textures/Tiles/steel_pavement_vertical.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_pavement_vertical.png #ECHO-Tweak Было:/Textures/Tiles/steel_pavement_vertical.png Стало:/Textures/_ECHO/Tiles/steel_pavement_vertical.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelPavementVertical
 
 - type: tile
   id: FloorSteelHerringbone
   parent: BaseStationTile
   name: tiles-steel-floor-herringbone
-  sprite: /Textures/Tiles/steel_herringbone.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_herringbone.png #ECHO-Tweak Было:/Textures/Tiles/steel_herringbone.png Стало:/Textures/_ECHO/Tiles/steel_herringbone.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelHerringbone
 
 - type: tile
   id: FloorSteelDiagonalMini
   parent: BaseStationTile
   name: tiles-steel-floor-diagonal-mini
-  sprite: /Textures/Tiles/steel_diagonal_mini.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_diagonal_mini.png #ECHO-Tweak Было:/Textures/Tiles/steel_diagonal_mini.png Стало:/Textures/_ECHO/Tiles/steel_diagonal_mini.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelDiagonalMini
 
 - type: tile
   parent: BaseStationTile
   id: FloorSteelSlatsContinuous
   name: tiles-steel-floor-slats-continuous
-  sprite: /Textures/Tiles/steel_slats_continuous.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_slats_continuous.png #ECHO-Tweak Было:/Textures/Tiles/steel_slats_continuous.png Стало:/Textures/_ECHO/Tiles/steel_slats_continuous.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelSlatsContinuous
   allowRotationMirror: true
 
@@ -193,13 +211,15 @@
   parent: BaseStationTile
   id: FloorSteelHorizontalSlatsBordered
   name: tiles-steel-floor-horizontal-slats-bordered
-  sprite: /Textures/Tiles/steel_horizontal_slats_bordered.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/steel_horizontal_slats_bordered.png #ECHO-Tweak Было:/Textures/Tiles/steel_horizontal_slats_bordered.png Стало:/Textures/_ECHO/Tiles/steel_horizontal_slats_bordered.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemSteelHorizontalSlatsBordered
 
 - type: tile
@@ -254,13 +274,15 @@
   id: FloorWhite
   parent: BaseStationTile
   name: tiles-white-floor
-  sprite: /Textures/Tiles/white.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white.png #ECHO-Tweak Было:/Textures/Tiles/white.png Стало:/Textures/_ECHO/Tiles/white.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhite
@@ -269,13 +291,15 @@
   id: FloorWhiteMini
   parent: BaseStationTile
   name: tiles-white-floor-mini
-  sprite: /Textures/Tiles/white_mini.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_mini.png #ECHO-Tweak Было:/Textures/Tiles/white_mini.png Стало:/Textures/_ECHO/Tiles/white_mini.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMini
@@ -284,13 +308,15 @@
   parent: BaseStationTile
   id: FloorWhiteSlatsContinuous
   name: tiles-white-floor-slats-continuous
-  sprite: /Textures/Tiles/white_slats_continuous.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_slats_continuous.png #ECHO-Tweak Было:/Textures/Tiles/white_slats_continuous.png Стало:/Textures/_ECHO/Tiles/white_slats_continuous.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemWhiteSlatsContinuous
   allowRotationMirror: true
 
@@ -311,26 +337,30 @@
   parent: BaseStationTile
   id: FloorWhiteHorizontalSlatsBordered
   name: tiles-white-floor-horizontal-slats-bordered
-  sprite: /Textures/Tiles/white_horizontal_slats_bordered.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_horizontal_slats_bordered.png #ECHO-Tweak Было:/Textures/Tiles/white_horizontal_slats_bordered.png Стало:/Textures/_ECHO/Tiles/white_horizontal_slats_bordered.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemWhiteHorizontalSlatsBordered
 
 - type: tile
   id: FloorWhitePavement
   parent: BaseStationTile
   name: tiles-white-floor-pavement
-  sprite: /Textures/Tiles/white_pavement.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_pavement.png #ECHO-Tweak Было:/Textures/Tiles/white_pavement.png Стало:/Textures/_ECHO/Tiles/white_pavement.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavement
@@ -339,13 +369,15 @@
   id: FloorWhiteDiagonal
   parent: BaseStationTile
   name: tiles-white-floor-diagonal
-  sprite: /Textures/Tiles/white_diagonal.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_diagonal.png #ECHO-Tweak Было:/Textures/Tiles/white_diagonal.png Стало:/Textures/_ECHO/Tiles/white_diagonal.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteDiagonal
@@ -354,7 +386,7 @@
   id: FloorWhiteOffset
   parent: BaseStationTile
   name: tiles-white-floor-offset
-  sprite: /Textures/Tiles/white_offset.png
+  sprite: /Textures/_ECHO/Tiles/white_offset.png #ECHO-Tweak Было:/Textures/Tiles/white_offset.png Стало:/Textures/_ECHO/Tiles/white_offset.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteOffset
@@ -363,13 +395,15 @@
   id: FloorWhiteMono
   parent: BaseStationTile
   name: tiles-white-floor-mono
-  sprite: /Textures/Tiles/white_mono.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_mono.png #ECHO-Tweak Было:/Textures/Tiles/white_mono.png Стало:/Textures/_ECHO/Tiles/white_mono.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteMono
@@ -378,13 +412,15 @@
   id: FloorWhitePavementVertical
   parent: BaseStationTile
   name: tiles-white-floor-pavement-vertical
-  sprite: /Textures/Tiles/white_pavement_vertical.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_pavement_vertical.png #ECHO-Tweak Было:/Textures/Tiles/white_pavement_vertical.png Стало:/Textures/_ECHO/Tiles/white_pavement_vertical.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhitePavementVertical
@@ -393,13 +429,15 @@
   id: FloorWhiteHerringbone
   parent: BaseStationTile
   name: tiles-white-floor-herringbone
-  sprite: /Textures/Tiles/white_herringbone.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_herringbone.png #ECHO-Tweak Было:/Textures/Tiles/white_herringbone.png Стало:/Textures/_ECHO/Tiles/white_herringbone.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteHerringbone
@@ -408,13 +446,15 @@
   id: FloorWhiteDiagonalMini
   parent: BaseStationTile
   name: tiles-white-floor-diagonal-mini
-  sprite: /Textures/Tiles/white_diagonal_mini.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/white_diagonal_mini.png #ECHO-Tweak Было:/Textures/Tiles/white_diagonal_mini.png Стало:/Textures/_ECHO/Tiles/white_diagonal_mini.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemWhiteDiagonalMini
@@ -438,13 +478,15 @@
   id: FloorDark
   parent: BaseStationTile
   name: tiles-dark-floor
-  sprite: /Textures/Tiles/dark.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark.png #ECHO-Tweak Было:/Textures/Tiles/dark.png Стало:/Textures/_ECHO/Tiles/dark.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDark
@@ -453,13 +495,15 @@
   id: FloorDarkMini
   parent: BaseStationTile
   name: tiles-dark-floor-mini
-  sprite: /Textures/Tiles/dark_mini.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_mini.png #ECHO-Tweak Было:/Textures/Tiles/dark_mini.png Стало:/Textures/_ECHO/Tiles/dark_mini.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMini
@@ -468,13 +512,15 @@
   parent: BaseStationTile
   id: FloorDarkSlatsContinuous
   name: tiles-dark-floor-slats-continuous
-  sprite: /Textures/Tiles/dark_slats_continuous.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_slats_continuous.png #ECHO-Tweak Было:/Textures/Tiles/dark_slats_continuous.png Стало:/Textures/_ECHO/Tiles/dark_slats_continuous.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemDarkSlatsContinuous
   allowRotationMirror: true
 
@@ -495,26 +541,30 @@
   parent: BaseStationTile
   id: FloorDarkHorizontalSlatsBordered
   name: tiles-dark-floor-horizontal-slats-bordered
-  sprite: /Textures/Tiles/dark_horizontal_slats_bordered.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_horizontal_slats_bordered.png #ECHO-Tweak Было:/Textures/Tiles/dark_horizontal_slats_bordered.png Стало:/Textures/_ECHO/Tiles/dark_horizontal_slats_bordered.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemDarkHorizontalSlatsBordered
 
 - type: tile
   id: FloorDarkPavement
   parent: BaseStationTile
   name: tiles-dark-floor-pavement
-  sprite: /Textures/Tiles/dark_pavement.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_pavement.png #ECHO-Tweak Было:/Textures/Tiles/dark_pavement.png Стало:/Textures/_ECHO/Tiles/dark_pavement.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavement
@@ -523,13 +573,15 @@
   id: FloorDarkDiagonal
   parent: BaseStationTile
   name: tiles-dark-floor-diagonal
-  sprite: /Textures/Tiles/dark_diagonal.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_diagonal.png #ECHO-Tweak Было:/Textures/Tiles/dark_diagonal.png Стало:/Textures/_ECHO/Tiles/dark_diagonal.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkDiagonal
@@ -538,7 +590,7 @@
   id: FloorDarkOffset
   parent: BaseStationTile
   name: tiles-dark-floor-offset
-  sprite: /Textures/Tiles/dark_offset.png
+  sprite: /Textures/_ECHO/Tiles/dark_offset.png #ECHO-Tweak Было:/Textures/Tiles/dark_offset.png Стало:/Textures/_ECHO/Tiles/dark_offset.png
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkOffset
@@ -547,13 +599,15 @@
   id: FloorDarkMono
   parent: BaseStationTile
   name: tiles-dark-floor-mono
-  sprite: /Textures/Tiles/dark_mono.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_mono.png #ECHO-Tweak Было:/Textures/Tiles/dark_mono.png Стало:/Textures/_ECHO/Tiles/dark_mono.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkMono
@@ -562,13 +616,15 @@
   id: FloorDarkPavementVertical
   parent: BaseStationTile
   name: tiles-dark-floor-pavement-vertical
-  sprite: /Textures/Tiles/dark_pavement_vertical.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_pavement_vertical.png #ECHO-Tweak Было:/Textures/Tiles/dark_pavement_vertical.png Стало:/Textures/_ECHO/Tiles/dark_pavement_vertical.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkPavementVertical
@@ -577,13 +633,15 @@
   id: FloorDarkHerringbone
   parent: BaseStationTile
   name: tiles-dark-floor-herringbone
-  sprite: /Textures/Tiles/dark_herringbone.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_herringbone.png #ECHO-Tweak Было:/Textures/Tiles/dark_herringbone.png Стало:/Textures/_ECHO/Tiles/dark_herringbone.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkHerringbone
@@ -592,13 +650,15 @@
   id: FloorDarkDiagonalMini
   parent: BaseStationTile
   name: tiles-dark-floor-diagonal-mini
-  sprite: /Textures/Tiles/dark_diagonal_mini.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/dark_diagonal_mini.png #ECHO-Tweak Было:/Textures/Tiles/dark_diagonal_mini.png Стало:/Textures/_ECHO/Tiles/dark_diagonal_mini.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemDarkDiagonalMini
@@ -1079,39 +1139,45 @@
   id: FloorShuttleWhite
   parent: BaseStationTile
   name: tiles-white-shuttle-floor
-  sprite: /Textures/Tiles/shuttlewhite.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/shuttlewhite.png #ECHO-Tweak Было:/Textures/Tiles/shuttlewhite.png Стало:/Textures/_ECHO/Tiles/shuttlewhite.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemShuttleWhite
 
 - type: tile
   id: FloorShuttleGrey
   parent: BaseStationTile
   name: tiles-grey-shuttle-floor
-  sprite: /Textures/Tiles/shuttlegrey.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/shuttlegrey.png #ECHO-Tweak Было:/Textures/Tiles/shuttlegrey.png Стало:/Textures/_ECHO/Tiles/shuttlegrey.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemShuttleGrey
 
 - type: tile
   id: FloorShuttleBlack
   parent: BaseStationTile
   name: tiles-black-shuttle-floor
-  sprite: /Textures/Tiles/shuttleblack.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
+  sprite: /Textures/_ECHO/Tiles/shuttleblack.png #ECHO-Tweak Было:/Textures/Tiles/shuttleblack.png Стало:/Textures/_ECHO/Tiles/shuttleblack.png
+  #ECHO-Tweak-Start
+  #variants: 4
+  #placementVariants:
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #- 1.0
+  #ECHO-Tweak-End
   itemDrop: FloorTileItemShuttleBlack
 
 - type: tile
