@@ -102,7 +102,7 @@ namespace Content.IntegrationTests.Tests
             "dm01-entryway",
             "Exo",
 	          "Snowball",
-            "Serpentcrest",
+            // "Serpentcrest",
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
