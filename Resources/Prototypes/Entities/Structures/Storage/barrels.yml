@@ -6,7 +6,7 @@
   description: A small metal drum. How tropical.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: /Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
+    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
     state: metalbarrel
     noRot: true
   - type: Fixtures
@@ -62,7 +62,7 @@
     state: radbarrel
   - type: RadiationSource
     intensity: 1.0
-# Echo-Tweak    slope: 0.25
+    slope: 0.25
 
 - type: entityTable
   id: RandomChemicalBarrel

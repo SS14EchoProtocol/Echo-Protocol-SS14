@@ -28,39 +28,6 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 10
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 5
-      behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: tank
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Piercing
-        damage: 5
-      behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: tank
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:SpillBehavior
-        solution: tank
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
   - type: SolutionContainerManager
     solutions:
       tank:
@@ -96,39 +63,6 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 20
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 5
-      behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: tank
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Piercing
-        damage: 5
-      behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: tank
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:SpillBehavior
-        solution: tank
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
   - type: SolutionContainerManager
     solutions:
       tank:
@@ -177,7 +111,6 @@
   description: An open barrel that can be filled with liquids.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: /Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
     state: waterbarrel-open
     noRot: true
     layers:
@@ -200,7 +133,6 @@
   description: An open barrel that can be filled with welding fuel.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: /Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
     state: weldbarrel-open
     noRot: true
     layers:
@@ -211,39 +143,6 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 10
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 5
-      behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: tank
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Piercing
-        damage: 5
-      behaviors:
-      - !type:SolutionExplosionBehavior
-        solution: tank
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:SpillBehavior
-        solution: tank
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
   - type: SolutionContainerManager
     solutions:
       tank:
@@ -265,7 +164,6 @@
     materialComposition:
       Steel: 800
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: /Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
     state: silicatebarrel-open
     noRot: true
     layers:
@@ -285,7 +183,6 @@
   description: An open wooden barrel that can be filled with liquids.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: /Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
     state: woodenbarrel-open
     noRot: true
     layers:
@@ -316,8 +213,7 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
-  - type: Sprite
-    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: /Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi 
+  - type: Sprite 
     state: metalbarrel-open
     noRot: true
     layers:
@@ -337,7 +233,6 @@
   description: An open radioactive barrel that can be filled with dangerous materials.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: /Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
     state: radbarrel-open
     noRot: true
     layers:
