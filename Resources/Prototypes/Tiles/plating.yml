@@ -1,4 +1,4 @@
-﻿- type: tile
+- type: tile
   id: BasePlating
   abstract: true
   friction: 1.5
@@ -14,7 +14,7 @@
   id: Plating
   parent: BasePlating
   name: tiles-plating
-  sprite: /Textures/Tiles/plating.png
+  sprite: /Textures/_ECHO/Tiles/plating.png #ECHO-Tweak Было:/Textures/Tiles/plating.png Стало:/Textures/_ECHO/Tiles/plating.png
 
 - type: tile
   id: PlatingRCD
