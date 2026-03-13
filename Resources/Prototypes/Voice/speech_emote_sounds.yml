@@ -659,6 +659,7 @@
     DefaultDeathgasp:
       collection: WawaDeath
 
+# ECHO-Tweak start
 - type: emoteSounds
   id: UnisexDwarf
   params:
@@ -742,3 +743,6 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+#Echo-Tweak end
+# Просто скопировал у людей, но приписал названия дворвфов... 
+#Все для того, чтобы локалка запускалась и тестер не бузил

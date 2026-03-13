@@ -1,6 +1,5 @@
-﻿# ВРЕМЕННО ОТКЛЮЧЕНО / TEMPORARILY DISABLED
-# Файл карты удалён из-за критических ошибок (дублирование UID, атмос. данных).
-# Для повторного включения: раскомментировать этот файл, default.yml (Pools), PostMapInitTest.cs, и восстановить Resources/Maps/serpentcrest.yml из git.
+﻿# ECHO-Tweak start
+# Потом раскомментируйте при апстриме (сейчас слишком большая куча проблем с uid и другим в этой карте...)
 # - type: gameMap
 #   id: Serpentcrest
 #   mapName: 'Serpentcrest'
@@ -67,3 +66,4 @@
 #             #silicon 
 #             Borg: [ 3, 3 ]
 #             StationAi: [ 1, 1 ]
+# ECHO-Tweak end 
