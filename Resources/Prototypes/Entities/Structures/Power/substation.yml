@@ -80,7 +80,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite # TODO: add sprite for maintenance panel open
-    sprite: Structures/Power/substation.rsi
+    sprite: _ECHO/Structures/Power/substation.rsi #ECHO-Tweak Было: Structures/Power/substation.rsi -> Стало: _ECHO/Structures/Power/substation.rsi
     snapCardinals: true
     layers:
     - state: substation
@@ -97,7 +97,7 @@
     color: "#ff6900"
     castShadows: false
   - type: PowerMonitoringDevice
-    sprite: Structures/Power/substation.rsi
+    sprite: _ECHO/Structures/Power/substation.rsi #ECHO-Tweak Было: Structures/Power/substation.rsi -> Стало: _ECHO/Structures/Power/substation.rsi
     state: substation_static
   - type: Destructible
     thresholds:
@@ -181,7 +181,7 @@
     anchored: true
   - type: Sprite # TODO: add sprite for maintenance panel open
     drawdepth: WallMountedItems
-    sprite: Structures/Power/substation.rsi
+    sprite: _ECHO/Structures/Power/substation.rsi #ECHO-Tweak Было: Structures/Power/substation.rsi -> Стало: _ECHO/Structures/Power/substation.rsi
     layers:
     - state: substation_wall
     - state: screen_wall
@@ -190,7 +190,7 @@
     maxCharge: 2000000
     startingCharge: 0
   - type: PowerMonitoringDevice
-    sprite: Structures/Power/substation.rsi
+    sprite: _ECHO/Structures/Power/substation.rsi #ECHO-Tweak Было: Structures/Power/substation.rsi -> Стало: _ECHO/Structures/Power/substation.rsi
     state: substation_wall_static
   - type: Destructible
     thresholds:
@@ -277,7 +277,7 @@
     anchored: true
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: Structures/Power/substation.rsi
+    sprite: _ECHO/Structures/Power/substation.rsi #ECHO-Tweak Было: Structures/Power/substation.rsi -> Стало: _ECHO/Structures/Power/substation.rsi
     layers:
     - state: substation_wall
   - type: Construction
