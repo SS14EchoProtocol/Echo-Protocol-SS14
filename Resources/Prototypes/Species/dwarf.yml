@@ -1,0 +1,7 @@
+- type: species
+  id: Dwarf
+  name: species-name-dwarf
+  roundStart: false #PE-Tweak
+  prototype: MobDwarf
+  dollPrototype: AppearanceDwarf
+  skinColoration: HumanToned

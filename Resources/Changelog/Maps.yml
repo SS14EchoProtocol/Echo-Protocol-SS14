@@ -611,14 +611,6 @@
   id: 73
   time: '2025-08-29T05:42:00.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/39954
-- author: Southbridge
-  changes:
-  - message: On Bagel, ensured there were late join spawners at arrivals
-    type: Add
-  - message: On Bagel, overhauled the TEG so it's a bit more ready for the pressure
-      update
-    type: Tweak
-  id: 74
 - author: ScarKy0
   changes:
   - message: On Bagel, added cameras to genpop and engineering.

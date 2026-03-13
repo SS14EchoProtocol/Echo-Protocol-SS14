@@ -1,7 +1,4 @@
 ﻿Entries:
-- author: SlamBamActionman
-  changes:
-  url: https://github.com/space-wizards/space-station-14/pull/38044
 - author: Mixelz
   changes:
   - message: Circuit Totes, a new type of box to compactly carry conspicous chunks
@@ -267,9 +264,6 @@
   id: 9056
   time: '2025-10-08T15:49:21.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/39920
-- author: SlamBamActionman
-  changes:
-  url: https://github.com/space-wizards/space-station-14/pull/38044
 - author: Mixelz
   changes:
   - message: Circuit Totes, a new type of box to compactly carry conspicous chunks
