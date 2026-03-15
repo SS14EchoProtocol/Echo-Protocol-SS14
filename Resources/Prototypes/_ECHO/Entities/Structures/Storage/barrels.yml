@@ -157,9 +157,6 @@
   name: open silicate barrel
   description: An open barrel that can be filled with silicate or lubricant.
   components:
-  - type: Construction
-    graph: EchoBarrelChemSilicateOpen
-    node: barrel
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
@@ -207,9 +204,6 @@
   name: open metal barrel
   description: An open metal barrel that can be filled with chemicals.
   components:
-  - type: Construction
-    graph: EchoBarrelMetalOpen
-    node: barrel
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
@@ -254,9 +248,6 @@
   name: open water barrel (empty)
   description: An empty open barrel for liquids.
   components:
-  - type: Construction
-    graph: EchoBarrelChemWaterOpen
-    node: barrel
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
@@ -271,9 +262,6 @@
   name: open welding fuel barrel (empty)
   description: An empty open barrel for welding fuel.
   components:
-  - type: Construction
-    graph: EchoBarrelChemWeldingOpen
-    node: barrel
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
@@ -288,9 +276,6 @@
   name: open wooden barrel (empty)
   description: An empty open wooden barrel.
   components:
-  - type: Construction
-    graph: EchoBarrelWoodenOpen
-    node: barrel
   - type: PhysicalComposition
     materialComposition:
       Wood: 800
@@ -305,9 +290,6 @@
   name: open radioactive barrel (empty)
   description: An empty open radioactive barrel.
   components:
-  - type: Construction
-    graph: EchoBarrelRadOpen
-    node: barrel
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
