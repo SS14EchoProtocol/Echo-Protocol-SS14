@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server._Utopia.ZLevels.Disposal.Components;
 using Content.Server.Announcements;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
@@ -212,6 +213,30 @@ namespace Content.Server.GameTicking
                 RaiseLocalEvent(new PostGameMapLoad(proto, mapId, g, stationName));
                 return g;
             }
+
+            // ECHO-Tweak-start
+            // ZLevels mapping support
+            if (ev.GameMap.ZMap)
+            {
+                if (!_zMapping.TryLoadMap(ev.GameMap.MapPath, out var zMaps, out var zGrids, out var error))
+                {
+                    throw new Exception($"Failed to load ZNetwork map: {error}");
+                }
+
+                var hasMainMap = false;
+                foreach (var zMap in zMaps)
+                {
+                    _metaData.SetEntityName(zMap.Owner, proto.MapName);
+
+                    if (!HasComp<MainZMapComponent>(zMap.Owner) || hasMainMap)
+                        continue;
+
+                    mapId = zMap.Comp.MapId;
+                    hasMainMap = true;
+                    RaiseLocalEvent(new PostGameMapLoad(proto, mapId, zGrids.Select(x => x.Owner).ToList(), stationName));
+                }
+            }
+            // ECHO-Tweak-end
 
             if (!_loader.TryLoadMap(ev.GameMap.MapPath,
                     out var map,

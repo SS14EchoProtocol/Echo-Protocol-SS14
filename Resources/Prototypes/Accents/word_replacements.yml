@@ -23,6 +23,89 @@
     accent-mobster-words-16: accent-mobster-words-replace-16
     accent-mobster-words-17: accent-mobster-words-replace-17
 
+
+- type: accent
+  id: scottish
+  wordReplacements:
+    accent-scottish-words-1: accent-scottish-words-replace-1
+    accent-scottish-words-2: accent-scottish-words-replace-2
+    accent-scottish-words-3: accent-scottish-words-replace-3
+    accent-scottish-words-4: accent-scottish-words-replace-4
+    accent-scottish-words-5: accent-scottish-words-replace-5
+    accent-scottish-words-6: accent-scottish-words-replace-6
+    accent-scottish-words-7: accent-scottish-words-replace-7
+    accent-scottish-words-8: accent-scottish-words-replace-8
+    accent-scottish-words-9: accent-scottish-words-replace-9
+    accent-scottish-words-10: accent-scottish-words-replace-10
+    accent-scottish-words-11: accent-scottish-words-replace-11
+    accent-scottish-words-12: accent-scottish-words-replace-12
+    accent-scottish-words-13: accent-scottish-words-replace-13
+    accent-scottish-words-14: accent-scottish-words-replace-14
+    accent-scottish-words-15: accent-scottish-words-replace-15
+    accent-scottish-words-16: accent-scottish-words-replace-16
+    accent-scottish-words-17: accent-scottish-words-replace-17
+    accent-scottish-words-18: accent-scottish-words-replace-18
+    accent-scottish-words-19: accent-scottish-words-replace-19
+    accent-scottish-words-20: accent-scottish-words-replace-20
+    accent-scottish-words-21: accent-scottish-words-replace-21
+    accent-scottish-words-22: accent-scottish-words-replace-22
+    accent-scottish-words-23: accent-scottish-words-replace-23
+    accent-scottish-words-24: accent-scottish-words-replace-24
+    accent-scottish-words-25: accent-scottish-words-replace-25
+    accent-scottish-words-26: accent-scottish-words-replace-26
+    accent-scottish-words-27: accent-scottish-words-replace-27
+    accent-scottish-words-28: accent-scottish-words-replace-28
+    accent-scottish-words-29: accent-scottish-words-replace-29
+    accent-scottish-words-30: accent-scottish-words-replace-30
+    accent-scottish-words-31: accent-scottish-words-replace-31
+    accent-scottish-words-32: accent-scottish-words-replace-32
+    accent-scottish-words-33: accent-scottish-words-replace-33
+    accent-scottish-words-34: accent-scottish-words-replace-34
+    accent-scottish-words-35: accent-scottish-words-replace-35
+    accent-scottish-words-36: accent-scottish-words-replace-36
+    accent-scottish-words-37: accent-scottish-words-replace-37
+    accent-scottish-words-38: accent-scottish-words-replace-38
+    accent-scottish-words-39: accent-scottish-words-replace-39
+    accent-scottish-words-40: accent-scottish-words-replace-40
+    accent-scottish-words-41: accent-scottish-words-replace-41
+    accent-scottish-words-42: accent-scottish-words-replace-42
+    accent-scottish-words-43: accent-scottish-words-replace-43
+    accent-scottish-words-44: accent-scottish-words-replace-44
+    accent-scottish-words-45: accent-scottish-words-replace-45
+    accent-scottish-words-46: accent-scottish-words-replace-46
+    accent-scottish-words-47: accent-scottish-words-replace-47
+    accent-scottish-words-48: accent-scottish-words-replace-48
+    accent-scottish-words-49: accent-scottish-words-replace-49
+    accent-scottish-words-50: accent-scottish-words-replace-50
+    accent-scottish-words-51: accent-scottish-words-replace-51
+    accent-scottish-words-52: accent-scottish-words-replace-52
+    accent-scottish-words-53: accent-scottish-words-replace-53
+    accent-scottish-words-54: accent-scottish-words-replace-54
+    accent-scottish-words-55: accent-scottish-words-replace-55
+    accent-scottish-words-56: accent-scottish-words-replace-56
+    accent-scottish-words-57: accent-scottish-words-replace-57
+    accent-scottish-words-58: accent-scottish-words-replace-58
+    accent-scottish-words-59: accent-scottish-words-replace-59
+    accent-scottish-words-60: accent-scottish-words-replace-60
+    accent-scottish-words-61: accent-scottish-words-replace-61
+    accent-scottish-words-62: accent-scottish-words-replace-62
+    accent-scottish-words-63: accent-scottish-words-replace-63
+    accent-scottish-words-64: accent-scottish-words-replace-64
+    accent-scottish-words-65: accent-scottish-words-replace-65
+    accent-scottish-words-66: accent-scottish-words-replace-66
+    accent-scottish-words-67: accent-scottish-words-replace-67
+    accent-scottish-words-68: accent-scottish-words-replace-68
+    accent-scottish-words-69: accent-scottish-words-replace-69
+    accent-scottish-words-70: accent-scottish-words-replace-70
+    accent-scottish-words-71: accent-scottish-words-replace-71
+    accent-scottish-words-72: accent-scottish-words-replace-72
+    accent-scottish-words-73: accent-scottish-words-replace-73
+    accent-scottish-words-74: accent-scottish-words-replace-74
+    accent-scottish-words-75: accent-scottish-words-replace-75
+    accent-scottish-words-76: accent-scottish-words-replace-76
+    accent-scottish-words-77: accent-scottish-words-replace-77
+    accent-scottish-words-78: accent-scottish-words-replace-78
+
 - type: accent
   id: pirate
   wordReplacements:
@@ -58,6 +141,72 @@
     accent-pirate-replaced-30: accent-pirate-replacement-30
     accent-pirate-replaced-31: accent-pirate-replacement-31
     accent-pirate-replaced-32: accent-pirate-replacement-32
+
+- type: accent
+  id: cowboy
+  wordReplacements:
+    corvax-accent-cowboy-words-1: corvax-accent-cowboy-replacement-1
+    corvax-accent-cowboy-words-2: corvax-accent-cowboy-replacement-2
+    corvax-accent-cowboy-words-3: corvax-accent-cowboy-replacement-3
+    corvax-accent-cowboy-words-4: corvax-accent-cowboy-replacement-4
+    corvax-accent-cowboy-words-5: corvax-accent-cowboy-replacement-5
+    corvax-accent-cowboy-words-6: corvax-accent-cowboy-replacement-6
+    corvax-accent-cowboy-words-7: corvax-accent-cowboy-replacement-7
+    corvax-accent-cowboy-words-8: corvax-accent-cowboy-replacement-8
+    corvax-accent-cowboy-words-9: corvax-accent-cowboy-replacement-9
+    corvax-accent-cowboy-words-10: corvax-accent-cowboy-replacement-10
+    corvax-accent-cowboy-words-11: corvax-accent-cowboy-replacement-11
+    corvax-accent-cowboy-words-12: corvax-accent-cowboy-replacement-12
+    corvax-accent-cowboy-words-13: corvax-accent-cowboy-replacement-13
+    corvax-accent-cowboy-words-14: corvax-accent-cowboy-replacement-14
+    corvax-accent-cowboy-words-15: corvax-accent-cowboy-replacement-15
+    corvax-accent-cowboy-words-16: corvax-accent-cowboy-replacement-16
+    corvax-accent-cowboy-words-17: corvax-accent-cowboy-replacement-17
+    corvax-accent-cowboy-words-18: corvax-accent-cowboy-replacement-18
+    corvax-accent-cowboy-words-19: corvax-accent-cowboy-replacement-19
+    corvax-accent-cowboy-words-20: corvax-accent-cowboy-replacement-20
+    corvax-accent-cowboy-words-21: corvax-accent-cowboy-replacement-21
+    corvax-accent-cowboy-words-22: corvax-accent-cowboy-replacement-22
+    corvax-accent-cowboy-words-23: corvax-accent-cowboy-replacement-23
+    corvax-accent-cowboy-words-24: corvax-accent-cowboy-replacement-24
+    corvax-accent-cowboy-words-25: corvax-accent-cowboy-replacement-25
+    corvax-accent-cowboy-words-26: corvax-accent-cowboy-replacement-26
+    corvax-accent-cowboy-words-27: corvax-accent-cowboy-replacement-27
+    corvax-accent-cowboy-words-28: corvax-accent-cowboy-replacement-28
+    corvax-accent-cowboy-words-29: corvax-accent-cowboy-replacement-29
+    corvax-accent-cowboy-words-30: corvax-accent-cowboy-replacement-30
+    corvax-accent-cowboy-words-31: corvax-accent-cowboy-replacement-31
+    corvax-accent-cowboy-words-32: corvax-accent-cowboy-replacement-32
+    corvax-accent-cowboy-words-33: corvax-accent-cowboy-replacement-33
+    corvax-accent-cowboy-words-34: corvax-accent-cowboy-replacement-34
+    corvax-accent-cowboy-words-35: corvax-accent-cowboy-replacement-35
+    corvax-accent-cowboy-words-36: corvax-accent-cowboy-replacement-36
+    corvax-accent-cowboy-words-37: corvax-accent-cowboy-replacement-37
+    corvax-accent-cowboy-words-38: corvax-accent-cowboy-replacement-38
+    corvax-accent-cowboy-words-39: corvax-accent-cowboy-replacement-39
+    corvax-accent-cowboy-words-40: corvax-accent-cowboy-replacement-40
+    corvax-accent-cowboy-words-41: corvax-accent-cowboy-replacement-41
+    corvax-accent-cowboy-words-42: corvax-accent-cowboy-replacement-42
+    corvax-accent-cowboy-words-43: corvax-accent-cowboy-replacement-43
+    corvax-accent-cowboy-words-44: corvax-accent-cowboy-replacement-44
+    corvax-accent-cowboy-words-45: corvax-accent-cowboy-replacement-45
+    corvax-accent-cowboy-words-46: corvax-accent-cowboy-replacement-46
+    corvax-accent-cowboy-words-47: corvax-accent-cowboy-replacement-47
+    corvax-accent-cowboy-words-48: corvax-accent-cowboy-replacement-48
+    corvax-accent-cowboy-words-49: corvax-accent-cowboy-replacement-49
+    corvax-accent-cowboy-words-50: corvax-accent-cowboy-replacement-50
+    corvax-accent-cowboy-words-51: corvax-accent-cowboy-replacement-51
+    corvax-accent-cowboy-words-52: corvax-accent-cowboy-replacement-52
+    corvax-accent-cowboy-words-53: corvax-accent-cowboy-replacement-53
+    corvax-accent-cowboy-words-54: corvax-accent-cowboy-replacement-54
+    corvax-accent-cowboy-words-55: corvax-accent-cowboy-replacement-55
+    corvax-accent-cowboy-words-56: corvax-accent-cowboy-replacement-56
+    corvax-accent-cowboy-words-57: corvax-accent-cowboy-replacement-57
+
+- type: accent
+  id: southern
+  wordReplacements:
+    accent-southern-words-1: accent-southern-words-replace-1
 
 # For the chat sanitization system
 - type: accent
@@ -186,6 +335,83 @@
     liar-word-37-2: liar-word-replacement-37
     liar-word-38: liar-word-replacement-38
     liar-word-39: liar-word-replacement-39
+
+- type: accent
+  id: german
+  wordReplacements:
+    accent-german-words-1: accent-german-words-replace-1
+    accent-german-words-2: accent-german-words-replace-2
+    accent-german-words-3: accent-german-words-replace-3
+    accent-german-words-4: accent-german-words-replace-4
+    accent-german-words-5: accent-german-words-replace-5
+    accent-german-words-6: accent-german-words-replace-6
+    accent-german-words-7: accent-german-words-replace-7
+    accent-german-words-8: accent-german-words-replace-8
+    accent-german-words-9: accent-german-words-replace-9
+    accent-german-words-10: accent-german-words-replace-10
+    accent-german-words-10-2: accent-german-words-replace-10
+    accent-german-words-11: accent-german-words-replace-11
+    accent-german-words-12: accent-german-words-replace-12
+    accent-german-words-13: accent-german-words-replace-13
+    accent-german-words-14: accent-german-words-replace-14
+    accent-german-words-15: accent-german-words-replace-15
+    accent-german-words-16: accent-german-words-replace-16
+    accent-german-words-17: accent-german-words-replace-17
+    accent-german-words-18: accent-german-words-replace-18
+    accent-german-words-19: accent-german-words-replace-19
+    accent-german-words-20: accent-german-words-replace-20
+    accent-german-words-21: accent-german-words-replace-21
+    accent-german-words-22: accent-german-words-replace-22
+    accent-german-words-23: accent-german-words-replace-23
+    accent-german-words-24: accent-german-words-replace-24
+    accent-german-words-25: accent-german-words-replace-25
+    accent-german-words-26: accent-german-words-replace-26
+    accent-german-words-27: accent-german-words-replace-27
+    accent-german-words-28: accent-german-words-replace-28
+    accent-german-words-29: accent-german-words-replace-29
+    accent-german-words-30: accent-german-words-replace-30
+    accent-german-words-31: accent-german-words-replace-31
+    accent-german-words-32: accent-german-words-replace-32
+    accent-german-words-32-2: accent-german-words-replace-32
+    accent-german-words-33: accent-german-words-replace-33
+    accent-german-words-34: accent-german-words-replace-34
+    accent-german-words-35: accent-german-words-replace-35
+    accent-german-words-36: accent-german-words-replace-36
+    accent-german-words-37: accent-german-words-replace-37
+    accent-german-words-38: accent-german-words-replace-38
+    accent-german-words-38-2: accent-german-words-replace-38
+    accent-german-words-39: accent-german-words-replace-39
+    accent-german-words-40: accent-german-words-replace-40
+    accent-german-words-41: accent-german-words-replace-41
+    accent-german-words-42: accent-german-words-replace-42
+    accent-german-words-43: accent-german-words-replace-43
+    accent-german-words-44: accent-german-words-replace-44
+    accent-german-words-45: accent-german-words-replace-45
+    accent-german-words-46: accent-german-words-replace-46
+    accent-german-words-47: accent-german-words-replace-47
+    accent-german-words-47-2: accent-german-words-replace-47
+    accent-german-words-48: accent-german-words-replace-48
+    accent-german-words-49: accent-german-words-replace-49
+    accent-german-words-50: accent-german-words-replace-50
+    accent-german-words-51: accent-german-words-replace-51
+    accent-german-words-52: accent-german-words-replace-52
+    accent-german-words-53: accent-german-words-replace-53
+    accent-german-words-53-2: accent-german-words-replace-53
+    accent-german-words-54: accent-german-words-replace-54
+    accent-german-words-55: accent-german-words-replace-55
+    accent-german-words-56: accent-german-words-replace-56
+    accent-german-words-56-2: accent-german-words-replace-56
+    accent-german-words-56-3: accent-german-words-replace-56
+    accent-german-words-57: accent-german-words-replace-57
+    accent-german-words-57-2: accent-german-words-replace-57
+    accent-german-words-58: accent-german-words-replace-58
+    accent-german-words-59: accent-german-words-replace-59
+    accent-german-words-60: accent-german-words-replace-60
+    accent-german-words-61: accent-german-words-replace-61
+    accent-german-words-61-2: accent-german-words-replace-61
+    accent-german-words-61-3: accent-german-words-replace-61
+    accent-german-words-61-4: accent-german-words-replace-61
+    accent-german-words-62: accent-german-words-replace-62
 
 - type: accent
   id: russian

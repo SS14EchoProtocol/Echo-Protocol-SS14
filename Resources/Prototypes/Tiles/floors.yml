@@ -1266,6 +1266,7 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: SheetGlass1
+  transparent: true # ECHO-Tweak: Прозрачные тайлы
 
 - type: tile
   id: FloorRGlass
@@ -1281,6 +1282,7 @@
   footstepSounds:
     collection: FootstepTile
   itemDrop: SheetRGlass1
+  transparent: true # ECHO-Tweak: Прозрачные тайлы
 
 - type: tile
   id: FloorMetalFoam

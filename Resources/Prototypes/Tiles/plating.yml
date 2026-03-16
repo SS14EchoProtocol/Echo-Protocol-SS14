@@ -102,6 +102,7 @@
   itemDrop: PartRodMetal1
   heatCapacity: 10000
   mass: 200
+  transparent: true # ECHO-Tweak: Прозрачные тайлы
 
 - type: tile
   id: TrainLattice
@@ -110,3 +111,4 @@
   sprite: /Textures/Tiles/latticeTrain.png
   footstepSounds:
     collection: FootstepPlating
+  transparent: true # ECHO-Tweak: Прозрачные тайлы

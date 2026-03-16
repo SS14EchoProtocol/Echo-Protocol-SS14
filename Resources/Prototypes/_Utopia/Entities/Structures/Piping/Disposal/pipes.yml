@@ -1,0 +1,170 @@
+- type: entity
+  parent: DisposalPipe
+  id: UtopiaDisposalPipe
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalTagger
+  id: UtopiaDisposalTagger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalTrunk
+  id: UtopiaDisposalTrunk
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalRouter
+  id: UtopiaDisposalRouter
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalRouterFlipped
+  id: UtopiaDisposalRouterFlipped
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalJunction
+  id: UtopiaDisposalJunction
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalJunctionFlipped
+  id: UtopiaDisposalJunctionFlipped
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalYJunction
+  id: UtopiaDisposalYJunction
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalBend
+  id: UtopiaDisposalBend
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalSignalRouter
+  id: UtopiaDisposalSignalRouter
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  parent: DisposalSignalRouterFlipped
+  id: UtopiaDisposalSignalRouterFlipped
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Dynamic
+    canCollide: True
+  - type: Construction
+    deconstructionTarget: null
+
+- type: entity
+  id: UtopiaZDisposalPipeUp
+  parent: DisposalPipe
+  name: Z-level disposal pipe
+  description: A disposal pipe capable of transferring contents between Z-levels.
+  components:
+  - type: ZLevelEntityLink
+  - type: ZLevelTransmitter
+    allowUp: true
+    allowDown: false
+    range: 0.08
+  - type: ZDisposalPipe
+    zDirection: Up
+
+- type: entity
+  id: UtopiaZDisposalPipeDown
+  parent: DisposalPipe
+  name: Z-level disposal pipe
+  description: A disposal pipe capable of transferring contents between Z-levels.
+  components:
+  - type: ZLevelEntityLink
+  - type: ZLevelTransmitter
+    allowUp: false
+    allowDown: true
+    range: 0.08
+  - type: ZDisposalPipe
+    zDirection: Down

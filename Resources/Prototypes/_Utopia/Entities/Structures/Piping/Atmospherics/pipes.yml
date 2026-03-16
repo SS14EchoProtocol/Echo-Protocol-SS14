@@ -1,0 +1,47 @@
+# - type: entity
+#   parent: GasPipeBase
+#   id: UtopiaGasZPipeStraightUp
+#   name: UP
+#   suffix: Straight
+#   placement:
+#     mode: AlignAtmosPipeLayers
+#   components:
+#   - type: NodeContainer
+#     nodes:
+#       pipe:
+#         !type:PipeNode
+#         nodeGroupID: Pipe
+#         pipeDirection: Longitudinal
+#       zUp:
+#         !type:ZPipeNode
+#         nodeGroupID: Pipe
+#         zDirection: Up
+#   - type: ZPipe
+#   - type: ZLevelTransmitter
+#     allowUp: true
+#   - type: ZLevelEntityLink
+#   - type: AtmosDevice
+
+# - type: entity
+#   parent: GasPipeBase
+#   id: UtopiaGasZPipeStraightDown
+#   name: DOWN
+#   suffix: Straight
+#   placement:
+#     mode: AlignAtmosPipeLayers
+#   components:
+#   - type: NodeContainer
+#     nodes:
+#       pipe:
+#         !type:PipeNode
+#         nodeGroupID: Pipe
+#         pipeDirection: Longitudinal
+#       zDown:
+#         !type:ZPipeNode
+#         nodeGroupID: Pipe
+#         zDirection: Down
+#   - type: ZPipe
+#   - type: ZLevelTransmitter
+#     allowDown: true
+#   - type: ZLevelEntityLink
+#   - type: AtmosDevice
