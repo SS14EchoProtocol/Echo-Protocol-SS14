@@ -1,0 +1,101 @@
+- type: entity
+  parent: CableHV
+  id: EchoZCableHVUp
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+    - type: NodeContainer
+      nodes:
+        power: !type:ZCableNode
+          nodeGroupID: HVPower
+          zDirection: Up
+    - type: ZCable
+    - type: ZLevelTransmitter
+      range: 0.08
+      allowUp: true
+    - type: ZLevelEntityLink
+
+- type: entity
+  parent: CableHV
+  id: EchoZCableHVDown
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+    - type: NodeContainer
+      nodes:
+        power: !type:ZCableNode
+          nodeGroupID: HVPower
+          zDirection: Down
+    - type: ZCable
+    - type: ZLevelTransmitter
+      range: 0.08
+      allowDown: true
+    - type: ZLevelEntityLink
+
+- type: entity
+  parent: CableMV
+  id: EchoZCableMVUp
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+    - type: NodeContainer
+      nodes:
+        power: !type:ZCableNode
+          nodeGroupID: HVPower
+          zDirection: Up
+    - type: ZCable
+    - type: ZLevelTransmitter
+      range: 0.08
+      allowUp: true
+    - type: ZLevelEntityLink
+
+- type: entity
+  parent: CableMV
+  id: EchoZCableMVDown
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+    - type: NodeContainer
+      nodes:
+        power: !type:ZCableNode
+          nodeGroupID: HVPower
+          zDirection: Down
+    - type: ZCable
+    - type: ZLevelTransmitter
+      range: 0.08
+      allowDown: true
+    - type: ZLevelEntityLink
+
+- type: entity
+  parent: CableApcExtension
+  id: EchoZCableLVUp
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+    - type: NodeContainer
+      nodes:
+        power: !type:ZCableNode
+          nodeGroupID: HVPower
+          zDirection: Up
+    - type: ZCable
+    - type: ZLevelTransmitter
+      range: 0.08
+      allowUp: true
+    - type: ZLevelEntityLink
+
+- type: entity
+  parent: CableApcExtension
+  id: EchoZCableLVDown
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+    - type: NodeContainer
+      nodes:
+        power: !type:ZCableNode
+          nodeGroupID: HVPower
+          zDirection: Down
+    - type: ZCable
+    - type: ZLevelTransmitter
+      range: 0.08
+      allowDown: true
+    - type: ZLevelEntityLink

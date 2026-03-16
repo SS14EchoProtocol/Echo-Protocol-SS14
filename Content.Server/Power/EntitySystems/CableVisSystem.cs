@@ -40,7 +40,14 @@ namespace Content.Server.Power.EntitySystems
                     continue;
 
                 var otherTransform = Transform(reachable.Owner);
-                var otherTile = _map.TileIndicesFor((transform.GridUid.Value, grid), otherTransform.Coordinates);
+
+                // ECHO-Tweak-start
+                if (!TryComp<MapGridComponent>(otherTransform.GridUid, out var otherGrid))
+                    continue;
+
+                var otherTile = _map.TileIndicesFor((otherTransform.GridUid.Value, otherGrid), otherTransform.Coordinates);
+                // ECHO-Tweak-end
+
                 var diff = otherTile - tile;
 
                 mask |= diff switch

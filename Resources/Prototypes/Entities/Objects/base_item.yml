@@ -44,6 +44,7 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
+  - type: CEZPhysics  # ECHO-Tweak
 
 - type: entity
   name: "storage item"
