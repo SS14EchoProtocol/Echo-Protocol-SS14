@@ -20,6 +20,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Hands;
+using Content.Shared.Inventory.VirtualItem;
 
 namespace Content.Server.Hands.Systems
 {
@@ -127,6 +129,20 @@ namespace Content.Server.Hands.Systems
             if (_timing.CurTime < hands.NextThrowTime)
                 return false;
             hands.NextThrowTime = _timing.CurTime + hands.ThrowCooldown;
+
+            // ECHO-Tweak start : Grab
+            if (TryComp<VirtualItemComponent>(throwEnt, out var virtualItem))
+            {
+                var userEv = new BeforeVirtualItemThrownEvent(virtualItem.BlockingEntity, player, coordinates);
+                RaiseLocalEvent(player, userEv);
+
+                var targEv = new BeforeVirtualItemThrownEvent(virtualItem.BlockingEntity, player, coordinates);
+                RaiseLocalEvent(virtualItem.BlockingEntity, targEv);
+
+                if (userEv.Cancelled || targEv.Cancelled)
+                    return false;
+            }
+            // ECHO-Tweak end : Grab
 
             if (TryComp(throwEnt, out StackComponent? stack) && stack.Count > 1 && stack.ThrowIndividually)
             {
