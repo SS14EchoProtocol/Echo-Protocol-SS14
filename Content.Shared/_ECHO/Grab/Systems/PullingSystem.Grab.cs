@@ -37,6 +37,8 @@ namespace Content.Shared.Movement.Pulling.Systems;
 
 public abstract partial class PullingSystem
 {
+    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -238,7 +240,7 @@ public abstract partial class PullingSystem
         var stunTime = TimeSpan.FromSeconds(2);
 
         _audio.PlayPredicted(new SoundCollectionSpecifier("TrayHit"), uid, args.PuttingOnTable);
-        _damageable.TryChangeDamage(uid, new(_proto.Index<DamageTypePrototype>("Blunt"), 17));
+        _damageable.TryChangeDamage(uid, new(_proto.Index<DamageTypePrototype>(BluntDamageType), 17));
 
         _stun.TryUpdateParalyzeDuration(uid, stunTime);
         TryStopPull(uid, comp);
@@ -346,7 +348,7 @@ public abstract partial class PullingSystem
         if (TryComp<PhysicsComponent>(args.Target, out var physics) && physics.BodyType == BodyType.Static)
         {
             var stunTime = TimeSpan.FromSeconds(1);
-            _damageable.TryChangeDamage(uid, new(_proto.Index<DamageTypePrototype>("Blunt"), 8));
+            _damageable.TryChangeDamage(uid, new(_proto.Index<DamageTypePrototype>(BluntDamageType), 8));
             _stun.TryUpdateParalyzeDuration(uid, stunTime);
             _audio.PlayPredicted(new SoundCollectionSpecifier("MetalThud"), uid, uid);
         }
