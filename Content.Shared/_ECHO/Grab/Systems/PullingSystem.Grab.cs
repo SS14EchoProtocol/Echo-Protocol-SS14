@@ -477,7 +477,7 @@ public abstract partial class PullingSystem
                 return false;
         }
 
-        puller.Comp.NextStageChange = _timing.CurTime + TimeSpan.FromSeconds(1f);
+        puller.Comp.NextStageChange = _timing.CurTime + TimeSpan.FromSeconds(1f * ev.Modifier);
 
         puller.Comp.GrabbingDirection = 1;
         _modifierSystem.RefreshMovementSpeedModifiers(puller);

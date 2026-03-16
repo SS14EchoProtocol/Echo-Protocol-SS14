@@ -488,6 +488,6 @@ public enum LogType
     /// <summary>
     /// A player grabbed another player
     /// </summary>
-    Grab = 104,
+    Grab = 105,
     // ECHO-Tweak end : Grab
 }
