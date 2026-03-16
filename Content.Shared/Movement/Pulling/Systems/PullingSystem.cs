@@ -39,7 +39,7 @@ namespace Content.Shared.Movement.Pulling.Systems;
 /// <summary>
 /// Allows one entity to pull another behind them via a physics distance joint.
 /// </summary>
-public abstract partial class PullingSystem : EntitySystem // ECHO-Tweak : Grab
+public abstract partial class PullingSystem : EntitySystem // ECHO-Tweak : Grab (sealed -> abstract partial)
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
