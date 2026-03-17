@@ -180,6 +180,17 @@ namespace Content.Server.NodeContainer.Nodes
                 }
             }
 
+            if (nodeQuery.TryGetComponent(Owner, out var container))
+            {
+                foreach (var node in container.Nodes.Values)
+                {
+                    if (node == this)
+                        continue;
+                    if (node is PipeNode sibling && sibling.NodeGroupID == NodeGroupID)
+                        yield return sibling;
+                }
+            }
+
             if (!xform.Anchored || grid == null)
                 yield break;
 

@@ -40,3 +40,7 @@
 - type: metabolizerType
   id: Arachnid
   name: metabolizer-type-arachnid
+
+- type: metabolizerType
+  id: Dwarf
+  name: metabolizer-type-dwarf

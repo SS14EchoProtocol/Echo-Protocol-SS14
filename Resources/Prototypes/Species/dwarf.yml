@@ -1,0 +1,10 @@
+# ECHO-Tweak start
+- type: species
+  id: Dwarf
+  name: species-name-dwarf
+  roundStart: false #PE-Tweak
+  prototype: MobDwarf
+  dollPrototype: AppearanceDwarf
+  skinColoration: HumanToned
+# ECHO-Tweak end 
+# Добавил просто упоминание дворфов, чтобы тестер не ругался (да и локалка запускалась...)

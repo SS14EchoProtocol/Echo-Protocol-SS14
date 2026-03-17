@@ -27,6 +27,7 @@
         density: 15
         layer:
         - GhostImpassable
+  - type: CEZLevelGhostMover  # ECHO-Tweak
 
 # shared parent between aghosts, replay spectators and normal observers
 - type: entity
@@ -106,6 +107,10 @@
     radius: 6
     castShadows: false
     enabled: false
+  # ECHO-Tweak-start: better ghost movement
+  - type: CEZPhysics
+    ignoreHighGround: true
+  # ECHO-Tweak-end
 
 # proto for player ghosts specifically
 - type: entity
