@@ -432,7 +432,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         DirtyField(weaponUid, weapon, nameof(MeleeWeaponComponent.NextAttack));
 
         // Do this AFTER attack so it doesn't spam every tick
-        var ev = new AttemptMeleeEvent();
+        var ev = new AttemptMeleeEvent(user); // ECHO-Tweak : Grab
         RaiseLocalEvent(weaponUid, ref ev);
 
         if (weapon.SwingBeverage)
@@ -901,6 +901,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         }
 
         RaiseLocalEvent(target.Value, ref attemptEvent);
+        RaiseLocalEvent(user, ref attemptEvent); // ECHO-Tweak : Grab
 
         if (attemptEvent.Cancelled)
             return false;

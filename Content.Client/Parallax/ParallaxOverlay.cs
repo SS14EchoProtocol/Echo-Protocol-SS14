@@ -46,8 +46,8 @@ public sealed class ParallaxOverlay : Overlay
         else
             return !_zLevel.TryMapDown(args.MapUid, out _);
         //CrystallEdge end
-
-        return true;
+        
+        // return true; // ECHO-Tweak : commented line 
     }
 
     protected override void Draw(in OverlayDrawArgs args)
