@@ -14,7 +14,7 @@ namespace Content.Shared.Movement.Pulling.Components;
 /// Specifies an entity as being able to pull another entity with <see cref="PullableComponent"/>
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-[Access(typeof(PullingSystem), typeof(SharedHandsSystem))] // ECHO-Tweak : Grab
+[Access(typeof(PullingSystem))]
 public sealed partial class PullerComponent : Component
 {
     // My raiding guild
@@ -47,7 +47,7 @@ public sealed partial class PullerComponent : Component
 
     [DataField]
     // ECHO-Tweak start : Grab
-    public ProtoId<AlertPrototype> PullingAlert = "ECHOPulling"; 
+    public ProtoId<AlertPrototype> PullingAlert = "ECHOPulling";
 
     [ViewVariables]
     public GrabStage Stage

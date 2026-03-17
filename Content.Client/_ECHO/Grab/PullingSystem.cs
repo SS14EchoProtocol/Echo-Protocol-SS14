@@ -40,7 +40,7 @@ public sealed partial class ClientPullingSystem : PullingSystem
                             ("target", Identity.Entity(pullable, EntityManager))),
             Loc.GetString($"grab-increase-{targetStage.ToString().ToLower()}-popup-others",
                             ("target", Identity.Entity(pullable, EntityManager)),
-                            ("puller", Identity.Entity(pullable, EntityManager))),
+                            ("puller", Identity.Entity(puller, EntityManager))),
             pullable, puller, popupType);
         _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg"), pullable, puller);
         _color.RaiseEffect(Color.Yellow, new List<EntityUid>() { pullable.Owner }, Filter.Pvs(pullable.Owner));
