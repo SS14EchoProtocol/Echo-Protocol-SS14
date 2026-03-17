@@ -27,22 +27,37 @@ public sealed class SpawnPointSystem : EntitySystem
         var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
         var possiblePositions = new List<EntityCoordinates>();
 
+        // From now we for first checking if there is late join job spawners and after check if there is basic late join spawners if map don't contain job late join spawners
         while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
+            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin && spawnPoint.Job!=null)
             {
                 possiblePositions.Add(xform.Coordinates);
             }
+        }
+        // Check non job id late join spawners
+        if (possiblePositions.Count == 0)
+        {
+            while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
+                {
+                    if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
+                        continue;
 
-            if (_gameTicker.RunLevel != GameRunLevel.InRound &&
-                spawnPoint.SpawnType == SpawnPointType.Job &&
-                (args.Job == null || spawnPoint.Job == null || spawnPoint.Job == args.Job))
-            {
-                possiblePositions.Add(xform.Coordinates);
-            }
+                    if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
+                    {
+                        possiblePositions.Add(xform.Coordinates);
+                    }
+
+                    if (_gameTicker.RunLevel != GameRunLevel.InRound &&
+                        spawnPoint.SpawnType == SpawnPointType.Job &&
+                        (args.Job == null || spawnPoint.Job == null || spawnPoint.Job == args.Job))
+                    {
+                        possiblePositions.Add(xform.Coordinates);
+                    }
+                }
         }
 
         if (possiblePositions.Count == 0)
