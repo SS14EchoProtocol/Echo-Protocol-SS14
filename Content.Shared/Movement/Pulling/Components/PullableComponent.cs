@@ -1,6 +1,7 @@
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.DoAfter;
 
 namespace Content.Shared.Movement.Pulling.Components;
 
@@ -40,7 +41,17 @@ public sealed partial class PullableComponent : Component
     public bool PrevFixedRotation;
 
     [DataField]
-    public ProtoId<AlertPrototype> PulledAlert = "Pulled";
+    // ECHO-Tweak start : Grab
+    public ProtoId<AlertPrototype> PulledAlert = "ECHOPulled";
+
+    [ViewVariables]
+    public TimeSpan LastEscapeAttempt = TimeSpan.Zero;
+
+    [ViewVariables, AutoNetworkedField]
+    public int EscapeAttemptCounter = 1;
+
+    public DoAfterId? EscapeAttemptDoAfter;
+    // ECHO-Tweak end : Grab
 }
 
 public sealed partial class StopBeingPulledAlertEvent : BaseAlertEvent;

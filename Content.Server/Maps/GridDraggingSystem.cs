@@ -14,7 +14,7 @@ public sealed class GridDraggingSystem : SharedGridDraggingSystem
 {
     [Dependency] private readonly IConGroupController _admin = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    // [Dependency] private readonly SharedTransformSystem _transformSystem = default!; // ECHO-Tweak : commented line
     [Dependency] private readonly GridMotionLinkSystem _gridMotion = default!;   // Utopia tweak
 
     private readonly HashSet<ICommonSession> _draggers = new();

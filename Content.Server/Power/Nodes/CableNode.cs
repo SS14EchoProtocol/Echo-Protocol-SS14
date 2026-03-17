@@ -9,6 +9,7 @@ using Robust.Shared.Map.Components;
 namespace Content.Server.Power.Nodes
 {
     [DataDefinition]
+    [Virtual] // ECHO-Tweak 
     public partial class CableNode : Node // Utopia-Tweak : ZLevels
     {
         public override IEnumerable<Node> GetReachableNodes(TransformComponent xform,
