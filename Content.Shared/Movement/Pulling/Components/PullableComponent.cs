@@ -47,6 +47,7 @@ public sealed partial class PullableComponent : Component
     [ViewVariables]
     public TimeSpan LastEscapeAttempt = TimeSpan.Zero;
 
+    [ViewVariables, AutoNetworkedField]
     public int EscapeAttemptCounter = 1;
 
     public DoAfterId? EscapeAttemptDoAfter;
