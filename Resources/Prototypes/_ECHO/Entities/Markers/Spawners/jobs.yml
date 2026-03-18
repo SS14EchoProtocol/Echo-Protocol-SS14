@@ -1,7 +1,7 @@
 # ТАК, в кратце по спавнпоинту, SpawnPointLatejoinPassenger делает так, чтобы игрок появлялся за пассажира на спавнпоинте этом
 - type: entity
   name: latejoin job spawn point passenger
-  id: ECHOSpawnPointLatejoinPassenger # сделано для примера
+  id: EchoSpawnPointLatejoinPassenger # сделано для примера
   parent: SpawnPointJobBase
   suffix: LateJoin
   components:
