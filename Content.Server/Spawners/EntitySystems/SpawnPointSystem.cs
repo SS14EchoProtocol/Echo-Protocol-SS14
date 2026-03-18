@@ -27,21 +27,23 @@ public sealed class SpawnPointSystem : EntitySystem
         var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
         var possiblePositions = new List<EntityCoordinates>();
 
+        // ECHO-Tweak Start
         // From now we for first checking if there is late join job spawners and after check if there is basic late join spawners if map don't contain job late join spawners
         while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin && spawnPoint.Job!=null)
+            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin && spawnPoint.Job!=null)// ECHO-Tweak => && spawnPoint.Job!=null
             {
                 possiblePositions.Add(xform.Coordinates);
             }
         }
+        // ECHO-Tweak End
         // Check non job id late join spawners
         if (possiblePositions.Count == 0)
         {
-            var pointsLateJoin = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+            var pointsLateJoin = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();// ECHO-Tweak => pointsLateJoin
 
             while (pointsLateJoin.MoveNext(out var uid, out var spawnPoint, out var xform))
             {
@@ -61,7 +63,6 @@ public sealed class SpawnPointSystem : EntitySystem
                 }
             }
         }
-
         if (possiblePositions.Count == 0)
         {
             // Ok we've still not returned, but we need to put them /somewhere/.
