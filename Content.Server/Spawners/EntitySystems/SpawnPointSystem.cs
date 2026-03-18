@@ -41,23 +41,25 @@ public sealed class SpawnPointSystem : EntitySystem
         // Check non job id late join spawners
         if (possiblePositions.Count == 0)
         {
-            while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
+            var pointsLateJoin = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+
+            while (pointsLateJoin.MoveNext(out var uid, out var spawnPoint, out var xform))
+            {
+                if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
+                    continue;
+
+                if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
                 {
-                    if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
-                        continue;
-
-                    if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
-                    {
-                        possiblePositions.Add(xform.Coordinates);
-                    }
-
-                    if (_gameTicker.RunLevel != GameRunLevel.InRound &&
-                        spawnPoint.SpawnType == SpawnPointType.Job &&
-                        (args.Job == null || spawnPoint.Job == null || spawnPoint.Job == args.Job))
-                    {
-                        possiblePositions.Add(xform.Coordinates);
-                    }
+                    possiblePositions.Add(xform.Coordinates);
                 }
+
+                if (_gameTicker.RunLevel != GameRunLevel.InRound &&
+                    spawnPoint.SpawnType == SpawnPointType.Job &&
+                    (args.Job == null || spawnPoint.Job == null || spawnPoint.Job == args.Job))
+                {
+                    possiblePositions.Add(xform.Coordinates);
+                }
+            }
         }
 
         if (possiblePositions.Count == 0)
