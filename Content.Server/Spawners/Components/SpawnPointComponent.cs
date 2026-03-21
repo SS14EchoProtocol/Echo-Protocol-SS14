@@ -7,7 +7,7 @@ namespace Content.Server.Spawners.Components;
 // ECHO-Tweak Start
 [Serializable]
 [ImplicitDataDefinitionForInheritors]
-public partial class JobPrototypeWhitelistPack
+public sealed partial class JobPrototypeWhitelistPack
 {
     /// <summary>
     /// The job this spawn point is valid for.
