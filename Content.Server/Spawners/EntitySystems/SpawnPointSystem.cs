@@ -29,40 +29,30 @@ public sealed class SpawnPointSystem : EntitySystem
         var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
         var possiblePositions = new List<EntityCoordinates>();
 
-        // ECHO-Tweak Start
-        // From now we for first checking if there is late join job spawners and after check if there is basic late join spawners if map don't contain job late join spawners
         while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
-            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin && spawnPoint.WhitelistLate.Any(e => e.Job != null))// ECHO-Tweak => spawnPoint.WhitelistLate.Any(e => e.Job != null)
+
+            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
             {
-                if (spawnPoint.WhitelistLate.Any(e => e.Job == args.Job))
+                // ECHO-Tweak Start
+                if (spawnPoint.WhitelistLate.Count != 0 || spawnPoint.WhitelistLate.Any(e => e.Job == args.Job))
+                {
                     possiblePositions.Add(xform.Coordinates);
+                }
+                else
+                {
+                    possiblePositions.Add(xform.Coordinates);
+                }
+                // ECHO-Tweak End
             }
-        }
-        // ECHO-Tweak End
-        // Check non job id late join spawners
-        if (possiblePositions.Count == 0)
-        {
-            var pointsLateJoin = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();// ECHO-Tweak => pointsLateJoin
 
-            while (pointsLateJoin.MoveNext(out var uid, out var spawnPoint, out var xform))
+            if (_gameTicker.RunLevel != GameRunLevel.InRound &&
+                spawnPoint.SpawnType == SpawnPointType.Job &&
+                (args.Job == null || spawnPoint.Job == null || spawnPoint.Job == args.Job))
             {
-                if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
-                    continue;
-
-                if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
-                {
-                    possiblePositions.Add(xform.Coordinates);
-                }
-
-                if (_gameTicker.RunLevel != GameRunLevel.InRound &&
-                    spawnPoint.SpawnType == SpawnPointType.Job &&
-                    (args.Job == null || spawnPoint.WhitelistLate == null || spawnPoint.Job == args.Job))// ECHO-Tweak
-                {
-                    possiblePositions.Add(xform.Coordinates);
-                }
+                possiblePositions.Add(xform.Coordinates);
             }
         }
         if (possiblePositions.Count == 0)
