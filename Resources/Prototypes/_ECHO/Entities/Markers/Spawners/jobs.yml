@@ -15,7 +15,7 @@
       - job_id: Passenger # Обозначаем какая должность для этого спавнпоинта
 
 - type: entity
-  name: latejoin job spawn point passenger
+  name: latejoin job spawn point passenger and captain
   id: EchoSpawnPointLatejoinPassengerNCaptain
   parent: SpawnPointJobBase
   suffix: LateJoin

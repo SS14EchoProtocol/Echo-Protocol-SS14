@@ -4,4 +4,4 @@ ent-EchoSpawnPointLatejoinPassenger = пассажир
 
 ent-  id: EchoSpawnPointLatejoinPassengerNCaptain = пассажир и капитан
     .desc = { ent-SpawnPointJobBase.desc }
-    .suffix = { ent-EchoSpawnPointLatejoinPassenger.suffix }
+    .suffix = Позднее присоединение
