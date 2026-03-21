@@ -3,6 +3,8 @@ using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Content.Server.Spawners.EntitySystems;
 
@@ -33,10 +35,10 @@ public sealed class SpawnPointSystem : EntitySystem
         {
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
-
-            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin && spawnPoint.Job!=null)// ECHO-Tweak => && spawnPoint.Job!=null
+            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin && spawnPoint.WhitelistLate.Any(e => e.Job != null))// ECHO-Tweak => spawnPoint.WhitelistLate.Any(e => e.Job != null)
             {
-                possiblePositions.Add(xform.Coordinates);
+                if (spawnPoint.WhitelistLate.Any(e => e.Job == args.Job))
+                    possiblePositions.Add(xform.Coordinates);
             }
         }
         // ECHO-Tweak End
@@ -57,7 +59,7 @@ public sealed class SpawnPointSystem : EntitySystem
 
                 if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                     spawnPoint.SpawnType == SpawnPointType.Job &&
-                    (args.Job == null || spawnPoint.Job == null || spawnPoint.Job == args.Job))
+                    (args.Job == null || spawnPoint.WhitelistLate == null || spawnPoint.Job == args.Job))// ECHO-Tweak
                 {
                     possiblePositions.Add(xform.Coordinates);
                 }

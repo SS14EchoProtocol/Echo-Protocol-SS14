@@ -11,4 +11,5 @@
     - state: passenger # в Textures/Markers/jobs.rsi есть файл  passenger, применяется для обозначения работы
   - type: SpawnPoint
     spawn_type: LateJoin # Обозначаем тип, тут это мидраунд спавнпоинт
-    job_id: Passenger # Обозначаем какая должнать для этого спавнпоинта
+    whitelist:
+      - job_id: Passenger # Обозначаем какая должность для этого спавнпоинта
