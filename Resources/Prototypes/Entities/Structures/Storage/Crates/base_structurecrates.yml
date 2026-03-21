@@ -9,11 +9,11 @@
   - type: Transform
     noRot: true
   - type: Icon
-    sprite: Structures/Storage/Crates/generic.rsi
+    sprite: _ECHO/Structures/Storage/Crates/generic.rsi #ECHO-Tweak Было: Structures/Storage/Crates/generic.rsi -> Стало: _ECHO/Structures/Storage/Crates/generic.rsi
     state: icon
   - type: Sprite
     noRot: true
-    sprite: Structures/Storage/Crates/generic.rsi
+    sprite: _ECHO/Structures/Storage/Crates/generic.rsi #ECHO-Tweak Было: Structures/Storage/Crates/generic.rsi -> Стало: _ECHO/Structures/Storage/Crates/generic.rsi
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]
@@ -88,10 +88,10 @@
   - type: LockVisuals
   - type: AccessReader
   - type: Icon
-    sprite: Structures/Storage/Crates/secure.rsi
+    sprite: _ECHO/Structures/Storage/Crates/secure.rsi #Было: Structures/Storage/Crates/secure.rsi -> Стало: _ECHO/Structures/Storage/Crates/secure.rsi
     state: icon
   - type: Sprite
-    sprite: Structures/Storage/Crates/secure.rsi
+    sprite: _ECHO/Structures/Storage/Crates/secure.rsi #Было: Structures/Storage/Crates/secure.rsi -> Стало: _ECHO/Structures/Storage/Crates/secure.rsi
     layers:
     - state: base
     - state: closed

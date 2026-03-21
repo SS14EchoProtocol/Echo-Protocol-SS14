@@ -4,9 +4,9 @@
   name: crate
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/generic.rsi
+    sprite: _ECHO/Structures/Storage/Crates/generic.rsi #ECHO-Tweak Было: Structures/Storage/Crates/generic.rsi -> Стало: _ECHO/Structures/Storage/Crates/generic.rsi
   - type: Sprite
-    sprite: Structures/Storage/Crates/generic.rsi
+    sprite: _ECHO/Structures/Storage/Crates/generic.rsi #ECHO-Tweak Было: Structures/Storage/Crates/generic.rsi -> Стало: _ECHO/Structures/Storage/Crates/generic.rsi
   - type: Reflect
     reflects:
     - Energy
@@ -210,9 +210,9 @@
   name: secure engineering crate
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/engicrate_secure.rsi
+    sprite: Structures/Storage/Crates/engicrate_secure.rsi #ECHO-Tweak Было: Structures/Storage/Crates/engicrate_secure.rsi -> Стало: _ECHO/Structures/Storage/Crates/engicrate_secure.rsi
   - type: Sprite
-    sprite: Structures/Storage/Crates/engicrate_secure.rsi
+    sprite: Structures/Storage/Crates/engicrate_secure.rsi #ECHO-Tweak Было: Structures/Storage/Crates/engicrate_secure.rsi -> Стало: _ECHO/Structures/Storage/Crates/engicrate_secure.rsi
   - type: AccessReader
     access: [["Engineering"]]
 
@@ -280,9 +280,9 @@
   name: secure crate
   components:
     - type: Icon
-      sprite: Structures/Storage/Crates/secure.rsi
+      sprite: _ECHO/Structures/Storage/Crates/secure.rsi #ECHO-Tweak Было: Structures/Storage/Crates/secure.rsi -> Стало: _ECHO/Structures/Storage/Crates/secure.rsi
     - type: Sprite
-      sprite: Structures/Storage/Crates/secure.rsi
+      sprite: _ECHO/Structures/Storage/Crates/secure.rsi
 
 - type: entity
   parent: CrateBaseSecure
