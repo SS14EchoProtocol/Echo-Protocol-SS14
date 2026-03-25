@@ -1,0 +1,299 @@
+
+- type: entity
+  parent: BaseBarrelChem
+  id: EchoBarrelChemWater
+  suffix: Water
+  name: water barrel
+  description: A barrel filled with water.
+  components:
+  - type: Sprite
+    state: waterbarrel
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Water
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: EchoBarrelChemWelding
+  suffix: Welding
+  name: welding fuel barrel
+  description: A barrel filled with welding fuel.
+  components:
+  - type: Sprite
+    state: weldbarrel
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 10
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: EchoBarrelWooden
+  name: wooden barrel
+  description: A simple wooden barrel.
+  components:
+  - type: Sprite
+    state: woodenbarrel
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 2000
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: EchoBarrelIED
+  name: IED barrel
+  description: A suspicious barrel with welding fuel. It looks dangerous.
+  components:
+  - type: Sprite
+    state: iedweldbarrel
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 20
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChem
+  id: BaseBarrelChemOpen
+  abstract: true
+  name: open barrel
+  description: An open barrel that can be filled with liquids.
+  components:
+  - type: Appearance
+  - type: Openable
+    opened: true
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: "fill-"
+    solutionName: tank
+  - type: Edible
+    solution: tank
+    utensil: None
+  - type: MixableSolution
+    solution: tank
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: DrawableSolution
+    solution: tank
+  - type: RefillableSolution
+    solution: tank
+  - type: DrainableSolution
+    solution: tank
+  - type: Spillable
+    solution: tank
+  - type: ExaminableSolution
+    solution: tank
+  - type: ReagentTank
+
+- type: entity
+  parent: BaseBarrelChemOpen
+  id: EchoBarrelChemWaterOpen
+  name: open water barrel
+  description: An open barrel that can be filled with liquids.
+  components:
+  - type: Sprite
+    state: waterbarrel-open
+    noRot: true
+    layers:
+    - state: waterbarrel-open
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Water
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChemOpen
+  id: EchoBarrelChemWeldingOpen
+  name: open welding fuel barrel
+  description: An open barrel that can be filled with welding fuel.
+  components:
+  - type: Sprite
+    state: weldbarrel-open
+    noRot: true
+    layers:
+    - state: weldbarrel-open
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 10
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChemOpen
+  id: EchoBarrelChemSilicateOpen
+  name: open silicate barrel
+  description: An open barrel that can be filled with silicate or lubricant.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 800
+  - type: Sprite
+    state: silicatebarrel-open
+    noRot: true
+    layers:
+    - state: silicatebarrel-open
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+
+- type: entity
+  parent: BaseBarrelChemOpen
+  id: EchoBarrelWoodenOpen
+  name: open wooden barrel
+  description: An open wooden barrel that can be filled with liquids.
+  components:
+  - type: Sprite
+    state: woodenbarrel-open
+    noRot: true
+    layers:
+    - state: woodenbarrel-open
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 2000
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Water
+          Quantity: 500
+
+- type: entity
+  parent: BaseBarrelChemOpen
+  id: EchoBarrelMetalOpen
+  name: open metal barrel
+  description: An open metal barrel that can be filled with chemicals.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 800
+  - type: Sprite 
+    state: metalbarrel-open
+    noRot: true
+    layers:
+    - state: metalbarrel-open
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+
+- type: entity
+  parent: [ BaseBarrelChemRadioactive, BaseBarrelChemOpen ]
+  id: EchoBarrelRadOpen
+  name: open radioactive barrel
+  description: An open radioactive barrel that can be filled with dangerous materials.
+  components:
+  - type: Sprite
+    state: radbarrel-open
+    noRot: true
+    layers:
+    - state: radbarrel-open
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-1
+      visible: false
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+        reagents:
+        - ReagentId: Radium
+          Quantity: 500
+
+- type: entity
+  parent: EchoBarrelChemWaterOpen
+  id: EchoBarrelChemWaterOpenEmpty
+  name: open water barrel (empty)
+  description: An empty open barrel for liquids.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 800
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+
+- type: entity
+  parent: EchoBarrelChemWeldingOpen
+  id: EchoBarrelChemWeldingOpenEmpty
+  name: open welding fuel barrel (empty)
+  description: An empty open barrel for welding fuel.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 800
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+
+- type: entity
+  parent: EchoBarrelWoodenOpen
+  id: EchoBarrelWoodenOpenEmpty
+  name: open wooden barrel (empty)
+  description: An empty open wooden barrel.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 800
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
+
+- type: entity
+  parent: EchoBarrelRadOpen
+  id: EchoBarrelRadOpenEmpty
+  name: open radioactive barrel (empty)
+  description: An empty open radioactive barrel.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 800
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 500
