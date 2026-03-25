@@ -55,6 +55,15 @@
   id: SheetGlass
   suffix: Full
   components:
+  #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/glass-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/glass.rsi}
+  #ECHO-Tweak-End
   - type: PhysicalComposition
     materialComposition:
       Glass: 100
@@ -66,6 +75,7 @@
     - glass_2
     - glass_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/glass.rsi #ECHO-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/glass.rsi
     state: glass_3
     layers:
     - state: glass_3
@@ -116,6 +126,15 @@
   description: A reinforced sheet of glass.
   suffix: Full
   components:
+  #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/glass-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/glass.rsi}
+  #ECHO-Tweak-End
   - type: PhysicalComposition
     materialComposition:
       ReinforcedGlass: 100
@@ -127,6 +146,7 @@
     - rglass_2
     - rglass_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/glass.rsi #ECHO-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/glass.rsi
     state: rglass_3
     layers:
     - state: rglass_3
@@ -196,6 +216,15 @@
   description: A sheet of translucent plasma.
   suffix: Full
   components:
+  #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/glass-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/glass.rsi}
+  #ECHO-Tweak-End
   - type: PhysicalComposition
     materialComposition:
       PlasmaGlass: 100
@@ -207,6 +236,7 @@
     - pglass_2
     - pglass_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/glass.rsi #ECHO-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/glass.rsi
     state: pglass_3
     layers:
     - state: pglass_3
@@ -271,6 +301,15 @@
   description: A reinforced sheet of translucent plasma.
   suffix: Full
   components:
+  #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/glass-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/glass.rsi}
+  #ECHO-Tweak-End
   - type: PhysicalComposition
     materialComposition:
       ReinforcedPlasmaGlass: 100
@@ -282,6 +321,7 @@
     - rpglass_2
     - rpglass_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/glass.rsi #ECHO-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/glass.rsi
     state: rpglass_3
     layers:
     - state: rpglass_3
@@ -326,6 +366,15 @@
   description: A sheet of uranium glass.
   suffix: Full
   components:
+  #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/glass-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/glass.rsi}
+  #ECHO-Tweak-End
   - type: PhysicalComposition
     materialComposition:
       UraniumGlass: 100
@@ -337,6 +386,7 @@
     - uglass_2
     - uglass_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/glass.rsi #ECHO-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/glass.rsi
     state: uglass_3
     layers:
     - state: uglass_3
@@ -400,6 +450,15 @@
   name: reinforced uranium glass
   description: A reinforced sheet of uranium.
   components:
+  #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
+  - type: ContainerSprite
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        base:
+          True: {sprite: _ECHO/Objects/Materials/Sheets/glass-storage.rsi}
+          False: {sprite: _ECHO/Objects/Materials/Sheets/glass.rsi}
+  #ECHO-Tweak-End
   - type: PhysicalComposition
     materialComposition:
       ReinforcedUraniumGlass: 100
@@ -411,6 +470,7 @@
     - ruglass_2
     - ruglass_3
   - type: Sprite
+    sprite: _ECHO/Objects/Materials/Sheets/glass.rsi #ECHO-Tweak: ADD sprite: _ECHO/Objects/Materials/Sheets/glass.rsi
     state: ruglass_3
     layers:
     - state: ruglass_3
