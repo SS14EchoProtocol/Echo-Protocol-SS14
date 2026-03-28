@@ -1,0 +1,55 @@
+- type: entity
+  parent: CrateGeneric
+  id: EchoCrateWooden
+  name: wooden crate
+  description: A wooden crate filled with hay.
+  components:
+  - type: Icon
+    sprite: _ECHO/Structures/Storage/Crates/wooden.rsi
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Crates/wooden.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: CrateBaseSecure
+  id: EchoCrateWoodenSecure
+  name: secure wooden crate
+  description: Secured wooden crate filled with hay.
+  components:
+  - type: Icon
+    sprite: _ECHO/Structures/Storage/Crates/wooden_secure.rsi
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Crates/wooden_secure.rsi
+  - type: AccessReader
+    access: [["Service", "Hydroponics"]]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
