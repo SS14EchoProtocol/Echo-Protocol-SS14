@@ -21,7 +21,7 @@ public sealed partial class WeldingSparksComponent : Component
     /// indexed by the <see cref="DoAfterId"/> of the DoAfter that triggered them.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
-    public Dictionary<DoAfterId, EntityUid> SpawnedEffects = [];
+    public Dictionary<ushort, EntityUid> SpawnedEffects = [];
 
     /// <summary>
     /// The last recorded click location by a user of the tool.

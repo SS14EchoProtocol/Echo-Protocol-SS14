@@ -1,18 +1,25 @@
+using System.Numerics;
 using Content.Shared._ECHO.Tools;
+using Content.Shared.DoAfter;
 using Content.Shared.Tools.Components;
+using Content.Shared.Tools.Systems;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Animations;
-using System.Numerics;
+using Robust.Shared.Map;
+using Robust.Shared.Player;
+using Robust.Shared.Spawners;
+using Robust.Shared.Timing;
 
 namespace Content.Client._ECHO.Tools;
 
-public sealed class WeldingSparksAnimationSystem : EntitySystem
+public sealed class WeldingSparksSystem : SharedWeldingSparksSystem
 {
     [Dependency] private readonly AnimationPlayerSystem _animation = default!;
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private const string ANIM_KEY = "WeldAnim";
 
@@ -20,18 +27,43 @@ public sealed class WeldingSparksAnimationSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeNetworkEvent<SpawnedWeldingSparksEvent>(OnSpawnedWeldingSparks);
+        SubscribeNetworkEvent<SpawnWeldingSparksEvent>(OnSpawnWeldingSparks);
+        SubscribeNetworkEvent<StopWeldingSparksEvent>(OnStopWeldingSparks);
     }
 
-    private void OnSpawnedWeldingSparks(SpawnedWeldingSparksEvent ev)
+    private void OnSpawnWeldingSparks(SpawnWeldingSparksEvent ev)
     {
-        var targetEnt = GetEntity(ev.TargetEnt);
-        if (!TryComp<WeldableComponent>(targetEnt, out var weldableComp) || !TryComp<WeldingSparksAnimationComponent>(targetEnt, out var sparksAnim))
+        if (!TryGetEntity(ev.TargetEnt, out var targetEnt) ||
+            !TryGetEntity(ev.Tool, out var tool))
             return;
 
-        if (!TryGetEntity(ev.SparksEnt, out var sparksEnt))
-            // `targetEnt` is validated with the `TryComp()` calls, so that can just use `GetEntity()`.
+        Spawn(tool.Value, targetEnt.Value, GetCoordinates(ev.TargetPos), ev.DoAfterIdx, ev.Duration);
+    }
+
+    private void OnStopWeldingSparks(StopWeldingSparksEvent ev)
+    {
+        if (!TryGetEntity(ev.Tool, out var tool))
             return;
+
+        if (!TryComp<WeldingSparksComponent>(tool, out var sparks))
+            return;
+
+        StopEffect((tool.Value, sparks), tool.Value, ev.DoAfterIdx);
+    }
+
+    private void Spawn(EntityUid tool, EntityUid targetEnt, EntityCoordinates targetPos, ushort doAfterIdx, TimeSpan duration)
+    {
+        if (!TryComp<WeldingSparksComponent>(tool, out var sparks))
+            return;
+
+        if (!TryComp<WeldableComponent>(targetEnt, out var weldableComp) ||
+            !TryComp<WeldingSparksAnimationComponent>(targetEnt, out var sparksAnim))
+            return;
+
+        var sparksEnt = Spawn(sparks.EffectProto, targetPos);
+        sparks.SpawnedEffects.Add(doAfterIdx, sparksEnt);
+
+        EnsureComp<TimedDespawnComponent>(sparksEnt).Lifetime = (float)duration.TotalSeconds + .25f;
 
         var animationPlayer = EnsureComp<AnimationPlayerComponent>(targetEnt);
         if (_animation.HasRunningAnimation(targetEnt, animationPlayer, ANIM_KEY))
@@ -41,7 +73,7 @@ public sealed class WeldingSparksAnimationSystem : EntitySystem
 
         var animation = new Animation()
         {
-            Length = ev.Duration,
+            Length = duration,
             AnimationTracks =
             {
                 new AnimationTrackComponentProperty()
@@ -52,13 +84,13 @@ public sealed class WeldingSparksAnimationSystem : EntitySystem
                     KeyFrames =
                     {
                         new AnimationTrackProperty.KeyFrame(startOffset, 0f),
-                        new AnimationTrackProperty.KeyFrame(endOffset, (float) ev.Duration.TotalSeconds),
+                        new AnimationTrackProperty.KeyFrame(endOffset, (float) duration.TotalSeconds),
                     }
                 }
             }
         };
 
-        _animation.Play(sparksEnt.Value, animation, ANIM_KEY);
+        _animation.Play(sparksEnt, animation, ANIM_KEY);
     }
 
     private (Vector2, Vector2) GetOffsets(Entity<WeldingSparksAnimationComponent> ent, bool isWelded)
@@ -95,5 +127,22 @@ public sealed class WeldingSparksAnimationSystem : EntitySystem
         {
             return (end, start);
         }
+    }
+
+    protected override void DoEffect(Entity<WeldingSparksComponent> ent, EntityUid user, EntityUid? target, TimeSpan duration, DoAfterId id, EntityCoordinates spawnLoc)
+    {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        if (!target.HasValue)
+            return;
+
+        Spawn(ent.Owner, target.Value, spawnLoc, id.Index, duration);
+    }
+
+    protected override void StopEffect(Entity<WeldingSparksComponent> ent, EntityUid user, ushort doAfterIdx)
+    {
+        if (ent.Comp.SpawnedEffects.TryGetValue(doAfterIdx, out var effect))
+            QueueDel(effect);
     }
 }

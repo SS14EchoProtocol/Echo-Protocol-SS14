@@ -32,4 +32,11 @@ public sealed partial class EchoCCVars
     */
     public static readonly CVarDef<bool> OfferModeIndicatorsPointShow =
         CVarDef.Create("hud.offer_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    /**
+     * UI
+     */
+
+    public static readonly CVarDef<bool> EntityMenuIcons =
+        CVarDef.Create("ui.entity_menu_icons", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

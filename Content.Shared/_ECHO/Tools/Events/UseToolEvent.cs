@@ -1,8 +1,11 @@
+using Content.Shared.DoAfter;
+
 namespace Content.Shared._ECHO.Tools;
 
 /// <summary>
 /// Event raised on a tool in `SharedToolSystem.UseTool()` if its DoAfter timer successfully started.
 /// </summary>
+[ByRefEvent]
 public readonly record struct UseToolEvent
 {
     /// <summary>
@@ -21,18 +24,18 @@ public readonly record struct UseToolEvent
     /// <remarks>
     /// Ideally this would just be a <c>DoAfterIdx</c> instance and wouldn't need converting back, but this is in '.Common' so oh well.
     /// </remarks>
-    public readonly ushort DoAfterIdx;
+    public readonly DoAfterId DoAfterId;
 
     /// <summary>
     /// Duration of the DoAfter timer.
     /// </summary>
     public readonly TimeSpan DoAfterLength;
 
-    public UseToolEvent(EntityUid user, EntityUid? target, ushort doAfterIdx, TimeSpan doAfterLength)
+    public UseToolEvent(EntityUid user, EntityUid? target, DoAfterId doAfterId, TimeSpan doAfterLength)
     {
         User = user;
         Target = target;
-        DoAfterIdx = doAfterIdx;
+        DoAfterId = doAfterId;
         DoAfterLength = doAfterLength;
     }
 }

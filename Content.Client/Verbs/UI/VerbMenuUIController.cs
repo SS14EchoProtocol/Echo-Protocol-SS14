@@ -196,6 +196,9 @@ namespace Content.Client.Verbs.UI
                     IconVisible = drawIcons,
                     TextVisible = !category.IconsOnly
                 };
+
+                subElement.HoverLabel.Visible = !category.IconsOnly;    // ECHO-Tweak
+
                 _context.AddElement(element.SubMenu, subElement);
             }
 

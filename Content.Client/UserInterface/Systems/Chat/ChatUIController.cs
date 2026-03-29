@@ -274,11 +274,11 @@ public sealed partial class ChatUIController : UIController
         Color color;
         if (panel.PanelOverride is StyleBoxFlat styleBoxFlat)
             color = styleBoxFlat.BackgroundColor;
-        else if (panel.TryGetStyleProperty<StyleBox>(PanelContainer.StylePropertyPanel, out var style)
-                 && style is StyleBoxFlat propStyleBoxFlat)
-            color = propStyleBoxFlat.BackgroundColor;
+        // else if (panel.TryGetStyleProperty<StyleBox>(PanelContainer.StylePropertyPanel, out var style)
+        //          && style is StyleBoxFlat propStyleBoxFlat)
+        //     color = propStyleBoxFlat.BackgroundColor;
         else
-            color = Color.FromHex("#25252ADD");
+            color = Color.FromHex("#2b2b2bdd");
 
         panel.PanelOverride = new StyleBoxFlat
         {

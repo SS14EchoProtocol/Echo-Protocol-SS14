@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._ECHO.UserInterface.EntitySpawning;
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Sandbox;
@@ -35,7 +36,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     private SandboxWindow? _window;
 
     // TODO hud refactor cache
-    private EntitySpawningUIController EntitySpawningController => UIManager.GetUIController<EntitySpawningUIController>();
+    private EchoEntitySpawningUIController EntitySpawningController => UIManager.GetUIController<EchoEntitySpawningUIController>(); // ECHO-Tweak: замена на наш изменённый ЮИ
     private TileSpawningUIController TileSpawningController => UIManager.GetUIController<TileSpawningUIController>();
     private DecalPlacerUIController DecalPlacerController => UIManager.GetUIController<DecalPlacerUIController>();
 

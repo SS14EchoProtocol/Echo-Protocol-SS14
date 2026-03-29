@@ -6,7 +6,7 @@
   description: A small metal drum. How tropical.
   components:
   - type: Sprite
-    sprite: Structures/Storage/barrels.rsi
+    sprite: _ECHO/Structures/Storage/barrels.rsi # ECHO-TWEAK Было: Structures/Storage/barrels.rsi ==> Стало: _ECHO/Structures/Storage/barrels.rsi
     state: metalbarrel
     noRot: true
   - type: Fixtures

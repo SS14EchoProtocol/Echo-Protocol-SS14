@@ -25,11 +25,15 @@ namespace Content.Client.Stylesheets
         {
             var ds = display ? "Display" : "";
             var sv = variation.StartsWith("Bold", StringComparison.Ordinal) ? "Bold" : "Regular";
+
             return resCache.GetFont
             (
                 // Ew, but ok
                 new[]
                 {
+                    // ECHO-Tweak: замена шрифтов
+                    $"/Fonts/RobotoMono/RobotoMono-{variation}.ttf",
+                    "/Fonts/RobotoMono/RobotoMono-Regular.ttf",
                     $"/Fonts/NotoSans{ds}/NotoSans{ds}-{variation}.ttf",
                     $"/Fonts/NotoSans/NotoSansSymbols-{sv}.ttf",
                     "/Fonts/NotoSans/NotoSansSymbols2-Regular.ttf"

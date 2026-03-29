@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Client.Parallax.Managers;
 using Content.Client.Viewport;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
+using Content.Shared._ECHO.Parallax;
 using Content.Shared.CCVar;
 using Content.Shared.Parallax.Biomes;
 using Robust.Client.Graphics;
@@ -38,6 +39,10 @@ public sealed class ParallaxOverlay : Overlay
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
         if (args.MapId == MapId.Nullspace || _entManager.HasComponent<BiomeComponent>(_mapSystem.GetMapOrInvalid(args.MapId)))
+            return false;
+
+        // ECHO-Tweak: Parallax blocking component
+        if (_entManager.HasComponent<BlockParallaxComponent>(_mapSystem.GetMapOrInvalid(args.MapId)))
             return false;
 
         //CrystallEdge draw parallax only for lowest zlevel

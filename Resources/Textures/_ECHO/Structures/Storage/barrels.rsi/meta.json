@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "taken from Adventure Time at commit 46cf372396cbedc7aacb91233f7cc147e3a18e82",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "waterbarrel"
+    },
+    {
+      "name": "weldbarrel"
+    },
+    {
+      "name": "silicatebarrel"
+    },
+    {
+      "name": "woodenbarrel"
+    },
+    {
+      "name": "metalbarrel"
+    },
+    {
+      "name": "iedweldbarrel"
+    },
+    {
+      "name": "radbarrel"
+    },
+    {
+      "name": "waterbarrel-open"
+    },
+    {
+      "name": "weldbarrel-open"
+    },
+    {
+      "name": "silicatebarrel-open"
+    },
+    {
+      "name": "woodenbarrel-open"
+    },
+    {
+      "name": "metalbarrel-open"
+    },
+    {
+      "name": "radbarrel-open"
+    },
+    {
+      "name": "fill-1"
+    },
+    {
+      "name": "fill-2"
+    },
+    {
+      "name": "fill-3"
+    },
+    {
+      "name": "fill-4"
+    },
+    {
+      "name": "fill-5"
+    }
+  ]
+}
