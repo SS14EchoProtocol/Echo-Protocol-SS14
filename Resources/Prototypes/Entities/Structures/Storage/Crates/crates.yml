@@ -359,8 +359,8 @@
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
     - state: paper
-      sprite: Structures/Storage/Crates/labels.rsi
-      offset: "-0.25,0.625"
+      sprite: _ECHO/Structures/Storage/Crates/labels.rsi #ECHO-Tweak Было: Structures/Storage/Crates/labels.rsi  -> Стало: _ECHO/Structures/Storage/Crates/labels.rsi
+      offset: "-0.25,0.225"
       map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _ECHO/Structures/Storage/Crates/livestock.rsi #ECHO-Tweak Было: Structures/Storage/Crates/livestock.rsi -> Стало: _ECHO/Structures/Storage/Crates/livestock.rsi
