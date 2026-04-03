@@ -53,3 +53,15 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: CrateBaseSecure
+  id: EchoCrateMiningSecure
+  name: secure weapon crate
+  components:
+  - type: Icon
+    sprite: _ECHO/Structures/Storage/Crates/miningseccrate.rsi
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Crates/miningseccrate.rsi
+  - type: AccessReader
+    access: [["Salvage"]]
