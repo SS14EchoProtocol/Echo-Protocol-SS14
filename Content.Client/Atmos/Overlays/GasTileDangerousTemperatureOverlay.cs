@@ -26,6 +26,8 @@ public sealed class GasTileDangerousTemperatureOverlay : Overlay
     private readonly SharedTransformSystem _xformSys;
     private EntityQuery<GasTileOverlayComponent> _overlayQuery;
 
+    private readonly OverlayResourceCache<CachedResources> _resources = new();
+    private List<Entity<MapGridComponent>> _grids = new();
 
     // Cache used to transform ThermalByte into Color for overlay
     private readonly Color[] _colorCache = new Color[256];
@@ -209,8 +211,6 @@ public sealed class GasTileDangerousTemperatureOverlay : Overlay
                             if (gasColor.A <= 0f)
                                 continue;
 
-                            anyGasDrawn = true;
-
                             drawHandle.DrawRect(
                                 Box2.CenteredAround(tilePosition + gridTileCenterVec, gridTileSizeVec),
                                 gasColor
@@ -222,13 +222,6 @@ public sealed class GasTileDangerousTemperatureOverlay : Overlay
             new Color(0, 0, 0, 0));
 
         drawHandle.SetTransform(Matrix3x2.Identity);
-
-        if (!anyGasDrawn)
-        {
-            _temperatureTarget?.Dispose();
-            _temperatureTarget = null;
-            return false;
-        }
 
         return true;
     }
