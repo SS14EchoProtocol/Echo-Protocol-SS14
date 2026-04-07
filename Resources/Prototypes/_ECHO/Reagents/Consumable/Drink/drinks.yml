@@ -1,0 +1,178 @@
+#Коктейли от Кекса/Стычинского
+
+- type: reagent
+  id: EchoSummerShade
+  name: summer-shade-name
+  parent: BaseDrink
+  desc: summer-shade-desc
+  physicalDesc: reagent-physical-desc-refreshing
+  flavor: Echo_summershade
+  color: "#FF2B2B"
+  recognizable: false
+  metamorphicSprite:
+    sprite: _ECHO/Objects/Consumable/Drinks/summershade.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 5
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          min: 290
+        amount: -2500
+
+- type: reagent
+  id: EchoWinterSun
+  name: winter-sun-name
+  parent: EchoSummerShade
+  desc: winter-sun-desc
+  physicalDesc: reagent-physical-desc-milky
+  flavor: Echo_wintersun
+  color: "#edccab"
+  recognizable: false
+  metamorphicSprite:
+    sprite: _ECHO/Objects/Consumable/Drinks/wintersun.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          min: 320
+        amount: 2500
+
+- type: reagent
+  id: EchoHungoverAngel
+  name: hungover-angel-name
+  parent: EchoSummerShade
+  desc: hungover-angel-desc
+  physicalDesc: reagent-physical-desc-exhilarating
+  flavor: Echo_hungoverangel
+  color: "#FBEC5D"
+  recognizable: false
+  metamorphicSprite:
+    sprite: _ECHO/Objects/Consumable/Drinks/hungoverangel.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -1
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrunk
+        type: Remove
+        time: 2
+
+- type: reagent
+  id: EchoCitrusBalance
+  name: citrus-balance-name
+  parent: EchoSummerShade
+  desc: citrus-balance-desc
+  physicalDesc: reagent-physical-desc-citric
+  flavor: Echo_citrusbalance
+  color: "#F8D568"
+  recognizable: false
+  metamorphicSprite:
+    sprite: _ECHO/Objects/Consumable/Drinks/citrucbalance.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+
+- type: reagent
+  id: EchoDobryiDrink
+  name: dobryi-drink-name
+  parent: EchoSummerShade
+  desc: dobryi-drink-desc
+  physicalDesc: reagent-physical-desc-sour
+  flavor: Echo_dobtyidrink
+  color: "#955F20"
+  recognizable: false
+  metamorphicSprite:
+    sprite: _ECHO/Objects/Consumable/Drinks/dobryi.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: EchoMilkEclipse
+  name: milk-eclipse-name
+  parent: EchoSummerShade
+  desc: milk-eclipse-desc
+  physicalDesc: reagent-physical-desc-refreshing
+  flavor: Echo_milkeclipse
+  color: "#D8DEBA"
+  recognizable: false
+  metamorphicSprite:
+    sprite: _ECHO/Objects/Consumable/Drinks/milkeclipse.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          min: 290
+        amount: -2500
+
+- type: reagent
+  id: EchoArcticExplosion
+  name: arctic-explosion-name
+  parent: EchoSummerShade
+  desc: arctic-explosion-desc
+  physicalDesc: reagent-physical-desc-refreshing
+  flavor: Echo_arcticexlposion
+  color: "#c5e3e2"
+  recognizable: false
+  metamorphicSprite:
+    sprite: _ECHO/Objects/Consumable/Drinks/arcticexplosion.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+      - !type:AdjustTemperature
+        conditions:
+        - !type:TemperatureCondition
+          min: 285
+        amount: -2500

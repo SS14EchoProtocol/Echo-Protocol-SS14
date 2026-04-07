@@ -1,10 +1,12 @@
 using System.Numerics;
 using Content.Client.ContextMenu.UI;
+using Content.Shared.CCVar;
 using Content.Shared.Verbs;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.Utility;
+using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
 using Robust.Shared.Maths;
@@ -56,6 +58,16 @@ namespace Content.Client.Verbs.UI
 
             var entManager = IoCManager.Resolve<IEntityManager>();
 
+            // ECHO-Tweak-start: скрытые иконки
+            var cfg = IoCManager.Resolve<IConfigurationManager>();
+
+            if (!cfg.GetCVar(EchoCCVars.EntityMenuIcons) && (verb.Category == null || !verb.Category.IconsOnly))
+            {
+                Icon.Visible = false;
+                return;
+            }
+            // ECHO-Tweak-end
+
             if (verb.Icon == null && verb.IconEntity != null)
             {
                 var spriteView = new SpriteView()
@@ -79,6 +91,15 @@ namespace Content.Client.Verbs.UI
         public VerbMenuElement(VerbCategory category, string styleClass) : base(category.Text)
         {
             Label.SetOnlyStyleClass(styleClass);
+
+            // ECHO-Tweak-start: скрытые иконки
+            var cfg = IoCManager.Resolve<IConfigurationManager>();
+            if (!cfg.GetCVar(EchoCCVars.EntityMenuIcons))
+            {
+                Icon.Visible = false;
+                return;
+            }
+            // ECHO-Tweak-end
 
             Icon.AddChild(new TextureRect()
             {

@@ -1,0 +1,343 @@
+#Безалкогольные коктейли от Кекса/Стычинского
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkSummerShadeGlass
+  suffix: SummerShade
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoSummerShade
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/summershade.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkWinterSunGlass
+  suffix: WinterSun
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoWinterSun
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/wintersun.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkHungoverAngelGlass
+  suffix: HungoverAngel
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoHungoverAngel
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/hungoverangel.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkCitrusBalanceGlass
+  suffix: CitrusBalance
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoCitrusBalance
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/citrucbalance.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkDobryiDrinkGlass
+  suffix: DobryiDrink
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoDobryiDrink
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/dobryi.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkMilkEclipseGlass
+  suffix: MilkEclipse
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoMilkEclipse
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/milkeclipse.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkArcticExplosionGlass
+  suffix: ArcticExplosion
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoArcticExplosion
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/arcticexplosion.rsi
+    state: icon
+
+#Базовый алкоголь от ECHO
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkAppleLiqueurGlass
+  suffix: AppleLiqueur
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoAppleLiqueur
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/apple_liqueur_glass.rsi
+    state: icon
+
+#Алкогольные коктейли от Кекса/Стычинского и Кермита
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkSugarKnightGlass
+  suffix: SugarKnight
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoSugarKnight
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/sugarknight.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkGrapeLadyGlass
+  suffix: GrapeLady
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoGrapeLady
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/grapelady.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkSaturdayBaronGlass
+  suffix: SaturdayBaron
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoSaturdayBaron
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/saturdaybaron.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkArcticLatteGlass
+  suffix: ArcticLatte
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoArcticLatte
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/arcticlatte.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkSpecialTeaOolongGlass
+  suffix: SpecialTeaOolong
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoSpecialTeaOolong
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/teaoolong.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkAzureBlueGlass
+  suffix: AzureBlue
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoAzureBlue
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/azureblue.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkPenetrationGlass
+  suffix: PenetrationDrink
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoPenetrationDrink
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/penetration.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkEclipsedEclispeGlass
+  suffix: EclipsedEclispe
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoEclipsedEclispe
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/eclipsedeclipse.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkSpaceBushGlass
+  suffix: SpaceBush
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoSpaceBush
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/spacebush.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkBusinessConversationGlass
+  suffix: BusinessConversation
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoBusinessConversation
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/buisinessconservation.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkAppleMartiniGlass
+  suffix: AppleMartini
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoAppleMartini
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/applemartini.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkBacardiAppleGlass
+  suffix: BacardiApple
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoBacardiApple
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/bacardiapple.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: EchoDrinkElderGuardsGlass
+  suffix: ElderGuards
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EchoElderGuards
+          Quantity: 30
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/elderguards.rsi
+    state: icon
+
+

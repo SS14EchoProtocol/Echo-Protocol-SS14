@@ -37,6 +37,17 @@
                 Align="Right"
                 Visible="false"/>
         </SpriteView>
+        <!-- ECHO-Tweak: скрытые иконки -->
+        <Label
+            Name="CountLabelNoIcon"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            StyleClasses="ConsoleText"
+            ModulateSelfOverride="Yellow"
+            Align="Right"
+            Visible="false"/>
+        <!-- ECHO-Tweak: скрытые иконки -->
+
         <RichTextLabel
             Name="Label"
             MaxWidth="300"

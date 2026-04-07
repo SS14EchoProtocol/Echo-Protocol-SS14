@@ -182,7 +182,7 @@ public sealed class ZNetworkMappingSystem : EntitySystem
             data.LevelPaths[depth].Add(gridLevel);
 
             // Save grid itself
-            if (!_mapLoader.TrySaveGrid(item.Owner, new($"{path}/{fileName}")))
+            if (!_mapLoader.TrySaveGrid(item.Owner, new ResPath($"{path}/{fileName}")))
                 return false;
         }
 

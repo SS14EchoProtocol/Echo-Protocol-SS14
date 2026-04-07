@@ -180,7 +180,7 @@
   flavor: metallic
   color: "#f4692e"
   recognizable: true
-  metabolisms:        
+  metabolisms:
     Bloodstream:
       effects:
       - !type:SatiateThirst

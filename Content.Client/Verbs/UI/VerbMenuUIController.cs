@@ -4,12 +4,14 @@ using Content.Client.CombatMode;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Gameplay;
 using Content.Client.Mapping;
+using Content.Shared.CCVar;
 using Content.Shared.Input;
 using Content.Shared.Verbs;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Collections;
+using Robust.Shared.Configuration;
 using Robust.Shared.Input;
 using Robust.Shared.Utility;
 
@@ -29,6 +31,7 @@ namespace Content.Client.Verbs.UI
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly ContextMenuUIController _context = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: скрытые иконки
 
         [UISystemDependency] private readonly CombatModeSystem _combatMode = default!;
         [UISystemDependency] private readonly VerbSystem _verbSystem = default!;
@@ -193,7 +196,7 @@ namespace Content.Client.Verbs.UI
             {
                 var subElement = new VerbMenuElement(verb)
                 {
-                    IconVisible = drawIcons,
+                    IconVisible = (drawIcons && _cfg.GetCVar(EchoCCVars.EntityMenuIcons)) || category.IconsOnly,    // ECHO-Tweak: скрытые иконки
                     TextVisible = !category.IconsOnly
                 };
 

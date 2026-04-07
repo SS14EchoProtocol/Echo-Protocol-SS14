@@ -1,0 +1,295 @@
+#Безалкогольные коктейли от Кекса/Стычинского и Кермита
+
+- type: reaction
+  id: EchoSummerShade
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    JuiceWatermelon:
+      amount: 3
+    Ice:
+      amount: 1
+    JuiceLime:
+      amount: 2
+  products:
+    EchoSummerShade: 6
+
+- type: reaction
+  id: EchoWinterSun
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    CafeLatte:
+      amount: 3
+    Cream:
+      amount: 2
+  products:
+    EchoWinterSun: 5
+
+- type: reaction
+  id: EchoHungoverAngel
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    SodaWater:
+      amount: 3
+    Ice:
+      amount: 1
+    JuiceLemon:
+      amount: 2
+  products:
+    EchoHungoverAngel: 6
+
+- type: reaction
+  id: EchoCitrusBalance
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    JuiceLime:
+      amount: 2
+    JuiceOrange:
+      amount: 2
+    Ice:
+      amount: 1
+  products:
+    EchoCitrusBalance: 5
+
+- type: reaction
+  id: EchoDobryiDrink
+  reactants:
+    JuiceOrange:
+      amount: 1
+    LemonLime:
+      amount: 1
+    Cola:
+      amount: 1
+  products:
+    EchoDobryiDrink: 3
+
+- type: reaction
+  id: EchoMilkEclipse
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    IceCream:
+      amount: 2
+    Tea:
+      amount: 2
+    Milk:
+      amount: 1
+  products:
+    EchoMilkEclipse: 5
+
+- type: reaction
+  id: EchoArcticExplosion
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    IceCream:
+      amount: 3
+    SodaWater:
+      amount: 2
+    Ice:
+      amount: 1
+  products:
+    EchoArcticExplosion: 6
+
+#Алкогольные коктейли от Кекса/Стычинского и Кермита
+
+- type: reaction
+  id: EchoSugarKnight
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Wine:
+      amount: 4
+    Sugar:
+      amount: 1
+    Cream:
+      amount: 1
+  products:
+    EchoSugarKnight: 6
+
+- type: reaction
+  id: EchoGrapeLady
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Wine:
+      amount: 3
+    Vermouth:
+      amount: 2
+    Cream:
+      amount: 1
+  products:
+    EchoGrapeLady: 6
+
+- type: reaction
+  id: EchoSaturdayBaron
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Ice:
+      amount: 1
+    Rum:
+      amount: 3
+    JuiceLemon:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    EchoSaturdayBaron: 6
+
+- type: reaction
+  id: EchoArcticLatte
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    CoffeeLiqueur:
+      amount: 1
+    IcedCoffee:
+      amount: 4
+    Cream:
+      amount: 1
+  products:
+    EchoArcticLatte: 6
+
+- type: reaction
+  id: EchoSpecialTeaOolong
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Sugar:
+      amount: 1
+    Whiskey:
+      amount: 2
+    Vodka:
+      amount: 7
+  products:
+    EchoSpecialTeaOolong: 10
+
+- type: reaction
+  id: EchoAzureBlue
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    BlueCuracao:
+      amount: 2
+    Ice:
+      amount: 1
+    Vodka:
+      amount: 2
+    SodaWater:
+      amount: 1
+  products:
+    EchoAzureBlue: 6
+
+- type: reaction
+  id: EchoPenetrationDrink
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Wine:
+      amount: 3
+    EchoAppleLiqueur:
+      amount: 1
+    Sugar:
+      amount: 1
+    JuiceLime:
+      amount: 3
+    Ice:
+      amount: 1
+    SodaWater:
+      amount: 1
+  products:
+    EchoPenetrationDrink: 10
+
+- type: reaction
+  id: EchoEclipsedEclispe
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    GargleBlaster:
+      amount: 1
+    Moonshine:
+      amount: 1
+  products:
+    EchoEclipsedEclispe: 2
+
+- type: reaction
+  id: EchoSpaceBush
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    SpaceUp:
+      amount: 1
+    SpaceMountainWind:
+      amount: 1
+    Mojito:
+      amount: 4
+  products:
+    EchoSpaceBush: 6
+
+- type: reaction
+  id: EchoBusinessConversation
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    CubaLibre:
+      amount: 3
+    Vodka:
+      amount: 1
+    Gin:
+      amount: 1
+    Bicaridine:
+      amount: 1
+  products:
+    EchoBusinessConversation: 6
+
+
+- type: reaction
+  id: EchoAppleMartini
+  reactants:
+    EchoAppleLiqueur:
+      amount: 3
+    Vermouth:
+      amount: 2
+    Gin:
+      amount: 1
+  products:
+    EchoAppleMartini: 6
+
+- type: reaction
+  id: EchoBacardiApple
+  reactants:
+    EchoAppleLiqueur:
+      amount: 1
+    Rum:
+      amount: 1
+    Ice:
+      amount: 1
+  products:
+    EchoBacardiApple: 3
+
+#охохо, сейчас такое будет.
+- type: reaction
+  id: EchoElderGuards
+  reactants:
+    Vodka:
+      amount: 2
+    EchoCitrusBalance:
+      amount: 2
+    Rum:
+      amount: 1
+    Grenadine:
+      amount: 1
+    Vinegar:
+      amount: 1
+    Wine:
+      amount: 1
+    Gin:
+      amount: 1
+    Whiskey:
+      amount: 1
+  products:
+    EchoElderGuards: 10 #polar bear heater. типо напиток из фильма, который по факту был придуман как шутка.
