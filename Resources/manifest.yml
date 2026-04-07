@@ -1,8 +1,6 @@
-#defaultWindowTitle: Space Station 14
-defaultWindowTitle: Space Station 14 - Echo Protocol #ECHO-Tweak
+defaultWindowTitle: Space Station 14 - Echo Protocol #ECHO-Tweak было: defaultWindowTitle: Space Station 14 -> Стало: defaultWindowTitle: Space Station 14 - Echo Protocol
 windowIconSet: /Textures/Logo/icon
-#splashLogo: /Textures/Logo/logo.png
-splashLogo: /Textures/_ECHO/Logo/new_logo.png #ECHO-Tweak theme
-#multiWindow: true
+splashLogo: /Textures/_ECHO/Logo/new_logo.png #ECHO-Tweak Было: splashLogo: /Textures/Logo/logo.png -> Стало: splashLogo: /Textures/_ECHO/Logo/new_logo.png
+multiWindow: true
 
 # PJB PLEASE
