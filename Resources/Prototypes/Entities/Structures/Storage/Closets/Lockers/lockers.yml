@@ -380,6 +380,19 @@
   components:
   - type: Sprite
     sprite: _ECHO/Structures/Storage/closet.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Storage/closet.rsi, так как путь изменён до нашего спрайта
+    layers:
+    - state: shotguncase
+    - state: shotguncase_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded_shotgun_case
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: shotguncase
