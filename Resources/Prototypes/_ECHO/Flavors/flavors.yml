@@ -112,3 +112,121 @@
   id: Echo_elderguards
   flavorType: Complex
   description: flavor-complex-elderguards
+
+- type: flavor
+  id: EchoOrangeTeaReg
+  flavorType: complex
+  description: flavor-complex-Echoorangeteareg
+
+- type: flavor
+  id: EchoCherryTeaReg
+  flavorType: complex
+  description: flavor-complex-Echocherryteareg
+
+- type: flavor
+  id: EchoWatermelonTeaReg
+  flavorType: complex
+  description: flavor-complex-Echowatermelonteareg
+
+  # Юппи начало
+- type: flavor
+  id: EchoYupiDryApple
+  flavorType: complex
+  description: flavor-complex-Echoyupidryapple
+
+- type: flavor
+  id: EchoYupiDryBerries
+  flavorType: complex
+  description: flavor-complex-Echoyupidryberries
+
+- type: flavor
+  id: EchoYupiDryCherry
+  flavorType: complex
+  description: flavor-complex-Echoyupidrycherry
+
+- type: flavor
+  id: EchoYupiDryMango
+  flavorType: complex
+  description: flavor-complex-Echoyupidrymango
+
+- type: flavor
+  id: EchoYupiDryOrange
+  flavorType: complex
+  description: flavor-complex-Echoyupidryorange
+
+- type: flavor
+  id: EchoYupiDryPeach
+  flavorType: complex
+  description: flavor-complex-Echoyupidrypeach
+
+- type: flavor
+  id: EchoYupiDryPineapple
+  flavorType: complex
+  description: flavor-complex-Echoyupidrypineapple
+
+- type: flavor
+  id: EchoYupiDryRaspberry
+  flavorType: complex
+  description: flavor-complex-Echoyupidryraspberry
+
+- type: flavor
+  id: EchoYupiDryStrawberry
+  flavorType: complex
+  description: flavor-complex-Echoyupidrystrawberry
+
+- type: flavor
+  id: EchoYupiDryWatermelon
+  flavorType: complex
+  description: flavor-complex-Echoyupidrywatermelon
+
+- type: flavor
+  id: EchoYupiApple
+  flavorType: complex
+  description: flavor-complex-Echoyupiapple
+
+- type: flavor
+  id: EchoYupiBerries
+  flavorType: complex
+  description: flavor-complex-Echoyupiberries
+
+- type: flavor
+  id: EchoYupiCherry
+  flavorType: complex
+  description: flavor-complex-Echoyupicherry
+
+- type: flavor
+  id: EchoYupiMango
+  flavorType: complex
+  description: flavor-complex-Echoyupimango
+
+- type: flavor
+  id: EchoYupiOrange
+  flavorType: complex
+  description: flavor-complex-Echoyupiorange
+
+- type: flavor
+  id: EchoYupiPeach
+  flavorType: complex
+  description: flavor-complex-Echoyupipeach
+
+- type: flavor
+  id: EchoYupiPineapple
+  flavorType: complex
+  description: flavor-complex-Echoyupipineapple
+
+- type: flavor
+  id: EchoYupiRaspberry
+  flavorType: complex
+  description: flavor-complex-Echoyupiraspberry
+
+- type: flavor
+  id: EchoYupiStrawberry
+  flavorType: complex
+  description: flavor-complex-Echoyupistrawberry
+
+- type: flavor
+  id: EchoYupiWatermelon
+  flavorType: complex
+  description: flavor-complex-Echoyupiwatermelon
+
+# Юппи конец

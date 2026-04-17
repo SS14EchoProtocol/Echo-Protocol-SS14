@@ -17,6 +17,10 @@
     Bucket: 3
     BoxMouthSwab: 1
     BoxAgrichem: 1
+    #ECHO-Tweak Start
+    EchoPlantAnalyzer: 1
+    EchoSoilPacked: 2
+    #ECHO-Tweak End
     MortarAndPestle: 1
     HandheldJuicer: 1
     #TO DO:

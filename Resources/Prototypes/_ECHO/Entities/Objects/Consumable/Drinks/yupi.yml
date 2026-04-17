@@ -1,0 +1,220 @@
+- type: entity
+  parent: BaseFoodCondiment
+  id: EchoBaseYupiPacket
+  name: yupi packet
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+    solution: food
+  - type: Openable
+    sound:
+      collection: packetOpenSounds
+  - type: InjectableSolution
+    solution: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+  - type: SolutionTransfer
+    maxTransferAmount: 5
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/yupi.rsi
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/yupi.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  - type: Tag
+    tags:
+      - EchoYupiPack
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketApple
+  name: apple yupi packet
+  description: A yupi packet with apple taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryApple
+          Quantity: 5
+  - type: Sprite
+    state: packet-apple
+  - type: Icon
+    state: packet-apple
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketBerries
+  name: berries yupi packet
+  description: A yupi packet with berries taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryBerries
+          Quantity: 5
+  - type: Sprite
+    state: packet-berries
+  - type: Icon
+    state: packet-berries
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketCherry
+  name: cherry yupi packet
+  description: A yupi packet with cherry taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryCherry
+          Quantity: 5
+  - type: Sprite
+    state: packet-cherry
+  - type: Icon
+    state: packet-cherry
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketMango
+  name: mango yupi packet
+  description: A yupi packet with mango taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryMango
+          Quantity: 5
+  - type: Sprite
+    state: packet-mango
+  - type: Icon
+    state: packet-mango
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketOrange
+  name: orange yupi packet
+  description: A yupi packet with orange taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryOrange
+          Quantity: 5
+  - type: Sprite
+    state: packet-orange
+  - type: Icon
+    state: packet-orange
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketPeach
+  name: peach yupi packet
+  description: A yupi packet with peach taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryPeach
+          Quantity: 5
+  - type: Sprite
+    state: packet-peach
+  - type: Icon
+    state: packet-peach
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketPineapple
+  name: pineapple yupi packet
+  description: A yupi packet with pineapple taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryPineapple
+          Quantity: 5
+  - type: Sprite
+    state: packet-pineapple
+  - type: Icon
+    state: packet-pineapple
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketRaspberry
+  name: raspberry yupi packet
+  description: A yupi packet with raspberry taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryRaspberry
+          Quantity: 5
+  - type: Sprite
+    state: packet-raspberry
+  - type: Icon
+    state: packet-raspberry
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketStrawberry
+  name: strawberry yupi packet
+  description: A yupi packet with strawberry taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryStrawberry
+          Quantity: 5
+  - type: Sprite
+    state: packet-strawberry
+  - type: Icon
+    state: packet-strawberry
+  - type: Appearance
+
+- type: entity
+  parent: EchoBaseYupiPacket
+  id: EchoYupiPacketWatermelon
+  name: watermelon yupi packet
+  description: A yupi packet with watermelon taste.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoYupiDryWatermelon
+          Quantity: 5
+  - type: Sprite
+    state: packet-watermelon
+  - type: Icon
+    state: packet-watermelon
+  - type: Appearance

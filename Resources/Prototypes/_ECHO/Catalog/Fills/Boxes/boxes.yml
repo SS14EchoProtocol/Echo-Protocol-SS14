@@ -1,0 +1,73 @@
+- type: entity
+  parent: BoxCardboard
+  id: EchoDrinksPackYupi
+  name: pack of yupi's
+  components:
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/yupi.rsi
+    drawdepth: SmallObjects
+    state: box
+  - type: Storage
+    grid:
+    - 0,0,2,1
+    maxItemSize: Tiny
+    whitelist:
+      tags:
+      - EchoYupiPack
+    hideStackVisualsWhenClosed: false
+  - type: Item
+    sprite: _ECHO/Objects/Consumable/Drinks/yupi.rsi
+    size: Small
+  - type: Appearance
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: EchoDrinksPackYupi
+  id: EchoDrinksPackYupiFilled
+  name: pack of yupi's
+  components:
+  - type: StaticPrice
+    price: 48
+  - type: StorageFill
+    contents:
+    - id: EchoYupiPacketApple
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketBerries
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketCherry
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketMango
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketOrange
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketPeach
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketPineapple
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketRaspberry
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketStrawberry
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketWatermelon
+      orGroup: EchoYupi1
+    - id: EchoYupiPacketApple
+      orGroup: EchoYupi2
+    - id: EchoYupiPacketBerries
+      orGroup: EchoYupi2
+    - id: EchoYupiPacketCherry
+      orGroup: EchoYupi3
+    - id: EchoYupiPacketMango
+      orGroup: EchoYupi3
+    - id: EchoYupiPacketOrange
+      orGroup: EchoYupi4
+    - id: EchoYupiPacketPeach
+      orGroup: EchoYupi4
+    - id: EchoYupiPacketPineapple
+      orGroup: EchoYupi5
+    - id: EchoYupiPacketRaspberry
+      orGroup: EchoYupi5
+    - id: EchoYupiPacketStrawberry
+      orGroup: EchoYupi6
+    - id: EchoYupiPacketWatermelon
+      orGroup: EchoYupi6
