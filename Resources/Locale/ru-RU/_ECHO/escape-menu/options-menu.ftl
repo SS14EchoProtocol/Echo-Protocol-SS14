@@ -1,3 +1,11 @@
 ui-options-film-grain = Grain эффект
 ui-options-show-offer-mode-indicators = Показывать индикатор передачи предмета
 ui-options-entity-menu-icons = Показывать иконки сущности в контекстном меню
+ui-options-function-pickup-humans = Переключить режим подбора игроков
+ui-options-function-toggle-posing = Переключить режим позирования
+ui-options-function-posing-offset-left = Переместиться влево (позирование)
+ui-options-function-posing-offset-right = Переместиться вправо (позирование)
+ui-options-function-posing-offset-up = Переместиться вверх (позирование)
+ui-options-function-posing-offset-down = Переместиться вниз (позирование)
+ui-options-function-posing-rotate-negative = Повернуть против часовой (позирование)
+ui-options-function-posing-rotate-positive = Повернуть по часовой (позирование)

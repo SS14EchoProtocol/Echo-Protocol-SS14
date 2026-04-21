@@ -64,6 +64,13 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ZoomOut = "ZoomOut";
         public static readonly BoundKeyFunction ZoomIn = "ZoomIn";
         public static readonly BoundKeyFunction ResetZoom = "ResetZoom";
+        public static readonly BoundKeyFunction TogglePosing = "TogglePosing"; // ECHO-Tweak
+        public static readonly BoundKeyFunction PosingOffsetLeft = "PosingOffsetLeft"; // ECHO-Tweak
+        public static readonly BoundKeyFunction PosingOffsetRight = "PosingOffsetRight"; // ECHO-Tweak
+        public static readonly BoundKeyFunction PosingOffsetUp = "PosingOffsetUp"; // ECHO-Tweak
+        public static readonly BoundKeyFunction PosingOffsetDown = "PosingOffsetDown"; // ECHO-Tweak
+        public static readonly BoundKeyFunction PosingRotateNegative = "PosingRotateNegative"; // ECHO-Tweak
+        public static readonly BoundKeyFunction PosingRotatePositive = "PosingRotatePositive"; // ECHO-Tweak
 
         public static readonly BoundKeyFunction ArcadeUp = "ArcadeUp";
         public static readonly BoundKeyFunction ArcadeDown = "ArcadeDown";
