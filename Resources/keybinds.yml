@@ -675,8 +675,8 @@ binds:
   key: S
 - function: PosingRotateNegative
   type: State
-  key: Q
+  key: Left
 - function: PosingRotatePositive
   type: State
-  key: E
+  key: Right
 # ECHO-Tweak-End

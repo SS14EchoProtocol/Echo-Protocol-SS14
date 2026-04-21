@@ -18,7 +18,9 @@ public sealed partial class PosingSystem : SharedPosingSystem
 
         SubscribeLocalEvent<PosingComponent, AfterAutoHandleStateEvent>(OnAfterHandleState);
 
-        var posing = _input.Contexts.New("posing", "common");
+        // Inherit from human so regular gameplay hotkeys (e.g. ActivateItemInHand on Z)
+        // remain available while posing mode is active.
+        var posing = _input.Contexts.New("posing", "human");
         posing.AddFunction(ContentKeyFunctions.TogglePosing);
         posing.AddFunction(ContentKeyFunctions.PosingOffsetUp);
         posing.AddFunction(ContentKeyFunctions.PosingOffsetDown);
