@@ -103,7 +103,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/_ECHO/Announcements/spanomalies.ogg #ECHO-Tweak Было: /Audio/Announcements/announce.ogg Стало: /Audio/_ECHO/Announcements/spanomalies.ogg
+      path: /Audio/Announcements/announce.ogg
     weight: 8
     duration: 35
   - type: AnomalySpawnRule
