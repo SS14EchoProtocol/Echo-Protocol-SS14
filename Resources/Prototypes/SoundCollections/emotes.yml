@@ -8,6 +8,11 @@
   id: FemaleLaugh
   files:
     - /Audio/Voice/Human/womanlaugh.ogg
+    #ECHO-Tweak-Start
+    - /Audio/_ECHO/Voice/Human/female_laugh.ogg
+    - /Audio/_ECHO/Voice/Human/female_giggle1.ogg
+    - /Audio/_ECHO/Voice/Human/female_giggle2.ogg
+    #ECHO-Tweak-End
 
 - type: soundCollection
   id: MaleCough

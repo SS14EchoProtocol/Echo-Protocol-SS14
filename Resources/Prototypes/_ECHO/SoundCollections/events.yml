@@ -1,0 +1,11 @@
+- type: soundCollection
+  id: ECHOPowerOff
+  files:
+    - /Audio/_ECHO/Announcements/poweroff.ogg
+    - /Audio/_ECHO/Announcements/poweroff2.ogg
+
+- type: soundCollection
+  id: ECHOPowerOn
+  files:
+    - /Audio/_ECHO/Announcements/poweron1.ogg
+    - /Audio/_ECHO/Announcements/poweron2.ogg

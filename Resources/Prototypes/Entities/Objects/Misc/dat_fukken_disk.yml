@@ -26,6 +26,23 @@
     - GhostOnlyWarp
   - type: StealTarget
     stealGroup: NukeDisk
+  # ECHO-Tweak-Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_pickup.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
+      params:
+        volume: -6
+  # ECHO-Tweak-Start
 
 - type: entity
   name: nuclear authentication disk
@@ -42,3 +59,20 @@
   - type: Tag
     tags:
     - FakeNukeDisk
+  # ECHO-Tweak-Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_pickup.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
+      params:
+        volume: -6
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
+      params:
+        volume: -6
+  # ECHO-Tweak-Start

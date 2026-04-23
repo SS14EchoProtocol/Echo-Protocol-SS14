@@ -11,6 +11,11 @@
     maxItemSize: Small
     grid:
     - 0,0,3,1
+    #ECHO-Tweak-Start
+    storageInsertSound:
+      path: /Audio/_ECHO/Entities/medkit_rustle.ogg
+    storageOpenSound: /Audio/_ECHO/Entities/medkit_open.ogg
+    #ECHO-Tweak-End
   - type: Item
     size: Large
     sprite: _ECHO/Objects/Specific/Medical/firstaidkits.rsi #ECHO-Tweak Было: Objects/Specific/Medical/firstaidkits.rsi -> Стало: _ECHO/Objects/Specific/Medical/firstaidkits.rsi
@@ -21,6 +26,17 @@
   - type: Tag
     tags:
     - Medkit
+  #ECHO-Tweak-Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_ECHO/Entities/medkit_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_ECHO/Entities/medkit_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_ECHO/Entities/medkit_drop.ogg
+  #ECHO-Tweak-End
 
 - type: entity
   name: burn treatment kit

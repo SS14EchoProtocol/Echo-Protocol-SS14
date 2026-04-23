@@ -30,7 +30,7 @@
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
-      sound: /Audio/Misc/redalert.ogg
+      sound: /Audio/_ECHO/Announcements/Alert/red.ogg #ECHO-Tweaked Было: /Audio/Misc/redalert.ogg Стало: /Audio/_ECHO/Announcements/Alert/red.ogg
       color: Red
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
@@ -39,7 +39,7 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/gamma.ogg
+        path: /Audio/_ECHO/Announcements/Alert/gamma_alert.ogg #ECHO-Tweaked Было: /Audio/Misc/gamma.ogg Стало: /Audio/_ECHO/Announcements/Alert/gamma_alert.ogg
         params:
           volume: -2
       disableSelection: true
@@ -50,7 +50,7 @@
       announcement: alert-level-delta-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/delta.ogg
+        path: /Audio/_ECHO/Announcements/Alert/delta.ogg #ECHO-Tweaked Было: /Audio/Misc/delta.ogg Стало: /Audio/_ECHO/Announcements/Alert/delta.ogg
         params:
           volume: -3
       disableSelection: true

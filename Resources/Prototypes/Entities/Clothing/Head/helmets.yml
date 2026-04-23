@@ -26,6 +26,20 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  #ECHO-Tweak-Start
+  - type: Clothing
+    equipSound:
+      path: /Audio/_ECHO/Entities/helmet_equip.ogg
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_ECHO/Entities/helmet_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_ECHO/Entities/helmet_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_ECHO/Entities/helmet_drop.ogg
+  #ECHO-Tweak-End
 
 #Basic Helmet (Security Helmet)
 - type: entity

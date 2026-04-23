@@ -103,7 +103,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Announcements/announce.ogg
+      path: /Audio/_ECHO/Announcements/spanomalies.ogg #ECHO-Tweak Было: /Audio/Announcements/announce.ogg Стало: /Audio/_ECHO/Announcements/spanomalies.ogg
     weight: 8
     duration: 35
   - type: AnomalySpawnRule
@@ -391,19 +391,32 @@
 
 - type: entity
   id: PowerGridCheck
-  parent: BaseStationEventShortDelay
+  parent: BaseStationEvent #ECHO-Tweak Было: BaseStationEventShortDelay Стало: BaseStationEvent
   components:
   - type: StationEvent
     weight: 5
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
+    #ECHO-Tweak-Sart
+    #startAudio:
+    #  path: /Audio/Announcements/power_off.ogg
+    #  params:
+    #    volume: -4
+    #ECHO-Tweak-End
     duration: 60
     maxDuration: 120
+    #ECHO-Tweak-Sart
+    startAudio:
+      # path: /Audio/Announcements/power_off.ogg
+      # params:
+      #   volume: -4
+      collection: ECHOPowerOff
   - type: PowerGridCheckRule
+    endSound:
+      collection: ECHOPowerOn
+  - type: GameRule
+    delay: null
+    #ECHO-Tweak-End
 
 - type: entity
   parent: BaseGameRule

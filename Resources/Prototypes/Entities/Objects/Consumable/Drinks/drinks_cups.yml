@@ -7,7 +7,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 20
+        maxVol: 20DrinkGlass
   - type: FitsInDispenser
     solution: drink
   - type: SolutionTransfer

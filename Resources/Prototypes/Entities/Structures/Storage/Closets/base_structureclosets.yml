@@ -45,6 +45,12 @@
         layer:
         - MachineLayer
   - type: EntityStorage
+    #ECHO-Tweak-Start
+    closeSound:
+      path: /Audio/_ECHO/Entities/closet_close.ogg
+    openSound:
+      path: /Audio/_ECHO/Entities/closet_open.ogg
+    #ECHO-Tweak-End
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container

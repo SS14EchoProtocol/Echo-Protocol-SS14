@@ -7,6 +7,10 @@
     state: icon
   - type: Clothing
     slots: [gloves]
+    #ECHO-Tweak-Start
+    equipSound:
+      path: /Audio/_ECHO/Entities/helmet_equip.ogg
+    #ECHO-Tweak-End
   - type: Edible
     requiresSpecialDigestion: true
   - type: Item
