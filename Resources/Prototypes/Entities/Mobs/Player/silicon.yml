@@ -70,10 +70,6 @@
     canShuttle: false
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
-    #ECHO-Tweak-Start
-    sound:
-      path: /Audio/_ECHO/Announcements/intercept.ogg
-    #ECHO-Tweak-End
   - type: ShowJobIcons
   - type: ShowCrewIcons
   - type: DamagedSiliconAccent
