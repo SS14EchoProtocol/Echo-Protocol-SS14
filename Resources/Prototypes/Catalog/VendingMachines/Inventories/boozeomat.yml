@@ -50,3 +50,4 @@
     DrinkWineCan: 5
   emaggedInventory:
     DrinkPoisonWinebottleFull: 2
+    EchoTeabox: 1 # ECHO_Tweak

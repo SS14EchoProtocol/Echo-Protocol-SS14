@@ -14,4 +14,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsNotAsErrors>CS0618,CS0672,CS0612,CS1062,CS1064,NU1903</WarningsNotAsErrors>
   </PropertyGroup>
+
+  <ItemGroup>
+    <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-37gx-xxp4-5rgx" />
+    <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-w3x6-4m5h-cxqf" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,92 @@
+- type: entity
+  name: EchoOrangeTeapack
+  parent: DrinkBase
+  id: EchoOrangeTeapack
+  description: its teapack with orange tea.
+  components:
+  - type: Tag
+    tags:
+    - EchoTeaPack
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - metallic
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/orangetea.rsi
+    state: teapack
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoOrangepackReg
+          Quantity: 5
+  - type: Item
+    size: Tiny
+
+- type: entity
+  name: EchoCherryTeapack
+  parent: DrinkBase
+  id: EchoCherryTeapack
+  description: its teapack with cherry tea.
+  components:
+  - type: Tag
+    tags:
+    - EchoTeaPack
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - metallic
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/cherrytea.rsi
+    state: teapack
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoCherrypackReg
+          Quantity: 5
+  - type: Item
+    size: Tiny
+
+- type: entity
+  name: EchoWatermelonTeapack
+  parent: DrinkBase
+  id: EchoWatermelonTeapack
+  description: its teapack with watermelon tea.
+  components:
+  - type: Tag
+    tags:
+    - EchoTeaPack
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - metallic
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/watermelontea.rsi
+    state: teapack
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 5
+        reagents:
+        - ReagentId: EchoWatermelonpackReg
+          Quantity: 5
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: BaseItem
+  id: EchoEmptyTeaPack
+  name: Teapack
+  description: Hmmmm. Its for tea, i guess.
+  components:
+  - type: Tag
+    tags:
+    - EchoTeaPack
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/teapack.rsi
+    state: icon
+  - type: Item
+    size: Tiny
