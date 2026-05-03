@@ -25,6 +25,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Movement.Pulling.Components;
+using Content.Shared._ECHO.Cpr; // ECHO-Tweak
 
 namespace Content.Server.Body.Systems;
 
@@ -91,12 +92,31 @@ public sealed class RespiratorSystem : EntitySystem
 
             UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
 
-            if (!_mobState.IsIncapacitated(uid) // cannot breathe in crit.
+            // ECHO-Tweak start : Resuscitation
+            var breathe = false;
+
+            if (TryComp<AssistedRespirationComponent>(uid, out var assist)
                 // ECHO-Tweak start : Grab
                 && !(TryComp<PullableComponent>(uid, out var pullable) 
                 && TryComp<PullerComponent>(pullable.Puller, out var puller) 
                 && puller.Stage == GrabStage.Choke)) 
                 // ECHO-Tweak end : Grab
+            {
+                // can breathe if not dead and breathing is assisted
+                if (!_mobState.IsDead(uid) && assist.AssistedUntil >= _gameTiming.CurTime)
+                    breathe = true;
+
+                // We leave the component lingering after it stopped having an effect, to be able to detect CPR being performed too slowly
+                if (assist.AssistedUntil + TimeSpan.FromSeconds(10) < _gameTiming.CurTime)
+                    RemCompDeferred<AssistedRespirationComponent>(uid);
+            }
+
+            // can breathe if not in crit.
+            if (!_mobState.IsIncapacitated(uid))
+                breathe = true;
+
+            if (breathe)
+            // ECHO-Tweak end: Resuscitation
             {
                 switch (respirator.Status)
                 {

@@ -254,6 +254,22 @@
   abstract: true
   components:
   - type: Internals
+  # ECHO-Tweak start : Resuscitation
+  - type: Cpr
+    change:
+      types:
+        Bloodloss: -0.5
+        Blunt: 0.2
+    bonusHeal:
+      types:
+        Asphyxiation: -5
+        Bloodloss: -1.5
+    sound:
+      path: "/Audio/_ECHO/Effects/cprpulse.ogg"
+      params:
+        volume: 0.5
+        variation: 0.125
+  # ECHO-Tweak end : Resuscitation
   - type: Respirator
     damage:
       types:
