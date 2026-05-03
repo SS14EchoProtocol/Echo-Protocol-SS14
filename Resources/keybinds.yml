@@ -656,4 +656,27 @@ binds:
 - function: OfferItem
   type: State
   key: F
+# Posing update
+- function: TogglePosing
+  type: State
+  key: R
+  mod1: Control
+- function: PosingOffsetLeft
+  type: State
+  key: A
+- function: PosingOffsetRight
+  type: State
+  key: D
+- function: PosingOffsetUp
+  type: State
+  key: W
+- function: PosingOffsetDown
+  type: State
+  key: S
+- function: PosingRotateNegative
+  type: State
+  key: Left
+- function: PosingRotatePositive
+  type: State
+  key: Right
 # ECHO-Tweak-End
