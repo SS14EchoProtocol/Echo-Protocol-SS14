@@ -11,7 +11,7 @@
     noRot: true
   - type: Sprite
     noRot: true
-    sprite: Structures/Storage/closet.rsi #ECHO-Tweak Было:    sprite: Structures/Storage/closet.rsi -> Стало:    sprite: _ECHO/Structures/Storage/closet.rsi
+    sprite: Structures/Storage/closet.rsi
     layers:
     - state: generic
       map: ["enum.StorageVisualLayers.Base"]
@@ -117,7 +117,7 @@
     group: Closet
 #ECHO-Tweak-Start респрайт шкафов
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/closet.rsi
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
 #ECHO-Tweak-End респрайт шкафов
 
 #Wall Closet
