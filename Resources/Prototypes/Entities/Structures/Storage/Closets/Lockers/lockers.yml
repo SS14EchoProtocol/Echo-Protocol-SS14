@@ -501,14 +501,16 @@
       sprite: Structures/Storage/closet_labels.rsi
       offset: "-0.095,-0.15"
       map: ["enum.PaperLabelVisuals.Layer"]
+#ECHO-Tweak-End Resprite of ShotgunCase
   - type: Appearance
   - type: EntityStorageVisuals
+#ECHO-Tweak-Start Resprite of ShotgunCase
     stateBaseClosed: generic
     stateDoorOpen: generic_open
     stateDoorClosed: generic_door
-  - type: AccessReader
-    access: [["Armory"]]
 #ECHO-Tweak-End Resprite of ShotgunCase
+  - type: AccessReader
+    access: [["Armory"]] # ECHO-Tweak Добавлено: access: [["Armory"]]
   - type: Construction
     graph: GunSafe
     node: done
