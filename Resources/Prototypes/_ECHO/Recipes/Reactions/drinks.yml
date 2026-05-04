@@ -293,3 +293,36 @@
       amount: 1
   products:
     EchoElderGuards: 10 #polar bear heater. типо напиток из фильма, который по факту был придуман как шутка.
+
+- type: reaction
+  id: EchoOrangeteaReaction
+  minTemp: 370
+  reactants:
+    EchoOrangepackReg:
+      amount: 5
+    Water:
+      amount: 25
+  products:
+    EchoOrangeTeaReg: 30
+
+- type: reaction
+  id: EchoCherryteaReaction
+  minTemp: 370
+  reactants:
+    EchoCherrypackReg:
+      amount: 5
+    Water:
+      amount: 25
+  products:
+    EchoCherryTeaReg: 30
+
+- type: reaction
+  id: EchoWatermelonteaReaction
+  minTemp: 370
+  reactants:
+    EchoWatermelonpackReg:
+      amount: 5
+    Water:
+      amount: 25
+  products:
+    EchoWatermelonTeaReg: 30

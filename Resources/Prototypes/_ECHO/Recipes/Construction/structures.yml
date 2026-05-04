@@ -1,0 +1,44 @@
+- type: construction
+  id: EchoStatueLeninRecipe
+  name: construction-name-statue-lenin
+  description: construction-desc-statue-lenin
+  graph: EchoStatueLenin
+  startNode: start
+  targetNode: statue
+  category: construction-category-structures
+  placementMode: SnapgridCenter
+  objectType: Structure
+  canBuildInImpassable: false
+  canRotate: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoStatueAngelRecipe
+  name: construction-name-statue-angel
+  description: construction-desc-statue-angel
+  graph: EchoStatueAngel
+  startNode: start
+  targetNode: statue
+  category: construction-category-structures
+  placementMode: SnapgridCenter
+  objectType: Structure
+  canBuildInImpassable: false
+  canRotate: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: EchoStatueLionRecipe
+  name: construction-name-statue-lion
+  description: construction-desc-statue-lion
+  graph: EchoStatueLion
+  startNode: start
+  targetNode: statue
+  category: construction-category-structures
+  placementMode: SnapgridCenter
+  objectType: Structure
+  canBuildInImpassable: false
+  canRotate: false
+  conditions:
+    - !type:TileNotBlocked

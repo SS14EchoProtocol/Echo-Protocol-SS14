@@ -1,0 +1,98 @@
+
+- type: entity
+  id: EchoOpes
+  parent: BaseItem
+  name: OPES desk flag
+  description: For democracy!
+  components:
+  - type: Sprite
+    sprite: _ECHO/Objects/Misc/flags.rsi
+    state: opes
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: EchoUssr
+  parent: BaseItem
+  name: USSR desk flag
+  description: Workers of all planets, unite!
+  components:
+  - type: Sprite
+    sprite: _ECHO/Objects/Misc/flags.rsi
+    state: ussr
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: EchoShipBottle
+  parent: BaseItem
+  name: ship in a bottle
+  description: The riddle of the century - how can you fit a ship in a bottle?
+  components:
+  - type: Sprite
+    sprite: _ECHO/Objects/Misc/ship_bottle.rsi
+    state: ship_bottle
+  - type: Item
+    size: Small
+  - type: Anchorable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 1
+          ShardGlass:
+            min: 2
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: EchoGoldPhone
+  parent: BaseItem
+  name: gold phone
+  description: A luxurious phone made of gold. A symbol of status and wealth.
+  components:
+  - type: Sprite
+    sprite: _ECHO/Objects/Misc/gold_phone.rsi
+    state: gold_phone
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: EchoDesktopClock
+  parent: BaseItem
+  name: desk clock
+  description: How much longer until the end of the shift?...
+  components:
+  - type: Sprite
+    sprite: _ECHO/Objects/Misc/desktop_clock.rsi
+    state: clock
+  - type: Item
+    size: Small
+  - type: Anchorable
+
+- type: entity
+  id: EchoDesktopTableAdministrator
+  parent: BaseItem
+  name: desk plaque "Administrator"
+  description: I'M THE BOSS!
+  components:
+  - type: Sprite
+    sprite: _ECHO/Objects/Misc/desktop_table.rsi
+    state: desktop_table
+  - type: Anchorable

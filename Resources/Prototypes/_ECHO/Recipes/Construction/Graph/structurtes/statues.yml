@@ -1,0 +1,74 @@
+- type: constructionGraph
+  id: EchoStatueLenin
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: statue
+          steps:
+            - material: Steel
+              amount: 8
+              doAfter: 15
+    - node: statue
+      entity: EchoStatueLenin
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 6
+          steps:
+            - tool: Prying
+              doAfter: 10
+
+- type: constructionGraph
+  id: EchoStatueAngel
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: statue
+          steps:
+            - material: Steel
+              amount: 8
+              doAfter: 15
+    - node: statue
+      entity: EchoStatueAngel
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 6
+          steps:
+            - tool: Prying
+              doAfter: 10
+
+- type: constructionGraph
+  id: EchoStatueLion
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: statue
+          steps:
+            - material: Steel
+              amount: 8
+              doAfter: 15
+    - node: statue
+      entity: EchoStatueLion
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 6
+          steps:
+            - tool: Prying
+              doAfter: 10

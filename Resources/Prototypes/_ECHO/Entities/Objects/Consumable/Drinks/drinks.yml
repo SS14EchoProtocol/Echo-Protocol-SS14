@@ -1,5 +1,3 @@
-#Безалкогольные коктейли от Кекса/Стычинского
-
 - type: entity
   parent: DrinkGlass
   id: EchoDrinkSummerShadeGlass
@@ -339,5 +337,3 @@
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/elderguards.rsi
     state: icon
-
-

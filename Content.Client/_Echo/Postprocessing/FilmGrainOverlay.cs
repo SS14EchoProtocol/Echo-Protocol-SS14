@@ -8,6 +8,8 @@ public sealed class FilmGrainOverlay : Overlay
 {
     [Dependency] private IPrototypeManager _prototype = default!;
 
+    public const float GrainSize = 0.5f;
+
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
 
@@ -36,6 +38,7 @@ public sealed class FilmGrainOverlay : Overlay
 
         _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         _shader.SetParameter("GRAIN_AMOUNT", GrainAmount);
+        _shader.SetParameter("GRAIN_SIZE", GrainSize);
 
         handle.UseShader(_shader);
         handle.DrawRect(args.WorldBounds, Color.White);

@@ -232,7 +232,8 @@ public sealed class ZNetworkMappingSystem : EntitySystem
             return false;
         }
 
-        if (!_resMan.UserData.TryReadAllText(path, out var rawData))
+        var dataPath = new ResPath($"{path}/map-data.json").ToRootedPath();
+        if (!_resMan.UserData.TryReadAllText(dataPath, out var rawData))
         {
             error = "Could not find map-data.json file in target directory.";
             return false;

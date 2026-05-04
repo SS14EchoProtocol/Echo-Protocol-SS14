@@ -81,3 +81,14 @@ ent-EchoDrinkBacardiAppleGlass = { ent-DrinkGlass }
 ent-EchoDrinkElderGuardsGlass = { ent-DrinkGlass }
     .suffix = Старая гвардия
     .desc = { ent-DrinkGlass.desc }
+ent-EchoDrinkOrangeTeaGlass = { ent-DrinkGlass }
+    .suffix = Апельсиновый чай
+    .desc = { ent-DrinkGlass.desc }
+
+ent-EchoDrinkCherryTeaGlass = { ent-DrinkGlass }
+    .suffix = Вишнёвый чай
+    .desc = { ent-DrinkGlass.desc }
+
+ent-EchoDrinkWatermelonTeaGlass = { ent-DrinkGlass }
+    .suffix = Арбузный чай
+    .desc = { ent-DrinkGlass.desc }
