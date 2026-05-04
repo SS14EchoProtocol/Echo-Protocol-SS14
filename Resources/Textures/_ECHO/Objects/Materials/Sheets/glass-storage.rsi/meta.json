@@ -1,0 +1,66 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by: Firisi and take referense from tgstation",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "glass"
+        },
+        {
+            "name": "glass_2"
+        },
+        {
+            "name": "glass_3"
+        },
+        {
+            "name": "pglass"
+        },
+        {
+            "name": "pglass_2"
+        },
+        {
+            "name": "pglass_3"
+        },
+        {
+            "name": "rpglass"
+        },
+        {
+            "name": "rpglass_2"
+        },
+        {
+            "name": "rpglass_3"
+        },
+        {
+            "name": "rglass"
+        },
+        {
+            "name": "rglass_2"
+        },
+        {
+            "name": "rglass_3"
+        },
+        {
+            "name": "uglass"
+        },
+        {
+            "name": "uglass_2"
+        },
+        {
+            "name": "uglass_3"
+        },
+        {
+            "name": "ruglass"
+        },
+        {
+            "name": "ruglass_2"
+        },
+        {
+            "name": "ruglass_3"
+        }
+    ]
+}
+

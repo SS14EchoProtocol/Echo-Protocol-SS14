@@ -1,0 +1,114 @@
+- type: flavor
+  id: Echoconsideredmilk
+  flavorType: Complex
+  description: flavor-complex-Echoconsideredmilk
+
+#Безалкогольные коктейли от Кекса/Рамы
+- type: flavor
+  id: Echo_summershade
+  flavorType: Complex
+  description: flavor-complex-summershade
+
+- type: flavor
+  id: Echo_wintersun
+  flavorType: Complex
+  description: flavor-complex-wintersun
+
+- type: flavor
+  id: Echo_hungoverangel
+  flavorType: Complex
+  description: flavor-complex-hungoverangel
+
+- type: flavor
+  id: Echo_citrusbalance
+  flavorType: Complex
+  description: flavor-complex-citrusbalance
+
+- type: flavor
+  id: Echo_dobtyidrink
+  flavorType: Complex
+  description: flavor-complex-dobtyidrink
+
+- type: flavor
+  id: Echo_milkeclipse
+  flavorType: Complex
+  description: flavor-complex-milkeclipse
+
+- type: flavor
+  id: Echo_arcticexlposion
+  flavorType: Complex
+  description: flavor-complex-arcticexlposion
+
+#Алкоголь базовый
+
+- type: flavor
+  id: Echo_appleliqueur
+  flavorType: Complex
+  description: flavor-complex-appleliqueur
+
+#Алкогольные коктейли
+
+- type: flavor
+  id: Echo_sugarknight
+  flavorType: Complex
+  description: flavor-complex-sugarknight
+
+- type: flavor
+  id: Echo_grapelady
+  flavorType: Complex
+  description: flavor-complex-grapelady
+
+- type: flavor
+  id: Echo_saturdaybaron
+  flavorType: Complex
+  description: flavor-complex-saturdaybaron
+
+- type: flavor
+  id: Echo_arcticlatte
+  flavorType: Complex
+  description: flavor-complex-arcticlatte
+
+- type: flavor
+  id: Echo_oolongtea
+  flavorType: Complex
+  description: flavor-complex-oolongtea
+
+- type: flavor
+  id: Echo_azureblue
+  flavorType: Complex
+  description: flavor-complex-azureblue
+
+- type: flavor
+  id: Echo_penetrationdrink
+  flavorType: Complex
+  description: flavor-complex-penetrationdrink
+
+- type: flavor
+  id: Echo_eclipsedeclipse
+  flavorType: Complex
+  description: flavor-complex-eclipsedeclipse
+
+- type: flavor
+  id: Echo_spacebush
+  flavorType: Complex
+  description: flavor-complex-spacebush
+
+- type: flavor
+  id: Echo_businessconversation
+  flavorType: Complex
+  description: flavor-complex-businessconversation
+
+- type: flavor
+  id: Echo_applemartini
+  flavorType: Complex
+  description: flavor-complex-applemartini
+
+- type: flavor
+  id: Echo_bacardiapple
+  flavorType: Complex
+  description: flavor-complex-bacardiapple
+
+- type: flavor
+  id: Echo_elderguards
+  flavorType: Complex
+  description: flavor-complex-elderguards

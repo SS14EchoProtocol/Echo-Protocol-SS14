@@ -22,7 +22,7 @@ public sealed class MenuButtonSheetlet<T> : Sheetlet<T> where T : PalettedStyles
     {
         IButtonConfig cfg = sheet;
 
-        var buttonTex = sheet.GetTextureOr(cfg.BaseButtonPath, NanotrasenStylesheet.TextureRoot);
+        var buttonTex = sheet.GetTextureOr(cfg.RoundedButtonBorderedPath, NanotrasenStylesheet.TextureRoot);    // ECHO-Tweak: BaseButtonPath -> RoundedButtonBorderedPath
         var topButtonBase = new StyleBoxTexture
         {
             Texture = buttonTex,

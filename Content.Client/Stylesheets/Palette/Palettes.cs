@@ -9,9 +9,9 @@ namespace Content.Client.Stylesheets.Palette;
 public static class Palettes
 {
     // muted tones
-    public static readonly ColorPalette Navy = ColorPalette.FromHexBase("#4f5376", lightnessShift: 0.05f, chromaShift: 0.0045f);
-    public static readonly ColorPalette Cyan = ColorPalette.FromHexBase("#42586a", lightnessShift: 0.05f, chromaShift: 0.0045f);
-    public static readonly ColorPalette Slate = ColorPalette.FromHexBase("#545562");
+    public static readonly ColorPalette Navy = ColorPalette.FromHexBase("#4d4d4d", lightnessShift: 0.05f, chromaShift: 0.0045f);    // ECHO-Tweak: новые цвета
+    public static readonly ColorPalette Cyan = ColorPalette.FromHexBase("#4d4d4d", lightnessShift: 0.05f, chromaShift: 0.0045f);    // ECHO-Tweak: новые цвета
+    public static readonly ColorPalette Slate = ColorPalette.FromHexBase("#424242");    // ECHO-Tweak: новые цвета
     public static readonly ColorPalette Neutral = ColorPalette.FromHexBase("#555555");
 
     // status tones

@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "taken from AdventureTime at commit 9260bff66533d9f7678958505b92f14480beb2b7",
+    "size": {
+        "x": 32,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "lion"
+        }
+    ]
+}
+

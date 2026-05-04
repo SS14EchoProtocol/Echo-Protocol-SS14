@@ -11,8 +11,7 @@
                     Text="{Loc 'ui-options-reset-all'}"
                     StyleClasses="negative" />
             <Button Name="ApplyButton"
-                    Text="{Loc 'ui-options-apply'}"
-                    StyleClasses="OpenLeft" />
+                    Text="{Loc 'ui-options-apply'}" />  <!-- ECHO-Tweak: удалён StyleClasses -->
         </BoxContainer>
     </controls:StripeBack>
 </Control>

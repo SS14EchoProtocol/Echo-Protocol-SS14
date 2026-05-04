@@ -3,6 +3,8 @@ using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Content.Server.Spawners.EntitySystems;
 
@@ -34,7 +36,16 @@ public sealed class SpawnPointSystem : EntitySystem
 
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
             {
-                possiblePositions.Add(xform.Coordinates);
+                // ECHO-Tweak Start
+                if (spawnPoint.WhitelistLate.Count != 0 || spawnPoint.WhitelistLate.Any(e => e.Job == args.Job))
+                {
+                    possiblePositions.Add(xform.Coordinates);
+                }
+                else
+                {
+                    possiblePositions.Add(xform.Coordinates);
+                }
+                // ECHO-Tweak End
             }
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
@@ -44,7 +55,6 @@ public sealed class SpawnPointSystem : EntitySystem
                 possiblePositions.Add(xform.Coordinates);
             }
         }
-
         if (possiblePositions.Count == 0)
         {
             // Ok we've still not returned, but we need to put them /somewhere/.

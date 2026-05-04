@@ -13,7 +13,7 @@
   icon:
     sprite: Objects/Weapons/Grenades/janitor.rsi
     state: icon
-  product: CrateServiceCleanerGrenades
+  product: CrateServiceJanitorialSupplies # ECHO-Tweak
   cost: 400
   category: cargoproduct-category-name-service
   group: market
@@ -33,7 +33,7 @@
   icon:
     sprite: Objects/Power/light_bulb.rsi
     state: normal
-  product: CrateServiceHolidayLights
+  product: CrateServiceReplacementLights # ECHO-Tweak
   cost: 800
   category: cargoproduct-category-name-service
   group: market
@@ -43,7 +43,7 @@
   icon:
     sprite: Objects/Power/light_bulb.rsi
     state: normal
-  product: CrateServiceColorfulLights
+  product: CrateServiceReplacementLights # ECHO-Tweak
   cost: 800
   category: cargoproduct-category-name-service
   group: market
@@ -53,7 +53,10 @@
   icon:
     sprite: Objects/Devices/mousetrap.rsi
     state: mousetrap
-  product: CrateMousetrapBoxes
+  product: BoxMousetrap
+  container:
+    entity: WrappedParcel
+    containerId: contents
   cost: 500
   category: cargoproduct-category-name-service
   group: market

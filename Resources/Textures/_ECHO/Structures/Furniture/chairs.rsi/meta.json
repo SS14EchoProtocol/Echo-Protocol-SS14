@@ -70,6 +70,14 @@
         {
             "name": "chair_yellow",
             "directions": 4
+        },
+        {
+            "name": "bar",
+            "directions": 4
+        },
+        {
+            "name": "steel-bench",
+            "directions": 4
         }
     ]
 }

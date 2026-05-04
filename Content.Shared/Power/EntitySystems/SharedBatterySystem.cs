@@ -3,6 +3,7 @@ using Content.Shared.Emp;
 using Content.Shared.Examine;
 using Content.Shared.Power.Components;
 using Content.Shared.Rejuvenate;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Power.EntitySystems;
@@ -14,6 +15,7 @@ public abstract partial class SharedBatterySystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly INetManager _net = default!;  // ECHO-Tweak
 
     public override void Initialize()
     {
@@ -68,6 +70,11 @@ public abstract partial class SharedBatterySystem : EntitySystem
 
         if (!HasComp<ExaminableBatteryComponent>(ent))
             return;
+
+        // ECHO-Tweak-start: remove junky networking
+        if (!ent.Comp.NetSyncEnabled && _net.IsClient)
+            return;
+        // ECHO-Tweak-end
 
         var chargePercentRounded = 0;
         var currentCharge = GetCharge(ent.AsNullable());

@@ -1,3 +1,4 @@
+using Content.Client._ECHO.UserInterface.Lobby;
 using Content.Client.Info;
 using Content.Client.Info.PlaytimeStats;
 using Content.Client.Resources;
@@ -92,7 +93,9 @@ namespace Content.Client.Lobby.UI
             foreach (var (slot, character) in _preferencesManager.Preferences!.Characters)
             {
                 numberOfFullSlots++;
-                var characterPickerButton = new CharacterPickerButton(_protomanager,
+
+                // ECHO-Tweak: CharacterPickerButton -> FancyCharacterPickerButton
+                var characterPickerButton = new FancyCharacterPickerButton(_protomanager,
                     _playerManager,
                     characterButtonsGroup,
                     character,

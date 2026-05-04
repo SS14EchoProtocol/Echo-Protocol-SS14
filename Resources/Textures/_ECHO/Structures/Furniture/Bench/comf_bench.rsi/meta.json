@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Tau Ceti at commit f2f1f2cc1b110f0f8791923a9815e7cea2f08e45, and modified by Mintalit",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "full",
+            "directions": 4
+        },
+        {
+            "name": "bench_solo_base",
+            "directions": 4
+        },
+        {
+            "name": "bench_solo_cover",
+            "directions": 4
+        }
+    ]
+}

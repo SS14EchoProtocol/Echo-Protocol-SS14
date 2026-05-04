@@ -6,3 +6,37 @@
     state: offer_item
   name: alerts-offer-name
   description: alerts-offer-desc
+
+- type: alert
+  id: ECHOPulled
+  icons:
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: pulled
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: grabbed-soft
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: grabbed-hard
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: grabbed-choke
+  clickEvent: !type:StopBeingPulledAlertEvent
+  name: alerts-pulled-name
+  description: alerts-pulled-desc
+  minSeverity: 0
+  maxSeverity: 3
+
+- type: alert
+  id: ECHOPulling
+  icons:
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: pulling
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: grab-soft
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: grab-hard
+  - sprite: /Textures/_ECHO/Interface/Alerts/grab.rsi
+    state: grab-choke
+  clickEvent: !type:StopPullingAlertEvent
+  name: alerts-pulling-name
+  description: alerts-pulling-desc
+  minSeverity: 0
+  maxSeverity: 3

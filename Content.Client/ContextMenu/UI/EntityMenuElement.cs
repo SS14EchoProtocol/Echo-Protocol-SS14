@@ -3,9 +3,11 @@ using Content.Client.Administration.Managers;
 using Content.Client.Administration.Systems;
 using Content.Client.UserInterface;
 using Content.Shared.Administration;
+using Content.Shared.CCVar;
 using Content.Shared.IdentityManagement;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.ContextMenu.UI
 {
@@ -69,9 +71,16 @@ namespace Content.Client.ContextMenu.UI
                     Count += entityElement.Count;
             }
 
-            IconLabel.Visible = Count > 1;
-            if (IconLabel.Visible)
-                IconLabel.Text = Count.ToString();
+            // ECHO-Tweak-start: скрытые иконки
+            var cfg = IoCManager.Resolve<IConfigurationManager>();
+
+            var iconLabel = cfg.GetCVar(EchoCCVars.EntityMenuIcons) ? IconLabel : CountLabelNoIcon;
+            Icon.Visible = cfg.GetCVar(EchoCCVars.EntityMenuIcons);
+
+            iconLabel.Visible = Count > 1;
+            if (iconLabel.Visible)
+                iconLabel.Text = $"x{Count.ToString()}";
+            // ECHO-Tweak-end
         }
 
         private string GetEntityDescriptionAdmin(EntityUid entity)

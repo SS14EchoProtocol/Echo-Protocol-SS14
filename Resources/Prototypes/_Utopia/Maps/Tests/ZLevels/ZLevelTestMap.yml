@@ -1,0 +1,48 @@
+# - type: gameMap
+#   id: ZLevelMapTest
+#   mapName: Dev
+#   mapsBelow:
+#     - /Maps/_Utopia/Tests/ZLevels/ZLevelMap0Test.yml
+#   mapsAbove:
+#     - /Maps/_Utopia/Tests/ZLevels/ZLevelMap2Test.yml
+#   mapPath: /Maps/Test/dev_map.yml
+#   minPlayers: 0
+#   stations:
+#     Dev:
+#       stationProto: StandardNanotrasenStation
+#       components:
+#         - type: StationNameSetup
+#           mapNameTemplate: "Dev"
+#         - type: StationJobs
+#           availableJobs:
+#             Captain: [ -1, -1 ]
+
+# - type: gameMap
+#   id: ZLevelMapTestBelow
+#   mapName: Dev
+#   mapPath: /Maps/_Utopia/Tests/ZLevels/ZLevelMap0Test.yml
+#   minPlayers: 0
+#   stations:
+#     Dev:
+#       stationProto: StandardNanotrasenStation
+#       components:
+#         - type: StationNameSetup
+#           mapNameTemplate: "Dev"
+#         - type: StationJobs
+#           availableJobs:
+#             Captain: [ -1, -1 ]
+
+# - type: gameMap
+#   id: ZLevelMapTestAbove
+#   mapName: Dev
+#   mapPath: /Maps/_Utopia/Tests/ZLevels/ZLevelMap2Test.yml
+#   minPlayers: 0
+#   stations:
+#     Dev:
+#       stationProto: StandardNanotrasenStation
+#       components:
+#         - type: StationNameSetup
+#           mapNameTemplate: "Dev"
+#         - type: StationJobs
+#           availableJobs:
+#             Captain: [ -1, -1 ]

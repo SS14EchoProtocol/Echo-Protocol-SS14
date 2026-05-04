@@ -16,7 +16,7 @@
                                VerticalAlignment="Center" />
             </BoxContainer>
         </Control>
-        <PanelContainer StyleClasses="LowDivider" />
+        <PanelContainer Name="Divider" Access="Public" StyleClasses="LowDivider" /> <!-- ECHO-Tweak: добавил имя для возможности скрыть этот элемент -->
         <Control Access="Public" Name="ContentsContainer" StyleClasses="WindowContentsContainer" RectClipContent="True" VerticalExpand="true" />
     </BoxContainer>
 </controls:FancyWindow>

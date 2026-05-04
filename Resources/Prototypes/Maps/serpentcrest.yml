@@ -1,4 +1,4 @@
-- type: gameMap
+﻿- type: gameMap
   id: Serpentcrest
   mapName: 'Serpentcrest'
   mapPath: /Maps/serpentcrest.yml

@@ -15,7 +15,7 @@ public sealed class ChatSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet, I
     {
         IButtonConfig btnCfg = sheet;
 
-        var chatColor = sheet.SecondaryPalette.Background.WithAlpha(221.0f / 255.0f);
+        var chatColor = Color.Black.WithAlpha(200.0f / 255.0f);
         var chatBg = new StyleBoxFlat(chatColor);
 
         var chatChannelButtonTex =

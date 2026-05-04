@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from BayStation12 at commit https://github.com/Baystation12/Baystation12/pull/31842/changes/6368709465cceebd3ea862205ff01512122ce3a4 and modified by Unlumy(GitHub), advanced-smes, advanced-smes-static, advanced-smes-open modified from smes, smes-open, and static by Unlumy(GitHub)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "advancedsmes"
+    },
+    {
+      "name": "advancedsmes-static"
+    },
+    {
+      "name": "advancedsmes-open"
+    },
+    {
+      "name": "smes"
+    },
+    {
+      "name": "static"
+    },
+    {
+      "name": "smes-open"
+    },
+    {
+      "name": "smes-oc0",
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "smes-oc1",
+      "delays": [
+        [
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "smes-oc2",
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "smes-og1"
+    },
+    {
+      "name": "smes-og2"
+    },
+    {
+      "name": "smes-og3"
+    },
+    {
+      "name": "smes-og4"
+    },
+    {
+      "name": "smes-og5"
+    },
+    {
+      "name": "smes-op0",
+      "delays": [
+        [
+          5.0,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ]
+      ]
+    },
+    {
+      "name": "smes-op1",
+      "delays": [
+        [
+          5.0,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ]
+      ]
+    },
+    {
+      "name": "smes-op2",
+      "delays": [
+        [
+          5.0,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ]
+      ]
+    }
+  ]
+}

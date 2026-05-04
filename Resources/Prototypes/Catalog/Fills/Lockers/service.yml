@@ -15,6 +15,7 @@
     - id: ClothingOuterArmorBasicSlim
     - id: WeaponShotgunDoubleBarreledRubber
     - id: DrinkShaker
+    - id: EchoBarmenKettleCircuit  #ECHO_Tweak
     - id: ClothingEyesHudBeer
     - id: HandLabeler
     - id: DrinkBeerBottleFull

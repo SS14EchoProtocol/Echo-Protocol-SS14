@@ -115,6 +115,10 @@
     - entity_storage
   - type: Paintable
     group: Closet
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
 
 #Wall Closet
 - type: entity

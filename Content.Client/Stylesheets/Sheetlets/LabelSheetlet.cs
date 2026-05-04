@@ -18,6 +18,27 @@ public sealed class LabelSheetlet : Sheetlet<PalettedStylesheet>
 
         return
         [
+            // ECHO-Tweak-start: замена шрифтов
+            /*E<Label>()
+                .Prop(Label.StylePropertyFont, ResCache.GetFont("/Fonts/RobotoMono/RobotoMono-Regular.ttf", size: 12)),*/
+            E<Label>()
+                .Class(StyleClass.LabelHeading)
+                .FontColor(sheet.HighlightPalette.Text)
+                .Prop(Label.StylePropertyFont, ResCacheExtension.NotoStack(ResCache, "Bold", size: 16)),
+            E<Label>()
+                .Class(StyleClass.LabelHeadingBigger)
+                .FontColor(sheet.HighlightPalette.Text)
+                .Prop(Label.StylePropertyFont, ResCacheExtension.NotoStack(ResCache, "Bold", size: 20)),
+            E<Label>()
+                .Class(StyleClass.LabelSubText)
+                .Font(ResCacheExtension.NotoStack(ResCache, size: 10))
+                .FontColor(Color.DarkGray),
+            E<Label>()
+                .Class(StyleClass.LabelKeyText)
+                .Font(robotoMonoBold12)
+                .FontColor(sheet.HighlightPalette.Text),
+
+            /*
             E<Label>()
                 .Class(StyleClass.LabelHeading)
                 .Font(sheet.BaseFont.GetFont(16, FontKind.Bold))
@@ -34,6 +55,9 @@ public sealed class LabelSheetlet : Sheetlet<PalettedStylesheet>
                 .Class(StyleClass.LabelKeyText)
                 .Font(sheet.BaseFont.GetFont(12, FontKind.Bold))
                 .FontColor(sheet.HighlightPalette.Text),
+            */
+            // ECHO-Tweak-end
+
             E<Label>()
                 .Class(StyleClass.LabelWeak)
                 .FontColor(Color.DarkGray), // TODO: you know the drill by now

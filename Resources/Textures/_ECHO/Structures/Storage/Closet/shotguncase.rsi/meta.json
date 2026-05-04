@@ -1,0 +1,40 @@
+{
+    "version": 1,
+    "copyright": "Sparking, locked and unlocked states taken from official codebase closet.rsi; shotguncase, shotguncase_door and shotguncase_open, taken from Tau Ceti at commit 9b974d6a0de50e09904c8c3fb7e96f5d05fdae90, modifyed by unlumy, Welded made by Mintalit(Github)",
+    "license": "CC-BY-SA-3.0",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "generic"
+        },
+        {
+            "name": "generic_door"
+        },
+        {
+            "name": "generic_open"
+        },
+        {
+            "name": "sparking",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "welded"
+        },
+        {
+            "name": "locked"
+        },
+        {
+            "name": "unlocked"
+        }
+    ]
+}

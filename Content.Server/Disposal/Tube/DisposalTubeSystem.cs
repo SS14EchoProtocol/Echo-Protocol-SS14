@@ -4,14 +4,19 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Construction.Completions;
 using Content.Server.Disposal.Unit;
 using Content.Server.Popups;
+using Content.Server._Utopia.ZLevels.Disposal.Components; // Utopia-Tweak : ZLevels
+using Content.Server._Utopia.ZLevels.Nodes; // Utopia-Tweak : ZLevels
+using Content.Server._Utopia.ZLevels.Transmission.Systems; // Utopia-Tweak : ZLevels
 using Content.Shared.Destructible;
 using Content.Shared.Disposal.Components;
 using Content.Shared.Disposal.Tube;
 using Content.Shared.Disposal.Unit;
+using Content.Shared._Utopia.ZLevels.Transmission.Components; // Utopia-Tweak : ZLevels
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Map; // Utopia-Tweak : ZLevels
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
@@ -31,6 +36,7 @@ namespace Content.Server.Disposal.Tube
         [Dependency] private readonly AtmosphereSystem _atmosSystem = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
         [Dependency] private readonly SharedMapSystem _map = default!;
+        [Dependency] private readonly ZLevelTransmissionSystem _zTransmission = default!; // Utopia-Tweak : ZLevels
 
         public override void Initialize()
         {
@@ -338,35 +344,79 @@ namespace Content.Server.Disposal.Tube
         {
             if (!Resolve(target, ref targetTube))
                 return null;
-            var oppositeDirection = nextDirection.GetOpposite();
 
-            var xform = Transform(target);
-            if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
+            // Utopia-Tweak : ZLevels
+            if (TryComp<ZDisposalPipeComponent>(target, out var zPipe) &&
+                TryComp<ZLevelEntityLinkComponent>(target, out var zLink))
+            {
+                var targetXform = Transform(target);
+
+                EntityUid targetMap = zPipe.ZDirection switch
+                {
+                    ZNodeDirection.Up => zLink.AboveMap ?? default,
+                    ZNodeDirection.Down => zLink.BelowMap ?? default,
+                    _ => default
+                };
+
+                if (targetMap == default)
+                    return null;
+
+                var zTarget = _zTransmission.TryFindZDisposalTarget(
+                    target,
+                    targetMap,
+                    zPipe.ZDirection
+                );
+
+                if (zTarget != null)
+                {
+                    TransferToZTube(target, zTarget.Value);
+                    return zTarget;
+                }
+            }
+            // Utopia-Tweak : ZLevels
+
+            var oppositeDirection = nextDirection.GetOpposite();
+            var normalXform = Transform(target);
+
+            if (!TryComp<MapGridComponent>(normalXform.GridUid, out var grid))
                 return null;
 
-            var position = xform.Coordinates;
-            foreach (var entity in _map.GetInDir(xform.GridUid.Value, grid, position, nextDirection))
+            var position = normalXform.Coordinates;
+
+            foreach (var entity in _map.GetInDir(
+                        normalXform.GridUid.Value,
+                        grid,
+                        position,
+                        nextDirection))
             {
                 if (!TryComp(entity, out DisposalTubeComponent? tube))
-                {
                     continue;
-                }
 
                 if (!CanConnect(entity, tube, oppositeDirection))
-                {
                     continue;
-                }
 
                 if (!CanConnect(target, targetTube, nextDirection))
-                {
                     continue;
-                }
 
                 return entity;
             }
 
             return null;
         }
+
+        // Utopia-Tweak : ZLevels
+        private void TransferToZTube(EntityUid holder, EntityUid targetTube)
+        {
+            if (!TryComp(holder, out DisposalHolderComponent? holderComp))
+                return;
+
+            _disposableSystem.ExitDisposals(holder, holderComp);
+            var targetCoords = Transform(targetTube).Coordinates;
+
+            _transform.SetCoordinates(holder, targetCoords);
+            _disposableSystem.EnterTube(holder, targetTube, holderComp);
+        }
+        // Utopia-Tweak : ZLevels
 
         public static void ConnectTube(EntityUid _, DisposalTubeComponent tube)
         {
