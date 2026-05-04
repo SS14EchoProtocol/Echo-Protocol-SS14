@@ -8,13 +8,13 @@
     },
     "states": [
         {
-            "name": "cabinet"
+            "name": "generic"
         },
         {
-            "name": "cabinet_door"
+            "name": "generic_door"
         },
         {
-            "name": "cabinet_open"
+            "name": "generic_open"
         },
         {
             "name": "sparking",
