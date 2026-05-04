@@ -7,12 +7,12 @@
 #ECHO-Tweak-Start респрайт шкафов
   - type: Sprite
     sprite: _ECHO/Structures/Storage/Closet/cabinet.rsi
-#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: cabinet
-    stateDoorOpen: cabinet_open
-    stateDoorClosed: cabinet_door
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: generic_door
+#ECHO-Tweak-End респрайт шкафов
 
   - type: AccessReader
     access: [["Bar"]]
