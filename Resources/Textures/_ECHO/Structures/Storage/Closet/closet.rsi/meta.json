@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "copyright": ", taken from Tau Ceti at commit 9b974d6a0de50e09904c8c3fb7e96f5d05fdae90, cuted on ss14 format by Firisi(Github), med_secure and med_secure_door modified from med and med_door, tac modified from syndicate, janitor_bomb, janitor_bomb_door, janitor_bomb_open modified from jan_bio and bomb, eng_evac_door modified from eng_weld_doorby Unlumy(Github); cap_door, n2, qm_door, ce, ce_door, hydro, hydro_door, cmo_door, cmo, cmo_open, cap_door modified by Unlumy(Github); atmos, genpop, brigmedic made by Unlumy(Github)",
+    "copyright": ", taken from Tau Ceti at commit 9b974d6a0de50e09904c8c3fb7e96f5d05fdae90, cuted on ss14 format by Firisi(Github), med_secure and med_secure_door modified from med and med_door, tac modified from syndicate, janitor_bomb, janitor_bomb_door, janitor_bomb_open modified from jan_bio and bomb, eng_evac_door modified from eng_weld_doorby Unlumy(Github); cap_door, n2, qm_door, ce, ce_door, hydro, hydro_door, cmo_door, cmo, cmo_open, cap_door, clown_door modified by Unlumy(Github); mime, atmos, genpop, brigmedic made by Unlumy(Github)",
     "license": "CC-BY-SA-3.0",
     "size": {
         "x": 32,
@@ -319,6 +319,15 @@
             "name": "brigmedic_door"
         },
         {
+            "name": "paramed"
+        },
+        {
+            "name": "paramed_door"
+        },
+        {
+            "name": "paramed_open"
+        },
+        {
             "name": "armory"
         },
         {
@@ -425,6 +434,36 @@
         },
         {
             "name": "hos_open"
+        },
+        {
+            "name": "hop"
+        },
+        {
+            "name": "hop_door"
+        },
+        {
+            "name": "representative_door"
+        },
+        {
+            "name": "hop_open"
+        },
+        {
+            "name": "mime"
+        },
+        {
+            "name": "mime_door"
+        },
+        {
+            "name": "mime_open"
+        },
+        {
+            "name": "clown"
+        },
+        {
+            "name": "clown_door"
+        },
+        {
+            "name": "clown_open"
         }
     ]
 }
