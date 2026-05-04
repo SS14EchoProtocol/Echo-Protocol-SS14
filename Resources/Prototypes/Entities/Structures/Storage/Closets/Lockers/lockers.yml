@@ -7,12 +7,13 @@
 #ECHO-Tweak-Start респрайт шкафов
   - type: Sprite
     sprite: _ECHO/Structures/Storage/Closet/cabinet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: generic
-    stateDoorOpen: generic_open
-    stateDoorClosed: generic_door
-#ECHO-Tweak-End респрайт шкафов
+    stateBaseClosed: generic #ECHO-Tweak было: stateBaseClosed: booze -> Стало:  stateBaseClosed: generic
+    stateDoorOpen: generic_open #ECHO-Tweak было: stateDoorOpen: booze_open -> Стало: stateDoorOpen: generic_open
+    stateDoorClosed: generic_door #ECHO-Tweak было: stateDoorClosed: booze_door -> Стало: stateDoorClosed: generic_door
+
 
   - type: AccessReader
     access: [["Bar"]]
