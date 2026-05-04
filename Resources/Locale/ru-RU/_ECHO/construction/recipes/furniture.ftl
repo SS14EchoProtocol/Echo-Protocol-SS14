@@ -1,0 +1,7 @@
+construction-recipe-orange-yellow-comf-bench = удобная скамейка (жёлтая)
+construction-recipe-purple-comf-bench = удобная скамейк (фиолетовая)
+construction-recipe-dark-purple-comf-bench = удобная скамейк (тёмно-фиолетовая)
+construction-recipe-gray-comf-bench = удобная скамейк (серая)
+construction-recipe-dark-gray-comf-bench = удобная скамейк (тёмно-серая)
+construction-recipe-green-comf-bench = удобная скамейк (зелёная)
+construction-recipe-white-blue-comf-bench = удобная скамейк (бело-голубая)

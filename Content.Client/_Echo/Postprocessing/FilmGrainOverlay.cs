@@ -8,6 +8,8 @@ public sealed class FilmGrainOverlay : Overlay
 {
     [Dependency] private IPrototypeManager _prototype = default!;
 
+    public const float GrainSize = 0.5f;
+
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
 
@@ -18,7 +20,9 @@ public sealed class FilmGrainOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
-        _shader = _prototype.Index<ShaderPrototype>("FilmGrain").InstanceUnique();
+        ProtoId<ShaderPrototype> FGrainShader = "FilmGrain";
+
+        _shader = _prototype.Index(FGrainShader).InstanceUnique();
 
         ZIndex = (int) Shared.DrawDepth.DrawDepth.Overlays;
     }
@@ -34,6 +38,7 @@ public sealed class FilmGrainOverlay : Overlay
 
         _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         _shader.SetParameter("GRAIN_AMOUNT", GrainAmount);
+        _shader.SetParameter("GRAIN_SIZE", GrainSize);
 
         handle.UseShader(_shader);
         handle.DrawRect(args.WorldBounds, Color.White);

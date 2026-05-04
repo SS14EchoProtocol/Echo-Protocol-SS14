@@ -1,0 +1,45 @@
+# - type: entity
+#   parent: BaseComputerShuttle
+#   id: ComputerShuttleZMaster
+#   name: shuttle console
+#   description: Used to pilot a shuttle.
+#   components:
+#   - type: Sprite
+#     layers:
+#     - map: ["computerLayerBody"]
+#       state: computer
+#     - map: ["computerLayerKeyboard"]
+#       state: generic_keyboard
+#     - map: ["computerLayerScreen"]
+#       state: shuttle
+#     - map: ["computerLayerKeys"]
+#       state: generic_keys
+#     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+#       state: generic_panel_open
+#   - type: Computer
+#     board: ShuttleConsoleCircuitboard
+#   - type: GridMotionLink
+#     isMaster: true
+
+# - type: entity
+#   parent: BaseComputerShuttle
+#   id: ComputerShuttleZ
+#   name: shuttle console
+#   description: Used to pilot a shuttle.
+#   components:
+#   - type: Sprite
+#     layers:
+#     - map: ["computerLayerBody"]
+#       state: computer
+#     - map: ["computerLayerKeyboard"]
+#       state: generic_keyboard
+#     - map: ["computerLayerScreen"]
+#       state: shuttle
+#     - map: ["computerLayerKeys"]
+#       state: generic_keys
+#     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+#       state: generic_panel_open
+#   - type: Computer
+#     board: ShuttleConsoleCircuitboard
+#   - type: GridMotionLink
+#     isMaster: false

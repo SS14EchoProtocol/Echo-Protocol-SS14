@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TauCeti at commit 567af47147bd0681241c1b1d9d688ba05ca9fc99",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "clock"
+        }
+    ]
+}

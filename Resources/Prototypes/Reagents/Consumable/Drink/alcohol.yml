@@ -150,15 +150,42 @@
         - !type:ReagentCondition
           reagent: Ethanol
           min: 15
+        - !type:MetabolizerTypeCondition
+          type: [ Dwarf ]
+          inverted: true
         damage:
           types:
             Poison: 0.1
+      # dwarves take less toxin damage and heal a marginal amount of brute
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ethanol
+          min: 15
+        - !type:MetabolizerTypeCondition
+          type: [ Dwarf ]
+        damage:
+          types:
+            Poison: 0.02
+      - !type:EvenHealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ethanol
+          min: 15
+        - !type:MetabolizerTypeCondition
+          type: [ Dwarf ]
+        damage:
+          Brute: -0.1
       - !type:Vomit
         probability: 0.04
         conditions:
         - !type:ReagentCondition
           reagent: Ethanol
           min: 12
+        # dwarves immune to vomiting from alcohol
+        - !type:MetabolizerTypeCondition
+          type: [ Dwarf ]
+          inverted: true
       - !type:Drunk
         boozePower: 2
 
@@ -849,13 +876,12 @@
         factor: 2
       - !type:SatiateHunger
         factor: -2
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Burn: -1
-            Brute: -1
-            Airloss: -1
-            Toxin: -1
+          Burn: -1
+          Brute: -1
+          Airloss: -1
+          Toxin: -1
 
 - type: reagent
   id: DriestMartini
@@ -1749,9 +1775,9 @@
   fizziness: 0.4
 
 - type: reagent
+  parent: BaseAlcohol
   id: WhiteGilgamesh
   name: reagent-name-white-gilgamesh
-  parent: BaseDrink
   desc: reagent-desc-white-gilgamesh
   physicalDesc: reagent-physical-desc-creamy
   flavor: white-gilgamesh

@@ -138,7 +138,7 @@
   parent: StoolBase
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
     state: bar
   - type: Construction
     graph: Seat
@@ -408,7 +408,7 @@
   description: A long chair made for a metro. Really standard design.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: Structures/Furniture/chairs.rsi, так как без этого идёт конфликт путей
+    sprite: _ECHO/Structures/Furniture/chairs.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Furniture/chairs.rsi, так как путь изменён до нашего спрайта
     state: steel-bench
   - type: Construction
     graph: Seat

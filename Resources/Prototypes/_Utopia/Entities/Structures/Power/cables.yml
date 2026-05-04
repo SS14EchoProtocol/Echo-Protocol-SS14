@@ -1,0 +1,35 @@
+- type: entity
+  parent: CableHV
+  id: UtopiaZCableHVUp
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+  - type: NodeContainer
+    nodes:
+      power:
+        !type:ZCableNode
+        nodeGroupID: HVPower
+        zDirection: Up
+  - type: ZCable
+  - type: ZLevelTransmitter
+    range: 0.08
+    allowUp: true
+  - type: ZLevelEntityLink
+
+- type: entity
+  parent: CableHV
+  id: UtopiaZCableHVDown
+  name: HV power cable
+  description: An orange high voltage power cable.
+  components:
+  - type: NodeContainer
+    nodes:
+      power:
+        !type:ZCableNode
+        nodeGroupID: HVPower
+        zDirection: Down
+  - type: ZCable
+  - type: ZLevelTransmitter
+    range: 0.08
+    allowDown: true
+  - type: ZLevelEntityLink

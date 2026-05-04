@@ -1,0 +1,40 @@
+{
+    "version": 1,
+    "copyright": "Sparking state taken from official codebase closet.rsi; welded, cabinet, cabinet_door and cabinet_open, locked and unlocked taken from Tau Ceti at commit 9b974d6a0de50e09904c8c3fb7e96f5d05fdae90 and modifyed by Unlumy(Github), Welded made by Unlumy(Github)",
+    "license": "CC-BY-SA-3.0",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "generic"
+        },
+        {
+            "name": "generic_door"
+        },
+        {
+            "name": "generic_open"
+        },
+        {
+            "name": "sparking",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "welded"
+        },
+        {
+            "name": "locked"
+        },
+        {
+            "name": "unlocked"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TauCeti at commit: https://github.com/TauCetiStation/TauCetiClassic/pull/12455/changes/bb0c7a1a552d0f79a618a5f5a1659fa2bc4e3779 and edited for ss14 format by luckyrat(Discord), welded by Unlumy(Github), sparking taken from original SS14 files by EmoGarbage.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "closed"
+        },
+        {
+            "name": "open"
+        },
+        {
+            "name": "welded"
+        },
+        {
+            "name": "sparking",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        }
+    ]
+}

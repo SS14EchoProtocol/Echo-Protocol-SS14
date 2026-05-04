@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: EchoNewCocktails
+  name: guide-new-cocktails-ECHO
+  text: "/ServerInfo/_ECHO/NewCocktails.xml"

@@ -1,0 +1,31 @@
+# ТАК, в кратце по спавнпоинту, SpawnPointLatejoinPassenger делает так, чтобы игрок появлялся за пассажира на спавнпоинте этом
+- type: entity
+  name: latejoin job spawn point passenger
+  id: EchoSpawnPointLatejoinPassenger # сделано для примера
+  parent: SpawnPointJobBase
+  suffix: LateJoin
+  components:
+  - type: Sprite # Спрайт
+    layers:
+    - state: green
+    - state: passenger # в Textures/Markers/jobs.rsi есть файл  passenger, применяется для обозначения работы
+  - type: SpawnPoint
+    spawn_type: LateJoin # Обозначаем тип, тут это мидраунд спавнпоинт
+    whitelist:
+      - job_id: Passenger # Обозначаем какая должность для этого спавнпоинта
+
+- type: entity
+  name: latejoin job spawn point passenger and captain
+  id: EchoSpawnPointLatejoinPassengerNCaptain
+  parent: SpawnPointJobBase
+  suffix: LateJoin
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: passenger
+  - type: SpawnPoint
+    spawn_type: LateJoin
+    whitelist:
+      - job_id: Passenger
+      - job_id: Captain

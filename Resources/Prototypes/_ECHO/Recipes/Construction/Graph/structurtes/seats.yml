@@ -6,6 +6,7 @@
       actions:
         - !type:DestroyEntity {}
       edges:
+# Цветные стулья
         - to: echoChairBlack
           steps:
             - material: Steel
@@ -31,6 +32,7 @@
             - material: Steel
               amount: 1
               doAfter: 1
+# Цветные удобные кресла
         - to: echoComfyChairLime
           steps:
             - material: Steel
@@ -51,7 +53,57 @@
             - material: Steel
               amount: 2
               doAfter: 1
-
+# Цветные удобные скамейки
+        - to: orangeYellowComfBench
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+        - to: purpleComfBench
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+        - to: darkPurpleComfBench
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+        - to: grayComfBench
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+        - to: darkGrayComfBench
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+        - to: greenComfBench
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+        - to: whiteBlueComfBench
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+            - material: Cloth
+              amount: 1
+# Цветные стулья
     - node: echoChairBlack
       entity: EchoChairBlack
       edges:
@@ -106,7 +158,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-
+# Цветные удобные кресла
     - node: echoComfyChairLime
       entity: EchoComfyChairLime
       edges:
@@ -151,6 +203,111 @@
             - !type:SpawnPrototype
               prototype: SheetSteel1
               amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+# Цветные удобные скамейки
+    - node: orangeYellowComfBench
+      entity: BenchOrangeYellowComfy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: purpleComfBench
+      entity: BenchPurpleComfy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: darkPurpleComfBench
+      entity: BenchDarkPurpleComfy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: grayComfBench
+      entity: BenchGrayComfy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: darkGrayComfBench
+      entity: BenchDarkGrayComfy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: greenComfBench
+      entity: BenchGreenComfy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: whiteBlueComfBench
+      entity: BenchWhiteBlueComfy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
           steps:
             - tool: Screwing
               doAfter: 1

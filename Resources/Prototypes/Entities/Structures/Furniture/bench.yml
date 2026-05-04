@@ -8,7 +8,7 @@
     anchored: true
   - type: Rotatable
   - type: Sprite
-    sprite: Structures/Furniture/Bench/comf_bench.rsi
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi # PE-Tweak Было: Structures/Furniture/Bench/comf_bench.rsi -> Стало: _ECHO/Structures/Furniture/Bench/comf_bench.rsi, Так как изменён путь до нашего спрайта
     layers:
     - state: bench_solo_base
       color: "#767e82"

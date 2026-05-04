@@ -38,6 +38,11 @@
   - type: MindContainer
   - type: RequireProjectileTarget
     active: False
+  # ECHO-Tweak-start
+  - type: CEZPhysics
+  - type: CEZLevelViewer
+    lookUp: true
+  # ECHO-Tweak-end
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
@@ -55,6 +60,7 @@
   - type: MovementSpeedModifier
   - type: SpeechBarks # ECHO-Tweak : Barks
   - type: OfferItem # ECHO-Tweak: Добавил оффер компонент для того, чтобы сущности могли оффер делать предметов
+  - type: Posing # ECHO-Tweak : Posing
 
 - type: entity
   save: false
@@ -162,8 +168,8 @@
     soundHit:
       collection: MetalThud
     damage:
-      groups:
-        Brute: 5
+      types:
+        Blunt: 5
 
 # Used for mobs that are affected by atmospherics, pressure, and heat
 - type: entity

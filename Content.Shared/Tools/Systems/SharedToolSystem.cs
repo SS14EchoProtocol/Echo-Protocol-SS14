@@ -184,7 +184,8 @@ public abstract partial class SharedToolSystem : EntitySystem
         // Echo - Moved `TryStartDoAfter` into a check and added `UseToolEvent`. "Wielding Sparks Animation"
         if (_doAfterSystem.TryStartDoAfter(doAfterArgs, out id))
         {
-            RaiseLocalEvent(tool, new UseToolEvent(user, target, id.Value.Index, doAfterLength));
+            var ev = new UseToolEvent(user, target, id.Value, doAfterLength);
+            RaiseLocalEvent(tool, ref ev);
         }
         return true;
     }

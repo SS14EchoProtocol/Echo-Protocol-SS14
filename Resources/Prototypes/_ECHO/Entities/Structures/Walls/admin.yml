@@ -1,0 +1,74 @@
+#Admin walls
+
+- type: entity
+  id: EchoWallAdminWhite
+  name: admin white wall
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Walls/admin_wall.rsi
+    state: white
+    drawdepth: Walls
+  - type: WallReplacementMarker
+  - type: Icon
+    sprite: _ECHO/Structures/Walls/admin_wall.rsi
+    state: white
+  - type: Occluder
+  - type: Tag
+    tags:
+    - Structure
+    - Wall
+    - HideContextMenu
+  - type: IsRoof
+  - type: PlacementReplacement
+    key: walls
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+  - type: Airtight
+  - type: StaticPrice
+    price: 1
+  - type: RadiationBlocker
+    resistance: 5
+  - type: BlockWeather
+  - type: Transform
+    anchored: true
+  - type: Clickable
+
+- type: entity
+  parent: EchoWallAdminWhite
+  id: EchoWallAdminWhiteUnshaded
+  name: admin white wall unshaded
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Walls/admin_wall.rsi
+    layers:
+      - state: white
+        shader: unshaded
+    drawdepth: Walls
+
+- type: entity
+  parent: EchoWallAdminWhite
+  id: EchoWallAdminBlack
+  name: admin black wall
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Walls/admin_wall.rsi
+    state: black
+    drawdepth: Walls
+  - type: Icon
+    sprite: _ECHO/Structures/Walls/admin_wall.rsi
+    state: black

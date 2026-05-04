@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TauCeti at commit d1026b4cf133736d277be8dbf5eedee52a736bec",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "terra"
+        },
+        {
+            "name": "moon"
+        },
+        {
+            "name": "europe"
+        }
+    ]
+}

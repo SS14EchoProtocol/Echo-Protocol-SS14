@@ -107,3 +107,95 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+#Цветные удобные камейки
+- type: construction
+  id: BenchOrangeYellowComfy
+  name: construction-recipe-orange-yellow-comf-bench
+  graph: EchoSeat
+  startNode: start
+  targetNode: orangeYellowComfBench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchPurpleComfy
+  name: construction-recipe-purple-comf-bench
+  graph: EchoSeat
+  startNode: start
+  targetNode: purpleComfBench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchDarkPurpleComfy
+  name: construction-recipe-dark-purple-comf-bench
+  graph: EchoSeat
+  startNode: start
+  targetNode: darkPurpleComfBench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchGrayComfy
+  name: construction-recipe-gray-comf-bench
+  graph: EchoSeat
+  startNode: start
+  targetNode: grayComfBench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchDarkGrayComfy
+  name: construction-recipe-dark-gray-comf-bench
+  graph: EchoSeat
+  startNode: start
+  targetNode: darkGrayComfBench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchGreenComfy
+  name: construction-recipe-green-comf-bench
+  graph: EchoSeat
+  startNode: start
+  targetNode: greenComfBench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchWhiteBlueComfy
+  name: construction-recipe-white-blue-comf-bench
+  graph: EchoSeat
+  startNode: start
+  targetNode: whiteBlueComfBench
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

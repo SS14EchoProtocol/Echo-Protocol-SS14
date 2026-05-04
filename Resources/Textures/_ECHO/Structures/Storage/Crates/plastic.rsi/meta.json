@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Modified from freezer.rsi that taken from TauCeti by Unlumy (github) for ECHO, welded by Unlumy(github), sparking taken from original SS14 files by EmoGarbage.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "base"
+        },
+        {
+            "name": "closed"
+        },
+        {
+            "name": "open"
+        },
+        {
+            "name": "welded"
+        },
+        {
+            "name": "sparking",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        }
+    ]
+}

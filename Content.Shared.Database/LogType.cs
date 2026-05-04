@@ -483,4 +483,11 @@ public enum LogType
     /// Events related to players connecting/disconnecting.
     /// </summary>
     Connection = 104,
+
+    // ECHO-Tweak start : Grab
+    /// <summary>
+    /// A player grabbed another player
+    /// </summary>
+    Grab = 105,
+    // ECHO-Tweak end : Grab
 }

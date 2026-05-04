@@ -1,0 +1,29 @@
+- type: entity
+  name: Tea Box
+  parent: BaseStorageItem
+  id: EchoTeabox
+  description: Woah. So much tea you have here.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/teapack.rsi
+    state: teabox
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,3,1
+    whitelist:
+      tags:
+        - EchoTeaPack
+  - type: StorageFill
+    contents:
+    - id: EchoOrangeTeapack
+    - id: EchoOrangeTeapack
+    - id: EchoEmptyTeaPack
+    - id: EchoEmptyTeaPack
+    - id: EchoCherryTeapack
+    - id: EchoCherryTeapack
+    - id: EchoEmptyTeaPack
+    - id: EchoEmptyTeaPack

@@ -1,0 +1,111 @@
+- type: entity
+  id: BenchOrangeYellowComfy
+  suffix: Solo. OrangeYellow
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#d89b2b"
+  - type: Construction
+    graph: EchoSeat
+    node: orangeYellowComfBench
+
+- type: entity
+  id: BenchPurpleComfy
+  suffix: Solo. Purple
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#5a3a7a"
+  - type: Construction
+    graph: EchoSeat
+    node: purpleComfBench
+
+- type: entity
+  id: BenchDarkPurpleComfy
+  suffix: Solo. DarkPurple
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#2e1b3a"
+  - type: Construction
+    graph: EchoSeat
+    node: darkPurpleComfBench
+
+- type: entity
+  id: BenchGrayComfy
+  suffix: Solo. Gray
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#9a9a9a"
+  - type: Construction
+    graph: EchoSeat
+    node: grayComfBench
+
+- type: entity
+  id: BenchDarkGrayComfy
+  suffix: Solo. DarkGray
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#4a4a4a"
+  - type: Construction
+    graph: EchoSeat
+    node: darkGrayComfBench
+
+- type: entity
+  id: BenchGreenComfy
+  suffix: Solo. Green
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#3f7a4a"
+  - type: Construction
+    graph: EchoSeat
+    node: greenComfBench
+
+- type: entity
+  id: BenchWhiteBlueComfy
+  suffix: Solo. WhiteBlue
+  parent: BenchComfy
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Furniture/Bench/comf_bench.rsi
+    layers:
+    - state: bench_solo_base
+      color: "#767e82"
+    - state: bench_solo_cover
+      color: "#cfe8f5"
+  - type: Construction
+    graph: EchoSeat
+    node: whiteBlueComfBench

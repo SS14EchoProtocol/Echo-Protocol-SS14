@@ -65,6 +65,7 @@ namespace Content.Client.ContextMenu.UI
 
         protected override void Draw(DrawingHandleScreen handle)
         {
+            HoverLabel.ModulateSelfOverride = IsHovered ? Color.Red : Color.Transparent;    // ECHO-Tweak: Использование символа вместо цвета кнопки
             UpdateStyle();
             base.Draw(handle);
         }

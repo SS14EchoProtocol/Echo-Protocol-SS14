@@ -1,0 +1,14 @@
+ent-BenchOrangeYellowComfy = жёлтая удобная скамейка
+    .desc = Выглядит удобной.
+ent-BenchPurpleComfy = фиолетовая удобная скамейка
+    .desc = { ent-BenchOrangeYellowComfy.desc }
+ent-BenchDarkPurpleComfy = тёмно-фиолетовая удобная скамейка
+    .desc = { ent-BenchOrangeYellowComfy.desc }
+ent-BenchGrayComfy = серая удобная скамейка
+    .desc = { ent-BenchOrangeYellowComfy.desc }
+ent-BenchDarkGrayComfy = тёмно-серая удобная скамейка
+    .desc = { ent-BenchOrangeYellowComfy.desc }
+ent-BenchGreenComfy = зелёная удобная скамейка
+    .desc = { ent-BenchOrangeYellowComfy.desc }
+ent-BenchWhiteBlueComfy = бело-голубая удобная скамейка
+    .desc = { ent-BenchOrangeYellowComfy.desc }
