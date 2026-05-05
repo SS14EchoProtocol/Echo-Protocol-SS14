@@ -6,9 +6,9 @@
   #ECHO-Tweak-Start: Resprite of window
   - type: Sprite
     drawdepth: WallTops
-    sprite: _ECHO/Structures/Windows/window.rsi
+    sprite: _ECHO/Structures/Windows/plasma_window.rsi
   - type: Icon
-    sprite: _ECHO/Structures/Windows/window.rsi
+    sprite: _ECHO/Structures/Windows/plasma_window.rsi
   #ECHO-Tweak-End
   - type: Damageable
     damageContainer: StructuralInorganic
