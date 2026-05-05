@@ -1,0 +1,159 @@
+- type: tile
+  id: ECHOFloorWoodDouble
+  name: tiles-wood-double
+  sprite: /Textures/_ECHO/Tiles/wood_double.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
+
+- type: tile
+  id: ECHOFloorWoodTavern
+  name: tiles-wood-tavern
+  sprite: /Textures/_ECHO/Tiles/wood_tavern.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
+
+- type: tile
+  id: ECHOFloorWoodTileAlt
+  name: tiles-wood-tile-alt
+  sprite: /Textures/_ECHO/Tiles/wood_tile_alt.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
+
+- type: tile
+  id: ECHOFloorWoodSequence
+  name: tiles-wood-sequence
+  sprite: /Textures/_ECHO/Tiles/wood_sequence.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
+
+- type: tile
+  id: ECHOFloorWoodLong
+  name: tiles-wood-long
+  sprite: /Textures/_ECHO/Tiles/wood_long.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
+
+- type: tile
+  id: ECHOFloorWoodVertically
+  name: tiles-wood-vertically
+  sprite: /Textures/_ECHO/Tiles/wood_vertically.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
+
+- type: tile
+  id: ECHOFloorWoodParquetAlt
+  name: tiles-wood-parquet_alt
+  sprite: /Textures/_ECHO/Tiles/wood_parquet_alt.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000
+
+- type: tile
+  id: ECHOFloorWoodSpin
+  name: tiles-wood-spin
+  sprite: /Textures/_ECHO/Tiles/wood_spin.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  barestepSounds:
+    collection: BarestepWood
+  itemDrop: MaterialWoodPlank1
+  heatCapacity: 10000

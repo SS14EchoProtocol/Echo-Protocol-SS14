@@ -4,11 +4,16 @@
   name: booze storage
   description: This is where the bartender keeps the booze.
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/cabinet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: cabinet
-    stateDoorOpen: cabinet_open
-    stateDoorClosed: cabinet_door
+    stateBaseClosed: generic #ECHO-Tweak было: stateBaseClosed: booze -> Стало:  stateBaseClosed: generic
+    stateDoorOpen: generic_open #ECHO-Tweak было: stateDoorOpen: booze_open -> Стало: stateDoorOpen: generic_open
+    stateDoorClosed: generic_door #ECHO-Tweak было: stateDoorClosed: booze_door -> Стало: stateDoorClosed: generic_door
+
 
   - type: AccessReader
     access: [["Bar"]]
@@ -26,6 +31,10 @@
   parent: LockerBaseSecure
   name: secure closet
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: secure
@@ -38,6 +47,10 @@
   parent: LockerBaseSecure
   name: quartermaster's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: qm
@@ -52,6 +65,10 @@
   name: salvage specialist's equipment
   description: Nevermind the pickaxe.
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: mining
@@ -66,6 +83,10 @@
   parent: LockerBaseSecure
   name: captain's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: cap
@@ -79,6 +100,10 @@
   parent: LockerBaseSecure
   name: head of personnel's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: hop
@@ -93,6 +118,10 @@
   parent: LockerBaseSecure
   name: chief engineer's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: ce
@@ -107,6 +136,10 @@
   parent: LockerBase
   name: electrical supplies locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: eng
@@ -121,6 +154,10 @@
   parent: LockerBase
   name: welding supplies locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: eng
@@ -135,6 +172,10 @@
   parent: LockerBase
   name: atmospheric technician's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: atmos
@@ -149,6 +190,10 @@
   parent: LockerBase
   name: engineer's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: eng_secure
@@ -164,6 +209,10 @@
   name: emergency shuttle emergency locker
   description: It's emergencies all the way down.
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: eng
@@ -179,6 +228,10 @@
   name: freezer
   suffix: No Access
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: freezer
@@ -210,6 +263,10 @@
   parent: LockerBase
   name: botanist's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: hydro
@@ -225,6 +282,10 @@
   name: medicine locker
   description: Filled to the brim with medical junk.
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: med
@@ -239,6 +300,10 @@
   parent: LockerBase
   name: medical doctor's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: med_secure
@@ -253,6 +318,10 @@
   parent: LockerBase
   name: paramedic's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: paramed
@@ -268,6 +337,10 @@
   parent: LockerBase
   name: chemical locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: med
@@ -282,6 +355,10 @@
   parent: LockerBaseSecure
   name: chief medical officer's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: cmo
@@ -296,6 +373,10 @@
   parent: LockerBase
   name: research director's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: rd
@@ -309,6 +390,10 @@
   parent: LockerBase
   name: scientist's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: science
@@ -323,6 +408,10 @@
   parent: LockerBaseSecure
   name: head of security's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: hos
@@ -337,6 +426,10 @@
   parent: LockerBaseSecure
   name: warden's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: warden
@@ -351,6 +444,10 @@
   parent: LockerBaseSecure
   name: brigmedic locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: brigmedic
@@ -365,6 +462,10 @@
   parent: LockerBaseSecure
   name: security officer's locker
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: sec
@@ -378,14 +479,38 @@
   parent: LockerBaseSecure
   name: gun safe
   components:
+  - type: Lock
+  - type: LockVisuals
+#ECHO-Tweak-Start Resprite of ShotgunCase
   - type: Sprite
-    sprite: _ECHO/Structures/Storage/closet.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Storage/closet.rsi, так как путь изменён до нашего спрайта
+    sprite: _ECHO/Structures/Storage/Closet/shotguncase.rsi # ECHO-Tweak Добавлено: sprite: _ECHO/Structures/Storage/Closet/shotguncase.rsi, так как путь изменён до нашего спрайта
+    noRot: true
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      visible: false
+      sprite: Structures/Storage/closet_labels.rsi
+      offset: "-0.095,-0.15"
+      map: ["enum.PaperLabelVisuals.Layer"]
+#ECHO-Tweak-End Resprite of ShotgunCase
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: shotguncase
-    stateDoorOpen: shotguncase_open
-    stateDoorClosed: shotguncase_door
+#ECHO-Tweak-Start Resprite of ShotgunCase
+    stateBaseClosed: generic
+    stateDoorOpen: generic_open
+    stateDoorClosed: generic_door
+#ECHO-Tweak-End Resprite of ShotgunCase
   - type: AccessReader
+    access: [["Armory"]] # ECHO-Tweak Добавлено: access: [["Armory"]]
   - type: Construction
     graph: GunSafe
     node: done
@@ -407,6 +532,10 @@
   id: GenpopBase
   abstract: true
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: GenpopLocker
   - type: EntityStorageVisuals
     stateBaseClosed: genpop
@@ -540,6 +669,10 @@
   description: It's a personal storage unit with a blood-red design.
   suffix: "Locked"
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: syndicate
@@ -581,6 +714,10 @@
   name: clown locker
   parent: LockerBaseSecure
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: AccessReader
     access: [["Theatre"]]
@@ -595,6 +732,10 @@
   name: mime locker
   parent: LockerBaseSecure
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: AccessReader
     access: [["Theatre"]]
@@ -609,6 +750,10 @@
   name: representative locker
   parent: LockerBaseSecure
   components:
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
   - type: Appearance
   - type: AccessReader
     access: [["Command"]]

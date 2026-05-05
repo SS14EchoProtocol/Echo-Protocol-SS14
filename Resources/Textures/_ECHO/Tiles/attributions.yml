@@ -1,3 +1,8 @@
+- files: ["wood_double.png", "wood_tavern.png", "wood_tile_alt.png", "wood_sequence.png", "wood_long.png", "wood_vertically.png", "wood_parquet_alt.png", "wood_spin.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "TauCetiClassic, resprited by maksim21612 (discord)"
+  source: "https://github.com/TauCetiStation/TauCetiClassic"
+
 - files: [ "dark_diagonal.png", "dark_diagonal_mini.png", "dark_herringbone.png", "dark_horizontal_slats_bordered.png", "dark_mini.png", "dark_offset.png", "dark_pavement.png", "dark_pavement_vertical.png", "dark_slats_continuous.png", "shuttleblack.png", "shuttlegrey.png", "shuttlewhite.png", "plating.png", "steel_diagonal.png", "steel_diagonal_mini.png", "steel_herringbone.png", "steel_horizontal_slats_bordered.png", "steel_mini.png", "steel_offset.png", "steel_pavement.png", "steel_pavement_vertical.png", "steel_slats_continuous.png", "white_diagonal.png", "white_diagonal_mini.png", "white_herringbone.png", "white_horizontal_slats_bordered.png", "white_mini.png", "white_offset.png", "white_pavement.png", "white_pavement_vertical.png", "white_slats_continuous.png", "white_herringbone.png"]
   license: "CC-BY-SA-3.0"
   copyright: "sprites maded on base of wizden and TauCeti Sprites and modified palette by Firisi(Github) "
