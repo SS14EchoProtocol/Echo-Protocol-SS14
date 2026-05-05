@@ -3,11 +3,13 @@
   name: plasma window
   parent: [BaseDeltaPressurePlasma, WindowRCDResistant]
   components:
+  #ECHO-Tweak-Start: Resprite of window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _ECHO/Structures/Windows/window.rsi
   - type: Icon
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _ECHO/Structures/Windows/window.rsi
+  #ECHO-Tweak-End
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Glass
