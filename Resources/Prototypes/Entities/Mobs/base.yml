@@ -258,11 +258,12 @@
   - type: Cpr
     change:
       types:
+        Asphyxiation: -2
         Bloodloss: -0.5
         Blunt: 0.2
     bonusHeal:
       types:
-        Asphyxiation: -5
+        Asphyxiation: -10
         Bloodloss: -1.5
     sound:
       path: "/Audio/_ECHO/Effects/cprpulse.ogg"
