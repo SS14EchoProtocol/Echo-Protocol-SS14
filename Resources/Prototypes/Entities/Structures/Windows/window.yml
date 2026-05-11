@@ -22,14 +22,12 @@
     tags:
       - ForceFixRotations
       - Window
-  #ECHO-Tweak-Start: Resprite of window
   - type: Sprite
     drawdepth: WallTops
-    sprite: _ECHO/Structures/Windows/window.rsi
+    sprite: _ECHO/Structures/Windows/window.rsi # ECHO-Tweak Было: /Structures/Windows/window.rsi -> Стало: _ECHO/Structures/Windows/window.rsi
   - type: Icon
-    sprite: _ECHO/Structures/Windows/window.rsi
+    sprite: _ECHO/Structures/Windows/window.rsi # ECHO-Tweak Было: /Structures/Windows/window.rsi -> Стало: _ECHO/Structures/Windows/window.rsi
     state: full
-  #ECHO-Tweak-End
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -78,7 +76,7 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: walls #ECHO-Tweak: Made possible to connect window to wall
+    key: walls # ECHO-Tweak Было: window -> Стало: walls
     base: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
