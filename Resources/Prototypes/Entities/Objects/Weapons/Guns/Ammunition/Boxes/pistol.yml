@@ -23,6 +23,17 @@
     steps: 3
     zeroVisible: false
   - type: Appearance
+  #ECHO-Tweak-Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_ECHO/Entities/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_ECHO/Entities/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_ECHO/Entities/ammobox_drop.ogg
+  #ECHO-Tweak-End
 
 # Boxes
 - type: entity

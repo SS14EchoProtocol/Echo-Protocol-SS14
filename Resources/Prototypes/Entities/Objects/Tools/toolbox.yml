@@ -14,10 +14,15 @@
     maxItemSize: Normal
     grid:
     - 0,0,6,3
-    storageOpenSound: /Audio/Items/toolbox_open.ogg
-    storageCloseSound: /Audio/Items/toolbox_close.ogg
-    storageInsertSound: /Audio/Items/toolbox_insert.ogg
-    storageRemoveSound: /Audio/Items/toolbox_remove.ogg
+    #ECHO-Tweak-Start
+    storageInsertSound:
+      path: /Audio/_ECHO/Entities/toolbox_rustle.ogg
+    storageOpenSound: /Audio/_ECHO/Entities/toolbox_open.ogg
+    #storageOpenSound: /Audio/Items/toolbox_open.ogg
+    #storageCloseSound: /Audio/Items/toolbox_close.ogg
+    #storageInsertSound: /Audio/Items/toolbox_insert.ogg
+    #storageRemoveSound: /Audio/Items/toolbox_remove.ogg
+    #ECHO-Tweak-End
   - type: Item
     size: Ginormous
   - type: MeleeWeapon

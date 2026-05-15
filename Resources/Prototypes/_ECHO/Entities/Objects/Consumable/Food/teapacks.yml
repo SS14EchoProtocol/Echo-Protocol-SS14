@@ -1,80 +1,102 @@
 - type: entity
-  name: EchoOrangeTeapack
-  parent: DrinkBase
-  id: EchoOrangeTeapack
-  description: its teapack with orange tea.
+  parent: BaseFoodCondiment
+  id: EchoBaseTeapack
+  abstract: true
   components:
-  - type: Tag
-    tags:
-    - EchoTeaPack
-  - type: FlavorProfile
-    flavors:
-      - bitter
-      - metallic
-  - type: Sprite
-    sprite: _ECHO/Objects/Consumable/Drinks/orangetea.rsi
-    state: teapack
+  - type: Item
+    size: Tiny
+  - type: Openable
+    sound:
+      collection: packetOpenSounds
+  - type: InjectableSolution
+    solution: food
   - type: SolutionContainerManager
     solutions:
-      drink:
+      food:
+        maxVol: 5
+  - type: SolutionTransfer
+    maxTransferAmount: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  - type: Tag
+    tags:
+      - EchoTeaPack
+
+- type: entity
+  parent: EchoBaseTeapack
+  id: EchoOrangeTeapack
+  name: EchoOrangeTeapack
+  description: its teapack with orange tea.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
         maxVol: 5
         reagents:
         - ReagentId: EchoOrangepackReg
           Quantity: 5
-  - type: Item
-    size: Tiny
-
-- type: entity
-  name: EchoCherryTeapack
-  parent: DrinkBase
-  id: EchoCherryTeapack
-  description: its teapack with cherry tea.
-  components:
-  - type: Tag
-    tags:
-    - EchoTeaPack
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/orangetea.rsi
+    state: teapack
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/orangetea.rsi
+    state: teapack
+  - type: Appearance
   - type: FlavorProfile
     flavors:
       - bitter
       - metallic
-  - type: Sprite
-    sprite: _ECHO/Objects/Consumable/Drinks/cherrytea.rsi
-    state: teapack
+
+- type: entity
+  parent: EchoBaseTeapack
+  id: EchoCherryTeapack
+  name: EchoCherryTeapack
+  description: its teapack with cherry tea.
+  components:
   - type: SolutionContainerManager
     solutions:
-      drink:
+      food:
         maxVol: 5
         reagents:
         - ReagentId: EchoCherrypackReg
           Quantity: 5
-  - type: Item
-    size: Tiny
-
-- type: entity
-  name: EchoWatermelonTeapack
-  parent: DrinkBase
-  id: EchoWatermelonTeapack
-  description: its teapack with watermelon tea.
-  components:
-  - type: Tag
-    tags:
-    - EchoTeaPack
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/cherrytea.rsi
+    state: teapack
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/cherrytea.rsi
+    state: teapack
+  - type: Appearance
   - type: FlavorProfile
     flavors:
       - bitter
       - metallic
-  - type: Sprite
-    sprite: _ECHO/Objects/Consumable/Drinks/watermelontea.rsi
-    state: teapack
+
+- type: entity
+  parent: EchoBaseTeapack
+  id: EchoWatermelonTeapack
+  name: EchoWatermelonTeapack
+  description: its teapack with watermelon tea.
+  components:
   - type: SolutionContainerManager
     solutions:
-      drink:
+      food:
         maxVol: 5
         reagents:
         - ReagentId: EchoWatermelonpackReg
           Quantity: 5
-  - type: Item
-    size: Tiny
+  - type: Sprite
+    sprite: _ECHO/Objects/Consumable/Drinks/watermelontea.rsi
+    state: teapack
+  - type: Icon
+    sprite: _ECHO/Objects/Consumable/Drinks/watermelontea.rsi
+    state: teapack
+  - type: Appearance
+  - type: FlavorProfile
+    flavors:
+      - bitter
+      - metallic
 
 - type: entity
   parent: BaseItem

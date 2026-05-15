@@ -11,6 +11,23 @@
   - type: GuideHelp
     guides:
     - Science
+  # ECHO-Tweak-Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_pickup.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
+      params:
+        volume: -5
+  # ECHO-Tweak-Start
 
 - type: entity
   parent: ResearchDisk

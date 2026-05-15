@@ -24,9 +24,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _ECHO/Structures/Windows/window.rsi # ECHO-Tweak Было: /Structures/Windows/window.rsi -> Стало: _ECHO/Structures/Windows/window.rsi
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: _ECHO/Structures/Windows/window.rsi # ECHO-Tweak Было: /Structures/Windows/window.rsi -> Стало: _ECHO/Structures/Windows/window.rsi
     state: full
   - type: Physics
     bodyType: Static
@@ -76,7 +76,7 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: windows
+    key: walls # ECHO-Tweak Было: window -> Стало: walls
     base: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock

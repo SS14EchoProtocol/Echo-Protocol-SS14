@@ -10,6 +10,17 @@
     size: Normal
   - type: Sprite
     sprite: Objects/Storage/boxes.rsi
+  #ECHO-Tweak-Start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_ECHO/Entities/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_ECHO/Entities/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_ECHO/Entities/ammobox_drop.ogg
+  #ECHO-Tweak-End
 
 - type: entity
   abstract: true

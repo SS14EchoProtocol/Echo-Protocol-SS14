@@ -326,3 +326,103 @@
       amount: 25
   products:
     EchoWatermelonTeaReg: 30
+
+- type: reaction
+  id: EchoYupiReactionApple
+  reactants:
+    EchoYupiDryApple:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiApple: 6
+
+- type: reaction
+  id: EchoYupiReactionBerries
+  reactants:
+    EchoYupiDryBerries:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiBerries: 6
+
+- type: reaction
+  id: EchoYupiReactionCherry
+  reactants:
+    EchoYupiDryCherry:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiCherry: 6
+
+- type: reaction
+  id: EchoYupiReactionMango
+  reactants:
+    EchoYupiDryMango:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiMango: 6
+
+- type: reaction
+  id: EchoYupiReactionOrange
+  reactants:
+    EchoYupiDryOrange:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiOrange: 6
+
+- type: reaction
+  id: EchoYupiReactionPeach
+  reactants:
+    EchoYupiDryPeach:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiPeach: 6
+
+- type: reaction
+  id: EchoYupiReactionPineapple
+  reactants:
+    EchoYupiDryPineapple:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiPineapple: 6
+
+- type: reaction
+  id: EchoYupiReactionRaspberry
+  reactants:
+    EchoYupiDryRaspberry:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiRaspberry: 6
+
+- type: reaction
+  id: EchoYupiReactionStrawberry
+  reactants:
+    EchoYupiDryStrawberry:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiStrawberry: 6
+
+- type: reaction
+  id: EchoYupiReactionWatermelon
+  reactants:
+    EchoYupiDryWatermelon:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    EchoYupiWatermelon: 6

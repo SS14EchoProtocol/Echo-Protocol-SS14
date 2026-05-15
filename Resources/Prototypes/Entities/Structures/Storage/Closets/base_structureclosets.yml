@@ -45,6 +45,12 @@
         layer:
         - MachineLayer
   - type: EntityStorage
+    #ECHO-Tweak-Start
+    closeSound:
+      path: /Audio/_ECHO/Entities/closet_close.ogg
+    openSound:
+      path: /Audio/_ECHO/Entities/closet_open.ogg
+    #ECHO-Tweak-End
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
@@ -115,6 +121,10 @@
     - entity_storage
   - type: Paintable
     group: Closet
+#ECHO-Tweak-Start респрайт шкафов
+  - type: Sprite
+    sprite: _ECHO/Structures/Storage/Closet/closet.rsi
+#ECHO-Tweak-End респрайт шкафов
 
 #Wall Closet
 - type: entity

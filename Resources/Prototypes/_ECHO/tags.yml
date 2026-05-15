@@ -5,3 +5,7 @@
 #teapack
 - type: Tag
   id: EchoTeaPack
+
+#yupi
+- type: Tag
+  id: EchoYupiPack
