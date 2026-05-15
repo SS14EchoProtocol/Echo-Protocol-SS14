@@ -228,7 +228,7 @@ public abstract partial class SharedCprSystem : EntitySystem
             Priority = 5,
             Disabled = !inRange,
             Message = inRange ? null : Loc.GetString("cpr-verb-text-disabled"),
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/cpr.svg.192dpi.png"))
+            Icon = new SpriteSpecifier.Texture(new("/Textures/_ECHO/Interface/VerbIcons/cpr.svg.192dpi.png"))
         };
 
         args.Verbs.Add(verb);
