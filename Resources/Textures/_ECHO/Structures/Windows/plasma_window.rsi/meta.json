@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Made by Firemixx(GitHub) with reference from TauCeti",
+  "copyright": "Made by Firemixx(GitHub) with reference from TauCeti, pwindow6 fix by Unlymy",
   "size": {
     "x": 32,
     "y": 32
