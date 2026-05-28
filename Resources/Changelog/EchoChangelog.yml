@@ -354,3 +354,312 @@ Entries:
       - {message: Добавлены напитки, type: Add}
     time: '2026-04-06T14:58:52Z'
     id: 66
+  - author: Unlumy
+    changes:
+      - {message: Цветовая гамма стандартных светильников была, type: Tweak}
+      - {message: Эмбиент лампочек изменился для больше аутентичности 21XX году, type: Tweak}
+    time: '2026-02-05T05:50:09Z'
+    id: 67
+  - author: Unlumy
+    changes:
+      - {message: Спрайт аптечек приведён в вид Tau Ceti, type: Tweak}
+      - {message: Стальной стол и Укреплённый стол теперь выглядят нормально, type: Tweak}
+    time: '2026-02-08T23:41:35Z'
+    id: 68
+  - author: Mironium
+    changes:
+      - {message: изменил спрайты стен на аналоги с Тау Сети, type: Tweak}
+    time: '2026-02-11T20:03:29Z'
+    id: 69
+  - author: Firisi
+    changes:
+      - {message: Изменил спрайты комода и высокого шкафа на спрайты TauCeti, type: Tweak}
+    time: '2026-02-13T03:14:53Z'
+    id: 70
+  - author: FIRISI
+    changes:
+      - {message: Изменены спрайты газовых канистр на спрайты из TauCeti, type: Tweak}
+    time: '2026-02-13T06:33:59Z'
+    id: 71
+  - author: FIRISI
+    changes:
+      - {message: Заменил спрайты поддонов и мостиков на спрайты TauCeti, type: Tweak}
+    time: '2026-02-13T16:50:04Z'
+    id: 72
+  - author: Mintalit
+    changes:
+      - {message: Изменен спрайт стойки (rack), type: Tweak}
+    time: '2026-02-14T12:40:46Z'
+    id: 73
+  - author: Unlumy
+    changes:
+      - {message: Апстрим мастер-ветки до 16.02.2026, type: Add}
+    time: '2026-02-16T22:43:54Z'
+    id: 74
+  - author: Luckyrat & Unlumy
+    changes:
+      - {message: 'Изменены спрайты: каркаса стола, стеклянного стола, деревянного
+          стола, покерного стола', type: Tweak}
+    time: '2026-02-17T05:37:22Z'
+    id: 75
+  - author: Firisi
+    changes:
+      - {message: Изменены спрайты крематория и морга на спрайты TauCeti, type: Tweak}
+    time: '2026-02-17T09:55:07Z'
+    id: 76
+  - author: godot04
+    changes:
+      - {message: Добавлены барки с ВП, type: Add}
+    time: '2026-02-20T07:44:07Z'
+    id: 77
+  - author: Unlumy
+    changes:
+      - {message: Теперь сварка обладает анимацией заваривания шлюзов и стены, type: Add}
+    time: '2026-02-20T07:44:18Z'
+    id: 78
+  - author: godot04
+    changes:
+      - {message: Исправлена анимация шва с поворотом камеры у сварки, type: Fix}
+    time: '2026-02-21T04:00:07Z'
+    id: 79
+  - author: Unlumy
+    changes:
+      - {message: 'Убрал из раундстарт пика расы, не относящиеся к лору', type: Remove}
+    time: '2026-02-21T04:31:18Z'
+    id: 80
+  - author: Remalid
+    changes:
+      - {message: Добавлено несколько видов барьеров, type: Add}
+    time: '2026-02-23T21:44:26Z'
+    id: 81
+  - author: Firisi
+    changes:
+      - {message: Добавлена система мировых спрайтом некоторым видам материалов, type: Add}
+      - {message: Изменены спрайты некоторых видов материалов, type: Tweak}
+    time: '2026-02-27T04:20:08Z'
+    id: 82
+  - author: Unlumy
+    changes:
+      - {message: Респрайт документальных планшетов и планшета кма, type: Tweak}
+      - {message: Респрайт ручек, type: Tweak}
+    time: '2026-03-01T10:11:07Z'
+    id: 83
+  - author: FIREMIX
+    changes:
+      - {message: Добавлена система передачи предметов, type: Add}
+    time: '2026-03-01T21:26:04Z'
+    id: 84
+  - author: (Mintalit)
+    changes:
+      - {message: Добавлены цветные варианты удобного кресла и простого стула, type: Add}
+      - {message: Изменены спрайты базовых стульев и кресел, type: Tweak}
+    time: '2026-03-02T18:08:50Z'
+    id: 85
+  - author: Mintalit
+    changes:
+      - {message: Изменен спрайт оружейного сейфа, type: Tweak}
+    time: '2026-03-05T14:30:47Z'
+    id: 86
+  - author: Unlumy
+    changes:
+      - {message: 'Изменены спрайты подстанции, смэса и ЛКП, а так же их вариаций',
+        type: Tweak}
+    time: '2026-03-11T15:04:37Z'
+    id: 87
+  - author: Firisi
+    changes:
+      - {message: Зареспрайчены стальные тайлы, type: Tweak}
+    time: '2026-03-12T18:54:40Z'
+    id: 88
+  - author: Spidern
+    changes:
+      - {message: Прописан variantize на дев карте, type: Add}
+    time: '2026-03-12T21:24:04Z'
+    id: 89
+  - author: _kote
+    changes:
+      - {message: Добавлена система Z-уровней, type: Add}
+    time: '2026-03-14T17:17:35Z'
+    id: 90
+  - author: Unlumy & Firemix & Godot04
+    changes:
+      - {message: Сборка актуализирована до 07.03.2026, type: Add}
+      - {message: Удалена карта серпент-(чё-то там), type: Remove}
+    time: '2026-03-14T20:28:01Z'
+    id: 91
+  - author: godot04
+    changes:
+      - {message: Добавлены грабы в игру, type: Add}
+    time: '2026-03-17T21:30:34Z'
+    id: 92
+  - author: Firisi
+    changes:
+      - {message: Вернул вариации и добавил им спрайты, type: Tweak}
+    time: '2026-03-17T22:33:24Z'
+    id: 93
+  - author: Remalid
+    changes:
+      - {message: Добавлены 4 вида бочек, type: Add}
+      - {message: Респрайт бочек визов, type: Tweak}
+    time: '2026-03-18T17:24:07Z'
+    id: 94
+  - author: FIREMIX
+    changes:
+      - {message: Добавлен мидраунд спавнер для ролей, type: Add}
+    time: '2026-03-25T09:44:44Z'
+    id: 95
+  - author: Firisi
+    changes:
+      - {message: Изменены спрайты пластин стекла, type: Tweak}
+      - {message: Материалам стекла была добавлена система мировых спрайтов, type: Add}
+    time: '2026-03-25T22:06:59Z'
+    id: 96
+  - author: _kote
+    changes:
+      - {message: Добавлена система подгрузки ограниченной процедурно сгенерированной
+          области, type: Add}
+    time: '2026-03-26T09:32:03Z'
+    id: 97
+  - author: _kote
+    changes:
+      - {message: Кнопки закругляются, type: Tweak}
+    time: '2026-03-26T18:51:35Z'
+    id: 98
+  - author: _kote
+    changes:
+      - {message: UI стал объёмнее и утратил былую блевотную синеву, type: Tweak}
+    time: '2026-03-28T19:18:47Z'
+    id: 99
+  - author: Mintalit
+    changes:
+      - {message: 'Добавлены цветные версии удобной скамейки - Жёлтая, фиолетовая,
+          тёмно-фиолетовая, серая, тёмно-серая, зелёная, бело-голубая', type: Add}
+      - {message: 'Изменен спрайт удобной скамейки, стальной скамейки, барного стула',
+        type: Tweak}
+    time: '2026-03-30T16:10:08Z'
+    id: 100
+  - author: Mintalit
+    changes:
+      - {message: Изменены боковые спрайты удобных и стальной скамейки, type: Tweak}
+      - {message: Исправлено местоположение локали удобных скамеек для меню крафта,
+        type: Fix}
+    time: '2026-03-31T20:47:15Z'
+    id: 101
+  - author: Unlumy, LuckyRat & Mironium
+    changes:
+      - {message: Изменены спрайты ящиков в игре, type: Tweak}
+    time: '2026-03-31T22:08:32Z'
+    id: 102
+  - author: Unlumy
+    changes:
+      - {message: Добавлен шахтёрский ящик с замком, type: Add}
+      - {message: Исправлена локаль наших ящиков, type: Fix}
+    time: '2026-04-03T06:32:33Z'
+    id: 103
+  - author: Unlumy
+    changes:
+      - {message: Апстрим до утра 03.04.2026, type: Add}
+    time: '2026-04-06T11:09:53Z'
+    id: 104
+  - author: _kote
+    changes:
+      - {message: Исправлен небольшой баг контекстного меню, type: Fix}
+    time: '2026-04-06T11:23:12Z'
+    id: 105
+  - author: kvmiw
+    changes:
+      - {message: Добавлены напитки, type: Add}
+    time: '2026-04-06T14:58:52Z'
+    id: 106
+  - author: Remalid
+    changes:
+      - {message: Добавлено 3 вида статуй, type: Add}
+      - {message: Добавлен набор настольного декора, type: Add}
+    time: '2026-04-14T14:52:17Z'
+    id: 107
+  - author: Unlumy + BarCow
+    changes:
+      - {message: 'Изменена иконка игрового окна, процесса и т.п.; Название тоже изменено
+          под наш билд;', type: Tweak}
+      - {message: Изменено лого при загрузке, type: Tweak}
+    time: '2026-04-15T14:57:22Z'
+    id: 108
+  - author: kvmiw
+    changes:
+      - {message: Добавлен чай, type: Add}
+    time: '2026-04-27T09:21:23Z'
+    id: 109
+  - author: _kote
+    changes:
+      - {message: Исправлена загрузка z-карт, type: Fix}
+    time: '2026-04-27T19:54:36Z'
+    id: 110
+  - author: godot04
+    changes:
+      - {message: Добавлена система позинга, type: Add}
+    time: '2026-04-28T18:35:09Z'
+    id: 111
+  - author: (Автор изменения)
+    changes:
+      - {message: Добавлено это, type: Add}
+      - {message: Удалено то, type: Remove}
+      - {message: Изменено то-то, type: Tweak}
+      - {message: Исправлено что-то, type: Fix}
+    time: '2026-05-01T02:12:43Z'
+    id: 112
+  - author: Unlumy & Tau Ceti
+    changes:
+      - {message: 'Изменены спрайты большинства шкафов на стиль Тау + Добавлены те,
+          которых в 13 нет/не нашёл', type: Tweak}
+    time: '2026-05-04T10:36:53Z'
+    id: 113
+  - author: Firemix(исправил пути файлов) & maksim21612(автор ПРа) & TauCeti
+    changes:
+      - {message: Добавлены плитки с Тау Сети с респрайтом  от maksim21612, type: Add}
+      - {message: Изменены файлы плиток оффов, type: Tweak}
+    time: '2026-05-04T18:14:18Z'
+    id: 114
+  - author: Unlumy
+    changes:
+      - {message: Добавлено 7 новых треков в лобби, type: Add}
+      - {message: Удалены треки оффициальных разработчиков из лобби, type: Remove}
+      - {message: Изменен плейлист в лобби, type: Tweak}
+    time: '2026-05-08T17:38:34Z'
+    id: 115
+  - author: FIRISI
+    changes:
+      - {message: Новые звуки при взаимодействии с некоторыми объектами, type: Add}
+    time: '2026-05-09T17:35:37Z'
+    id: 116
+  - author: kvmiw
+    changes:
+      - {message: Добавлены юппи, type: Add}
+      - {message: Изменены спрайты чая, type: Tweak}
+    time: '2026-05-11T15:55:21Z'
+    id: 117
+  - author: Firemix
+    changes:
+      - {message: 'Респрайт обычного окна, плазменного окна и фальшивой стены(или
+          же секретной двери)', type: Tweak}
+    time: '2026-05-12T01:03:30Z'
+    id: 118
+  - author: Unlumy
+    changes:
+      - {message: Исправлен спрайт окна, type: Fix}
+    time: '2026-05-17T06:05:30Z'
+    id: 119
+  - author: Firisi
+    changes:
+      - {message: Изменены спрайты частей тела у человека, type: Tweak}
+    time: '2026-05-23T15:37:36Z'
+    id: 120
+  - author: godot04
+    changes:
+      - {message: Добавлена возможность делать СЛР, type: Add}
+    time: '2026-05-24T17:13:59Z'
+    id: 121
+  - author: Remalid
+    changes:
+      - {message: 'Теперь щитами можно бить, тем самым толкая существ', type: Tweak}
+    time: '2026-05-28T13:09:34Z'
+    id: 122
