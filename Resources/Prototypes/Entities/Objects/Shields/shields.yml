@@ -61,7 +61,19 @@
                   max: 2
     - type: StaticPrice
       price: 100
-
+    - type: MeleeThrowOnHit #ECHO-Tweak-Start: ADD melee weapon component 
+      distance: 0.05 #this is ~half a tile
+    - type: MeleeWeapon
+      attackRate: 0.9
+      damage:
+        types:
+          Blunt: 6
+      animationRotation: -90
+      wideAnimationRotation: -90
+      angle: 0
+      animation: WeaponArcThrust
+      soundHit:
+        collection: MetalThud #ECHO-Tweak-End
 - type: entity
   name: base repairable shield
   parent: BaseShield
@@ -251,6 +263,14 @@
               max: 4
     - type: StaticPrice
       price: 20
+    - type: MeleeThrowOnHit #ECHO-Tweak-Start: ADD MeleeThrowOnHit component
+      distance: 0
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 0
+      soundHit:
+        path: /Audio/Items/Toys/card_tube_bonk.ogg #ECHO-Tweak-End
 
 - type: entity
   name: makeshift shield
