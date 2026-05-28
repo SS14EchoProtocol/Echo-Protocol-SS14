@@ -68,7 +68,6 @@
       damage:
         types:
           Blunt: 6
-      animationRotation: -90
       wideAnimationRotation: -90
       angle: 0
       animation: WeaponArcThrust
