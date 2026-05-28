@@ -61,7 +61,7 @@
                   max: 2
     - type: StaticPrice
       price: 100
-    - type: MeleeThrowOnHit #ECHO-Tweak-Start: ADD melee weapon component 
+    - type: MeleeThrowOnHit #ECHO-Tweak-Start: ADD MeleeThrowOnHit and MeleeWeapon components 
       distance: 0.05 #this is ~half a tile
     - type: MeleeWeapon
       attackRate: 0.9
