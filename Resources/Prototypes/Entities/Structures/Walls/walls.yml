@@ -1064,9 +1064,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Walls/solid_rust.rsi
+    sprite: _ECHO/Structures/Walls/solid_rust.rsi #ECHO-Tweak Было: Structures/Walls/solid_rust.rsi -> Стало: _ECHO/Structures/Walls/solid_rust.rsi
   - type: Icon
-    sprite: _ECHO/Structures/Walls/solid_rust.rsi
+    sprite: _ECHO/Structures/Walls/solid_rust.rsi #ECHO-Tweak Было: Structures/Walls/solid_rust.rsi -> Стало: _ECHO/Structures/Walls/solid_rust.rsi
     state: full
   - type: Construction
     graph: Girder
