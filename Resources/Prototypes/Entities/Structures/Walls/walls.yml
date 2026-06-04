@@ -1064,9 +1064,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _ECHO/Structures/Walls/solid_rust.rsi
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _ECHO/Structures/Walls/solid_rust.rsi
     state: full
   - type: Construction
     graph: Girder
