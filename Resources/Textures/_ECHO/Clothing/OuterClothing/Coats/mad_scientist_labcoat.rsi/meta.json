@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from space_station_ADT at commit https://github.com/AdventureTimeSS14/space_station_ADT/commit/2ce66eecedad70799eb4a854627079fbb921e57a, recoloured by discord:mironium_adt",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "icon"
+      },
+      {
+        "name": "inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "inhand-right",
+        "directions": 4
+      },
+      {
+        "name": "equipped-OUTERCLOTHING",
+        "directions": 4
+      }
+    ]
+  }

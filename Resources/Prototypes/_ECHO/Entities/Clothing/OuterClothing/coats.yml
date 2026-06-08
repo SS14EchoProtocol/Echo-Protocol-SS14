@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ECHOOuterClothingCoatMadScientist
+  name: Mad Scientist labcoat
+  description: You feel madness from the owner of this coat
+  components:
+  - type: Sprite
+    sprite: _ECHO/Clothing/OuterClothing/Coats/mad_scientist_labcoat.rsi
+  - type: Clothing
+    sprite: _ECHO/Clothing/OuterClothing/Coats/mad_scientist_labcoat.rsi
