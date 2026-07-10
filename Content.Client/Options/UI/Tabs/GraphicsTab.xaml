@@ -32,6 +32,10 @@
                 <CheckBox Name="ViewportVerticalFitCheckBox"
                           Text="{Loc 'ui-options-vp-vertical-fit'}"
                           ToolTip="{Loc 'ui-options-vp-vertical-fit-tooltip'}" />
+                <!-- ECHO-Tweak-start -->
+                <CheckBox Name="CenterRadialMenuCheckBox" Text="{Loc 'ui-options-center-radial-menu'}" />
+                <ui:OptionDropDown Name="RadialMenuTypeSelector" Title="{Loc 'ui-options-radial-menu-type'}" />
+                <!-- ECHO-Tweak-end -->
 
                 <!-- Misc -->
                 <Label Text="{Loc 'ui-options-misc-label'}" StyleClasses="LabelKeyText"/>

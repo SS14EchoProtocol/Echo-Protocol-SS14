@@ -39,4 +39,10 @@ public sealed partial class EchoCCVars
 
     public static readonly CVarDef<bool> EntityMenuIcons =
         CVarDef.Create("ui.entity_menu_icons", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<int> RadialMenuConfig =
+        CVarDef.Create("ui.radial_menu_type", (int)_ECHO.UserInterface.RadialMenuType.Simple, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> CenterRadialMenu =
+        CVarDef.Create("ui.center_radial_menu", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

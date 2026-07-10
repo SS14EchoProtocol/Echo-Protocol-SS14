@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._ECHO.UserInterface;
 using Content.Shared.Input;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
@@ -12,6 +13,10 @@ namespace Content.Client.UserInterface.Controls;
 [Virtual]
 public class RadialMenu : BaseWindow
 {
+    // ECHO-Tweak-start
+    public static RadialMenuType RadialMenuConfig = RadialMenuType.Simple;
+    // ECHO-Tweak-end
+
     /// <summary>
     /// Contextual button used to traverse through previous layers of the radial menu
     /// </summary>
@@ -378,12 +383,12 @@ public interface IRadialMenuItemWithSector
     /// <summary>
     /// Angle in radian where button sector should start.
     /// </summary>
-    public float AngleSectorFrom { set; }
+    public float AngleSectorFrom { get; set; }  // ECHO-Tweak: added getter
 
     /// <summary>
     /// Angle in radian where button sector should end.
     /// </summary>
-    public float AngleSectorTo { set; }
+    public float AngleSectorTo { get; set; }    // ECHO-Tweak: added getter
 
     /// <summary>
     /// Outer radius for drawing segment and pointer detection.
@@ -404,6 +409,45 @@ public interface IRadialMenuItemWithSector
     /// Coordinates of center in parent component - button container.
     /// </summary>
     public Vector2 ParentCenter { set; }
+
+    // ECHO-Tweak-start
+    // Shader radial menu
+
+    /// <summary>
+    /// Marker, is menu item hovered currently.
+    /// </summary>
+    public bool IsHovered { get; }
+
+    /// <summary>
+    /// Color for menu item background when it is hovered over.
+    /// </summary>
+    Color HoverBackgroundColor { get; }
+
+    /// <summary>
+    /// Color for menu item default state.
+    /// </summary>
+    Color BackgroundColor { get; }
+
+    /// <summary>
+    /// Color for menu item border when item is hovered over.
+    /// </summary>
+    Color HoverBorderColor { get; }
+
+    /// <summary>
+    /// Color for menu item border default state.
+    /// </summary>
+    Color BorderColor { get; }
+
+    /// <summary>
+    /// Marker, if menu item background should be drawn.
+    /// </summary>
+    public bool DrawBackground { get; }
+
+    /// <summary>
+    /// Marker, if menu item borders should be drawn.
+    /// </summary>
+    public bool DrawBorder { get; }
+    // ECHO-Tweak-end
 }
 
 [Virtual]
@@ -489,6 +533,7 @@ public class RadialMenuButtonWithSector : RadialMenuButton, IRadialMenuItemWithS
             _angleSectorFrom = value;
             _isWholeCircle = IsWholeCircle(value, _angleSectorTo);
         }
+        get => _angleSectorFrom;    // ECHO-Tweak: Shader radial menu
     }
 
     /// <inheritdoc />
@@ -499,6 +544,7 @@ public class RadialMenuButtonWithSector : RadialMenuButton, IRadialMenuItemWithS
             _angleSectorTo = value;
             _isWholeCircle = IsWholeCircle(_angleSectorFrom, value);
         }
+        get => _angleSectorTo;  // ECHO-Tweak: Shader radial menu
     }
 
     /// <inheritdoc />
@@ -523,6 +569,13 @@ public class RadialMenuButtonWithSector : RadialMenuButton, IRadialMenuItemWithS
     /// <inheritdoc />
     protected override void Draw(DrawingHandleScreen handle)
     {
+        // ECHO-Tweak-start
+        // Shader radial menu
+
+        if (RadialMenu.RadialMenuConfig != RadialMenuType.Legacy)
+            return;
+        // ECHO-Tweak-end
+
         base.Draw(handle);
 
         if (_parentCenter == null)

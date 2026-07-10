@@ -7,10 +7,10 @@ namespace Content.Shared._ECHO.Posing;
 public sealed partial class PosingComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public Vector2 CurrentOffset = Vector2.Zero;
+    public Vector2 TargetOffset = Vector2.Zero;
 
     [ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public Angle CurrentAngle = Angle.Zero;
+    public Angle TargetAngle = Angle.Zero;
 
     [DataField, AutoNetworkedField]
     public Vector2 OffsetLimits = new(0.3f, 0.3f);
@@ -29,4 +29,10 @@ public sealed partial class PosingComponent : Component
 
     [DataField]
     public float DefaultAngle = 0f;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public Vector2 CurrentOffset = Vector2.Zero;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public Angle CurrentAngle = Angle.Zero;
 }

@@ -27,7 +27,7 @@
       path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
       params:
         volume: -5
-  # ECHO-Tweak-Start
+  # ECHO-Tweak-End
 
 - type: entity
   parent: ResearchDisk

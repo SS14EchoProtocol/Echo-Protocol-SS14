@@ -1,3 +1,4 @@
+using Content.Shared._ECHO.Extensions;
 using Content.Shared._ECHO.Posing;
 using Content.Shared.Input;
 using Robust.Client.GameObjects;
@@ -11,6 +12,9 @@ public sealed partial class PosingSystem : SharedPosingSystem
     [Dependency] private readonly IInputManager _input = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+
+    private const float OffsetChangeSpeed = 1f;
+    private const float RotationChangeSpeed = 15f;
 
     public override void Initialize()
     {
@@ -43,8 +47,8 @@ public sealed partial class PosingSystem : SharedPosingSystem
 
         if (!component.Posing)
         {
-            _sprite.SetOffset(uid, component.DefaultOffset);
-            _sprite.SetRotation(uid, Angle.FromDegrees(component.DefaultAngle));
+            component.TargetOffset = component.DefaultOffset;
+            component.TargetAngle = component.DefaultAngle;
             return;
         }
     }
@@ -54,8 +58,12 @@ public sealed partial class PosingSystem : SharedPosingSystem
         base.ClientTogglePosing(uid, posing);
 
         _input.Contexts.SetActiveContext(posing.Posing ? "posing" : posing.DefaultInputContext);
-        _sprite.SetOffset(uid, posing.DefaultOffset);
-        _sprite.SetRotation(uid, Angle.FromDegrees(posing.DefaultAngle));
+
+        if (!posing.Posing)
+        {
+            posing.TargetOffset = posing.DefaultOffset;
+            posing.TargetAngle = posing.DefaultAngle;
+        }
     }
 
     // возможно не самый лучший способ, но вы б знали, как я не хочу возиться со всеми остальными анимациями
@@ -66,11 +74,11 @@ public sealed partial class PosingSystem : SharedPosingSystem
         var query = EntityQueryEnumerator<PosingComponent>();
         while (query.MoveNext(out var uid, out var posing))
         {
-            if (posing.Posing)
-            {
-                _sprite.SetOffset(uid, posing.DefaultOffset + posing.CurrentOffset);
-                _sprite.SetRotation(uid, posing.CurrentAngle);
-            }
+            posing.CurrentOffset = VectorExtensions.MoveTowards(posing.CurrentOffset, posing.DefaultOffset + posing.TargetOffset, frameTime * OffsetChangeSpeed);
+            posing.CurrentAngle = AngleExtensions.MoveTowards(posing.CurrentAngle, posing.TargetAngle, frameTime * RotationChangeSpeed);
+
+            _sprite.SetOffset(uid, posing.CurrentOffset);
+            _sprite.SetRotation(uid, posing.CurrentAngle);
         }
     }
 }

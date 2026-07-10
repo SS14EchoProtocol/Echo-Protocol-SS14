@@ -9,6 +9,8 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Client.Input;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Client.UserInterface.Controls;
 
@@ -20,6 +22,7 @@ public sealed partial class SimpleRadialMenu : RadialMenu
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IInputManager _inputManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak
 
     public SimpleRadialMenu()
     {
@@ -42,6 +45,15 @@ public sealed partial class SimpleRadialMenu : RadialMenu
 
     public void OpenOverMouseScreenPosition()
     {
+        // ECHO-Tweak-start
+        // Centered radial menu setting
+        if (_cfg.GetCVar(EchoCCVars.CenterRadialMenu))
+        {
+            OpenCentered();
+            return;
+        }
+        // ECHO-Tweak-end
+
         var vpSize = _clyde.ScreenSize;
         OpenCenteredAt(_inputManager.MouseScreenPosition.Position / vpSize);
     }
@@ -386,4 +398,3 @@ public sealed class SimpleRadialMenuSettings
     /// </summary>
     public bool NoBackground = false;
 }
-
