@@ -95,7 +95,7 @@
       path: /Audio/_ECHO/Items/Handling/toolbelt_drop.ogg
       params:
         volume: -4
-  # ECHO-Tweak-Start
+  # ECHO-Tweak-End
 
 - type: entity
   parent: BaseClothingBeltEngineering

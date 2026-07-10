@@ -42,7 +42,7 @@
       path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
       params:
         volume: -6
-  # ECHO-Tweak-Start
+  # ECHO-Tweak-End
 
 - type: entity
   name: nuclear authentication disk
@@ -75,4 +75,4 @@
       path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
       params:
         volume: -6
-  # ECHO-Tweak-Start
+  # ECHO-Tweak-End

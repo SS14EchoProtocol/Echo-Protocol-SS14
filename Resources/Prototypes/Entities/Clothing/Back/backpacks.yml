@@ -16,7 +16,7 @@
     #ECHO-Tweak-Start
     equipSound:
       path: /Audio/_ECHO/Entities/backpack_equip.ogg
-    #ECHO-Tweak-Start
+    #ECHO-Tweak-End
   - type: Storage
     grid:
     - 0,0,6,3
@@ -44,7 +44,7 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/_ECHO/Entities/backpack_drop.ogg
-  #ECHO-Tweak-Start
+  #ECHO-Tweak-End
   - type: Tag
     tags:
     - WhitelistChameleon
