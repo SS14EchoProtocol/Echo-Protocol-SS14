@@ -32,7 +32,7 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+      enum.ContainerSpriteState.State:
         icon:
           True: {state: icon_storage}
           False: {state: icon}
