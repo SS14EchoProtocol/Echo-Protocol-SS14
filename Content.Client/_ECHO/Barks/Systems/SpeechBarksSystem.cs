@@ -8,6 +8,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared._ECHO.DynamicAudio;
 
 namespace Content.Client._ECHO.SpeechBarks;
 
@@ -18,6 +19,7 @@ public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly SharedDynamicAudioSystem _dynamicAudio = default!;
 
     public override void Initialize()
     {
@@ -78,12 +80,15 @@ public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
         {
             if (_player.LocalSession == null) break;
 
-            _audio.PlayEntity(
+            var audio = _audio.PlayEntity(
                 ev.SoundSpecifier,
                 _player.LocalSession,
                 entity,
                 audioParams.WithPitchScale(_random.NextFloat(ev.Pitch - 0.1f, ev.Pitch + 0.1f))
             );
+
+            if (audio.HasValue)
+                _dynamicAudio.ApplyAudioEffect(audio.Value, entity);
 
             await Task.Delay(TimeSpan.FromSeconds(_random.NextFloat(ev.LowVar, ev.HighVar)));
         }
