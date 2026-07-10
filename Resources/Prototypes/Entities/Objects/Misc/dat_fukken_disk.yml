@@ -8,7 +8,7 @@
   - type: SpecialRespawn
     prototype: NukeDisk
   - type: Sprite
-    sprite: Objects/Misc/nukedisk.rsi
+    sprite: _ECHO/Objects/Misc/nukedisk.rsi #ECHO-Tweak Было: Objects/Misc/nukedisk.rsi -> Стало: _ECHO/Objects/Misc/nukedisk.rsi
     state: icon
   - type: StaticPrice
     price: 2000
@@ -26,7 +26,17 @@
     - GhostOnlyWarp
   - type: StealTarget
     stealGroup: NukeDisk
-  # ECHO-Tweak-Start
+  #ECHO-Tweak-Start
+  #ECHO-Tweak Стейты спрайтов в инвентаре
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State: #Чем выше state тем выше он в приоритете отрисовки
+        icon:
+          True: {state: icon_storage}
+          False: {state: icon}
+  #ECHO-Tweak Кастомные звуки при подборе
   - type: EmitSoundOnPickup
     sound:
       path: /Audio/_ECHO/Items/Handling/disk_pickup.ogg
@@ -42,7 +52,7 @@
       path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
       params:
         volume: -6
-  # ECHO-Tweak-Start
+  #ECHO-Tweak-End
 
 - type: entity
   name: nuclear authentication disk
@@ -52,14 +62,24 @@
   description: A nuclear auth disk, capable of arming a nuke if used along with a code. Note from nanotrasen reads "THIS IS YOUR MOST IMPORTANT POSESSION, SECURE DAT FUKKEN DISK!"
   components:
   - type: Sprite
-    sprite: Objects/Misc/nukedisk.rsi
+    sprite: _ECHO/Objects/Misc/nukedisk.rsi #ECHO-Tweak Было: Objects/Misc/nukedisk.rsi -> Стало: _ECHO/Objects/Misc/nukedisk.rsi
     state: icon
   - type: StaticPrice
     price: 1 # it's worth even less than normal items. Perfection.
   - type: Tag
     tags:
     - FakeNukeDisk
-  # ECHO-Tweak-Start
+  #ECHO-Tweak-Start
+  #ECHO-Tweak Стейты спрайтов в инвентаре
+  - type: ContainerSprite
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ContainerSpriteState.State:
+        icon:
+          True: {state: icon_storage}
+          False: {state: icon}
+  #ECHO-Tweak Кастомные звуки при подборе
   - type: EmitSoundOnPickup
     sound:
       path: /Audio/_ECHO/Items/Handling/disk_pickup.ogg
@@ -75,4 +95,4 @@
       path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
       params:
         volume: -6
-  # ECHO-Tweak-Start
+  #ECHO-Tweak-End
