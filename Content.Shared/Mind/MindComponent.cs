@@ -121,4 +121,11 @@ public sealed partial class MindComponent : Component
     /// </summary>
     [DataField]
     public LocId? Subtype;
+
+    /// <summary>
+    /// ECHO-Tweak: память
+    /// Просто хранящиеся доп данные
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Dictionary<string, string> Memory = new();
 }

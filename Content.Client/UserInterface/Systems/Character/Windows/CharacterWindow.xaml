@@ -15,6 +15,12 @@
                     <Label Name="SubText" VerticalAlignment="Top" StyleClasses="LabelSubText" Access="Public"/>
                 </BoxContainer>
             </BoxContainer>
+            <!-- ECHO-Tweak-start: память для хранения раундстартовых данных -->
+            <BoxContainer Name="MemoryBox" Orientation="Vertical" Access="Public">
+                <Label Name="MemoryLabel" Access="Public" Text="{Loc 'character-info-memory-label'}" HorizontalAlignment="Center"/>
+                <BoxContainer Orientation="Vertical" Name="Memory" Access="Public"/>
+            </BoxContainer>
+            <!-- ECHO-Tweak-end -->
             <Label Name="ObjectivesLabel" Access="Public" Text="{Loc 'character-info-objectives-label'}" HorizontalAlignment="Center"/>
             <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public"/>
             <cc:Placeholder Name="RolePlaceholder" Access="Public" PlaceholderText="{Loc 'character-info-roles-antagonist-text'}"/>

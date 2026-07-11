@@ -1,0 +1,21 @@
+﻿<Control MinHeight="60" Margin="4"
+                    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                    SetSize="180 180"
+                    xmlns="https://spacestation14.io">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <Button Name="OpenButton" ModulateSelfOverride="#00000000" Access="Public" VerticalExpand="True" HorizontalExpand="True" SizeFlagsStretchRatio="4">
+            <PanelContainer Name="HoverPanel" HorizontalExpand="True" VerticalExpand="True" Margin="-4">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#21e5ff2c" BorderColor="#21e5ff57" BorderThickness="2" />
+                </PanelContainer.PanelOverride>
+            </PanelContainer>
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                <BoxContainer Orientation="Vertical" VerticalExpand="True" MinWidth="60">
+                    <AnimatedTextureRect HorizontalAlignment="Center" VerticalAlignment="Center" VerticalExpand="True" Name="Icon" Access="Public"/>
+                </BoxContainer>
+                <RichTextLabel Name="ProgramName" Access="Public" HorizontalAlignment="Center" VerticalExpand="True" StyleClasses="ConsoleText"/>
+            </BoxContainer>
+        </Button>
+        <Button Name="InstallButton" Access="Public" Visible="False" VerticalExpand="True" HorizontalExpand="True" Margin="0 4" SizeFlagsStretchRatio="1" StyleClasses="ConsoleText"/>
+    </BoxContainer>
+</Control>

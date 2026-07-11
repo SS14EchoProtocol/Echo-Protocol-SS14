@@ -1,0 +1,107 @@
+- type: entity
+  id: EchoDesktop
+  parent: BaseStructure
+  name: desktop computer
+  description: The message wait until the operating system is updated is frozen on the screen. Although the progress bar never seems to move.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: /Textures/_ECHO/Structures/Machines/desktop.rsi
+    drawdepth: WallMountedItems
+    layers:
+    - state: desktop
+    - state: screen
+      shader: unshaded
+      visible: false
+      map: ["enum.ToggleableVisuals.Layer"]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_ECHO/Machines/computerboot_pc.ogg
+      params:
+        volume: -16
+        maxDistance: 3
+  - type: PointLight
+    enabled: false
+    radius: 1.1
+    energy: 1
+    color: "#2789CD"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.4,0.45,0.3"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: ItemToggle
+    onUse: false
+    onActivate: false
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemTogglePointLight
+  - type: Appearance
+
+  - type: CartridgeLoader
+    uiKey: enum.PCBoundUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+    cartridgeSlot:
+      priority: -1
+      name: device-pda-slot-component-slot-name-cartridge
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Machines/id_insert.ogg
+      whitelist:
+        components:
+          - Cartridge
+  - type: ContainerContainer
+    containers:
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+
+  - type: PC
+  - type: ActivatableUI
+    key: enum.PCBoundUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.PCBoundUiKey.Key:
+        type: ComputerBoundUserInterface
+
+- type: entity
+  id: EchoDesktopWhite
+  parent: EchoDesktop
+  name: white desktop computer
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: /Textures/_ECHO/Structures/Machines/desktop.rsi
+    layers:
+    - state: desktop_white
+    - state: screen
+      shader: unshaded
+      visible: false
+      map: ["enum.ToggleableVisuals.Layer"]

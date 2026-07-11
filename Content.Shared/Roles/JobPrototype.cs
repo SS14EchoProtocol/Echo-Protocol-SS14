@@ -1,3 +1,4 @@
+using Content.Shared._ECHO.Computer;
 using Content.Shared.Access;
 using Content.Shared.Guidebook;
 using Content.Shared.Players.PlayTimeTracking;
@@ -153,6 +154,12 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+        /// <summary>
+        /// ECHO-Tweak: Аккаунты для компьютеров
+        /// </summary>
+        [DataField]
+        public ProtoId<ComputerAccessPrototype>? ComputerAccess = "Generic";
     }
 
     /// <summary>
