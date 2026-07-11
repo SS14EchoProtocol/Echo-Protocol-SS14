@@ -38,6 +38,9 @@
     - state: icon
       color: "#b3b3b3"
     - state: trinkets-icon
+    - map: ["dirt"]
+      sprite: _ECHO/Clothing/dirt.rsi
+      visible: false
   - type: Item
     inhandVisuals:
       left:
@@ -55,6 +58,34 @@
       - state: equipped-INNERCLOTHING
         color: "#b3b3b3"
       - state: trinkets-equipped-INNERCLOTHING
+  - type: DirtVisuals
+    dirtLayers:
+      None:
+        sprite: ECHO/Clothing/dirt.rsi
+        state: jumpsuit
+        visible: false
+      Light:
+        sprite: ECHO/Clothing/dirt.rsi
+        state: jumpsuit
+        visible: true
+      Medium:
+        sprite: ECHO/Clothing/dirt.rsi
+        state: jumpsuit
+        visible: true
+      Heavy:
+        sprite: ECHO/Clothing/dirt.rsi
+        state: jumpsuit
+        visible: true
+    dirtThresholds:
+      None: 0
+      Light: 5
+      Medium: 10
+      Heavy: 15
+  - type: SolutionContainerManager
+    reagents: []
+    solutions:
+      dirt:
+        maxVol: 30
 
 # Black Jumpsuit
 - type: entity
