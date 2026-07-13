@@ -250,6 +250,10 @@ public abstract partial class GameTest
         catch (Exception)
         {
             _pairDestroyed = true;
+<<<<<<< HEAD
+=======
+            Assert.Fail();
+>>>>>>> wizzden/master
             throw;
         }
         finally

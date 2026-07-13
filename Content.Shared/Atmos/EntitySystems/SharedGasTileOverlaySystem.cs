@@ -6,15 +6,24 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.Atmos.EntitySystems;
 
+<<<<<<< HEAD
 public abstract class SharedGasTileOverlaySystem : EntitySystem
+=======
+public abstract partial class SharedGasTileOverlaySystem : EntitySystem
+>>>>>>> wizzden/master
 {
     public const byte ChunkSize = 8;
     protected float AccumulatedFrameTime;
     protected bool PvsEnabled;
 
+<<<<<<< HEAD
     [Dependency] protected readonly IPrototypeManager ProtoMan = default!;
     [Dependency] protected readonly IConfigurationManager ConfMan = default!;
     [Dependency] private readonly SharedAtmosphereSystem _atmosphere = default!;
+=======
+    [Dependency] protected IConfigurationManager ConfMan = default!;
+    [Dependency] private SharedAtmosphereSystem _atmosphere = default!;
+>>>>>>> wizzden/master
 
     /// <summary>
     ///     array of the ids of all visible gases.

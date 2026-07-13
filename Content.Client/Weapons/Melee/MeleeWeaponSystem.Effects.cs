@@ -33,7 +33,7 @@ public sealed partial class MeleeWeaponSystem
         if (localPos == Vector2.Zero || animation == null)
             return;
 
-        if (!_xformQuery.TryGetComponent(user, out var userXform) || userXform.MapID == MapId.Nullspace)
+        if (!TryComp(user, out TransformComponent? userXform) || userXform.MapID == MapId.Nullspace)
             return;
 
         // Allow systems to override how visuals are spawned/tracked.
@@ -84,7 +84,7 @@ public sealed partial class MeleeWeaponSystem
         var baseVec = prepare.SpawnAtMap ? (mapRot - userXform.LocalRotation).RotateVec(localPos) : localPos;
         _sprite.SetRotation((animationUid, sprite), baseVec.ToWorldAngle());
 
-        var xform = _xformQuery.GetComponent(animationUid);
+        var xform = Transform(animationUid);
         TrackUserComponent track;
 
         switch (arcComponent.Animation)

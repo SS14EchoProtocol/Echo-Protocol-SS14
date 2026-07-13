@@ -164,7 +164,7 @@
   time: 10
   group: Savory
   reagents:
-    Mayo: 5
+    Mayo: 2
   solids:
     FoodBreadBun: 1
     FoodMeatChicken: 1
@@ -308,7 +308,7 @@
   time: 10
   group: Savory
   reagents:
-    Egg: 12
+    Egg: 6
   solids:
     FoodBreadBun: 1
     FoodCheeseSlice: 1
@@ -323,8 +323,12 @@
   solids:
     FoodBreadBun: 1
     FoodMealRibs: 1
+<<<<<<< HEAD
     FoodOnionSlice: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodOnionSlice: 5
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeMimeBurger
@@ -379,7 +383,7 @@
   group: Savory
   solids:
     FoodBreadBun: 1
-    FoodCheeseSlice: 2
+    FoodCheeseSlice: 1
     FoodSoybeans: 2 #replace with soylent green when those become craftable
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -406,7 +410,7 @@
   solids:
     FoodBreadBun: 1
     FoodMeat: 2
-    FoodCheeseSlice: 2
+    FoodCheeseSlice: 1
     FoodTomato: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -475,8 +479,12 @@
     Milk: 5
   solids:
     FoodDough: 1
+<<<<<<< HEAD
     FoodCheeseSlice: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodCheeseSlice: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeMeatBread
@@ -487,8 +495,12 @@
   solids:
     FoodDough: 1
     FoodMeatCutlet: 2
+<<<<<<< HEAD
     FoodCheeseSlice: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodCheeseSlice: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeMimanaBread
@@ -500,8 +512,12 @@
     Nothing: 5
   solids:
     FoodDough: 1
+<<<<<<< HEAD
     FoodMimana: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodMimana: 2
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeBread
@@ -544,8 +560,12 @@
   solids:
     FoodDough: 1
     FoodMeatSpiderCutlet: 2
+<<<<<<< HEAD
     FoodCheeseSlice: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodCheeseSlice: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeTofuBread
@@ -555,8 +575,12 @@
   group: Breads
   solids:
     FoodDough: 1
+<<<<<<< HEAD
     FoodTofu: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodTofuSlice: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeXenoMeatBread
@@ -632,7 +656,7 @@
   group: Breakfast
   reagents:
     Milk: 5
-    Egg: 12
+    Egg: 6
   solids:
     FoodBreadPlainSlice: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
@@ -848,8 +872,12 @@
   group: Pasta
   solids:
     FoodNoodlesBoiled: 1
+<<<<<<< HEAD
     FoodMeatMeatball: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodMeatMeatball: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeButterNoodles
@@ -859,8 +887,12 @@
   group: Pasta
   solids:
     FoodNoodlesBoiled: 1
+<<<<<<< HEAD
     FoodButter: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodButterSlice: 2
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeChowMein
@@ -884,8 +916,8 @@
   time: 15
   group: Savory
   reagents:
-    Oats: 15
-    Water: 10
+    Oats: 20
+    Water: 20
   solids:
     FoodBowlBig: 1
   recipeType: Microwave # PE-Tweak добавлено (recipeType: Microwave)
@@ -897,8 +929,8 @@
   time: 15
   group: Savory
   reagents:
-    Rice: 15
-    Water: 10
+    Rice: 20
+    Water: 20
   solids:
     FoodBowlBig: 1
   recipeType: Microwave # PE-Tweak добавлено (recipeType: Microwave)
@@ -910,8 +942,9 @@
   time: 15
   group: Dessert
   reagents:
-    Rice: 15
-    Milk: 10
+    Rice: 10
+    Milk: 30
+    Egg: 6
     Sugar: 5
   solids:
     FoodBowlBig: 1
@@ -936,7 +969,7 @@
   group: Savory
   solids:
     FoodRiceBoiled: 1
-    FoodMeatCutlet: 3
+    FoodMeatCutlet: 2
     FoodChiliPepper: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -987,7 +1020,7 @@
   time: 10
   group: Soup
   reagents:
-    Water: 10
+    Water: 20
   solids:
     FoodBowlBig: 1
     FoodMeatMeatball: 1
@@ -1007,6 +1040,7 @@
   solids:
     FoodBowlBig: 1
     Nettle: 1
+    FoodAmbrosiaDeus: 1
     FoodPotato: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -1117,11 +1151,15 @@
   time: 10
   group: Soup
   reagents:
-    Soysauce: 5
+    Soysauce: 10
   solids:
     FoodBowlBig: 1
+<<<<<<< HEAD
     FoodMeatXenoCutlet: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodMeatXenoCutlet: 5
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeWingFangChuSoupSpider
@@ -1163,6 +1201,7 @@
   solids:
     FoodBowlBig: 1
     FoodBanana: 1
+    MaterialBananium: 1
     ShardGlass: 1
     #idk probably replace shard with someting bananium when #14663 merged
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
@@ -1207,9 +1246,13 @@
   reagents:
     Water: 10
   solids:
+<<<<<<< HEAD
     FoodMeatSnail: 1
   recipeType: 
   - Microwave # PE-Tweak добавлено (recipeType: - Microwave)
+=======
+    MobSnail: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeEscargotSoup
@@ -1222,7 +1265,8 @@
   solids:
     FoodBowlBig: 1
     FoodOnionSlice: 1
-    FoodButter: 1
+    FoodGarlic: 1
+    FoodButterSlice: 2
     FoodMeatSnailCooked: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -1431,7 +1475,7 @@
   time: 15
   group: Savory
   solids:
-    FoodDough: 1
+    FoodDoughSlice: 1
     FoodCheeseSlice: 2
     FoodChiliPepper: 1
     FoodMeatFish: 2
@@ -1446,8 +1490,12 @@
   reagents:
     TableSalt: 1
   solids:
+<<<<<<< HEAD
     FoodMeatFish: 2
   recipeType: Microwave # PE-Tweak добавлено (recipeType: Microwave)
+=======
+    FoodMeatFish: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeMisoColaSoup
@@ -1702,8 +1750,12 @@
   group: Cake
   solids:
     FoodCakePlain: 1
+<<<<<<< HEAD
     FoodCarrot: 3
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodCarrot: 2
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeLemonCake
@@ -1724,7 +1776,7 @@
   group: Cake
   solids:
     FoodCakePlain: 1
-    FoodLemoon: 2
+    FoodLemoon: 1
     FoodBerries: 1 #dark colouring
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -1905,10 +1957,14 @@
   group: Savory
   reagents:
     Water: 10
-    UncookedAnimalProteins: 6
+    UncookedAnimalProteins: 2
   solids:
+<<<<<<< HEAD
     FoodDoughSlice: 3
   recipeType: Microwave # PE-Tweak добавлено (recipeType: Microwave)
+=======
+    FoodDoughSlice: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeBrownies
@@ -1921,7 +1977,7 @@
     Sugar: 30
     Egg: 18
   solids:
-    FoodButter: 2
+    FoodButter: 1
     FoodSnackChocolateBar: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -2046,7 +2102,7 @@
   time: 5
   group: Soup
   reagents:
-    Nitrogen: 5
+    FrostOil: 10
   solids:
     FoodSoupChiliHot: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
@@ -2100,7 +2156,7 @@
   time: 15
   group: Savory
   reagents:
-    BbqSauce: 5
+    BbqSauce: 10
   solids:
     FoodMeat: 2
     FoodKebabSkewer: 1
@@ -2113,10 +2169,16 @@
   time: 20
   group: Savory
   solids:
+<<<<<<< HEAD
     FoodChiliPepper: 2
     FoodMeatCutlet: 1
     FoodCorn: 1
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+    FoodChiliPepper: 1
+    FoodMeatCutlet: 2
+    FoodDoughTortillaFlat: 1
+>>>>>>> wizzden/master
 
 # SALADS: These should be moved out of the microwave as soon as possible
 # - type: microwaveMealRecipe
@@ -2131,6 +2193,7 @@
 #     FoodApple: 1
 #   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
+<<<<<<< HEAD
 # - type: microwaveMealRecipe
 #   id: RecipeValidSalad
 #   name: valid salad recipe
@@ -2157,6 +2220,32 @@
 #     FoodOnionRed: 1
 #     FoodCabbage: 1
 #   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+- type: microwaveMealRecipe
+  id: RecipeValidSalad
+  name: valid salad recipe
+  result: FoodSaladValid
+  time: 5
+  group: Salad
+  solids:
+    FoodBowlBig: 1
+    FoodAmbrosiaVulgaris: 2
+    FoodPotato: 1
+    FoodMeatMeatball: 1
+
+- type: microwaveMealRecipe
+  id: RecipeColeslaw
+  name: coleslaw recipe
+  result: FoodSaladColeslaw
+  time: 5
+  group: Salad
+  reagents:
+    Vinaigrette: 5
+  solids:
+    FoodBowlBig: 1
+    FoodOnionRed: 2
+    FoodCabbage: 2
+>>>>>>> wizzden/master
 
 # - type: microwaveMealRecipe
 #   id: RecipeCaesarSalad
@@ -2187,6 +2276,7 @@
 #     FoodLime: 1
 #   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
+<<<<<<< HEAD
 # - type: microwaveMealRecipe
 #   id: RecipeKimchiSalad
 #   name: kimchi salad recipe
@@ -2229,6 +2319,47 @@
 #     FoodGrape: 1
 #     FoodWatermelonSlice: 2
 #   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
+=======
+- type: microwaveMealRecipe
+  id: RecipeKimchiSalad
+  name: kimchi salad recipe
+  result: FoodSaladKimchi
+  time: 5
+  group: Salad
+  reagents:
+    Vinegar: 5
+  solids:
+    FoodBowlBig: 1
+    FoodCarrot: 1
+    FoodCabbage: 2
+    FoodGarlic: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFruitSalad
+  name: fruit salad recipe
+  result: FoodSaladFruit
+  time: 5
+  group: Salad
+  solids:
+    FoodBowlBig: 1
+    FoodOrange: 1
+    FoodApple: 1
+    FoodGrape: 1
+    FoodWatermelonSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeJungleSalad
+  name: jungle salad recipe
+  result: FoodSaladJungle
+  time: 5
+  group: Salad
+  solids:
+    FoodBowlBig: 1
+    FoodBanana: 1
+    FoodApple: 1
+    FoodGrape: 1
+    FoodWatermelonSlice: 1
+>>>>>>> wizzden/master
 
 # - type: microwaveMealRecipe
 #   id: RecipeWatermelonFruitBowlSalad
@@ -2423,9 +2554,13 @@
   time: 15
   solids:
     FoodButter: 1
+<<<<<<< HEAD
     LeavesCannabis: 6
   recipeType:
   - Microwave # PE-Tweak добавлено (  - Microwave)
+=======
+    LeavesCannabis: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeCannabisBrownies
@@ -2438,7 +2573,7 @@
     Sugar: 30
     Egg: 18
   solids:
-    FoodCannabisButter: 2
+    FoodCannabisButter: 1
     FoodSnackChocolateBar: 2
   recipeType: Oven # PE-Tweak добавлено (recipeType: Oven)
 
@@ -2451,10 +2586,14 @@
   solids:
     FoodCorn: 1
     FoodPlate: 1
+<<<<<<< HEAD
     FoodButter: 1
   recipeType:
   - Oven
   - Microwave # PE-Tweak добавлено (  - Oven  - Microwave)
+=======
+    FoodButterSlice: 1
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipePeaSoup
@@ -2463,13 +2602,17 @@
   time: 10
   group: Soup
   solids:
-    FoodPeaPod: 2
+    FoodPeaPod: 3
     FoodBowlBig: 1
   reagents:
+<<<<<<< HEAD
     Water: 10
   recipeType:
   - Oven
   - Microwave # PE-Tweak добавлено (  - Oven  - Microwave)
+=======
+    Water: 20
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeTacoShell
@@ -2478,10 +2621,14 @@
   time: 5
   group: Breads
   solids:
+<<<<<<< HEAD
     FoodDoughTortillaFlat: 1 # one third of a standard bread dough recipe
   recipeType:
   - Oven
   - Microwave # PE-Tweak добавлено (  - Oven  - Microwave)
+=======
+    FoodDoughTortillaFlat: 1 # one eighth a standard bread dough recipe
+>>>>>>> wizzden/master
 
 - type: microwaveMealRecipe
   id: RecipeTacoBeef

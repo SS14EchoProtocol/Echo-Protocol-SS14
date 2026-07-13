@@ -6,9 +6,14 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class GermanAccentSystem : EntitySystem
+public sealed partial class GermanAccentSystem : EntitySystem
 {
+<<<<<<< HEAD
     [Dependency] private readonly IRobustRandom _random = default!;
+=======
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ReplacementAccentSystem _replacement = default!;
+>>>>>>> wizzden/master
 
     private static readonly Regex RegexTh = new(@"(?<=\s|^)th", RegexOptions.IgnoreCase);
     private static readonly Regex RegexThe = new(@"(?<=\s|^)the(?=\s|$)", RegexOptions.IgnoreCase);

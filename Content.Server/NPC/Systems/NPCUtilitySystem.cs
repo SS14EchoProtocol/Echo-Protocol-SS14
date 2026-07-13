@@ -30,15 +30,22 @@ using Content.Shared.Atmos.Components;
 using System.Linq;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
+<<<<<<< HEAD
+=======
+using Content.Shared.Mobs.Components;
+>>>>>>> wizzden/master
 using Content.Shared.Temperature.Components;
+using Content.Shared.Stealth;
+using Content.Shared.Stealth.Components;
 
 namespace Content.Server.NPC.Systems;
 
 /// <summary>
 /// Handles utility queries for NPCs.
 /// </summary>
-public sealed class NPCUtilitySystem : EntitySystem
+public sealed partial class NPCUtilitySystem : EntitySystem
 {
+<<<<<<< HEAD
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -59,6 +66,26 @@ public sealed class NPCUtilitySystem : EntitySystem
 
     private EntityQuery<PuddleComponent> _puddleQuery;
     private EntityQuery<TransformComponent> _xformQuery;
+=======
+    [Dependency] private ContainerSystem _container = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private IngestionSystem _ingestion = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutions = default!;
+    [Dependency] private WeldableSystem _weldable = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
+    [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private MobThresholdSystem _thresholdSystem = default!;
+    [Dependency] private TurretTargetSettingsSystem _turretTargetSettings = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedStealthSystem _stealth = default!;
+    [Dependency] private EntityQuery<PuddleComponent> _puddleQuery = default!;
+>>>>>>> wizzden/master
 
     private ObjectPool<HashSet<EntityUid>> _entPool =
         new DefaultObjectPool<HashSet<EntityUid>>(new SetPolicy<EntityUid>(), 256);
@@ -67,13 +94,6 @@ public sealed class NPCUtilitySystem : EntitySystem
     private List<EntityUid> _entityList = new();
     private HashSet<Entity<IComponent>> _entitySet = new();
     private List<EntityPrototype.ComponentRegistryEntry> _compTypes = new();
-
-    public override void Initialize()
-    {
-        base.Initialize();
-        _puddleQuery = GetEntityQuery<PuddleComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
-    }
 
     /// <summary>
     /// Runs the UtilityQueryPrototype and returns the best-matching entities.
@@ -86,7 +106,7 @@ public sealed class NPCUtilitySystem : EntitySystem
     {
         // TODO: PickHostilesop or whatever needs to juse be UtilityQueryOperator
 
-        var weh = _proto.Index<UtilityQueryPrototype>(proto);
+        var weh = ProtoMan.Index<UtilityQueryPrototype>(proto);
         var ents = _entPool.Get();
 
         foreach (var query in weh.Query)
@@ -157,7 +177,7 @@ public sealed class NPCUtilitySystem : EntitySystem
             case InverseBoolCurve:
                 return conScore.Equals(0f) ? 1f : 0f;
             case PresetCurve presetCurve:
-                return GetScore(_proto.Index<UtilityCurvePresetPrototype>(presetCurve.Preset).Curve, conScore);
+                return GetScore(ProtoMan.Index<UtilityCurvePresetPrototype>(presetCurve.Preset).Curve, conScore);
             case QuadraticCurve quadraticCurve:
                 return Math.Clamp(quadraticCurve.Slope * MathF.Pow(conScore - quadraticCurve.XOffset, quadraticCurve.Exponent) + quadraticCurve.YOffset, 0f, 1f);
             default:
@@ -285,6 +305,15 @@ public sealed class NPCUtilitySystem : EntitySystem
 
                 return Math.Clamp(distance / radius, 0f, 1f);
             }
+            case TargetIsVisibleCon:
+            {
+                if (!TryComp(targetUid, out StealthComponent? stealth))
+                    return 1f; // If there is no StealthComponent, we see it.
+
+                // Checking the visibility level
+                var visibility = _stealth.GetVisibility(targetUid, stealth);
+                return visibility >= 0.5f ? 1f : 0f; // Visibility threshold 0.5
+            }
             case TargetAmmoCon:
             {
                 if (!HasComp<GunComponent>(targetUid))
@@ -304,12 +333,20 @@ public sealed class NPCUtilitySystem : EntitySystem
             }
             case TargetHealthCon con:
             {
-                if (!TryComp(targetUid, out DamageableComponent? damage))
+                if (!TryComp(targetUid, out DamageableComponent? damage) || !TryComp(targetUid, out MobThresholdsComponent? threshold))
                     return 0f;
+<<<<<<< HEAD
                 var totalDamage = _damageable.GetTotalDamage((targetUid, damage));
                 if (con.TargetState != MobState.Invalid && _thresholdSystem.TryGetPercentageForState(targetUid, con.TargetState, totalDamage, out var percentage))
                     return Math.Clamp((float)(1 - percentage), 0f, 1f);
                 if (_thresholdSystem.TryGetIncapPercentage(targetUid, totalDamage, out var incapPercentage))
+=======
+
+                var totalDamage = _damageable.GetTotalDamage((targetUid, damage));
+                if (con.TargetState != MobState.Invalid && _thresholdSystem.TryGetPercentageForState(targetUid, con.TargetState, totalDamage, out var percentage, threshold))
+                    return Math.Clamp((float)(1 - percentage), 0f, 1f);
+                if (_thresholdSystem.TryGetIncapPercentage(targetUid, totalDamage, out var incapPercentage, threshold))
+>>>>>>> wizzden/master
                     return Math.Clamp((float)(1 - incapPercentage), 0f, 1f);
                 return 0f;
             }
@@ -415,7 +452,7 @@ public sealed class NPCUtilitySystem : EntitySystem
                 if (compQuery.Components.Count == 0)
                     return;
 
-                var mapPos = _transform.GetMapCoordinates(owner, xform: _xformQuery.GetComponent(owner));
+                var mapPos = _transform.GetMapCoordinates(owner, xform: Transform(owner));
                 _compTypes.Clear();
                 var i = -1;
                 EntityPrototype.ComponentRegistryEntry compZero = default!;
@@ -493,7 +530,7 @@ public sealed class NPCUtilitySystem : EntitySystem
     private void RecursiveAdd(EntityUid uid, HashSet<EntityUid> entities)
     {
         // TODO: Probably need a recursive struct enumerator on engine.
-        var xform = _xformQuery.GetComponent(uid);
+        var xform = Transform(uid);
         var enumerator = xform.ChildEnumerator;
         entities.Add(uid);
 

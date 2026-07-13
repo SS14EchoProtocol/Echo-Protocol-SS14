@@ -4,8 +4,9 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.VoiceMask;
 
 /// <summary>
-///     This component is for voice mask items! Adding this component to clothing will give the the voice mask UI
+///     This component is for voice mask items & voice-masking entities! Adding this component to clothing will give the voice mask UI
 ///     and allow the wearer to change their voice and verb at will.
+///     Having this on an entity while the IsInnate field is true will give it an innate voice masking ability.
 /// </summary>
 /// <remarks>
 ///     DO NOT use this if you do not want the interface.
@@ -48,7 +49,7 @@ public sealed partial class VoiceMaskComponent : Component
     ///     If user's voice is getting changed when they speak.
     /// </summary>
     [DataField]
-    public bool Active = true;
+    public bool Active = false;
 
     /// <summary>
     ///     If user's accent is getting hidden when they speak.
@@ -56,6 +57,7 @@ public sealed partial class VoiceMaskComponent : Component
     [DataField]
     public bool AccentHide = true;
 
+<<<<<<< HEAD
     // ECHO-Tweak : Barks
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
@@ -66,10 +68,29 @@ public sealed partial class VoiceMaskComponent : Component
     public float BarkPitch = 1f;
     // ECHO-Tweak : Barks
 
+=======
+>>>>>>> wizzden/master
     /// <summary>
     ///     If user's equipped agent id name is getting changed.
     /// </summary>
     [DataField]
     public bool ChangeIDName = false;
+<<<<<<< HEAD
+=======
+
+    /// <summary>
+    ///     Whether the voice mask is innate to the entity.
+    ///     When added to an entity while this field is set to true, the entity itself will gain the action & UI necessary to change its voice.
+    ///     When this field is set to false, then the entity with this component will be a provider (either through implanting or through wearing) of the voice masking abilities for another entity.
+    /// </summary>
+    [DataField]
+    public bool IsInnate = false;
+
+    /// <summary>
+    ///     Is used as the title text in the UI.
+    /// </summary>
+    [DataField]
+    public LocId TitleText = "voice-mask-name-change-window";
+>>>>>>> wizzden/master
 }
 

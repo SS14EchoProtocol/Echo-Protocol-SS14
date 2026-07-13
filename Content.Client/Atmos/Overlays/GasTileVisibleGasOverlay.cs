@@ -20,12 +20,20 @@ namespace Content.Client.Atmos.Overlays;
 /// <summary>
 /// Overlay responsible for rendering visible atmos gasses (like plasma for example) usin.
 /// </summary>
+<<<<<<< HEAD
 public sealed class GasTileVisibleGasOverlay : Overlay
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
+=======
+public sealed partial class GasTileVisibleGasOverlay : Overlay
+{
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
+>>>>>>> wizzden/master
 
     private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
 
@@ -142,7 +150,11 @@ public sealed class GasTileVisibleGasOverlay : Overlay
             return;
 
         // TODO: WorldBounds callback.
+<<<<<<< HEAD
         _mapManager.FindGridsIntersecting(args.MapId,
+=======
+        _mapSystem.FindGridsIntersecting(args.MapId,
+>>>>>>> wizzden/master
             args.WorldAABB,
             ref gridState,
             static (EntityUid uid,

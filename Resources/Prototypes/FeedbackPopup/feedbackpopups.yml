@@ -17,6 +17,7 @@
   responseType: "General Feedback"
   responseLink: "https://forum.spacestation14.com/c/development/feedback/51"
   showRoundEnd: false
+<<<<<<< HEAD
 
 - type: feedbackPopup
   id: ForceVentCrittersToAttackFeedback
@@ -30,3 +31,5 @@
   ruleWhitelist:
     components:
       - VentHordeRule
+=======
+>>>>>>> wizzden/master

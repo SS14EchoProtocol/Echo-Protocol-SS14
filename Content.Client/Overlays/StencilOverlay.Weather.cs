@@ -33,7 +33,11 @@ public sealed partial class StencilOverlay
                 _grids.Clear();
 
                 // idk if this is safe to cache in a field and clear sloth help
+<<<<<<< HEAD
                 _mapManager.FindGridsIntersecting(mapId, worldAABB, ref _grids);
+=======
+                _map.FindGridsIntersecting(mapId, worldAABB, ref _grids);
+>>>>>>> wizzden/master
 
                 foreach (var grid in _grids)
                 {

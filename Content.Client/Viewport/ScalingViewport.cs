@@ -19,11 +19,15 @@ namespace Content.Client.Viewport
     /// <summary>
     ///     Viewport control that has a fixed viewport size and scales it appropriately.
     /// </summary>
+<<<<<<< HEAD
     public sealed partial class ScalingViewport : Control, IViewportControl //CrystallEdge partial for ZLevels rendering
+=======
+    public sealed partial class ScalingViewport : Control, IViewportControl
+>>>>>>> wizzden/master
     {
-        [Dependency] private readonly IClyde _clyde = default!;
-        [Dependency] private readonly IEntityManager _entityManager = default!;
-        [Dependency] private readonly IInputManager _inputManager = default!;
+        [Dependency] private IClyde _clyde = default!;
+        [Dependency] private IEntityManager _entityManager = default!;
+        [Dependency] private IInputManager _inputManager = default!;
 
         // Internal viewport creation is deferred.
         private IClydeViewport? _viewport;

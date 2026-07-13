@@ -1,5 +1,33 @@
 - type: entity
   id: CrateServiceJanitorialSupplies
+<<<<<<< HEAD
+=======
+  name: janitorial supplies crate
+  description: Fight back against dirt and grime with Nanotrasen's Janitorial Essentials(tm)! Contains three buckets, caution signs, and cleaner grenades. Also has a single mop, broom, spray cleaner, wire brush, rag, and trash bag.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: AllSoapsTable
+        - id: MopItem
+        - id: MopBucketCubeWrapped
+        - id: Bucket
+          amount: 3
+        - id: WetFloorSign
+          amount: 2
+        - id: SprayBottleSpaceCleaner
+          amount: 2
+        - id: TrashBag
+          amount: 2
+        - id: Plunger
+          amount: 2
+        - id: BoxCleanerGrenades
+        - id: WireBrush
+
+- type: entity
+>>>>>>> wizzden/master
   parent: CratePlastic
   name: janitorial supplies crate
   description: Fight back against dirt and grime with Nanotrasen's Janitorial Essentials(tm)! Contains three buckets, caution signs, and cleaner grenades. Also has a single mop, broom, spray cleaner, rag, and trash bag.
@@ -115,6 +143,7 @@
   name: bureaucracy crate
   description: Several stacks of paper, a few pens and an office toy. What more could you ask for?
   components:
+<<<<<<< HEAD
   - type: StorageFill
     contents:
     - id: Paper
@@ -129,6 +158,28 @@
     - id: BoxFolderYellow
     - id: NewtonCradle
     - id: BoxEnvelope
+=======
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: Paper
+          amount: 12
+        - id: PaperOffice
+          amount: 6
+        - id: Pen
+          amount: 2
+        - id: BoxFolderClipboardEmpty
+          amount: 2
+        - id: HandLabeler
+        - id: BoxFolderBlueEmpty
+        - id: BoxFolderRedEmpty
+        - id: BoxFolderYellowEmpty
+        - id: NewtonCradle
+        - id: BoxEnvelope
+        - id: BrbSign
+        - id: DeskBell
+>>>>>>> wizzden/master
 
 - type: entity
   id: CrateServiceFaxMachine

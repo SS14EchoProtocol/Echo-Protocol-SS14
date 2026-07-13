@@ -4,9 +4,15 @@ using Robust.Shared.Console;
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Spawn)]
+<<<<<<< HEAD
 public sealed class DeleteComponentCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IComponentFactory _compFactory = default!;
+=======
+public sealed partial class DeleteComponentCommand : LocalizedEntityCommands
+{
+    [Dependency] private IComponentFactory _compFactory = default!;
+>>>>>>> wizzden/master
 
     public override string Command => "deletecomponent";
 

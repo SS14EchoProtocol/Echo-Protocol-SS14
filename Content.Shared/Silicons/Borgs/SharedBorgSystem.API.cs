@@ -236,8 +236,14 @@ public abstract partial class SharedBorgSystem
             }
         }
 
+<<<<<<< HEAD
         var attemptEv = new BorgModuleInsertAttemptEvent(module.Owner);
         RaiseLocalEvent(chassis, ref attemptEv);
+=======
+        var attemptEv = new BorgModuleInsertAttemptEvent(module.Owner, chassis.Owner);
+        RaiseLocalEvent(chassis, ref attemptEv);
+        RaiseLocalEvent(module, ref attemptEv);
+>>>>>>> wizzden/master
 
         if (attemptEv.Cancelled)
         {

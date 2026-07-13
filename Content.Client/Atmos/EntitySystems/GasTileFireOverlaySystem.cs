@@ -8,9 +8,15 @@ namespace Content.Client.Atmos.EntitySystems;
 /// System responsible for rendering atmos fire animations using <see cref="GasTileFireOverlay"/>.
 /// </summary>
 [UsedImplicitly]
+<<<<<<< HEAD
 public sealed class GasTileFireOverlaySystem : EntitySystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
+=======
+public sealed partial class GasTileFireOverlaySystem : EntitySystem
+{
+    [Dependency] private IOverlayManager _overlayMan = default!;
+>>>>>>> wizzden/master
 
     private GasTileFireOverlay _fireOverlay = default!;
 

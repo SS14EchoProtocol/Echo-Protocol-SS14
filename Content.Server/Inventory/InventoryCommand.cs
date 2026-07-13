@@ -12,7 +12,11 @@ public sealed class InventoryCommand : ToolshedCommand
 {
     private InventorySystem? _inventorySystem;
 
+<<<<<<< HEAD
     [CommandImplementation("query")]
+=======
+    [CommandImplementation("contents")]
+>>>>>>> wizzden/master
     public IEnumerable<EntityUid> InventoryQuery([PipedArgument] IEnumerable<EntityUid> entities) =>
         entities.SelectMany(InventoryQuery);
 

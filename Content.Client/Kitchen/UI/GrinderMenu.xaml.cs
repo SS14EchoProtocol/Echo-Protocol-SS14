@@ -18,8 +18,13 @@ namespace Content.Client.Kitchen.UI;
 [GenerateTypedNameReferences]
 public sealed partial class GrinderMenu : FancyWindow
 {
+<<<<<<< HEAD
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+=======
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+>>>>>>> wizzden/master
     private readonly ItemSlotsSystem _slots = default!;
     private readonly SharedPowerReceiverSystem _power = default!;
     private readonly SharedReagentGrinderSystem _grinder = default!;
@@ -58,12 +63,26 @@ public sealed partial class GrinderMenu : FancyWindow
         OnEjectChamber?.Invoke(_chamberVisualContents[args.ItemIndex]);
     }
 
+<<<<<<< HEAD
+=======
+    /// <summary>
+    ///     Set the reagent grinder entity associated with this menu.
+    /// </summary>
+    /// <param name="owner">The reagent grinder.</param>
+>>>>>>> wizzden/master
     public void SetEntity(EntityUid owner)
     {
         _owner = owner;
         UpdateUi();
     }
 
+<<<<<<< HEAD
+=======
+    /// <summary>
+    ///     Update the UI state of this reagent grinder, including its contents,
+    ///     current grinding/juicing status, and button toggle states.
+    /// </summary>
+>>>>>>> wizzden/master
     public void UpdateUi()
     {
         if (!_entityManager.TryGetComponent<ReagentGrinderComponent>(_owner, out var grinderComp))

@@ -18,12 +18,20 @@ namespace Content.Client.Atmos.Overlays;
 /// <summary>
 ///     Overlay responsible for rendering atmos fire animation.
 /// </summary>
+<<<<<<< HEAD
 public sealed class GasTileFireOverlay : Overlay
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
+=======
+public sealed partial class GasTileFireOverlay : Overlay
+{
+    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+    [Dependency] private IEntityManager _entManager = default!;
+>>>>>>> wizzden/master
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities | OverlaySpace.WorldSpaceBelowWorld;
     private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
@@ -113,7 +121,11 @@ public sealed class GasTileFireOverlay : Overlay
             return;
 
         // TODO: WorldBounds callback.
+<<<<<<< HEAD
         _mapManager.FindGridsIntersecting(args.MapId, args.WorldAABB, ref gridState,
+=======
+        _mapSystem.FindGridsIntersecting(args.MapId, args.WorldAABB, ref gridState,
+>>>>>>> wizzden/master
             static (EntityUid uid, MapGridComponent grid,
                 ref (Box2Rotated WorldBounds,
                     DrawingHandleWorld drawHandle,

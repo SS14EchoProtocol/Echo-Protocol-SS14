@@ -4,15 +4,19 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Rounding;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.Damage.Systems;
 
-public sealed class ExaminableDamageSystem : EntitySystem
+public sealed partial class ExaminableDamageSystem : EntitySystem
 {
+<<<<<<< HEAD
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+=======
+    [Dependency] private DestructibleSystem _destructible = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+>>>>>>> wizzden/master
 
     public override void Initialize()
     {
@@ -22,7 +26,7 @@ public sealed class ExaminableDamageSystem : EntitySystem
 
     private void OnExamine(Entity<ExaminableDamageComponent> ent, ref ExaminedEvent args)
     {
-        if (!_prototype.Resolve(ent.Comp.Messages, out var proto) || proto.Values.Count == 0)
+        if (!ProtoMan.Resolve(ent.Comp.Messages, out var proto) || proto.Values.Count == 0)
             return;
 
         var percent = GetDamagePercent(ent);

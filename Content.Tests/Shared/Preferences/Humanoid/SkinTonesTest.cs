@@ -43,7 +43,11 @@ public sealed class SkinTonesTest
         {
             var unaryInput = i / 100f; // Test values like 0.0, 0.01, ..., 100.0
             var color = strategy.FromUnary(unaryInput);
+<<<<<<< HEAD
             Assert.That(strategy.VerifySkinColor(color), $"Color {color} from unary value {unaryInput} failed verification.");
+=======
+            Assert.That(strategy.VerifySkinColor(color, out var reason), $"Color {color} from unary value {unaryInput} failed verification. Reason: {reason}");
+>>>>>>> wizzden/master
         }
     }
 
@@ -75,7 +79,225 @@ public sealed class SkinTonesTest
     public void TestDefaultHumanSkinToneValid()
     {
         var strategy = new HumanTonedSkinColoration();
+<<<<<<< HEAD
         Assert.That(strategy.VerifySkinColor(strategy.ValidHumanSkinTone));
+=======
+        Assert.That(strategy.VerifySkinColor(strategy.ValidHumanSkinTone, out _));
+    }
+
+    /// <summary>
+    /// Checks that clamping random colors with a low-saturation, high-lightness HSL strategy produces valid colors.
+    /// This was the primary test case that originally revealed the precision bug.
+    /// </summary>
+    [Test]
+    public void TestTintedHuesValidHsl()
+    {
+        var random = new RobustRandom();
+        var strategy = new ClampedHslColoration()
+        {
+            Saturation = (0.0f, 0.1f),
+            Lightness = (0.85f, 1.0f),
+        };
+
+        for (var i = 0; i <= 10000; i++)
+        {
+            var color = new Color(random.NextFloat(), random.NextFloat(), random.NextFloat());
+            var skinColor = strategy.ClosestSkinColor(color);
+            LogDriftIfGreater(strategy, color, skinColor, TestContext.CurrentContext.Test.Name); // Monitor drift
+
+            Assert.That(strategy.VerifySkinColor(skinColor, out var reason),
+                $"Color {skinColor} (from input {color}) failed verification in {TestContext.CurrentContext.Test.Name} on iteration {i}. Reason: {reason}");
+        }
+    }
+
+    /// <summary>
+    /// Checks that clamping random colors with a low-saturation, high-value HSV strategy produces valid colors.
+    /// </summary>
+    [Test]
+    public void TestTintedHuesValidHsv()
+    {
+        var random = new RobustRandom();
+        var strategy = new ClampedHsvColoration()
+        {
+            Saturation = (0.0f, 0.1f),
+            Value = (0.85f, 1.0f),
+        };
+
+        for (var i = 0; i <= 10000; i++)
+        {
+            var color = new Color(random.NextFloat(), random.NextFloat(), random.NextFloat());
+            var skinColor = strategy.ClosestSkinColor(color);
+            LogDriftIfGreater(strategy, color, skinColor, TestContext.CurrentContext.Test.Name); // Monitor drift
+
+            Assert.That(strategy.VerifySkinColor(skinColor, out var reason),
+                $"Color {skinColor} (from input {color}) failed verification in {TestContext.CurrentContext.Test.Name} on iteration {i}. Reason: {reason}");
+        }
+    }
+
+    /// <summary>
+    /// Checks that clamping random colors with an HSL strategy that limits all three channels produces valid colors.
+    /// </summary>
+    [Test]
+    public void TestClampedHslWithAllChannels()
+    {
+        var random = new RobustRandom();
+        var strategy = new ClampedHslColoration()
+        {
+            Hue = (0.1f, 0.3f),
+            Saturation = (0.2f, 0.8f),
+            Lightness = (0.3f, 0.7f),
+        };
+
+        for (var i = 0; i <= 10000; i++)
+        {
+            var color = new Color(random.NextFloat(), random.NextFloat(), random.NextFloat());
+            var skinColor = strategy.ClosestSkinColor(color);
+            LogDriftIfGreater(strategy, color, skinColor, TestContext.CurrentContext.Test.Name); // Monitor drift
+
+            Assert.That(strategy.VerifySkinColor(skinColor, out var reason),
+                $"Color {skinColor} (from input {color}) failed verification in {TestContext.CurrentContext.Test.Name} on iteration {i}. Reason: {reason}");
+        }
+    }
+
+    /// <summary>
+    /// Checks that clamping random colors with an HSV strategy that limits all three channels produces valid colors.
+    /// </summary>
+    [Test]
+    public void TestClampedHsvWithAllChannels()
+    {
+        var random = new RobustRandom();
+        var strategy = new ClampedHsvColoration()
+        {
+            Hue = (0.1f, 0.3f),
+            Saturation = (0.2f, 0.8f),
+            Value = (0.3f, 0.7f),
+        };
+
+        for (var i = 0; i <= 10000; i++)
+        {
+            var color = new Color(random.NextFloat(), random.NextFloat(), random.NextFloat());
+            var skinColor = strategy.ClosestSkinColor(color);
+            LogDriftIfGreater(strategy, color, skinColor, TestContext.CurrentContext.Test.Name); // Monitor drift
+
+            Assert.That(strategy.VerifySkinColor(skinColor, out var reason),
+                $"Color {skinColor} (from input {color}) failed verification in {TestContext.CurrentContext.Test.Name} on iteration {i}. Reason: {reason}");
+        }
+    }
+
+    /// <summary>
+    /// Checks that clamping works correctly for HSL strategies where the hue range wraps around the 0-1 boundary.
+    /// </summary>
+    [Test]
+    public void TestClampedHslWithCircularHue()
+    {
+        var random = new RobustRandom();
+        var strategy = new ClampedHslColoration()
+        {
+            Hue = (0.9f, 0.1f), // A range that wraps around 1.0 (e.g., reds)
+            Saturation = (0.5f, 1.0f),
+            Lightness = (0.5f, 1.0f),
+        };
+
+        for (var i = 0; i <= 10000; i++)
+        {
+            var color = new Color(random.NextFloat(), random.NextFloat(), random.NextFloat());
+            var skinColor = strategy.ClosestSkinColor(color);
+            LogDriftIfGreater(strategy, color, skinColor, TestContext.CurrentContext.Test.Name); // Monitor drift
+
+            Assert.That(strategy.VerifySkinColor(skinColor, out var reason),
+                $"Color {skinColor} (from input {color}) with circular hue failed verification in {TestContext.CurrentContext.Test.Name} on iteration {i}. Reason: {reason}");
+        }
+    }
+
+    /// <summary>
+    /// Checks that a color that is already valid is not modified.
+    /// </summary>
+    [Test]
+    public void TestClosestSkinColorReturnsValidColor()
+    {
+        var strategy = new ClampedHslColoration()
+        {
+            Saturation = (0.0f, 1.0f),
+            Lightness = (0.0f, 1.0f),
+        };
+
+        var validColor = Color.FromHsl(new Vector4(0.5f, 0.5f, 0.5f, 1.0f));
+        var result = strategy.ClosestSkinColor(validColor);
+
+        Assert.That(strategy.VerifySkinColor(result, out _), Is.True);
+    }
+
+    /// <summary>
+    /// Checks that a color outside the valid range is correctly clamped to a valid color.
+    /// </summary>
+    [Test]
+    public void TestClosestSkinColorClampsInvalidColor()
+    {
+        var strategy = new ClampedHslColoration()
+        {
+            Saturation = (0.0f, 0.1f),
+            Lightness = (0.85f, 1.0f),
+        };
+
+        // This color has high saturation and low lightness, should be clamped
+        var invalidColor = Color.FromHsl(new Vector4(0.5f, 0.9f, 0.2f, 1.0f));
+        var result = strategy.ClosestSkinColor(invalidColor);
+
+        Assert.That(strategy.VerifySkinColor(result, out _), Is.True);
+        Assert.That(result, Is.Not.EqualTo(invalidColor));
+    }
+
+    /// <summary>
+    /// Helper method to calculate and log the maximum floating-point drift observed during clamping.
+    /// This is for monitoring the behavior of the clamping, not for causing test failures directly.
+    /// </summary>
+    private void LogDriftIfGreater(ISkinColorationStrategy strategy, Color original, Color clamped, string testName)
+    {
+        if (strategy is ClampedHslColoration hslStrategy)
+        {
+            var hsl = Color.ToHsl(clamped);
+            var (minSat, maxSat) = hslStrategy.Saturation ?? (0f, 1f);
+            var (minLight, maxLight) = hslStrategy.Lightness ?? (0f, 1f);
+
+            // Re-calculate the drift from the original bounds *without* applying Epsilon
+            // This shows the pure floating-point error relative to the intended boundaries.
+            var satDrift = Math.Max(minSat - hsl.Y, hsl.Y - maxSat);
+            var lightDrift = Math.Max(minLight - hsl.Z, hsl.Z - maxLight);
+            var currentDrift = Math.Max(satDrift, lightDrift);
+
+            if (currentDrift > _maxHslDrift)
+            {
+                TestContext.Out.WriteLine($"--- NEW MAX HSL DRIFT DETECTED in {testName} ---");
+                TestContext.Out.WriteLine($"Max HSL Drift: {currentDrift:E} (previously {_maxHslDrift:E})");
+                TestContext.Out.WriteLine($"Original RGB: {original}");
+                TestContext.Out.WriteLine($"Clamped RGB: {clamped}");
+                TestContext.Out.WriteLine($"Result HSL: H={hsl.X:F8}, S={hsl.Y:F8}, L={hsl.Z:F8}");
+                TestContext.Out.WriteLine($"Bounds: S=({minSat:F8}, {maxSat:F8}), L=({minLight:F8}, {maxLight:F8})");
+                _maxHslDrift = currentDrift;
+            }
+        }
+        else if (strategy is ClampedHsvColoration hsvStrategy)
+        {
+            var hsv = Color.ToHsv(clamped);
+            var (minSat, maxSat) = hsvStrategy.Saturation ?? (0f, 1f);
+            var (minValue, maxValue) = hsvStrategy.Value ?? (0f, 1f);
+
+            var satDrift = Math.Max(minSat - hsv.Y, hsv.Y - maxSat);
+            var valueDrift = Math.Max(minValue - hsv.Z, hsv.Z - maxValue);
+            var currentDrift = Math.Max(satDrift, valueDrift);
+
+            if (currentDrift > _maxHsvDrift)
+            {
+                TestContext.Out.WriteLine($"--- NEW MAX HSV DRIFT DETECTED in {testName} ---");
+                TestContext.Out.WriteLine($"Max HSV Drift: {currentDrift:E} (previously {_maxHsvDrift:E})");
+                TestContext.Out.WriteLine($"Original RGB: {original}");
+                TestContext.Out.WriteLine($"Clamped RGB: {clamped}");
+                TestContext.Out.WriteLine($"Result HSV: H={hsv.X:F8}, S={hsv.Y:F8}, V={hsv.Z:F8}");
+                TestContext.Out.WriteLine($"Bounds: S=({minSat:F8}, {maxSat:F8}), V=({minValue:F8}, {maxValue:F8})");
+                _maxHsvDrift = currentDrift;
+            }
+        }
+>>>>>>> wizzden/master
     }
 
     /// <summary>

@@ -102,15 +102,22 @@
   - type: Tag
     tags:
     - BypassInteractionRangeChecks
-  - type: PointLight
+  - type: NightVision
     netsync: false
-    radius: 6
-    castShadows: false
     enabled: false
+<<<<<<< HEAD
   # ECHO-Tweak-start: better ghost movement
   - type: CEZPhysics
     ignoreHighGround: true
   # ECHO-Tweak-end
+=======
+    prioritized: false
+    relayOverlay: false # In case default values change
+    lightingColor: '#FFFFFF20'
+    overlayColor: '#FFFFFF00'
+    noiseAmount: 0 # In case default values change
+    noiseMultiplier: 0 # In case default values change
+>>>>>>> wizzden/master
 
 # proto for player ghosts specifically
 - type: entity

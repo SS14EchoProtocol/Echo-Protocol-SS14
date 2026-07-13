@@ -21,12 +21,17 @@ namespace Content.Client.Atmos.Overlays;
 /// <summary>
 ///     Overlay responsible for rendering heat distortion shader.
 /// </summary>
+<<<<<<< HEAD
 public sealed class GasTileHeatBlurOverlay : Overlay
+=======
+public sealed partial class GasTileHeatBlurOverlay : Overlay
+>>>>>>> wizzden/master
 {
     public override bool RequestScreenTexture { get; set; } = true;
     private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
     private static readonly ProtoId<ShaderPrototype> HeatOverlayShader = "HeatBlur";
 
+<<<<<<< HEAD
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -34,6 +39,15 @@ public sealed class GasTileHeatBlurOverlay : Overlay
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
 
+=======
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IClyde _clyde = default!;
+    [Dependency] private IConfigurationManager _configManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
+
+    private readonly SharedMapSystem _maps;
+>>>>>>> wizzden/master
     private readonly SharedTransformSystem _xformSys;
     private readonly ShaderInstance _shader;
 
@@ -63,13 +77,21 @@ public sealed class GasTileHeatBlurOverlay : Overlay
     public GasTileHeatBlurOverlay()
     {
         IoCManager.InjectDependencies(this);
+<<<<<<< HEAD
+=======
+        _maps = _entManager.System<SharedMapSystem>();
+>>>>>>> wizzden/master
         _xformSys = _entManager.System<SharedTransformSystem>();
 
         _noiseTexture = _resourceCache.GetTexture("/Textures/Effects/HeatBlur/perlin_noise.png");
         _heatGradientTexture = _resourceCache.GetTexture("/Textures/Effects/HeatBlur/soft_circle.png");
 
         _shader = _proto.Index(HeatOverlayShader).InstanceUnique();
+<<<<<<< HEAD
         _configManager.OnValueChanged(CCVars.ReducedMotion, SetReducedMotion, invokeImmediately: true);
+=======
+        _configManager.OnValueChanged(CCVars.DisableHeatDistortion, SetReducedMotion, invokeImmediately: true);
+>>>>>>> wizzden/master
     }
 
     private void SetReducedMotion(bool reducedMotion)
@@ -126,7 +148,11 @@ public sealed class GasTileHeatBlurOverlay : Overlay
             () =>
             {
                 _intersectingGrids.Clear();
+<<<<<<< HEAD
                 _mapManager.FindGridsIntersecting(mapId, worldAABB, ref _intersectingGrids);
+=======
+                _maps.FindGridsIntersecting(mapId, worldAABB, ref _intersectingGrids);
+>>>>>>> wizzden/master
                 foreach (var grid in _intersectingGrids)
                 {
                     if (!overlayQuery.TryGetComponent(grid.Owner, out var comp))
@@ -226,7 +252,11 @@ public sealed class GasTileHeatBlurOverlay : Overlay
     {
         _resources.Dispose();
 
+<<<<<<< HEAD
         _configManager.UnsubValueChanged(CCVars.ReducedMotion, SetReducedMotion);
+=======
+        _configManager.UnsubValueChanged(CCVars.DisableHeatDistortion, SetReducedMotion);
+>>>>>>> wizzden/master
         base.DisposeBehavior();
     }
 

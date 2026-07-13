@@ -9,12 +9,20 @@ namespace Content.Shared.Atmos.EntitySystems;
 
 public abstract partial class SharedAtmosphereSystem : EntitySystem
 {
+<<<<<<< HEAD
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] protected readonly IPrototypeManager ProtoMan = default!;
     [Dependency] private readonly SharedInternalsSystem _internals = default!;
     [Dependency] protected readonly SharedTransformSystem XformSystem = default!;
 
     private EntityQuery<InternalsComponent> _internalsQuery;
+=======
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private SharedInternalsSystem _internals = default!;
+    [Dependency] protected SharedTransformSystem XformSystem = default!;
+
+    [Dependency] private EntityQuery<InternalsComponent> _internalsQuery = default!;
+>>>>>>> wizzden/master
 
     /// <summary>
     /// The length to pre-allocate list/dicts of delta pressure entities on a <see cref="GridAtmosphereComponent"/>.
@@ -25,8 +33,11 @@ public abstract partial class SharedAtmosphereSystem : EntitySystem
     {
         base.Initialize();
 
+<<<<<<< HEAD
         _internalsQuery = GetEntityQuery<InternalsComponent>();
 
+=======
+>>>>>>> wizzden/master
         InitializeBreathTool();
         InitializeGases();
         InitializeCVars();

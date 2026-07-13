@@ -9,9 +9,13 @@ using static Content.Shared.Access.Components.IdCardConsoleComponent;
 
 namespace Content.Client.Access.UI
 {
-    public sealed class IdCardConsoleBoundUserInterface : BoundUserInterface
+    public sealed partial class IdCardConsoleBoundUserInterface : BoundUserInterface
     {
+<<<<<<< HEAD
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+=======
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
+>>>>>>> wizzden/master
         private readonly SharedIdCardConsoleSystem _idCardConsoleSystem = default!;
 
         private IdCardConsoleWindow? _window;
@@ -65,7 +69,7 @@ namespace Content.Client.Access.UI
             _window?.UpdateState(castState);
         }
 
-        public void SubmitData(string newFullName, string newJobTitle, List<ProtoId<AccessLevelPrototype>> newAccessList, ProtoId<JobPrototype> newJobPrototype)
+        public void SubmitData(string newFullName, string newJobTitle, List<ProtoId<AccessLevelPrototype>> newAccessList, ProtoId<JobPrototype>? newJobPrototype)
         {
             SendMessage(new WriteToTargetIdMessage(
                 newFullName,

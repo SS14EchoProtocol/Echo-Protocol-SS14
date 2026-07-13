@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿- type: gameMap
+=======
+- type: gameMap
+>>>>>>> wizzden/master
   id: Serpentcrest
   mapName: 'Serpentcrest'
   mapPath: /Maps/serpentcrest.yml

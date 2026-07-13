@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 using Content.Server.Atmos.Components;
+=======
+>>>>>>> wizzden/master
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
@@ -24,14 +27,25 @@ using System.Runtime.CompilerServices;
 namespace Content.Server.Atmos.EntitySystems
 {
     [UsedImplicitly]
-    public sealed class GasTileOverlaySystem : SharedGasTileOverlaySystem
+    public sealed partial class GasTileOverlaySystem : SharedGasTileOverlaySystem
     {
+<<<<<<< HEAD
         [Robust.Shared.IoC.Dependency] private readonly IGameTiming _gameTiming = default!;
         [Robust.Shared.IoC.Dependency] private readonly IPlayerManager _playerManager = default!;
         [Robust.Shared.IoC.Dependency] private readonly IMapManager _mapManager = default!;
         [Robust.Shared.IoC.Dependency] private readonly IParallelManager _parMan = default!;
         [Robust.Shared.IoC.Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Robust.Shared.IoC.Dependency] private readonly ChunkingSystem _chunkingSys = default!;
+=======
+        [Robust.Shared.IoC.Dependency] private IGameTiming _gameTiming = default!;
+        [Robust.Shared.IoC.Dependency] private IPlayerManager _playerManager = default!;
+        [Robust.Shared.IoC.Dependency] private IParallelManager _parMan = default!;
+        [Robust.Shared.IoC.Dependency] private AtmosphereSystem _atmosphereSystem = default!;
+        [Robust.Shared.IoC.Dependency] private ChunkingSystem _chunkingSys = default!;
+
+        [Robust.Shared.IoC.Dependency] private EntityQuery<MapGridComponent> _mapGridQuery = default!;
+        [Robust.Shared.IoC.Dependency] private EntityQuery<GasTileOverlayComponent> _gasTileOverlayQuery = default!;
+>>>>>>> wizzden/master
 
         /// <summary>
         /// Per-tick cache of sessions.
@@ -57,15 +71,10 @@ namespace Content.Server.Atmos.EntitySystems
         private float _updateInterval;
 
         private int _thresholds;
-        private EntityQuery<MapGridComponent> _gridQuery;
-        private EntityQuery<GasTileOverlayComponent> _query;
 
         public override void Initialize()
         {
             base.Initialize();
-
-            _query = GetEntityQuery<GasTileOverlayComponent>();
-            _gridQuery = GetEntityQuery<MapGridComponent>();
 
             _updateJob = new UpdatePlayerJob()
             {
@@ -74,10 +83,9 @@ namespace Content.Server.Atmos.EntitySystems
                 ChunkIndexPool = _chunkIndexPool,
                 Sessions = _sessions,
                 ChunkingSys = _chunkingSys,
-                MapManager = _mapManager,
                 ChunkViewerPool = _chunkViewerPool,
                 LastSentChunks = _lastSentChunks,
-                GridQuery = _gridQuery,
+                GridQuery = _mapGridQuery,
             };
 
             _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
@@ -136,7 +144,7 @@ namespace Content.Server.Atmos.EntitySystems
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Invalidate(Entity<GasTileOverlayComponent?> grid, Vector2i index)
         {
-            if (_query.Resolve(grid.Owner, ref grid.Comp))
+            if (_gasTileOverlayQuery.Resolve(grid.Owner, ref grid.Comp))
                 grid.Comp.InvalidTiles.Add(index);
         }
 
@@ -386,7 +394,6 @@ namespace Content.Server.Atmos.EntitySystems
             public int BatchSize => 2;
 
             public IEntityManager EntManager;
-            public IMapManager MapManager;
             public ChunkingSystem ChunkingSys;
             public GasTileOverlaySystem System;
             public ObjectPool<HashSet<Vector2i>> ChunkIndexPool;

@@ -12,8 +12,9 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Weather;
 
-public abstract class SharedWeatherSystem : EntitySystem
+public abstract partial class SharedWeatherSystem : EntitySystem
 {
+<<<<<<< HEAD
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] protected readonly IPrototypeManager ProtoMan = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
@@ -35,6 +36,20 @@ public abstract class SharedWeatherSystem : EntitySystem
         _blockQuery = GetEntityQuery<BlockWeatherComponent>();
         _weatherQuery = GetEntityQuery<WeatherStatusEffectComponent>();
     }
+=======
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] protected SharedAudioSystem Audio = default!;
+    [Dependency] private ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedRoofSystem _roof = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
+
+    [Dependency] private EntityQuery<BlockWeatherComponent> _blockQuery = default!;
+    [Dependency] private EntityQuery<WeatherStatusEffectComponent> _weatherQuery = default!;
+
+    public static readonly TimeSpan StartupTime = TimeSpan.FromSeconds(15);
+    public static readonly TimeSpan ShutdownTime = TimeSpan.FromSeconds(15);
+>>>>>>> wizzden/master
 
     public bool CanWeatherAffect(Entity<MapGridComponent?, RoofComponent?> ent, TileRef tileRef)
     {

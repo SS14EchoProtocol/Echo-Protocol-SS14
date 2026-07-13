@@ -8,10 +8,15 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.HealthExaminable;
 
-public sealed class HealthExaminableSystem : EntitySystem
+public sealed partial class HealthExaminableSystem : EntitySystem
 {
+<<<<<<< HEAD
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+=======
+    [Dependency] private ExamineSystemShared _examineSystem = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+>>>>>>> wizzden/master
 
     public override void Initialize()
     {

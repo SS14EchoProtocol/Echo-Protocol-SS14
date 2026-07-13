@@ -2,6 +2,7 @@
 using Content.IntegrationTests.Fixtures;
 using Content.Server.GameTicking;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.GameRules;
 
@@ -10,6 +11,11 @@ public sealed class SecretStartsTest : GameTest
 {
     public override PoolSettings PoolSettings => new PoolSettings { Dirty = true };
 
+<<<<<<< HEAD
+=======
+    private static readonly EntProtoId SecretGameRule = "Secret";
+
+>>>>>>> wizzden/master
     /// <summary>
     ///     Tests that when secret is started, all of the game rules it successfully adds are also started.
     /// </summary>
@@ -27,7 +33,7 @@ public sealed class SecretStartsTest : GameTest
         {
             // this mimics roundflow:
             // rules added, then round starts
-            gameTicker.AddGameRule("Secret");
+            gameTicker.AddGameRule(SecretGameRule);
             gameTicker.StartGamePresetRules();
         });
 

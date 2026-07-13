@@ -1,9 +1,17 @@
 using System.Linq;
 using Content.Client.UserInterface.Systems.Guidebook;
+<<<<<<< HEAD
+=======
+using Content.Shared.Chat.Prototypes;
+>>>>>>> wizzden/master
 using Content.Shared.Guidebook;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+<<<<<<< HEAD
+=======
+using Content.Shared.Speech.Components;
+>>>>>>> wizzden/master
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
@@ -16,6 +24,10 @@ public sealed partial class HumanoidProfileEditor
 
     private ColorSelectorSliders _rgbSkinColorSelector;
     private List<SpeciesPrototype> _species = new();
+<<<<<<< HEAD
+=======
+    private List<EmoteSoundsPrototype> _voices = new();
+>>>>>>> wizzden/master
     private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
 
     public void UpdateSpeciesGuidebookIcon()
@@ -97,6 +109,37 @@ public sealed partial class HumanoidProfileEditor
         EyeColorPicker.SetData(Profile.Appearance.EyeColor);
     }
 
+<<<<<<< HEAD
+=======
+    private void UpdateVoiceControls()
+    {
+        if (Profile == null)
+            return;
+
+        VoiceButton.Clear();
+        _voices.Clear();
+
+        var speciesPrototype = _prototypeManager.Index(Profile.Species);
+        var availableVoices = speciesPrototype.Voices;
+
+        _voices.AddRange(availableVoices.Select(protoId => _prototypeManager.Index(protoId)));
+
+        if (_voices.All(proto => Profile?.Voice != proto.ID))
+            SetVoice(speciesPrototype.DefaultSoundsBySex[(int)Profile.Sex]);
+
+        for (var i = 0; i < availableVoices.Count; i++)
+        {
+            var name = Loc.GetString(_voices[i].VoiceSelectorName);
+            VoiceButton.AddItem(name, i);
+
+            if (Profile?.Voice.Equals(_voices[i].ID) == true)
+            {
+                VoiceButton.SelectId(i);
+            }
+        }
+    }
+
+>>>>>>> wizzden/master
     private void UpdateSkinColor()
     {
         if (Profile == null)
@@ -188,6 +231,10 @@ public sealed partial class HumanoidProfileEditor
         // In case there's species restrictions for loadouts
         RefreshLoadouts();
         UpdateSexControls(); // update sex for new species
+<<<<<<< HEAD
+=======
+        UpdateVoiceControls();
+>>>>>>> wizzden/master
         UpdateSpeciesGuidebookIcon();
         ReloadPreview();
     }
@@ -215,11 +262,29 @@ public sealed partial class HumanoidProfileEditor
                 break;
         }
 
+<<<<<<< HEAD
         UpdateGenderControls();
+=======
+        // this does the same as above but for voice
+        if (_prototypeManager.TryIndex(Profile?.Species, out var prototype))
+            SetVoice(prototype.DefaultSoundsBySex[(int)newSex]);
+
+        UpdateGenderControls();
+        UpdateVoiceControls();
+>>>>>>> wizzden/master
         _markingsModel.SetOrganSexes(newSex);
         ReloadPreview();
     }
 
+<<<<<<< HEAD
+=======
+    private void SetVoice(ProtoId<EmoteSoundsPrototype> newVoice)
+    {
+        Profile = Profile?.WithVoice(newVoice);
+        SetDirty();
+    }
+
+>>>>>>> wizzden/master
     private void SetGender(Gender newGender)
     {
         Profile = Profile?.WithGender(newGender);

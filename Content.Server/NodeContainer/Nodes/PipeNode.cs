@@ -182,6 +182,7 @@ namespace Content.Server.NodeContainer.Nodes
                 }
             }
 
+<<<<<<< HEAD
             if (nodeQuery.TryGetComponent(Owner, out var container))
             {
                 foreach (var node in container.Nodes.Values)
@@ -198,6 +199,13 @@ namespace Content.Server.NodeContainer.Nodes
 
             var mapSystem = entMan.System<SharedMapSystem>();
             var pos = mapSystem.TileIndicesFor(grid.Value, xform.Comp.Coordinates);
+=======
+            if (!xform.Comp.Anchored || grid is not { } gridEnt)
+                yield break;
+
+            var mapSystem = entMan.System<SharedMapSystem>();
+            var pos = mapSystem.TileIndicesFor(gridEnt, xform.Comp.Coordinates);
+>>>>>>> wizzden/master
 
             for (var i = 0; i < PipeDirectionHelpers.PipeDirections; i++)
             {
@@ -206,7 +214,11 @@ namespace Content.Server.NodeContainer.Nodes
                 if (!CurrentPipeDirection.HasDirection(pipeDir))
                     continue;
 
+<<<<<<< HEAD
                 foreach (var pipe in LinkableNodesInDirection(pos, pipeDir, grid.Value, nodeQuery, mapSystem))
+=======
+                foreach (var pipe in LinkableNodesInDirection(pos, pipeDir, gridEnt, nodeQuery, mapSystem))
+>>>>>>> wizzden/master
                 {
                     yield return pipe;
                 }

@@ -18,5 +18,9 @@ command-description-inventory-ensure =
     Puts a given entity on the first piped entity that has a slot matching the given flag if none exists, passing through the UID of whatever is in the slot by the end.
 command-description-inventory-ensurespawn =
     Spawns a given prototype on the first piped entity that has a slot matching the given flag if none exists, passing through the UID of whatever is in the slot by the end.
+<<<<<<< HEAD
 command-description-inventory-query =
+=======
+command-description-inventory-contents =
+>>>>>>> wizzden/master
     Gets the entities in the inventory slots of the piped entities and passes them along.

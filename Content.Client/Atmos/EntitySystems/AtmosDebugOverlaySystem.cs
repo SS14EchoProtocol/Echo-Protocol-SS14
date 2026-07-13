@@ -8,9 +8,13 @@ using Robust.Client.Graphics;
 namespace Content.Client.Atmos.EntitySystems
 {
     [UsedImplicitly]
-    internal sealed class AtmosDebugOverlaySystem : SharedAtmosDebugOverlaySystem
+    internal sealed partial class AtmosDebugOverlaySystem : SharedAtmosDebugOverlaySystem
     {
+<<<<<<< HEAD
         [Dependency] private readonly IOverlayManager _overlayManager = default!;
+=======
+        [Dependency] private IOverlayManager _overlayManager = default!;
+>>>>>>> wizzden/master
 
         public readonly Dictionary<EntityUid, AtmosDebugOverlayMessage> TileData = [];
 

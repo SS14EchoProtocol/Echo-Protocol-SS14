@@ -25,13 +25,18 @@ namespace Content.Client.Verbs.UI
     ///     open a verb menu for a given entity, add verbs to it, and add server-verbs when the server response is
     ///     received.
     /// </remarks>
-    public sealed class VerbMenuUIController : UIController,
+    public sealed partial class VerbMenuUIController : UIController,
         IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>,
         IOnStateEntered<MappingState>, IOnStateExited<MappingState>
     {
+<<<<<<< HEAD
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly ContextMenuUIController _context = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: скрытые иконки
+=======
+        [Dependency] private IPlayerManager _playerManager = default!;
+        [Dependency] private ContextMenuUIController _context = default!;
+>>>>>>> wizzden/master
 
         [UISystemDependency] private readonly CombatModeSystem _combatMode = default!;
         [UISystemDependency] private readonly VerbSystem _verbSystem = default!;

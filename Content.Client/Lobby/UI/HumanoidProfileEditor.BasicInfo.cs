@@ -21,6 +21,7 @@ public sealed partial class HumanoidProfileEditor
         NameEdit.Text = Profile?.Name ?? "";
     }
 
+<<<<<<< HEAD
     private void RandomizeEverything()
     {
         Profile = HumanoidCharacterProfile.Random();
@@ -35,4 +36,17 @@ public sealed partial class HumanoidProfileEditor
         SetName(name);
         UpdateNameEdit();
     }
+=======
+    /// <summary>
+    /// Randomize values selectively while respecting locked values.
+    /// </summary>
+    private void RandomizeProfile()
+    {
+        Profile = Profile == null
+            ? HumanoidCharacterProfile.Random()
+            : HumanoidCharacterProfile.Random(RandomizeLockButton.RandomizeCfg, Profile!);
+        SetProfile(Profile, CharacterSlot);
+        SetDirty();
+    }
+>>>>>>> wizzden/master
 }

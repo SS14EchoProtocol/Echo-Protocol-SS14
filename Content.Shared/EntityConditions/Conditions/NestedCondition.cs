@@ -20,9 +20,15 @@ public sealed partial class NestedCondition : EntityConditionBase<NestedConditio
 /// <summary>
 /// Handles <see cref="NestedCondition"/>.
 /// </summary>
+<<<<<<< HEAD
 public sealed class NestedConditionSystem : EntityConditionSystem<TransformComponent, NestedCondition>
 {
     [Dependency] private readonly SharedEntityConditionsSystem _conditions = default!;
+=======
+public sealed partial class NestedConditionSystem : EntityConditionSystem<TransformComponent, NestedCondition>
+{
+    [Dependency] private SharedEntityConditionsSystem _conditions = default!;
+>>>>>>> wizzden/master
 
     protected override void Condition(Entity<TransformComponent> ent, ref EntityConditionEvent<NestedCondition> args)
     {

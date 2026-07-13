@@ -14,7 +14,11 @@ namespace Content.Shared.ParcelWrap.Systems;
 // This part handles Wrapped Parcels
 public sealed partial class ParcelWrappingSystem
 {
+<<<<<<< HEAD
     [Dependency] private readonly IGameTiming _timing = default!;
+=======
+    [Dependency] private IGameTiming _timing = default!;
+>>>>>>> wizzden/master
 
     private void InitializeWrappedParcel()
     {

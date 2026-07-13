@@ -15,14 +15,14 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Server.Mind;
 
-public sealed class MindSystem : SharedMindSystem
+public sealed partial class MindSystem : SharedMindSystem
 {
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IPlayerManager _players = default!;
-    [Dependency] private readonly GhostSystem _ghosts = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IPlayerManager _players = default!;
+    [Dependency] private GhostSystem _ghosts = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private PvsOverrideSystem _pvsOverride = default!;
 
     public override void Initialize()
     {
@@ -184,7 +184,11 @@ public sealed class MindSystem : SharedMindSystem
         {
             component = EnsureComp<MindContainerComponent>(entity.Value);
 
+<<<<<<< HEAD
             if (TryGetMind(entity.Value, out var entityMindId, out _))
+=======
+            if (TryGetMind(entity.Value, out var entityMindId, out _) && entityMindId != mindId)
+>>>>>>> wizzden/master
                 _ghosts.OnGhostAttempt(entityMindId, false);
 
             if (TryComp<ActorComponent>(entity.Value, out var actor))
@@ -227,7 +231,11 @@ public sealed class MindSystem : SharedMindSystem
 
             oldContainer.Mind = null;
             oldContainer.HasMind = false;
+<<<<<<< HEAD
             mind.OwnedEntity = null;
+=======
+            mind.OwnedEntity = entity;
+>>>>>>> wizzden/master
 
             RaiseLocalEvent(oldEntity.Value, new MindRemovedMessage(mindEnt, containerEnt, entity));
             RaiseLocalEvent(mindId, new MindGotRemovedEvent(mindEnt, containerEnt, entity));
@@ -262,6 +270,10 @@ public sealed class MindSystem : SharedMindSystem
         if (entity != null)
         {
             component!.Mind = mindId;
+<<<<<<< HEAD
+=======
+            component.LastMind = mindId;
+>>>>>>> wizzden/master
             component.HasMind = true;
             mind.OwnedEntity = entity;
             mind.OriginalOwnedEntity ??= GetNetEntity(mind.OwnedEntity);

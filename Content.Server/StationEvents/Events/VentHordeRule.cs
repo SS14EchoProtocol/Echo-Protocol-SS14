@@ -14,19 +14,32 @@ namespace Content.Server.StationEvents.Events;
 /// <summary>
 /// Variant of <see cref="VentCrittersRule"/> that selects a single vent and spawns all entities there.
 /// </summary>
+<<<<<<< HEAD
 public sealed class VentHordeRule : StationEventSystem<VentHordeRuleComponent>
+=======
+public sealed partial class VentHordeRule : StationEventSystem<VentHordeRuleComponent>
+>>>>>>> wizzden/master
 {
     /*
      * DO NOT COPY PASTE THIS TO MAKE YOUR MOB EVENT.
      * USE THE PROTOTYPE.
      */
 
+<<<<<<< HEAD
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityTableSystem _table = default!;
     [Dependency] private readonly VentHordeSystem _horde = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+=======
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private EntityTableSystem _table = default!;
+    [Dependency] private VentHordeSystem _horde = default!;
+    [Dependency] private IGameTiming _timing = default!;
+>>>>>>> wizzden/master
 
     protected override void Added(EntityUid uid, VentHordeRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {

@@ -9,6 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.VentHorde.Systems;
 
+<<<<<<< HEAD
 public sealed class VentHordeSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -16,6 +17,15 @@ public sealed class VentHordeSystem : EntitySystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedJitteringSystem _jitter = default!;
+=======
+public sealed partial class VentHordeSystem : EntitySystem
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedJitteringSystem _jitter = default!;
+>>>>>>> wizzden/master
 
     public override void Initialize()
     {

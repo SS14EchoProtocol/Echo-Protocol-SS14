@@ -3,8 +3,9 @@
   parent: MarkerBase
   name: xenoborgs
   components:
-  - type: GridSpawnPointWhitelist
+  - type: AntagGridSpawnPoint
     whitelist:
+<<<<<<< HEAD
       components:
       - Xenoborg
       tags:
@@ -14,6 +15,9 @@
       - MothershipCore
       tags:
       - MothershipCoreGhostrole
+=======
+    - Xenoborg
+>>>>>>> wizzden/master
   - type: SpawnPoint
   - type: Sprite
     layers:
@@ -26,12 +30,16 @@
   parent: MarkerBase
   name: mothership core
   components:
-  - type: GridSpawnPointWhitelist
+  - type: AntagGridSpawnPoint
     whitelist:
+<<<<<<< HEAD
       components:
       - MothershipCore
       tags:
       - MothershipCoreGhostrole
+=======
+    - MothershipCore
+>>>>>>> wizzden/master
   - type: SpawnPoint
   - type: Sprite
     layers:
