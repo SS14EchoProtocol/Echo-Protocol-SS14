@@ -13,12 +13,7 @@ namespace Content.Shared.GhostTypes;
 
 public sealed partial class StoreDamageTakenOnMindSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-=======
     [Dependency] private DamageableSystem _damageable = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {

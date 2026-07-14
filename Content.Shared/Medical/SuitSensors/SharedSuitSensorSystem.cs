@@ -28,22 +28,6 @@ namespace Content.Shared.Medical.SuitSensors;
 
 public abstract partial class SharedSuitSensorSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly SharedStationSystem _stationSystem = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SharedIdCardSystem _idCardSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-=======
     [Dependency] private SharedStationSystem _stationSystem = default!;
     [Dependency] private MobStateSystem _mobStateSystem = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
@@ -59,7 +43,6 @@ public abstract partial class SharedSuitSensorSystem : EntitySystem
     [Dependency] private DamageableSystem _damageable = default!;
 
     [Dependency] private EntityQuery<SuitSensorComponent> _sensorQuery = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {

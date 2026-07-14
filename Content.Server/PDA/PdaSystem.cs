@@ -19,10 +19,7 @@ using Content.Shared.Light;
 using Content.Shared.Light.EntitySystems;
 using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
-<<<<<<< HEAD
-=======
 using Content.Shared.Store.Components;
->>>>>>> wizzden/master
 using Content.Shared.VoiceMask;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;

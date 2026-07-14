@@ -134,10 +134,7 @@
       # This tag is used to nagivate the Airlock construction graph. It's needed because this construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
       - DoorRemoteWhitelist
       # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door
-<<<<<<< HEAD
 # ECHO-Tweak-Start 
   - type: WeldingSparksAnimation # ECHO-Tweak "Wielding Sparks Animation"
     startingOffset: 0, 0.5
 # ECHO-Tweak-End
-=======
->>>>>>> wizzden/master

@@ -100,20 +100,12 @@ public abstract partial class GameTest
     }
 
     /// <summary>
-<<<<<<< HEAD
-    ///     Attempts to retrieve the given component from an entity on the server.
-=======
     ///     Attempts to retrieve the given component from an entity on the client.
->>>>>>> wizzden/master
     /// </summary>
     public bool CTryComp<T>(EntityUid? target, [NotNullWhen(true)] out T? component)
         where T : IComponent
     {
-<<<<<<< HEAD
-        return SEntMan.TryGetComponent(target, out component);
-=======
         return CEntMan.TryGetComponent(target, out component);
->>>>>>> wizzden/master
     }
 
     /// <summary>

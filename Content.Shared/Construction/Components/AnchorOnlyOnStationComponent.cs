@@ -1,19 +1,12 @@
-<<<<<<< HEAD
-﻿namespace Content.Shared.Construction.Components;
-=======
+
 ﻿using Robust.Shared.GameStates;
 
 namespace Content.Shared.Construction.Components;
->>>>>>> wizzden/master
 
 /// <summary>
 /// If a entity has this component it can only be anchored to the station
 /// </summary>
-<<<<<<< HEAD
-[RegisterComponent]
-=======
 [RegisterComponent, NetworkedComponent]
->>>>>>> wizzden/master
 public sealed partial class AnchorOnlyOnStationComponent : Component
 {
     /// <summary>
@@ -21,8 +14,6 @@ public sealed partial class AnchorOnlyOnStationComponent : Component
     /// </summary>
     [DataField]
     public LocId PopupMessageAnchorFail = "anchorable-fail-not-on-station";
-<<<<<<< HEAD
-=======
 
     /// <summary>
     /// If true, it will only be able to be anchored on the largest grid of a station.
@@ -30,5 +21,4 @@ public sealed partial class AnchorOnlyOnStationComponent : Component
     /// </summary>
     [DataField]
     public bool OnlyCountLargestGrid = true;
->>>>>>> wizzden/master
 }

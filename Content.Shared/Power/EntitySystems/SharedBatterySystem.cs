@@ -13,14 +13,9 @@ namespace Content.Shared.Power.EntitySystems;
 /// </summary>
 public abstract partial class SharedBatterySystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly INetManager _net = default!;  // ECHO-Tweak
-=======
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
->>>>>>> wizzden/master
+    [Dependency] private readonly INetManager _net = default!;  // ECHO-Tweak
 
     public override void Initialize()
     {

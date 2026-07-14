@@ -10,11 +10,7 @@ namespace Content.Client.Humanoid;
 /// <summary>
 /// View model for UIs manipulating a set of markings, responsible for applying markings logic and keeping state synchronized.
 /// </summary>
-<<<<<<< HEAD
-public sealed class MarkingsViewModel
-=======
 public sealed partial class MarkingsViewModel
->>>>>>> wizzden/master
 {
     [Dependency] private MarkingManager _marking = default!;
     [Dependency] private IPrototypeManager _prototype = default!;

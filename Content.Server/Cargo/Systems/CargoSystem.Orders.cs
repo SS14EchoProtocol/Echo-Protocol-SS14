@@ -173,11 +173,7 @@ namespace Content.Server.Cargo.Systems
             }
 
             // Invalid order
-<<<<<<< HEAD
-            if (!_protoMan.Resolve(order.Product, out var product))
-=======
             if (!ProtoMan.Resolve(order.Product, out var product))
->>>>>>> wizzden/master
             {
                 ConsolePopup(args.Actor, Loc.GetString("cargo-console-invalid-product"));
                 PlayDenySound(uid, component);
@@ -628,11 +624,7 @@ namespace Content.Server.Cargo.Systems
         /// </summary>
         private bool FulfillOrder(CargoOrderData order, ProtoId<CargoAccountPrototype> account, EntityCoordinates spawn, string? paperProto)
         {
-<<<<<<< HEAD
-            if (!_protoMan.Resolve(order.Product, out var product))
-=======
             if (!ProtoMan.Resolve(order.Product, out var product))
->>>>>>> wizzden/master
                 return false;
 
             // Create the item itself

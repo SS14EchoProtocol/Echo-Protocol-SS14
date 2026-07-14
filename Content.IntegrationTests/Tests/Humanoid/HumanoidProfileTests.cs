@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-using Content.IntegrationTests.Fixtures;
-=======
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
@@ -8,7 +5,6 @@ using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
 using Content.Shared.Body;
 using Content.Shared.Chat.Prototypes;
->>>>>>> wizzden/master
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -67,8 +63,6 @@ public sealed class HumanoidProfileTests : GameTest
 
             Assert.That(speciesProto.DefaultSoundsBySex[(int)Sex.Female], Is.EqualTo(voiceComponent.EmoteSounds));
         });
-<<<<<<< HEAD
-=======
     }
 
     [Test]
@@ -212,6 +206,5 @@ public sealed class HumanoidProfileTests : GameTest
                 Assert.That(proto.DefaultSoundsBySex, Has.Length.EqualTo(3), "Species should declare a defaultSoundsBySex for every sex");
             }
         });
->>>>>>> wizzden/master
     }
 }

@@ -57,7 +57,6 @@ public sealed partial class VoiceMaskComponent : Component
     [DataField]
     public bool AccentHide = true;
 
-<<<<<<< HEAD
     // ECHO-Tweak : Barks
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
@@ -68,15 +67,11 @@ public sealed partial class VoiceMaskComponent : Component
     public float BarkPitch = 1f;
     // ECHO-Tweak : Barks
 
-=======
->>>>>>> wizzden/master
     /// <summary>
     ///     If user's equipped agent id name is getting changed.
     /// </summary>
     [DataField]
     public bool ChangeIDName = false;
-<<<<<<< HEAD
-=======
 
     /// <summary>
     ///     Whether the voice mask is innate to the entity.
@@ -91,6 +86,5 @@ public sealed partial class VoiceMaskComponent : Component
     /// </summary>
     [DataField]
     public LocId TitleText = "voice-mask-name-change-window";
->>>>>>> wizzden/master
 }
 

@@ -34,13 +34,9 @@ public abstract partial class SharedBorgSystem
         SubscribeLocalEvent<ComponentBorgModuleComponent, BorgModuleRelayedEvent<BorgModuleInsertAttemptEvent>>(
             OnComponentModuleInstalledRelay);
 
-<<<<<<< HEAD
-        _moduleQuery = GetEntityQuery<BorgModuleComponent>();
-=======
         SubscribeLocalEvent<BorgModuleWhitelistComponent, BorgModuleInsertAttemptEvent>(OnCheckWhitelist);
         SubscribeLocalEvent<BorgModuleWhitelistComponent, BorgModuleRelayedEvent<BorgModuleInsertAttemptEvent>>(
             OnCheckBlacklistRelay);
->>>>>>> wizzden/master
     }
 
     #region BorgModule
@@ -282,12 +278,8 @@ public abstract partial class SharedBorgSystem
     private void OnComponentModuleInstalledRelay(Entity<ComponentBorgModuleComponent> ent,
         ref BorgModuleRelayedEvent<BorgModuleInsertAttemptEvent> args)
     {
-<<<<<<< HEAD
-        if (!TryComp<ComponentBorgModuleComponent>(args.Args.ModuleEnt, out var newModule))
-=======
         if (args.Args.Cancelled ||
             !TryComp<ComponentBorgModuleComponent>(args.Args.ModuleEnt, out var newModule))
->>>>>>> wizzden/master
             return;
 
         foreach (var comp in newModule.Components)
@@ -298,10 +290,6 @@ public abstract partial class SharedBorgSystem
                 args.Args.Reason = Loc.GetString("borg-module-incompatible", ("existing", ent));
             }
         }
-<<<<<<< HEAD
-    }
-    #endregion
-=======
 
     }
     #endregion
@@ -387,5 +375,4 @@ public abstract partial class SharedBorgSystem
     }
 
     #endregion
->>>>>>> wizzden/master
 }

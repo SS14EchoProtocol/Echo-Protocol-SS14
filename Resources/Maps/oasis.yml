@@ -1,19 +1,11 @@
 meta:
   format: 7
   category: Map
-<<<<<<< HEAD
-  engineVersion: 272.0.0
-  forkId: ""
-  forkVersion: ""
-  time: 02/13/2026 09:17:40
-  entityCount: 31155
-=======
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
   time: 05/26/2026 23:53:10
   entityCount: 31153
->>>>>>> wizzden/master
 maps:
 - 1
 grids:
@@ -16172,11 +16164,7 @@ entities:
       pos: -22.5,26.5
       parent: 2
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -257120.67
-=======
       secondsUntilStateChange: -258110.02
->>>>>>> wizzden/master
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -17036,11 +17024,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -355949.3
-=======
       secondsUntilStateChange: -356938.66
->>>>>>> wizzden/master
       state: Opening
   - uid: 6934
     components:
@@ -17052,11 +17036,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -355951.94
-=======
       secondsUntilStateChange: -356941.28
->>>>>>> wizzden/master
       state: Opening
   - uid: 6935
     components:
@@ -17068,11 +17048,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -355950.78
-=======
       secondsUntilStateChange: -356940.12
->>>>>>> wizzden/master
       state: Opening
   - uid: 6936
     components:
@@ -17083,11 +17059,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -355950
-=======
       secondsUntilStateChange: -356939.34
->>>>>>> wizzden/master
       state: Opening
 - proto: AirlockTheatreLocked
   entities:
@@ -101056,11 +101028,7 @@ entities:
       pos: -13.5,-1.5
       parent: 2
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -347273.3
-=======
       secondsUntilStateChange: -348262.66
->>>>>>> wizzden/master
     - type: DeviceNetwork
       deviceLists:
       - 18275
@@ -147181,11 +147149,7 @@ entities:
       pos: 36.5,-35.5
       parent: 2
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -384105.1
-=======
       secondsUntilStateChange: -385094.44
->>>>>>> wizzden/master
       state: Opening
   - uid: 5211
     components:
@@ -204360,11 +204324,7 @@ entities:
       pos: 24.5,2.5
       parent: 21002
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -729309.7
-=======
       secondsUntilStateChange: -730299.06
->>>>>>> wizzden/master
       state: Opening
   - uid: 28863
     components:

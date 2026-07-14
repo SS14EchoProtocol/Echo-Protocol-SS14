@@ -85,7 +85,6 @@
   - type: PaperVisualizer
   - type: PaperVisuals
   - type: StationAiWhitelist
-<<<<<<< HEAD
   #ECHO-Tweak-Start
   - type: EmitSoundOnPickup
     sound:
@@ -94,8 +93,6 @@
     sound:
       path: /Audio/_ECHO/Entities/paper_drop.ogg
   #ECHO-Tweak-End
-=======
->>>>>>> wizzden/master
 
 - type: entity
   name: paper scrap
@@ -474,8 +471,5 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-<<<<<<< HEAD
-=======
   - type: Injurable
->>>>>>> wizzden/master
   - type: StationAiWhitelist

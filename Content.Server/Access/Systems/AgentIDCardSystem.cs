@@ -2,28 +2,20 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Components;
 using Content.Server.Clothing.Systems;
 using Content.Server.Implants;
-<<<<<<< HEAD
-using Content.Server.VoiceMask;
-=======
 using Content.Server.Popups;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Clothing.Components;
->>>>>>> wizzden/master
 using Content.Shared.Implants;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Lock;
 using Content.Shared.PDA;
-<<<<<<< HEAD
-using Content.Shared.VoiceMask;
-=======
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Content.Shared.UserInterface;
 using Content.Shared.VoiceMask;
 using Robust.Server.GameObjects;
->>>>>>> wizzden/master
 
 namespace Content.Server.Access.Systems
 {

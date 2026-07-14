@@ -115,12 +115,7 @@ public sealed partial class ChemistryGuideDataSystem : SharedChemistryGuideDataS
 
 
             if (extractableComponent.GrindableSolutionName is { } grindableSolutionId &&
-<<<<<<< HEAD
-                entProto.TryGetComponent<SolutionContainerManagerComponent>(out var manager, EntityManager.ComponentFactory) &&
-                _solutionContainer.TryGetSolution(manager, grindableSolutionId, out var grindableSolution))
-=======
                 _solutionContainer.TryGetSolution(entProto, grindableSolutionId, out var grindableSolution))
->>>>>>> wizzden/master
             {
                 var data = new ReagentEntitySourceData(
                     new() { DefaultGrindCategory },

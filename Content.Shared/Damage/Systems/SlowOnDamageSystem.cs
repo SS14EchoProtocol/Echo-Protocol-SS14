@@ -9,13 +9,8 @@ namespace Content.Shared.Damage.Systems;
 
 public sealed partial class SlowOnDamageSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifierSystem = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
-=======
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifierSystem = default!;
     [Dependency] private DamageableSystem _damage = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {

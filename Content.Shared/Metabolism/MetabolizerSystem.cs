@@ -23,20 +23,11 @@ namespace Content.Shared.Metabolism;
 /// <inheritdoc/>
 public sealed partial class MetabolizerSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly SharedEntityConditionsSystem _entityConditions = default!;
-    [Dependency] private readonly SharedEntityEffectsSystem _entityEffects = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-=======
     [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private MobStateSystem _mobStateSystem = default!;
     [Dependency] private SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private SharedEntityEffectsSystem _entityEffects = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
->>>>>>> wizzden/master
 
     [Dependency] private EntityQuery<OrganComponent> _organQuery = default!;
     [Dependency] private EntityQuery<SolutionManagerComponent> _solutionQuery = default!;

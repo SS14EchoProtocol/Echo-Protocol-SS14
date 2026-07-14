@@ -2,10 +2,6 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Binary.Components;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
-<<<<<<< HEAD
-using Content.Shared.Atmos;
-=======
->>>>>>> wizzden/master
 using Content.Shared.Atmos.Components;
 using Content.Shared.Examine;
 using JetBrains.Annotations;

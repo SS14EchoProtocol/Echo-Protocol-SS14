@@ -6,10 +6,8 @@
   prototype: MobDwarf
   dollPrototype: AppearanceDwarf
   skinColoration: HumanToned
-<<<<<<< HEAD
 # ECHO-Tweak end 
 # Добавил просто упоминание дворфов, чтобы тестер не ругался (да и локалка запускалась...)
-=======
   defaultSoundsBySex:
   - UnisexDwarf
   - FemaleDwarf
@@ -17,4 +15,3 @@
   voices:
   - UnisexDwarf
   - FemaleDwarf
->>>>>>> wizzden/master

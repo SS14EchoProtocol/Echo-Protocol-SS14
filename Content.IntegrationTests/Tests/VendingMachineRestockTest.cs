@@ -141,11 +141,7 @@ namespace Content.IntegrationTests.Tests
                     List<EntProtoId<VendingMachineRestockComponent>>> entitiesWhichSpawnRestocks = new();
                 foreach (var proto in prototypeManager.EnumeratePrototypes<EntityPrototype>())
                 {
-<<<<<<< HEAD
-                    if (!proto.TryGetComponent<EntityTableContainerFillComponent>(out var fill, compFact))
-=======
                     if (!proto.TryComp<EntityTableContainerFillComponent>(out var fill, compFact))
->>>>>>> wizzden/master
                         continue;
 
                     var containers = fill.Containers;

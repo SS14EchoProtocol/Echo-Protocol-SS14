@@ -15,6 +15,7 @@ using Content.Shared.Speech;
 using Content.Shared.VoiceMask;
 using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.VoiceMask;
 
@@ -28,6 +29,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     [Dependency] private LockSystem _lock = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private IdentitySystem _identity = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     /// <summary>
     ///  The name of the client-side type that represents the user interface window.
@@ -189,7 +191,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     #region User inputs from UI
     private void OnChangeVerb(Entity<VoiceMaskComponent> entity, ref VoiceMaskChangeVerbMessage msg)
     {
-        if (msg.Verb is { } id && !ProtoMan.HasIndex<SpeechVerbPrototype>(id))
+        if (msg.Verb is { } id && !_prototypeManager.HasIndex<SpeechVerbPrototype>(id))
             return;
 
         entity.Comp.VoiceMaskSpeechVerb = msg.Verb;
@@ -271,11 +273,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     private void UpdateUI(Entity<VoiceMaskComponent> entity)
     {
         if (_uiSystem.HasUi(entity, VoiceMaskUIKey.Key))
-<<<<<<< HEAD
-            _uiSystem.SetUiState(entity.Owner, VoiceMaskUIKey.Key, new VoiceMaskBuiState(GetCurrentVoiceName(entity), entity.Comp.VoiceMaskSpeechVerb, entity.Comp.Active, entity.Comp.AccentHide, entity.Comp.BarkId, entity.Comp.BarkPitch));
-=======
-            _uiSystem.SetUiState(entity.Owner, VoiceMaskUIKey.Key, new VoiceMaskBuiState(GetCurrentVoiceName(entity), entity.Comp.VoiceMaskSpeechVerb, entity.Comp.Active, entity.Comp.AccentHide, entity.Comp.TitleText));
->>>>>>> wizzden/master
+            _uiSystem.SetUiState(entity.Owner, VoiceMaskUIKey.Key, new VoiceMaskBuiState(GetCurrentVoiceName(entity), entity.Comp.VoiceMaskSpeechVerb, entity.Comp.Active, entity.Comp.AccentHide, entity.Comp.TitleText, entity.Comp.BarkId, entity.Comp.BarkPitch));
     }
     #endregion
 

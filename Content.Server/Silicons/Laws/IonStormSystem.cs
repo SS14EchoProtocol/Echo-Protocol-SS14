@@ -7,27 +7,15 @@ using Robust.Shared.Random;
 using System.Linq;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
-<<<<<<< HEAD
-using Robust.Shared.Prototypes;
-=======
->>>>>>> wizzden/master
 
 namespace Content.Server.Silicons.Laws;
 
 public sealed partial class IonStormSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SiliconLawSystem _siliconLaw = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
-    [Dependency] private readonly IonLawSystem _ionLaw = default!;
-=======
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private SiliconLawSystem _siliconLaw = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private IonLawSystem _ionLaw = default!;
->>>>>>> wizzden/master
 
     /// <summary>
     /// Randomly alters the laws of an individual silicon.

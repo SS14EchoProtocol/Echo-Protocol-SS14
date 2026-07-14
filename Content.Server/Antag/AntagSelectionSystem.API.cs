@@ -386,43 +386,6 @@ public sealed partial class AntagSelectionSystem
     /// <summary>
     /// Returns a list of all antag players who are constrained by a job whitelist or blacklist from an antag.
     /// </summary>
-<<<<<<< HEAD
-    public void ForceMakeAntag<T>(ICommonSession? player, string defaultRule) where T : Component
-    {
-        var rule = ForceGetGameRuleEnt<T>(defaultRule);
-
-        if (!TryGetNextAvailableDefinition(rule, out var def))
-            def = rule.Comp.Definitions.Last();
-        MakeAntag(rule, player, def.Value);
-    }
-
-    /// <summary>
-    /// Tries to grab one of the weird specific antag gamerule ents or starts a new one.
-    /// This is gross code but also most of this is pretty gross to begin with.
-    /// </summary>
-    public Entity<AntagSelectionComponent> ForceGetGameRuleEnt<T>(string id) where T : Component
-    {
-        var query = EntityQueryEnumerator<T, AntagSelectionComponent>();
-        while (query.MoveNext(out var uid, out _, out var comp))
-        {
-            return (uid, comp);
-        }
-        var ruleEnt = GameTicker.AddGameRule(id);
-        RemComp<LoadMapRuleComponent>(ruleEnt);
-        var antag = Comp<AntagSelectionComponent>(ruleEnt);
-        antag.AssignmentComplete = true; // don't do normal selection.
-        GameTicker.StartGameRule(ruleEnt);
-        return (ruleEnt, antag);
-    }
-
-    /// <summary>
-    /// Get all sessions that have been preselected for antag.
-    /// </summary>
-    /// <param name="except">A specific definition to be excluded from the check.</param>
-    public HashSet<ICommonSession> GetPreSelectedAntagSessions(AntagSelectionDefinition? except = null)
-    {
-        var result = new HashSet<ICommonSession>();
-=======
     /// <param name="except">Antag prototypes we're excluding for our returned job whitelist/blacklist.</param>
     /// <returns>A dictionary of antag sessions, and their job blacklists.</returns>
     [PublicAPI]
@@ -430,7 +393,6 @@ public sealed partial class AntagSelectionSystem
         GetAntagJobs(params HashSet<ProtoId<AntagSpecifierPrototype>> except)
     {
         var result = new Dictionary<ICommonSession, (HashSet<ProtoId<JobPrototype>>? Whitelist, HashSet<ProtoId<JobPrototype>>? Blacklist)>();
->>>>>>> wizzden/master
         var query = QueryAllRules();
         while (query.MoveNext(out var uid, out var comp, out _))
         {

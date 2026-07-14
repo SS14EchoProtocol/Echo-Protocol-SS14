@@ -15,10 +15,6 @@ namespace Content.Shared.Chemistry.Components;
 /// <para>Once reagents and materials have been merged this component should be depricated in favor of using a combination of <see cref="PhysicalCompositionComponent"/> and <see cref="TemperatureComponent"/>. May require minor reworks to both.</para>
 /// </remarks>
 [RegisterComponent, NetworkedComponent]
-<<<<<<< HEAD
-[Access(typeof(SharedSolutionContainerSystem))]
-=======
->>>>>>> wizzden/master
 public sealed partial class SolutionComponent : Component
 {
     public const string DefaultSolutionId = "solution";
@@ -33,16 +29,6 @@ public sealed partial class SolutionComponent : Component
     /// <summary>
     /// <para>The reagents the entity is composed of and their temperature.</para>
     /// </summary>
-<<<<<<< HEAD
-    [DataField]
-    public Solution Solution = new();
-}
-
-
-[Serializable, NetSerializable]
-public sealed class SolutionComponentState(Solution solution) : ComponentState
-{
-=======
     [DataField, AlwaysPushInheritance]
     public Solution Solution = new();
 }
@@ -54,6 +40,5 @@ public sealed class SolutionComponentState(Solution solution) : ComponentState
 public sealed class SolutionComponentState(string id, Solution solution) : ComponentState
 {
     public string Id = id;
->>>>>>> wizzden/master
     public Solution Solution = solution;
 }

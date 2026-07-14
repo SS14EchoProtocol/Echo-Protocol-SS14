@@ -10,11 +10,7 @@ namespace Content.Shared.Humanoid.Markings;
 /// <summary>
 /// Manager responsible for sharing the logic of markings between in-simulation bodies and out-of-simulation profile editing
 /// </summary>
-<<<<<<< HEAD
-public sealed class MarkingManager
-=======
 public sealed partial class MarkingManager
->>>>>>> wizzden/master
 {
     [Dependency] private IComponentFactory _component = default!;
     [Dependency] private IPrototypeManager _prototype = default!;

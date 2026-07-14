@@ -1,8 +1,5 @@
 using System.Numerics;
-<<<<<<< HEAD
 using Content.Client._ECHO.UserInterface.EntitySpawning;
-=======
->>>>>>> wizzden/master
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Sandbox;

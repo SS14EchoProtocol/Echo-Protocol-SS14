@@ -44,12 +44,9 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
-<<<<<<< HEAD
   - type: CEZPhysics  # ECHO-Tweak
-=======
   - type: Rotatable
     increment: 30
->>>>>>> wizzden/master
 
 - type: entity
   name: "storage item"

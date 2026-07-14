@@ -33,18 +33,6 @@ namespace Content.Server.Preferences.Managers
     /// </summary>
     public sealed partial class ServerPreferencesManager : IServerPreferencesManager, IPostInjectInit
     {
-<<<<<<< HEAD
-        [Dependency] private readonly IServerNetManager _netManager = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IServerDbManager _db = default!;
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly IDependencyCollection _dependencies = default!;
-        [Dependency] private readonly ILogManager _log = default!;
-        [Dependency] private readonly UserDbDataManager _userDb = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly MarkingManager _marking = default!;
-        [Dependency] private readonly ISerializationManager _serialization = default!;
-=======
         [Dependency] private IServerNetManager _netManager = default!;
         [Dependency] private IConfigurationManager _cfg = default!;
         [Dependency] private IServerDbManager _db = default!;
@@ -56,7 +44,6 @@ namespace Content.Server.Preferences.Managers
         [Dependency] private IPrototypeManager _prototypeManager = default!;
         [Dependency] private MarkingManager _marking = default!;
         [Dependency] private ISerializationManager _serialization = default!;
->>>>>>> wizzden/master
 
         // Cache player prefs on the server so we don't need as much async hell related to them.
         private readonly Dictionary<NetUserId, PlayerPrefData> _cachedPlayerPrefs =
@@ -126,10 +113,6 @@ namespace Content.Server.Preferences.Managers
                 new Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>>();
 
             var species = profile.Species;
-<<<<<<< HEAD
-            if (!_prototypeManager.HasIndex<SpeciesPrototype>(species))
-                species = HumanoidCharacterProfile.DefaultSpecies;
-=======
             if (!_prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesPrototype))
             {
                 species = HumanoidCharacterProfile.DefaultSpecies;
@@ -139,7 +122,6 @@ namespace Content.Server.Preferences.Managers
             var voice = profile.Voice ?? speciesPrototype.DefaultSoundsBySex[(int)sex];
             if (!_prototypeManager.HasIndex(voice))
                 voice = speciesPrototype.DefaultSoundsBySex[(int)sex];
->>>>>>> wizzden/master
 
             if (profile.OrganMarkings?.RootElement is { } element)
             {
@@ -201,10 +183,7 @@ namespace Content.Server.Preferences.Managers
                 species,
                 profile.Age,
                 sex,
-<<<<<<< HEAD
-=======
                 voice,
->>>>>>> wizzden/master
                 gender,
                 new HumanoidCharacterAppearance
                 (
@@ -217,12 +196,8 @@ namespace Content.Server.Preferences.Managers
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-<<<<<<< HEAD
                 loadouts,
                 new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // ECHO-Tweak : Barks
-=======
-                loadouts
->>>>>>> wizzden/master
             );
         }
 

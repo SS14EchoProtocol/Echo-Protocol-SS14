@@ -11,11 +11,8 @@ public sealed class SecretStartsTest : GameTest
 {
     public override PoolSettings PoolSettings => new PoolSettings { Dirty = true };
 
-<<<<<<< HEAD
-=======
     private static readonly EntProtoId SecretGameRule = "Secret";
 
->>>>>>> wizzden/master
     /// <summary>
     ///     Tests that when secret is started, all of the game rules it successfully adds are also started.
     /// </summary>

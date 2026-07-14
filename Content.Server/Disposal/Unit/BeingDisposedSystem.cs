@@ -1,9 +1,6 @@
 using Content.Server.Body.Systems;
 using Content.Shared.Atmos;
-<<<<<<< HEAD
-=======
 using Content.Shared.Disposal.Unit;
->>>>>>> wizzden/master
 
 namespace Content.Server.Disposal.Unit;
 

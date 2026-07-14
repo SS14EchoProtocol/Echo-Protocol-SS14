@@ -29,14 +29,9 @@ namespace Content.Client.Verbs.UI
         IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>,
         IOnStateEntered<MappingState>, IOnStateExited<MappingState>
     {
-<<<<<<< HEAD
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly ContextMenuUIController _context = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: скрытые иконки
-=======
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private ContextMenuUIController _context = default!;
->>>>>>> wizzden/master
+        [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: скрытые иконки
 
         [UISystemDependency] private readonly CombatModeSystem _combatMode = default!;
         [UISystemDependency] private readonly VerbSystem _verbSystem = default!;

@@ -38,8 +38,6 @@ using static Content.Server.Antag.Components.AntagSelectionTime;
 
 namespace Content.Server.Antag;
 
-<<<<<<< HEAD
-=======
 /// <summary>
 /// Turns players into antags.
 /// When the round starts, all active game rules select players for antagonist.
@@ -55,7 +53,6 @@ namespace Content.Server.Antag;
 /// I hope this system is now readable and significantly less buggy thanks to my efforts.
 /// I could do more, but I've been soaped enough. Now it's your turn to fix it.
 /// </remarks>
->>>>>>> wizzden/master
 public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelectionComponent>
 {
     [Dependency] private IBanManager _ban = default!;
@@ -154,9 +151,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!ProtoMan.Resolve(proto, out var def))
             return;
 
-<<<<<<< HEAD
-        MakeAntag((rule, select), args.Player, def, ignoreSpawner: true);
-=======
         if (!Exists(rule) || !RuleQuery.TryComp(rule, out var select))
             return;
 
@@ -173,7 +167,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         // We do this after TrySpawnAntagonist so we don't have to worry about a failed spawn adding permanent pre selections to a game rule.
         PreSelectSession((rule, select), def, args.Player);
         InitializeAntag((rule, select), def, uid.Value, args.Player);
->>>>>>> wizzden/master
         args.TookRole = true;
 
         // Move ghosts that were watching the raffle on the spawner over to the freshly spawned antag.
@@ -190,16 +183,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         TryMakeLateJoinAntag(args.Player);
     }
 
-<<<<<<< HEAD
-    /// <summary>
-    /// Attempt to make this player be a late-join antag.
-    /// </summary>
-    /// <param name="session">The session to attempt to make antag.</param>
-    public void TryMakeLateJoinAntag(ICommonSession session)
-=======
     // This is called when the round starts, before jobs are selected
     private void OnPlayerSpawning(RulePlayerSpawningEvent args)
->>>>>>> wizzden/master
     {
         var pool = args.PlayerPool;
 
@@ -277,10 +262,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (!comp.RemoveUponFailedSpawn)
                 continue;
 
-<<<<<<< HEAD
-            if (TryMakeAntag((uid, antag), session, def.Value))
-                break;
-=======
             foreach (var antag in comp.Antags)
             {
                 if (!comp.PreSelectedSessions.TryGetValue(antag, out var session))
@@ -577,7 +558,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         {
             if (prefs.Contains(role))
                 return true;
->>>>>>> wizzden/master
         }
     }
 
@@ -629,55 +609,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     {
         if (!set.Remove(player))
         {
-<<<<<<< HEAD
-            // prevent antag selection from happening if the round is on-going, requiring a spawner if used midround.
-            // this is so rules like nukies, if added by an admin midround, dont make random living people nukies
-            Log.Info($"Antags for rule {ent:?} get picked pre-spawn so only spawners will be made.");
-            DebugTools.Assert(def.SpawnerPrototype != null, $"Rule {ent:?} had no spawner for pre-spawn rule added mid-round!");
-            picking = false;
-        }
-
-        for (var i = 0; i < count; i++)
-        {
-            var session = (ICommonSession?)null;
-            if (picking)
-            {
-                if (!playerPool.TryPickAndTake(RobustRandom, out session) && noSpawner)
-                {
-                    Log.Warning($"Couldn't pick a player for {ToPrettyString(ent):rule}, no longer choosing antags for this definition");
-                    break;
-                }
-
-                if (session != null && ent.Comp.PreSelectedSessions.Values.Any(x => x.Contains(session)))
-                {
-                    Log.Warning($"Somehow picked {session} for an antag when this rule already selected them previously");
-                    continue;
-                }
-            }
-
-            if (session == null)
-                MakeAntag(ent, null, def); // This is for spawner antags
-            else
-            {
-                if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
-                    ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
-                set.Add(session); // Selection done!
-                Log.Debug($"Pre-selected {session.Name} as antagonist: {ToPrettyString(ent)}");
-                _adminLogger.Add(LogType.AntagSelection, $"Pre-selected {session.Name} as antagonist: {ToPrettyString(ent)}");
-            }
-        }
-    }
-
-    /// <summary>
-    /// Assigns antag roles to sessions selected for it.
-    /// </summary>
-    public void AssignPreSelectedSessions(Entity<AntagSelectionComponent> ent)
-    {
-        // Only assign if there's been a pre-selection, and the selection hasn't already been made
-        if (!ent.Comp.PreSelectionsComplete || ent.Comp.AssignmentComplete)
-=======
             Log.Error($"Attempted to remove {player.Name} from antag pre-selection, but they weren't pre-selected in the first place!");
->>>>>>> wizzden/master
             return;
         }
 
@@ -690,9 +622,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     /// Attempts to initialize a valid antag entity for a player.
     /// Will de-select the player if they fail to initialize.
     /// </summary>
-<<<<<<< HEAD
-    public bool TryMakeAntag(Entity<AntagSelectionComponent> ent, ICommonSession? session, AntagSelectionDefinition def, bool ignoreSpawner = false, bool checkPref = true, bool onlyPreSelect = false)
-=======
     /// <param name="gameRule">Game rule which is trying to create an antag right now!</param>
     /// <param name="prototype">Antag prototype the player is becoming.</param>
     /// <param name="player">Player.</param>
@@ -700,7 +629,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     private bool TryInitializeAntag(Entity<AntagSelectionComponent> gameRule,
         AntagSpecifierPrototype prototype,
         ICommonSession player)
->>>>>>> wizzden/master
     {
         // Get a valid entity to initialize
         if (!TryGetAntagEntity(gameRule, prototype, player, out var antagEnt))
@@ -709,9 +637,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             return false;
         }
 
-<<<<<<< HEAD
-        if (!IsSessionValid(ent, session, def) || !IsEntityValid(session?.AttachedEntity, def))
-=======
         // Re-check entity validity now that the player has spawned.
         // Pre-selection bypasses the blacklist (AttachedEntity was null at that time),
         // so we must verify here before applying antag components.
@@ -720,80 +645,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (antagEnt.Value != player.AttachedEntity)
                 QueueDel(antagEnt.Value);
             DeSelectSession(gameRule, prototype, player);
->>>>>>> wizzden/master
             return false;
         }
 
-<<<<<<< HEAD
-        if (onlyPreSelect && session != null)
-        {
-            if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
-                ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
-            set.Add(session);
-            Log.Debug($"Pre-selected {session!.Name} as antagonist: {ToPrettyString(ent)}");
-            _adminLogger.Add(LogType.AntagSelection, $"Pre-selected {session.Name} as antagonist: {ToPrettyString(ent)}");
-        }
-        else
-        {
-            MakeAntag(ent, session, def, ignoreSpawner);
-        }
-
-        return true;
-    }
-
-    /// <summary>
-    /// Makes a given player into the specified antagonist.
-    /// </summary>
-    public void MakeAntag(Entity<AntagSelectionComponent> ent, ICommonSession? session, AntagSelectionDefinition def, bool ignoreSpawner = false)
-    {
-        EntityUid? antagEnt = null;
-        var isSpawner = false;
-
-        if (session != null)
-        {
-            if (!ent.Comp.PreSelectedSessions.TryGetValue(def, out var set))
-                ent.Comp.PreSelectedSessions.Add(def, set = new HashSet<ICommonSession>());
-            set.Add(session);
-            ent.Comp.AssignedSessions.Add(session);
-
-            // we shouldn't be blocking the entity if they're just a ghost or smth.
-            if (!HasComp<GhostComponent>(session.AttachedEntity))
-                antagEnt = session.AttachedEntity;
-        }
-        else if (!ignoreSpawner && def.SpawnerPrototype != null) // don't add spawners if we have a player, dummy.
-        {
-            antagEnt = Spawn(def.SpawnerPrototype);
-            isSpawner = true;
-        }
-
-        if (!antagEnt.HasValue)
-        {
-            var getEntEv = new AntagSelectEntityEvent(session, ent, def.PrefRoles);
-
-            RaiseLocalEvent(ent, ref getEntEv, true);
-            antagEnt = getEntEv.Entity;
-        }
-
-        if (antagEnt is not { } player)
-        {
-            Log.Error($"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
-            _adminLogger.Add(LogType.AntagSelection, $"Attempted to make {session} antagonist in gamerule {ToPrettyString(ent)} but there was no valid entity for player.");
-            if (session != null && ent.Comp.RemoveUponFailedSpawn)
-            {
-                ent.Comp.AssignedSessions.Remove(session);
-                ent.Comp.PreSelectedSessions[def].Remove(session);
-            }
-
-            return;
-        }
-
-        // TODO: This is really messy because this part runs twice for midround events.
-        // Once when the ghostrole spawner is created and once when a player takes it.
-        // Therefore any component subscribing to this has to make sure both subscriptions return the same value
-        // or the ghost role raffle location preview will be wrong.
-
-        var getPosEv = new AntagSelectLocationEvent(session, ent, player);
-=======
         InitializeAntag(gameRule, prototype, antagEnt.Value, player);
         return true;
     }
@@ -905,7 +759,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     private MapCoordinates? GetValidSpawnPosition(Entity<AntagSelectionComponent> ent, AntagSpecifierPrototype antag, ICommonSession? session = null)
     {
         var getPosEv = new AntagSelectLocationEvent(ent, antag, session);
->>>>>>> wizzden/master
         RaiseLocalEvent(ent, ref getPosEv, true);
         if (getPosEv.Handled)
         {
@@ -931,15 +784,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
                 return;
             }
 
-<<<<<<< HEAD
-            spawnerComp.Rule = ent;
-            spawnerComp.Definition = def;
-            return;
-        }
-
-        // The following is where we apply components, equipment, and other changes to our antagonist entity.
-        EntityManager.AddComponents(player, def.Components);
-=======
     /// <summary>
     /// Initializes the antagonist status on the specified entity.
     /// Adds the needed components, loadouts, items, attaches the player and fires off an event.
@@ -952,54 +796,29 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         // The following is where we apply components, equipment, and other changes to our antagonist entity.
         AssignAntagComponents(antag, prototype);
->>>>>>> wizzden/master
 
         // Equip the entity's RoleLoadout and LoadoutGroup
         List<ProtoId<StartingGearPrototype>> gear = new();
         if (prototype.StartingGear is not null)
             gear.Add(prototype.StartingGear.Value);
 
-<<<<<<< HEAD
-        _loadout.Equip(player, gear, def.RoleLoadout);
-=======
         _loadout.Equip(antag, gear, prototype.RoleLoadout);
->>>>>>> wizzden/master
 
         // Ensure that we have the right mind for our entity.
         if (!_mind.TryGetMind(player, out var mind, out var mindComp) || mindComp.OwnedEntity != antag)
             mind = _mind.CreateMind(player.UserId, Name(antag));
 
-<<<<<<< HEAD
-            if (curMind == null ||
-                !TryComp<MindComponent>(curMind.Value, out var mindComp) ||
-                mindComp.OwnedEntity != antagEnt)
-            {
-                curMind = _mind.CreateMind(session.UserId, Name(antagEnt.Value));
-                _mind.SetUserId(curMind.Value, session.UserId);
-            }
-
-            _mind.TransferTo(curMind.Value, antagEnt, ghostCheckOverride: true);
-            _role.MindAddRoles(curMind.Value, def.MindRoles, null, true);
-            ent.Comp.AssignedMinds.Add((curMind.Value, Name(player)));
-            SendBriefing(session, def.Briefing);
-=======
         _mind.TransferTo(mind, antag, ghostCheckOverride: true);
         _role.MindAddRoles(mind, prototype.MindRoles, silent: true);
         AssignMind(gameRule, prototype, mind, antag);
 
         Log.Debug($"Assigned {ToPrettyString(antag):target}, mind {ToPrettyString(mind):target} as antagonist: {ToPrettyString(gameRule):user}");
         _adminLogger.Add(LogType.AntagSelection, $"Assigned {ToPrettyString(antag):target}, mind {ToPrettyString(mind):target} as antagonist: {ToPrettyString(gameRule):user}");
->>>>>>> wizzden/master
 
         SendBriefing(player, prototype.Briefing);
 
-<<<<<<< HEAD
-        var afterEv = new AfterAntagEntitySelectedEvent(session, player, ent, def);
-        RaiseLocalEvent(ent, ref afterEv, true);
-=======
         var afterEv = new AfterAntagEntitySelectedEvent(player, antag, gameRule, prototype);
         RaiseLocalEvent(gameRule, ref afterEv, true);
->>>>>>> wizzden/master
     }
 
     private void AssignMind(Entity<AntagSelectionComponent> gameRule, ProtoId<AntagSpecifierPrototype> proto, EntityUid mind, EntityUid antag)
@@ -1031,11 +850,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 /// Only raised if the selected player's current entity is invalid.
 /// </summary>
 [ByRefEvent]
-<<<<<<< HEAD
-public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, List<ProtoId<AntagPrototype>> AntagRoles)
-=======
 public record struct AntagSelectEntityEvent(Entity<AntagSelectionComponent> GameRule, AntagSpecifierPrototype Antag, MapCoordinates Coords, ICommonSession? Session)
->>>>>>> wizzden/master
 {
     public readonly ICommonSession? Session = Session;
 
@@ -1052,22 +867,14 @@ public record struct AntagSelectEntityEvent(Entity<AntagSelectionComponent> Game
 /// Methods responding to this event should not be making any changed as future methods can fail causing an antag to not spawn.
 /// </summary>
 [ByRefEvent]
-<<<<<<< HEAD
-public record struct AntagSelectLocationEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, EntityUid Entity)
-=======
 public record struct AntagSelectLocationEvent(Entity<AntagSelectionComponent> GameRule, AntagSpecifierPrototype Antag, ICommonSession? Session = null)
->>>>>>> wizzden/master
 {
     public readonly ICommonSession? Session = Session;
 
     public bool Handled => Coordinates.Any();
 
     // the entity of the antagonist
-<<<<<<< HEAD
-    public EntityUid Entity = Entity;
-=======
     public AntagSpecifierPrototype Antag = Antag;
->>>>>>> wizzden/master
 
     public List<MapCoordinates> Coordinates = new();
 }

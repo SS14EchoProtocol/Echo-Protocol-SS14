@@ -12,16 +12,11 @@ namespace Content.Server.Maps;
 /// <inheritdoc />
 public sealed partial class GridDraggingSystem : SharedGridDraggingSystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IConGroupController _admin = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    // [Dependency] private readonly SharedTransformSystem _transformSystem = default!; // ECHO-Tweak : commented line
-    [Dependency] private readonly GridMotionLinkSystem _gridMotion = default!;   // Utopia tweak
-=======
     [Dependency] private IConGroupController _admin = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
->>>>>>> wizzden/master
+    // [Dependency] private readonly SharedTransformSystem _transformSystem = default!; // ECHO-Tweak : commented line
+    [Dependency] private readonly GridMotionLinkSystem _gridMotion = default!;   // Utopia tweak
 
     private readonly HashSet<ICommonSession> _draggers = new();
 

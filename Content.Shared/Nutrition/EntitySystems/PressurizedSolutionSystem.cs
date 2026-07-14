@@ -264,11 +264,7 @@ public sealed partial class PressurizedSolutionSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
-<<<<<<< HEAD
-        if (args.SolutionId != entity.Comp.Solution)
-=======
         if (args.Solution.Comp.Id != entity.Comp.Solution)
->>>>>>> wizzden/master
             return;
 
         // If the solution is no longer capable of being fizzy, clear any built up fizziness

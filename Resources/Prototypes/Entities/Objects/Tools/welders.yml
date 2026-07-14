@@ -169,7 +169,6 @@
     enabled: false
     radius: 1.5
     color: lightblue
-<<<<<<< HEAD
   - type: WeldingSparks # ECHO-Tweak "Wielding Sparks Animation"
     effect: EchoEffectWeldingSparksExp
   - type: SolutionRegeneration
@@ -178,10 +177,6 @@
       reagents:
       - ReagentId: WeldingFuel
         Quantity: 1
-=======
-  - type: Welder
-    fuelReagent: Plasma
->>>>>>> wizzden/master
   - type: RequiresEyeProtection
     statusEffectTime: 5 # less harmful; sunglasses can block it
 

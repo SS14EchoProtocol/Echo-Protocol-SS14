@@ -21,11 +21,7 @@ public sealed partial class AntagMultipleRoleSpawnerSystem : EntitySystem
         if (entProtos.Count == 0)
             return; // You will just get a normal job
 
-<<<<<<< HEAD
-        args.Entity = Spawn(ent.Comp.PickAndTake ? _random.PickAndTake(entProtos) : _random.Pick(entProtos));
-=======
         // TODO: Could probably turn this into a dictionary that takes an antag prototype and spits out an entity?
         args.Entity = Spawn(ent.Comp.PickAndTake ? _random.PickAndTake(entProtos) : _random.Pick(entProtos), args.Coords);
->>>>>>> wizzden/master
     }
 }

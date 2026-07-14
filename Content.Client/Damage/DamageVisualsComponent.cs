@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-using Content.Shared.Damage.Prototypes;
-=======
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.DisplacementMap;
->>>>>>> wizzden/master
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 

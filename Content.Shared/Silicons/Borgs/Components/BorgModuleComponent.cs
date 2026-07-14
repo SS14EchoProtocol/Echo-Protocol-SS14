@@ -37,20 +37,12 @@ public sealed partial class BorgModuleComponent : Component
 }
 
 /// <summary>
-<<<<<<< HEAD
-/// Raised on a chassis before a module is inserted into it.
-/// </summary>
-/// <param name="ModuleEnt">The module being added.</param>
-[ByRefEvent]
-public record struct BorgModuleInsertAttemptEvent(EntityUid ModuleEnt, bool Cancelled = false, string? Reason = null);
-=======
 /// Raised on a chassis and module before a module is inserted into it.
 /// </summary>
 /// <param name="ModuleEnt">The module being added.</param>
 /// <param name="ChassisEnt">The chassis being added to.</param>
 [ByRefEvent]
 public record struct BorgModuleInsertAttemptEvent(EntityUid ModuleEnt, EntityUid ChassisEnt, bool Cancelled = false, string? Reason = null);
->>>>>>> wizzden/master
 
 /// <summary>
 /// Raised on a module when it is installed in order to add specific behavior to an entity.

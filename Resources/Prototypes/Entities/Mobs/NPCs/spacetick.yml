@@ -78,11 +78,7 @@
     damage:
       types:
         Piercing: 2
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-=======
   - type: SolutionManager
->>>>>>> wizzden/master
     solutions:
     - SolutionVenomTick
   - type: MeleeChemicalInjector

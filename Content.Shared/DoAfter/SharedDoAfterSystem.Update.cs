@@ -9,16 +9,6 @@ namespace Content.Shared.DoAfter;
 
 public abstract partial class SharedDoAfterSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IDynamicTypeFactory _factory = default!;
-#if EXCEPTION_TOLERANCE
-    [Dependency] private readonly INetManager _netManager = default!;
-    [Dependency] private readonly IRuntimeLog _runtimeLog = default!;
-#endif
-    [Dependency] private readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-=======
     [Dependency] private IDynamicTypeFactory _factory = default!;
 #if EXCEPTION_TOLERANCE
     [Dependency] private INetManager _netManager = default!;
@@ -29,7 +19,6 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
     [Dependency] private SharedHandsSystem _hands = default!;
 
     [Dependency] private EntityQuery<HandsComponent> _handsQuery = default!;
->>>>>>> wizzden/master
 
     private DoAfter[] _doAfters = Array.Empty<DoAfter>();
 
@@ -45,11 +34,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
 
             try
             {
-<<<<<<< HEAD
-                Update(uid, active, comp, time, xformQuery, handsQuery);
-=======
                 Update(uid, active, comp, time);
->>>>>>> wizzden/master
             }
             // ReSharper disable once RedundantCatchClause
 #if EXCEPTION_TOLERANCE
@@ -216,21 +201,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         if (args.Used is { } used && !Exists(used))
             return true;
 
-<<<<<<< HEAD
-        if (args.EventTarget is { Valid: true } eventTarget && !xformQuery.HasComponent(eventTarget))
-            return true;
-
-        if (!xformQuery.TryGetComponent(args.User, out var userXform))
-            return true;
-
-        TransformComponent? targetXform = null;
-        if (args.Target is { } target && !xformQuery.TryGetComponent(target, out targetXform))
-            return true;
-
-        if (args.Used is { } @using && !xformQuery.HasComp(@using))
-=======
         if (args.EventTarget is { Valid: true } eventTarget && !Exists(eventTarget))
->>>>>>> wizzden/master
             return true;
 
         // TODO: Re-use existing xform query for these calculations.

@@ -33,13 +33,6 @@ public sealed partial class WeatherSystem : SharedWeatherSystem
         base.Initialize();
 
         SubscribeLocalEvent<WeatherStatusEffectComponent, ComponentShutdown>(OnComponentShutdown);
-<<<<<<< HEAD
-
-        _audioQuery = GetEntityQuery<AudioComponent>();
-        _gridQuery = GetEntityQuery<MapGridComponent>();
-        _roofQuery = GetEntityQuery<RoofComponent>();
-=======
->>>>>>> wizzden/master
     }
 
     private void OnComponentShutdown(Entity<WeatherStatusEffectComponent> ent, ref ComponentShutdown args)

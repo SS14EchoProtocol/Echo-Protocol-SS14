@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-using System;
-=======
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
->>>>>>> wizzden/master
 using System.Numerics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -228,39 +224,27 @@ public sealed partial class ClampedHsvColoration : ISkinColorationStrategy
         var hsv = Color.ToHsv(color);
 
         if (Hue is (var minHue, var maxHue) && !SkinColorationUtils.IsHueInRange(hsv.X, minHue, maxHue))
-<<<<<<< HEAD
-=======
         {
             reason = $"Hue {Hue} is outside of range of min {minHue} max {maxHue}";
->>>>>>> wizzden/master
             return false;
         }
 
         if (Saturation is (var minSat, var maxSat) && (hsv.Y < minSat - SkinColorationUtils.Epsilon || hsv.Y > maxSat + SkinColorationUtils.Epsilon))
-<<<<<<< HEAD
-=======
         {
             reason = $"Saturation {Saturation} is outside of range of min {minSat} max {maxSat}";
->>>>>>> wizzden/master
             return false;
         }
 
         if (Value is (var minVal, var maxVal) && (hsv.Z < minVal - SkinColorationUtils.Epsilon || hsv.Z > maxVal + SkinColorationUtils.Epsilon))
-<<<<<<< HEAD
-=======
         {
             reason = $"Value {Value} is outside of range of min {minVal} max {maxVal}";
->>>>>>> wizzden/master
             return false;
         }
 
         return true;
     }
-
-    public Color ClosestSkinColor(Color color)
     {
         var hsv = Color.ToHsv(color);
-
         if (Hue is (var minHue, var maxHue))
             hsv.X = SkinColorationUtils.ClampHue(hsv.X, minHue, maxHue);
         if (Saturation is (var minSat, var maxSat))
@@ -307,29 +291,20 @@ public sealed partial class ClampedHslColoration : ISkinColorationStrategy
         var hsl = Color.ToHsl(color);
 
         if (Hue is (var minHue, var maxHue) && !SkinColorationUtils.IsHueInRange(hsl.X, minHue, maxHue))
-<<<<<<< HEAD
-=======
         {
             reason = $"Hue {Hue} is outside of range of min {minHue} max {maxHue}";
->>>>>>> wizzden/master
             return false;
         }
 
         if (Saturation is (var minSat, var maxSat) && (hsl.Y < minSat - SkinColorationUtils.Epsilon || hsl.Y > maxSat + SkinColorationUtils.Epsilon))
-<<<<<<< HEAD
-=======
         {
             reason = $"Saturation {Saturation} is outside of range of min {minSat} max {maxSat}";
->>>>>>> wizzden/master
             return false;
         }
 
         if (Lightness is (var minLight, var maxLight) && (hsl.Z < minLight - SkinColorationUtils.Epsilon || hsl.Z > maxLight + SkinColorationUtils.Epsilon))
-<<<<<<< HEAD
-=======
         {
             reason = $"Lightness {Lightness} is outside of range of min {minLight} max {maxLight}";
->>>>>>> wizzden/master
             return false;
         }
 
@@ -352,8 +327,6 @@ public sealed partial class ClampedHslColoration : ISkinColorationStrategy
 }
 
 /// <summary>
-<<<<<<< HEAD
-=======
 /// Coloration strategy that clamps the color between nodes within the HSV colorspace.
 /// Clamped values depend on the nodes and are linearly interpolated between them.
 /// </summary>
@@ -537,19 +510,11 @@ public sealed partial class HueNodeClampedHsvColorationNode
 }
 
 /// <summary>
->>>>>>> wizzden/master
 /// Contains shared utility methods for handling color manipulations in skin coloration strategies.
 /// </summary>
 internal static class SkinColorationUtils
 {
     /// <summary>
-<<<<<<< HEAD
-    /// An empirically determined epsilon to account for floating-point drift during RGB -> HSL/HSV -> RGB conversions.
-    /// Based on high-iteration testing (50M+ samples) which showed a max drift of ~4.9E-6 for HSL.
-    /// A value of 1E-5f provides a robust safety margin.
-    /// </summary>
-    public const float Epsilon = 1e-5f; // 0.00001
-=======
     /// A value derived by dividing 1 by 361, rounding down.
     /// Due to the way these values are stored and deconstructed we can't expect much more precision than this..
     /// </summary>
@@ -560,7 +525,6 @@ internal static class SkinColorationUtils
     /// Due to the way these values are stored and deconstructed we can't expect much more precision than this..
     /// </summary>
     public const float Epsilon = 0.00390625f;
->>>>>>> wizzden/master
 
     /// <summary>
     /// Checks if a hue value is within a specified range, correctly handling ranges that wrap around 1.0 (e.g., reds).
@@ -572,13 +536,8 @@ internal static class SkinColorationUtils
     public static bool IsHueInRange(float hue, float minHue, float maxHue)
     {
         if (minHue > maxHue) // Wraps around 1.0 (e.g., reds)
-<<<<<<< HEAD
-            return hue >= minHue - Epsilon || hue <= maxHue + Epsilon;
-        return hue >= minHue - Epsilon && hue <= maxHue + Epsilon;
-=======
             return hue >= minHue - EpsilonHue || hue <= maxHue + EpsilonHue;
         return hue >= minHue - EpsilonHue && hue <= maxHue + EpsilonHue;
->>>>>>> wizzden/master
     }
 
     /// <summary>

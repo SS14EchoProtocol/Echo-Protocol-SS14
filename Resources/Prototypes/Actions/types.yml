@@ -417,8 +417,6 @@
     itemIconStyle: BigAction
 
 - type: entity
-<<<<<<< HEAD
-=======
   parent: BaseAction
   id: ActionToggleNightVision
   name: Toggle night vision
@@ -433,7 +431,6 @@
     event: !type:ToggleNightVisionEvent {}
 
 - type: entity
->>>>>>> wizzden/master
   parent: ActionToggleWagging
   id: ActionToggleWaggingVulpkanin
   components:

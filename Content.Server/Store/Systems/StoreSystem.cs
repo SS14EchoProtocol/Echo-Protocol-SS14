@@ -1,10 +1,4 @@
 using Content.Shared.Implants.Components;
-<<<<<<< HEAD
-using Content.Shared.Interaction;
-using Content.Shared.Popups;
-using Content.Shared.Stacks;
-=======
->>>>>>> wizzden/master
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Content.Shared.UserInterface;
@@ -14,14 +8,6 @@ namespace Content.Server.Store.Systems;
 
 public sealed partial class StoreSystem : SharedStoreSystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
-
-=======
->>>>>>> wizzden/master
     public override void Initialize()
     {
         base.Initialize();
@@ -46,13 +32,8 @@ public sealed partial class StoreSystem : SharedStoreSystem
         component.StartingMap = Transform(uid).MapUid;
 
         // Add the bui key if it does not exist already (the check is needed to make sure that we don't overwrite existing InterfaceData).
-<<<<<<< HEAD
-        if (!_uiSystem.HasUi(uid, StoreUiKey.Key))
-            _uiSystem.SetUi(uid, StoreUiKey.Key, new InterfaceData("StoreBoundUserInterface"));
-=======
         if (!UI.HasUi(uid, StoreUiKey.Key))
             UI.SetUi(uid, StoreUiKey.Key, new InterfaceData("StoreBoundUserInterface"));
->>>>>>> wizzden/master
     }
 
     private void OnStartup(EntityUid uid, StoreComponent component, ComponentStartup args)

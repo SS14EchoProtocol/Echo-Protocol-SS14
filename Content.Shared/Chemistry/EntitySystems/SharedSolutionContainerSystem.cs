@@ -17,10 +17,6 @@ using JetBrains.Annotations;
 using Robust.Shared.ColorNaming;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
-<<<<<<< HEAD
-using Robust.Shared.Map;
-=======
->>>>>>> wizzden/master
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -31,14 +27,8 @@ namespace Content.Shared.Chemistry.EntitySystems;
 
 /// <summary>
 /// The event raised whenever a solution entity is modified.
-<<<<<<< HEAD
-/// Raised on the solution entity itself.
-/// If you want to subscribe with the entity containing the solution entity
-/// then use <see cref="SolutionContainerChangedEvent"/> instead.
-=======
 /// This event is raised on the owner of the solution.
 /// If the changed solution is contained in a <see cref="SolutionManagerComponent"/>, it will be raised on the owner of that component.
->>>>>>> wizzden/master
 /// </summary>
 /// <remarks>
 /// Raised after chemcial reactions and <see cref="SolutionOverflowEvent"/> are handled.
@@ -75,18 +65,6 @@ public partial record struct SolutionAccessAttemptEvent(string SolutionName)
 [UsedImplicitly]
 public abstract partial class SharedSolutionContainerSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] protected readonly ChemicalReactionSystem ChemicalReactionSystem = default!;
-    [Dependency] protected readonly ExamineSystemShared ExamineSystem = default!;
-    [Dependency] protected readonly OpenableSystem Openable = default!;
-    [Dependency] protected readonly SharedAppearanceSystem AppearanceSystem = default!;
-    [Dependency] protected readonly SharedHandsSystem Hands = default!;
-    [Dependency] protected readonly SharedContainerSystem ContainerSystem = default!;
-    [Dependency] protected readonly MetaDataSystem MetaDataSys = default!;
-    [Dependency] protected readonly INetManager NetManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-=======
     public static readonly EntProtoId DefaultSolution = "Solution";
 
     [Dependency] protected IGameTiming Timing = default!;
@@ -102,7 +80,6 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     [Dependency] protected EntityQuery<ContainedSolutionComponent> ContainedQuery = default!;
     [Dependency] protected EntityQuery<SolutionComponent> SolutionQuery = default!;
     [Dependency] protected EntityQuery<SolutionManagerComponent> SolutionManagerQuery = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {
@@ -128,11 +105,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
 
     private void OnSolutionGetState(Entity<SolutionComponent> ent, ref ComponentGetState args)
     {
-<<<<<<< HEAD
-        args.State = new SolutionComponentState(ent.Comp.Solution);
-=======
         args.State = new SolutionComponentState(ent.Comp.Id, ent.Comp.Solution);
->>>>>>> wizzden/master
     }
 
     private void OnSolutionHandleState(Entity<SolutionComponent> ent, ref ComponentHandleState args)
@@ -141,22 +114,16 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             return;
 
         ent.Comp.Solution = cast.Solution.Clone();
-<<<<<<< HEAD
-=======
         ent.Comp.Id = cast.Id;
->>>>>>> wizzden/master
 
         // Always raise the event on the client so that we can update UIs accordingly.
         var changedEv = new SolutionChangedEvent(ent);
         RaiseLocalEvent(ent, ref changedEv);
-<<<<<<< HEAD
-=======
 
         if (!ContainedQuery.TryComp(ent, out var contained) || !SolutionManagerQuery.TryComp(contained.Container, out var manager))
             return;
 
         manager.Solutions[ent.Comp.Id] = ent;
->>>>>>> wizzden/master
     }
 
     /// <summary>

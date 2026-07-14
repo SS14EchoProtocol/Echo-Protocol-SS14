@@ -16,30 +16,22 @@ public sealed class VoiceMaskBuiState : BoundUserInterfaceState
     public readonly string? Verb;
     public readonly bool Active;
     public readonly bool AccentHide;
-<<<<<<< HEAD
- // ECHO-Tweak : Barks
+    // ECHO-Tweak : Barks
     public readonly string Bark;
     public readonly float Pitch;
     // ECHO-Tweak : Barks
-    public VoiceMaskBuiState(string name, string? verb, bool active, bool accentHide, string bark, float pitch) // ECHO-Tweak : Barks
-=======
     public readonly LocId TitleText;
-
-    public VoiceMaskBuiState(string name, string? verb, bool active, bool accentHide, LocId titleText)
->>>>>>> wizzden/master
+    public VoiceMaskBuiState(string name, string? verb, bool active, bool accentHide, LocId titleText, string bark, float pitch) // ECHO-Tweak : Barks
     {
         Name = name;
         Verb = verb;
         Active = active;
         AccentHide = accentHide;
-<<<<<<< HEAD
         // ECHO-Tweak : Barks
         Bark = bark;
         Pitch = pitch;
         // ECHO-Tweak : Barks
-=======
         TitleText = titleText;
->>>>>>> wizzden/master
     }
 }
 

@@ -157,30 +157,18 @@ namespace Content.Server.Spawners.EntitySystems
             if (TerminatingOrDeleted(ent) || !Exists(ent))
                 return;
 
-<<<<<<< HEAD
-            var coords = Transform(ent).Coordinates;
-=======
             var xform = Transform(ent);
             var coords = _xform.GetMapCoordinates(ent, xform);
             var rotation = _xform.GetWorldRotation(xform);
->>>>>>> wizzden/master
             var offset = ent.Comp.Offset;
 
             var spawns = _entityTable.GetSpawns(ent.Comp.Table);
             foreach (var proto in spawns)
             {
-<<<<<<< HEAD
-                var xOffset = _robustRandom.NextFloat(-offset, offset);
-                var yOffset = _robustRandom.NextFloat(-offset, offset);
-                var trueCoords = coords.Offset(new Vector2(xOffset, yOffset));
-
-                SpawnAttachedTo(proto, trueCoords);
-=======
                 var vOffset = _robustRandom.NextVector2(-offset, offset);
                 var trueCoords = coords.Offset(vOffset);
 
                 Spawn(proto, trueCoords, rotation: rotation);
->>>>>>> wizzden/master
             }
         }
     }

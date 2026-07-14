@@ -27,21 +27,6 @@ namespace Content.Shared.Kitchen.EntitySystems;
 [UsedImplicitly]
 public abstract partial class SharedReagentGrinderSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainersSystem = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedStackSystem _stackSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedDestructibleSystem _destructible = default!;
-    [Dependency] private readonly SharedJitteringSystem _jitter = default!;
-    [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
-    [Dependency] private readonly SharedPowerStateSystem _powerState = default!;
-=======
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainersSystem = default!;
@@ -55,17 +40,12 @@ public abstract partial class SharedReagentGrinderSystem : EntitySystem
     [Dependency] private SharedJitteringSystem _jitter = default!;
     [Dependency] private SharedPowerReceiverSystem _power = default!;
     [Dependency] private SharedPowerStateSystem _powerState = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {
         base.Initialize();
 
-<<<<<<< HEAD
-        SubscribeLocalEvent<InsideReagentGrinderComponent, SolutionContainerChangedEvent>(OnBeakerSolutionContainerChanged);
-=======
         SubscribeLocalEvent<InsideReagentGrinderComponent, SolutionChangedEvent>(OnBeakerSolutionContainerChanged);
->>>>>>> wizzden/master
 
         SubscribeLocalEvent<ReagentGrinderComponent, ComponentStartup>(OnGrinderStartup);
         SubscribeLocalEvent<ReagentGrinderComponent, ContainerIsRemovingAttemptEvent>(OnEntRemovingAttempt);
@@ -80,11 +60,7 @@ public abstract partial class SharedReagentGrinderSystem : EntitySystem
         SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberContentMessage>(OnEjectChamberContentMessage);
     }
 
-<<<<<<< HEAD
-    private void OnBeakerSolutionContainerChanged(Entity<InsideReagentGrinderComponent> ent, ref SolutionContainerChangedEvent args)
-=======
     private void OnBeakerSolutionContainerChanged(Entity<InsideReagentGrinderComponent> ent, ref SolutionChangedEvent args)
->>>>>>> wizzden/master
     {
         // Update the UI if the reagents inside the beaker are changed.
         // This is needed in case the component state for the container is applied before that of the solution container
@@ -384,15 +360,10 @@ public abstract partial class SharedReagentGrinderSystem : EntitySystem
         switch (program)
         {
             case GrinderProgram.Grind:
-<<<<<<< HEAD
-                if (_solutionContainersSystem.TryGetSolution(ent.Owner, ent.Comp.GrindableSolutionName, out _, out var solution))
-                {
-=======
                 if (ent.Comp.GrindableSolutionName is not { } solutionId)
                     return null;
 
                 if (_solutionContainersSystem.TryGetSolution(ent.Owner, solutionId, out _, out var solution))
->>>>>>> wizzden/master
                     return solution;
                 break;
             case GrinderProgram.Juice:

@@ -38,22 +38,6 @@ namespace Content.Client.Mapping;
 public sealed partial class MappingState : GameplayStateBase
 {
     #if !FULL_RELEASE
-<<<<<<< HEAD
-    [Dependency] private readonly IClientAdminManager _admin = default!;
-    #endif
-
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IEntityNetworkManager _entityNetwork = default!;
-    [Dependency] private readonly IInputManager _input = default!;
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
-    [Dependency] private readonly MappingManager _mapping = default!;
-    [Dependency] private readonly IOverlayManager _overlays = default!;
-    [Dependency] private readonly IPlacementManager _placement = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IResourceCache _resources = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-=======
     [Dependency] private IClientAdminManager _admin = default!;
     #endif
 
@@ -67,7 +51,6 @@ public sealed partial class MappingState : GameplayStateBase
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IResourceCache _resources = default!;
     [Dependency] private IGameTiming _timing = default!;
->>>>>>> wizzden/master
 
     private EntityMenuUIController _entityMenuController = default!;
 

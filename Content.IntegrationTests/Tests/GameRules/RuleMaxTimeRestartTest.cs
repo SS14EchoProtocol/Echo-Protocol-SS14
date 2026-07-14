@@ -15,11 +15,8 @@ namespace Content.IntegrationTests.Tests.GameRules
     {
         public override PoolSettings PoolSettings => new() { InLobby = true };
 
-<<<<<<< HEAD
-=======
         private static readonly EntProtoId MaxTimeRestartGameRule = "MaxTimeRestart";
 
->>>>>>> wizzden/master
         [Test]
         public async Task RestartTest()
         {

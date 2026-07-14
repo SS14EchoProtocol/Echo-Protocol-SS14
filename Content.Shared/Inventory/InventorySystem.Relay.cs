@@ -61,10 +61,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, IsUnequippingTargetAttemptEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, ChameleonControllerOutfitSelectedEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, VoiceMaskNameUpdatedEvent>(RelayInventoryEvent);
-<<<<<<< HEAD
-=======
         SubscribeLocalEvent<InventoryComponent, VoiceMaskToggledEvent>(RelayInventoryEvent);
->>>>>>> wizzden/master
         SubscribeLocalEvent<InventoryComponent, BeforeEmoteEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, StoodEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, DownedEvent>(RelayInventoryEvent);
@@ -85,11 +82,8 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, WieldAttemptEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, UnwieldAttemptEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, IngestionAttemptEvent>(RefRelayInventoryEvent);
-<<<<<<< HEAD
         SubscribeLocalEvent<InventoryComponent, ModifyGrabStageTimeEvent>(RefRelayInventoryEvent); // ECHO-Tweak : Grab
-=======
         SubscribeLocalEvent<InventoryComponent, RefreshNightVisionEvent>(RefRelayInventoryEvent);
->>>>>>> wizzden/master
 
         // Eye/vision events
         SubscribeLocalEvent<InventoryComponent, CanSeeAttemptEvent>(RelayInventoryEvent);

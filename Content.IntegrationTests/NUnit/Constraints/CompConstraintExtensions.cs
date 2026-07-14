@@ -20,20 +20,14 @@ public static class CompConstraintExtensions
 {
     extension(Has)
     {
-<<<<<<< HEAD
-=======
         /// <inheritdoc cref="extension(ConstraintExpression).Comp{T}"/>
->>>>>>> wizzden/master
         public static ResolvableConstraintExpression Comp<T>(IIntegrationInstance instance)
             where T : IComponent
         {
             return new ConstraintExpression().Comp<T>(instance);
         }
 
-<<<<<<< HEAD
-=======
         /// <inheritdoc cref="extension(ConstraintExpression).Comp(Type, IIntegrationInstance)"/>
->>>>>>> wizzden/master
         public static ResolvableConstraintExpression Comp(Type t, IIntegrationInstance instance)
         {
             return new ConstraintExpression().Comp(t, instance);
@@ -42,8 +36,6 @@ public static class CompConstraintExtensions
 
     extension(ConstraintExpression expr)
     {
-<<<<<<< HEAD
-=======
         /// <summary>
         /// Returns a new constraint which will either test for the existence of a <typeparamref name="T"/>
         /// on the entity being tested or apply any following constraint to that component.
@@ -64,15 +56,12 @@ public static class CompConstraintExtensions
         ///     );
         /// </code>
         /// </example>
->>>>>>> wizzden/master
         public ResolvableConstraintExpression Comp<T>(IIntegrationInstance instance)
             where T : IComponent
         {
             return expr.Append(new CompOperator(typeof(T), instance));
         }
 
-<<<<<<< HEAD
-=======
         /// <summary>
         /// Returns a new constraint which will either test for the existence of a component of the specified type
         /// on the entity being tested or apply any following constraint to that component.
@@ -93,7 +82,6 @@ public static class CompConstraintExtensions
         ///     );
         /// </code>
         /// </example>
->>>>>>> wizzden/master
         public ResolvableConstraintExpression Comp(Type t, IIntegrationInstance instance)
         {
             return expr.Append(new CompOperator(t, instance));

@@ -332,8 +332,6 @@ namespace Content.IntegrationTests.Tests
                         BuildDiffString(clientEntities, Entities(client.EntMan), client.EntMan));
                 }
             });
-<<<<<<< HEAD
-=======
         }
 
         /// <summary>
@@ -361,7 +359,6 @@ namespace Content.IntegrationTests.Tests
                 }
             });
             await pair.RunTicksSync(3);
->>>>>>> wizzden/master
         }
 
         private static string BuildDiffString(IEnumerable<EntityUid> oldEnts, IEnumerable<EntityUid> newEnts, IEntityManager entMan)

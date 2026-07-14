@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
-<<<<<<< HEAD
-=======
 using Content.IntegrationTests.Fixtures.Attributes;
->>>>>>> wizzden/master
 using Content.Server.Administration.Logs;
 using Content.Server.Database;
 using Content.Server.GameTicking;
@@ -34,25 +31,11 @@ public sealed class AddTests : GameTest
     [Test]
     public async Task AddAndGetSingleLog()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-        var sEntities = server.ResolveDependency<IEntityManager>();
-
-        var sAdminLogSystem = server.ResolveDependency<IAdminLogManager>();
-
-        var guid = Guid.NewGuid();
-
-        await pair.CreateTestMap();
-        var coordinates = pair.TestMap!.GridCoords;
-        await server.WaitPost(() =>
-=======
         var guid = Guid.NewGuid();
 
         await Pair.CreateTestMap();
         var coordinates = Pair.TestMap!.GridCoords;
         await Server.WaitPost(() =>
->>>>>>> wizzden/master
         {
             var entity = SSpawnAtPosition(null, coordinates);
 
@@ -85,19 +68,6 @@ public sealed class AddTests : GameTest
     [Test]
     public async Task AddAndGetUnformattedLog()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sDatabase = server.ResolveDependency<IServerDbManager>();
-        var sEntities = server.ResolveDependency<IEntityManager>();
-        var sSystems = server.ResolveDependency<IEntitySystemManager>();
-
-        var sAdminLogSystem = server.ResolveDependency<IAdminLogManager>();
-        var sGamerTicker = sSystems.GetEntitySystem<GameTicker>();
-
-=======
->>>>>>> wizzden/master
         var guid = Guid.NewGuid();
 
         var testMap = await Pair.CreateTestMap();
@@ -152,17 +122,7 @@ public sealed class AddTests : GameTest
     [TestCase(500)]
     public async Task BulkAddLogs(int amount)
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sEntities = server.ResolveDependency<IEntityManager>();
-        var sAdminLogSystem = server.ResolveDependency<IAdminLogManager>();
-
-        var testMap = await pair.CreateTestMap();
-=======
         var testMap = await Pair.CreateTestMap();
->>>>>>> wizzden/master
         var coordinates = testMap.GridCoords;
         await Server.WaitPost(() =>
         {
@@ -184,15 +144,6 @@ public sealed class AddTests : GameTest
     [Test]
     public async Task AddPlayerSessionLog()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sPlayers = server.ResolveDependency<IPlayerManager>();
-
-        var sAdminLogSystem = server.ResolveDependency<IAdminLogManager>();
-=======
->>>>>>> wizzden/master
         Guid playerGuid = default;
 
         await Server.WaitPost(() =>
@@ -222,26 +173,6 @@ public sealed class AddTests : GameTest
     [Test]
     public async Task DuplicatePlayerDoesNotThrowTest()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sPlayers = server.ResolveDependency<IPlayerManager>();
-        var sAdminLogSystem = server.ResolveDependency<IAdminLogManager>();
-
-        var guid = Guid.NewGuid();
-
-        await server.WaitPost(() =>
-        {
-            var player = sPlayers.Sessions.Single();
-
-            sAdminLogSystem.Add(LogType.Unknown, $"{player} {player} test log: {guid}");
-        });
-
-        await PoolManager.WaitUntil(server, async () =>
-        {
-            var logs = await sAdminLogSystem.CurrentRoundLogs(new LogFilter
-=======
         var guid = Guid.NewGuid();
 
         await Server.WaitPost(() =>
@@ -254,7 +185,6 @@ public sealed class AddTests : GameTest
         await PoolManager.WaitUntil(Server, async () =>
         {
             var logs = await _sAdminLogManager.CurrentRoundLogs(new LogFilter
->>>>>>> wizzden/master
             {
                 Search = guid.ToString()
             });
@@ -271,27 +201,6 @@ public sealed class AddTests : GameTest
     [Test]
     public async Task DuplicatePlayerIdDoesNotThrowTest()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sPlayers = server.ResolveDependency<IPlayerManager>();
-
-        var sAdminLogSystem = server.ResolveDependency<IAdminLogManager>();
-
-        var guid = Guid.NewGuid();
-
-        await server.WaitPost(() =>
-        {
-            var player = sPlayers.Sessions.Single();
-
-            sAdminLogSystem.Add(LogType.Unknown, $"{player:first} {player:second} test log: {guid}");
-        });
-
-        await PoolManager.WaitUntil(server, async () =>
-        {
-            var logs = await sAdminLogSystem.CurrentRoundLogs(new LogFilter
-=======
         var guid = Guid.NewGuid();
 
         await Server.WaitPost(() =>
@@ -304,7 +213,6 @@ public sealed class AddTests : GameTest
         await PoolManager.WaitUntil(Server, async () =>
         {
             var logs = await _sAdminLogManager.CurrentRoundLogs(new LogFilter
->>>>>>> wizzden/master
             {
                 Search = guid.ToString()
             });
@@ -328,20 +236,6 @@ public sealed class PreRoundAddTests : GameTest
         AdminLogsEnabled = true
     };
 
-<<<<<<< HEAD
-    [Test]
-    public async Task PreRoundAddAndGetSingle()
-    {
-        var pair = Pair;
-        var server = pair.Server;
-
-        var sDatabase = server.ResolveDependency<IServerDbManager>();
-        var sSystems = server.ResolveDependency<IEntitySystemManager>();
-
-        var sAdminLogSystem = server.ResolveDependency<IAdminLogManager>();
-        var sGamerTicker = sSystems.GetEntitySystem<GameTicker>();
-
-=======
     [SidedDependency(Side.Server)] private readonly IAdminLogManager _sAdminLogManager = null!;
     [SidedDependency(Side.Server)] private readonly IServerDbManager _sDbManager = null!;
     [SidedDependency(Side.Server)] private readonly GameTicker _sGameTicker = null!;
@@ -349,7 +243,6 @@ public sealed class PreRoundAddTests : GameTest
     [Test]
     public async Task PreRoundAddAndGetSingle()
     {
->>>>>>> wizzden/master
         var guid = Guid.NewGuid();
 
         await Server.WaitPost(() =>

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-using Robust.Shared.Prototypes;
-=======
->>>>>>> wizzden/master
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Sandbox

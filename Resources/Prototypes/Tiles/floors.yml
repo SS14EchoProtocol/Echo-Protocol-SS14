@@ -166,11 +166,7 @@
   parent: BaseStationTile
   id: FloorSteelSlatsContinuous
   name: tiles-steel-floor-slats-continuous
-<<<<<<< HEAD
   sprite: /Textures/_ECHO/Tiles/steel_slats_continuous.png #ECHO-Tweak Было:/Textures/Tiles/steel_slats_continuous.png Стало:/Textures/_ECHO/Tiles/steel_slats_continuous.png
-=======
-  sprite: /Textures/Tiles/steel_slats_continuous.png
->>>>>>> wizzden/master
   variants: 4
   placementVariants:
   - 1.0
@@ -197,11 +193,7 @@
   parent: BaseStationTile
   id: FloorSteelHorizontalSlatsBordered
   name: tiles-steel-floor-horizontal-slats-bordered
-<<<<<<< HEAD
   sprite: /Textures/_ECHO/Tiles/steel_horizontal_slats_bordered.png #ECHO-Tweak Было:/Textures/Tiles/steel_horizontal_slats_bordered.png Стало:/Textures/_ECHO/Tiles/steel_horizontal_slats_bordered.png
-=======
-  sprite: /Textures/Tiles/steel_horizontal_slats_bordered.png
->>>>>>> wizzden/master
   variants: 4
   placementVariants:
   - 1.0
@@ -292,11 +284,7 @@
   parent: BaseStationTile
   id: FloorWhiteSlatsContinuous
   name: tiles-white-floor-slats-continuous
-<<<<<<< HEAD
   sprite: /Textures/_ECHO/Tiles/white_slats_continuous.png #ECHO-Tweak Было:/Textures/Tiles/white_slats_continuous.png Стало:/Textures/_ECHO/Tiles/white_slats_continuous.png
-=======
-  sprite: /Textures/Tiles/white_slats_continuous.png
->>>>>>> wizzden/master
   variants: 4
   placementVariants:
   - 1.0
@@ -323,11 +311,7 @@
   parent: BaseStationTile
   id: FloorWhiteHorizontalSlatsBordered
   name: tiles-white-floor-horizontal-slats-bordered
-<<<<<<< HEAD
   sprite: /Textures/_ECHO/Tiles/white_horizontal_slats_bordered.png #ECHO-Tweak Было:/Textures/Tiles/white_horizontal_slats_bordered.png Стало:/Textures/_ECHO/Tiles/white_horizontal_slats_bordered.png
-=======
-  sprite: /Textures/Tiles/white_horizontal_slats_bordered.png
->>>>>>> wizzden/master
   variants: 4
   placementVariants:
   - 1.0
@@ -484,11 +468,7 @@
   parent: BaseStationTile
   id: FloorDarkSlatsContinuous
   name: tiles-dark-floor-slats-continuous
-<<<<<<< HEAD
   sprite: /Textures/_ECHO/Tiles/dark_slats_continuous.png #ECHO-Tweak Было:/Textures/Tiles/dark_slats_continuous.png Стало:/Textures/_ECHO/Tiles/dark_slats_continuous.png
-=======
-  sprite: /Textures/Tiles/dark_slats_continuous.png
->>>>>>> wizzden/master
   variants: 4
   placementVariants:
   - 1.0
@@ -515,11 +495,7 @@
   parent: BaseStationTile
   id: FloorDarkHorizontalSlatsBordered
   name: tiles-dark-floor-horizontal-slats-bordered
-<<<<<<< HEAD
   sprite: /Textures/_ECHO/Tiles/dark_horizontal_slats_bordered.png #ECHO-Tweak Было:/Textures/Tiles/dark_horizontal_slats_bordered.png Стало:/Textures/_ECHO/Tiles/dark_horizontal_slats_bordered.png
-=======
-  sprite: /Textures/Tiles/dark_horizontal_slats_bordered.png
->>>>>>> wizzden/master
   variants: 4
   placementVariants:
   - 1.0

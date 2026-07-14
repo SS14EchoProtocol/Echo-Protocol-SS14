@@ -167,14 +167,7 @@
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
   - type: Vocal
-<<<<<<< HEAD
-    sounds:
-      Male: UnisexMoth
-      Female: UnisexMoth
-      Unsexed: UnisexMoth
-=======
     emoteSounds: UnisexMoth
->>>>>>> wizzden/master
   - type: BodyEmotes
     soundsId: MothBodyEmotes
   - type: MovementSpeedModifier

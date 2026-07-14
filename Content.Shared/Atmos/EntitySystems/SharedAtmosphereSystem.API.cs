@@ -86,8 +86,6 @@ public abstract partial class SharedAtmosphereSystem
 
         return ev.Handled;
     }
-<<<<<<< HEAD
-=======
 
     /// <summary>
     /// Gets the potential energy from overpressure between two gas mixtures.
@@ -103,5 +101,4 @@ public abstract partial class SharedAtmosphereSystem
         return (mix1.Pressure - (mix2?.Pressure ?? 0)) * mix1.Volume;
     }
 
->>>>>>> wizzden/master
 }

@@ -410,15 +410,11 @@
     state: "syringe_base0"
   - type: Item
     size: Tiny
-<<<<<<< HEAD
     sprite: _ECHO/Objects/Specific/Chemistry/syringe.rsi # ECHO-tweak Было: Objects/Specific/Chemistry/syringe.rsi --> Стало: _ECHO/Objects/Specific/Chemistry/syringe.rsi
   - type: SolutionContainerManager
     solutions:
       injector:
         maxVol: 15
-=======
-    sprite: Objects/Specific/Chemistry/syringe.rsi
->>>>>>> wizzden/master
   - type: Injector
     activeModeProtoId: SyringeDrawMode
     allowedModes:

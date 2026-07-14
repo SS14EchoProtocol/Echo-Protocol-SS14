@@ -5,19 +5,7 @@
   components:
   - type: AntagGridSpawnPoint
     whitelist:
-<<<<<<< HEAD
-      components:
-      - Xenoborg
-      tags:
-      - XenoborgGhostrole
-    blacklist:
-      components:
-      - MothershipCore
-      tags:
-      - MothershipCoreGhostrole
-=======
     - Xenoborg
->>>>>>> wizzden/master
   - type: SpawnPoint
   - type: Sprite
     layers:
@@ -32,14 +20,7 @@
   components:
   - type: AntagGridSpawnPoint
     whitelist:
-<<<<<<< HEAD
-      components:
-      - MothershipCore
-      tags:
-      - MothershipCoreGhostrole
-=======
     - MothershipCore
->>>>>>> wizzden/master
   - type: SpawnPoint
   - type: Sprite
     layers:

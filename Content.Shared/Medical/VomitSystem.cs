@@ -58,11 +58,7 @@ public sealed partial class VomitSystem : EntitySystem
             return;
 
         // Empty stomach solution into the new vomit solution
-<<<<<<< HEAD
-        args.Args.Sol.AddSolution(sol, _proto);
-=======
         args.Args.Sol.AddSolution(sol, ProtoMan);
->>>>>>> wizzden/master
         sol.RemoveAllSolution();
 
         // Remind the stomach that it's empty.

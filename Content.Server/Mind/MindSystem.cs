@@ -184,11 +184,7 @@ public sealed partial class MindSystem : SharedMindSystem
         {
             component = EnsureComp<MindContainerComponent>(entity.Value);
 
-<<<<<<< HEAD
-            if (TryGetMind(entity.Value, out var entityMindId, out _))
-=======
             if (TryGetMind(entity.Value, out var entityMindId, out _) && entityMindId != mindId)
->>>>>>> wizzden/master
                 _ghosts.OnGhostAttempt(entityMindId, false);
 
             if (TryComp<ActorComponent>(entity.Value, out var actor))
@@ -231,11 +227,7 @@ public sealed partial class MindSystem : SharedMindSystem
 
             oldContainer.Mind = null;
             oldContainer.HasMind = false;
-<<<<<<< HEAD
-            mind.OwnedEntity = null;
-=======
             mind.OwnedEntity = entity;
->>>>>>> wizzden/master
 
             RaiseLocalEvent(oldEntity.Value, new MindRemovedMessage(mindEnt, containerEnt, entity));
             RaiseLocalEvent(mindId, new MindGotRemovedEvent(mindEnt, containerEnt, entity));
@@ -270,10 +262,7 @@ public sealed partial class MindSystem : SharedMindSystem
         if (entity != null)
         {
             component!.Mind = mindId;
-<<<<<<< HEAD
-=======
             component.LastMind = mindId;
->>>>>>> wizzden/master
             component.HasMind = true;
             mind.OwnedEntity = entity;
             mind.OriginalOwnedEntity ??= GetNetEntity(mind.OwnedEntity);

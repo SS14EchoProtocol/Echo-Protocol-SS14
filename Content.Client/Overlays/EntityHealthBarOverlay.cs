@@ -140,12 +140,6 @@ public sealed class EntityHealthBarOverlay : Overlay
         var totalDamage = _damageable.GetTotalDamage((uid, dmg));
         if (_mobStateSystem.IsAlive(uid, component))
         {
-<<<<<<< HEAD
-            if (dmg.HealthBarThreshold != null && totalDamage < dmg.HealthBarThreshold)
-                return null;
-
-=======
->>>>>>> wizzden/master
             if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholds) &&
                 !_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Dead, out threshold, thresholds))
                 return (1, false);

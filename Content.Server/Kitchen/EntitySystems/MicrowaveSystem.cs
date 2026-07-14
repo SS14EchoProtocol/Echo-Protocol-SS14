@@ -44,11 +44,7 @@ using BeingMicrowavedEvent = Content.Shared.Kitchen.BeingMicrowavedEvent; // Pe-
 
 namespace Content.Server.Kitchen.EntitySystems
 {
-<<<<<<< HEAD
-    public sealed partial class MicrowaveSystem : EntitySystem // Pe-Tweak добавлено partial
-=======
     public sealed partial class MicrowaveSystem : EntitySystem
->>>>>>> wizzden/master
     {
         [Dependency] private DeviceLinkSystem _deviceLink = default!;
         [Dependency] private SharedPopupSystem _popupSystem = default!;

@@ -17,8 +17,6 @@ public sealed partial class DamageableSystem
         return _supportedTypesByContainer[container.Value].Contains(type);
     }
 
-<<<<<<< HEAD
-=======
     public DamageModifierSet? GetDamageModifierSet(Entity<DamageableComponent?> entity)
     {
         if (!_damageableQuery.Resolve(entity, ref entity.Comp, false)
@@ -30,7 +28,6 @@ public sealed partial class DamageableSystem
         return modifierSet;
     }
 
->>>>>>> wizzden/master
     /// <summary>
     ///     Directly sets the damage in a damageable component.
     /// </summary>
@@ -51,12 +48,7 @@ public sealed partial class DamageableSystem
 
         foreach (var (type, amount) in damage.DamageDict)
         {
-<<<<<<< HEAD
-            if (SupportsType(ent.Comp.DamageContainerID, type))
-                ent.Comp.Damage.DamageDict[type] = amount;
-=======
             ent.Comp.Damage.DamageDict[type] = amount;
->>>>>>> wizzden/master
         }
 
         OnEntityDamageChanged((ent, ent.Comp));
@@ -170,31 +162,7 @@ public sealed partial class DamageableSystem
         var evt = new DamageDealtEvent(damage, origin, interruptsDoAfters);
         RaiseLocalEvent(ent, ref evt);
 
-<<<<<<< HEAD
-        damageDone.DamageDict.EnsureCapacity(damage.DamageDict.Count);
-
-        var dict = ent.Comp.Damage.DamageDict;
-        foreach (var (type, value) in damage.DamageDict)
-        {
-            if (!SupportsType(ent.Comp.DamageContainerID, type))
-                continue;
-
-            var oldValue = dict.GetValueOrDefault(type);
-            var newValue = FixedPoint2.Max(FixedPoint2.Zero, oldValue + value);
-            if (newValue == oldValue)
-                continue;
-
-            dict[type] = newValue;
-            damageDone.DamageDict[type] = newValue - oldValue;
-        }
-
-        if (!damageDone.Empty)
-            OnEntityDamageChanged((ent, ent.Comp), damageDone, interruptsDoAfters, origin);
-
-        return damageDone;
-=======
         return damage;
->>>>>>> wizzden/master
     }
 
     /// <summary>
@@ -487,20 +455,11 @@ public sealed partial class DamageableSystem
     /// Returns whether the entity can be damaged by the given type of damage
     /// </summary>
     [Obsolete("Do not rely on the ability to determine if an entity will be able to be damaged by something")]
-<<<<<<< HEAD
-    public bool CanBeDamagedBy(Entity<DamageableComponent?> ent, ProtoId<DamageTypePrototype> type)
-    {
-        if (!_damageableQuery.Resolve(ent, ref ent.Comp, false))
-            return false;
-
-        return SupportsType(ent.Comp.DamageContainerID, type);
-=======
     public bool CanBeDamagedBy(Entity<InjurableComponent?> ent, ProtoId<DamageTypePrototype> type)
     {
         if (!_injurableQuery.Resolve(ent, ref ent.Comp, false))
             return false;
 
         return SupportsType(ent.Comp.DamageContainer, type);
->>>>>>> wizzden/master
     }
 }

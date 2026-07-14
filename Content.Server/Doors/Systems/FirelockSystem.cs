@@ -39,11 +39,6 @@ namespace Content.Server.Doors.Systems
 
             SubscribeLocalEvent<FirelockComponent, AtmosAlarmEvent>(OnAtmosAlarm);
             SubscribeLocalEvent<FirelockComponent, PowerChangedEvent>(PowerChanged);
-<<<<<<< HEAD
-
-            _atmosAlarmQuery = GetEntityQuery<AtmosAlarmableComponent>();
-=======
->>>>>>> wizzden/master
         }
 
         private void PowerChanged(EntityUid uid, FirelockComponent component, ref PowerChangedEvent args)

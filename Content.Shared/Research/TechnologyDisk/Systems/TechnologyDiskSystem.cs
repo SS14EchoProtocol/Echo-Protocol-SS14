@@ -17,22 +17,12 @@ namespace Content.Shared.Research.TechnologyDisk.Systems;
 
 public sealed partial class TechnologyDiskSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedResearchSystem _research = default!;
-    [Dependency] private readonly SharedLatheSystem _lathe = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
-=======
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedResearchSystem _research = default!;
     [Dependency] private SharedLatheSystem _lathe = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private NameModifierSystem _nameModifier = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {
@@ -67,22 +57,14 @@ public sealed partial class TechnologyDiskSystem : EntitySystem
         }
         else
         {
-<<<<<<< HEAD
-            var weightedRandom = _protoMan.Index(ent.Comp.TierWeightPrototype);
-=======
             var weightedRandom = ProtoMan.Index(ent.Comp.TierWeightPrototype);
->>>>>>> wizzden/master
             tier = int.Parse(weightedRandom.Pick(_random));
             ent.Comp.Tier = tier;
         }
 
         // get a list of every distinct recipe in all the technologies.
         var bundles = new HashSet<(ProtoId<LatheRecipePrototype> recipe, ProtoId<TechDisciplinePrototype> discipline)>();
-<<<<<<< HEAD
-        foreach (var tech in _protoMan.EnumeratePrototypes<TechnologyPrototype>())
-=======
         foreach (var tech in ProtoMan.EnumeratePrototypes<TechnologyPrototype>())
->>>>>>> wizzden/master
         {
             if (tech.Tier != tier)
                 continue;
@@ -135,11 +117,7 @@ public sealed partial class TechnologyDiskSystem : EntitySystem
     /// </summary>
     private void TrySetDisciplineVisuals(Entity<TechnologyDiskComponent> ent)
     {
-<<<<<<< HEAD
-        if (!_protoMan.Resolve(ent.Comp.Discipline, out var discipline))
-=======
         if (!ProtoMan.Resolve(ent.Comp.Discipline, out var discipline))
->>>>>>> wizzden/master
             return;
 
         _appearance.SetData(ent.Owner, TechDiskVisuals.Discipline, discipline.ID);
@@ -168,11 +146,7 @@ public sealed partial class TechnologyDiskSystem : EntitySystem
     private void OnExamine(Entity<TechnologyDiskComponent> ent, ref ExaminedEvent args)
     {
         if (ent.Comp is { Tier: not null, Discipline: not null }
-<<<<<<< HEAD
-            && _protoMan.Resolve(ent.Comp.Discipline, out var disciplineProto))
-=======
             && ProtoMan.Resolve(ent.Comp.Discipline, out var disciplineProto))
->>>>>>> wizzden/master
         {
             var desc = Loc.GetString("tech-disk-examine-desc",
                 ("tier", ent.Comp.Tier),

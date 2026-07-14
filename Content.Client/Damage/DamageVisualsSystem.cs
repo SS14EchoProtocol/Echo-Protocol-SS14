@@ -4,10 +4,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
-<<<<<<< HEAD
-=======
 using Content.Shared.DisplacementMap;
->>>>>>> wizzden/master
 using Content.Shared.FixedPoint;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
@@ -33,13 +30,8 @@ namespace Content.Client.Damage;
 /// </summary>
 public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponent>
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-=======
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private DisplacementMapSystem _displacement = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {
@@ -544,11 +536,7 @@ public sealed partial class DamageVisualsSystem : VisualizerSystem<DamageVisuals
             if (!damageVisComp.Overlay && damageGroup != damageVisComp.DamageGroup)
                 continue;
 
-<<<<<<< HEAD
-            if (!_prototypeManager.TryIndex<DamageGroupPrototype>(damageGroup, out var damageGroupPrototype)
-=======
             if (!ProtoMan.TryIndex<DamageGroupPrototype>(damageGroup, out var damageGroupPrototype)
->>>>>>> wizzden/master
                 || !damage.TryGetDamageInGroup(damageGroupPrototype, out var damageTotal))
                 continue;
 

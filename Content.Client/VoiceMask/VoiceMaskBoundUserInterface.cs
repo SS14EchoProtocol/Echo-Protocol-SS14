@@ -56,11 +56,7 @@ public sealed partial class VoiceMaskBoundUserInterface : BoundUserInterface
             return;
         }
 
-<<<<<<< HEAD
-        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide, cast.Bark, cast.Pitch);
-=======
-        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide, cast.TitleText);
->>>>>>> wizzden/master
+        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide, cast.TitleText, cast.Bark, cast.Pitch);
     }
 
     protected override void Dispose(bool disposing)

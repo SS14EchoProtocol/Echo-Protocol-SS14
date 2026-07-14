@@ -310,8 +310,6 @@
       collection: DeathGasp
 
 - type: emoteSounds
-<<<<<<< HEAD
-=======
   id: UnisexDwarf
   voiceSelectorName: humanoid-profile-editor-voice-masculine
   sounds:
@@ -400,7 +398,6 @@
     pitch: 0.75
 
 - type: emoteSounds
->>>>>>> wizzden/master
   id: UnisexMoth
   voiceSelectorName: humanoid-profile-editor-voice-neutral
   params:

@@ -129,24 +129,14 @@ namespace Content.Shared.DrawDepth
         /// <summary>
         ///     Explosions, fire, melee swings. Whatever.
         /// </summary>
-<<<<<<< HEAD
-        Effects = DrawDepthTag.Default + 12,
-
-        Ghosts = DrawDepthTag.Default + 13,
-=======
         Effects = DrawDepthTag.Default + 18,
 
         Ghosts = DrawDepthTag.Default + 19,
->>>>>>> wizzden/master
 
         /// <summary>
         ///    Use this selectively if it absolutely needs to be drawn above (almost) everything else. Examples include
         ///    the pointing arrow, the drag & drop ghost-entity, and some debug tools.
         /// </summary>
-<<<<<<< HEAD
-        Overlays = DrawDepthTag.Default + 14,
-=======
         Overlays = DrawDepthTag.Default + 20,
->>>>>>> wizzden/master
     }
 }

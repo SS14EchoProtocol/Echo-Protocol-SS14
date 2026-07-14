@@ -1,11 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-<<<<<<< HEAD
-    "copyright": "Drawn by Ubaser.",
-=======
     "copyright": "Drawn by Ubaser. Integrity stages by Princess-Cheeseballs (Github)",
->>>>>>> wizzden/master
     "size": {
         "x": 32,
         "y": 32
@@ -48,12 +44,8 @@
         {
             "name": "on-equipped-SUITSTORAGE",
             "directions": 4
-<<<<<<< HEAD
-=======
         },
         {
-            "name": "mask"
-        },
         {
             "name": "integrity-unshaded-0"
         },
@@ -68,7 +60,6 @@
         },
         {
             "name": "integrity-unshaded-4"
->>>>>>> wizzden/master
         }
     ]
 }

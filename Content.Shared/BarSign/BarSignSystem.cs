@@ -32,13 +32,8 @@ public sealed partial class BarSignSystem : EntitySystem
     {
         BarSignPrototype? newPrototype;
         if (ent.Comp.Current is null)
-<<<<<<< HEAD
-            newPrototype = _random.Pick(GetAllBarSigns(_prototypeManager));
-        else if (!_prototypeManager.Resolve(ent.Comp.Current, out newPrototype))
-=======
             newPrototype = _random.Pick(GetAllBarSigns(ProtoMan));
         else if (!ProtoMan.Resolve(ent.Comp.Current, out newPrototype))
->>>>>>> wizzden/master
             return;
 
         SetBarSign(ent, newPrototype);
@@ -64,11 +59,7 @@ public sealed partial class BarSignSystem : EntitySystem
 
     private void OnEmpPulse(Entity<BarSignComponent> ent, ref EmpPulseEvent args)
     {
-<<<<<<< HEAD
-        if (!_prototypeManager.Resolve(ent.Comp.Emped, out var empedPrototype))
-=======
         if (!ProtoMan.Resolve(ent.Comp.Emped, out var empedPrototype))
->>>>>>> wizzden/master
             return;
 
         SetBarSign(ent, empedPrototype);

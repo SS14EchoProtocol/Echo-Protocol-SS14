@@ -11,15 +11,6 @@ namespace Content.Shared.Chemistry.EntitySystems;
 
 public sealed partial class RehydratableSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-=======
     [Dependency] private INetManager _net = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
@@ -27,7 +18,6 @@ public sealed partial class RehydratableSystem : EntitySystem
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private IGameTiming _timing = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {
@@ -42,13 +32,8 @@ public sealed partial class RehydratableSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
-<<<<<<< HEAD
-        var quantity = _solutions.GetTotalPrototypeQuantity(ent, ent.Comp.CatalystPrototype);
-        _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(ent.Owner)} was hydrated, now contains a solution of: {SharedSolutionContainerSystem.ToPrettyString(args.Solution)}.");
-=======
         var quantity = _solutions.GetTotalPrototypeQuantity(ent.Owner, ent.Comp.CatalystPrototype);
         _adminLogger.Add(LogType.Action, LogImpact.Medium, $"{ToPrettyString(ent.Owner)} was hydrated, now contains a solution of: {SharedSolutionContainerSystem.ToPrettyString(args.Solution.Comp.Solution)}.");
->>>>>>> wizzden/master
         if (quantity != FixedPoint2.Zero && quantity >= ent.Comp.CatalystMinimum)
         {
             Expand(ent);

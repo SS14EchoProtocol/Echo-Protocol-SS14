@@ -76,19 +76,9 @@ public sealed partial class DamageableComponent : Component
 [Serializable, NetSerializable]
 public sealed class DamageableComponentState(
     DamageSpecifier damage,
-<<<<<<< HEAD
-    ProtoId<DamageContainerPrototype>? damageContainerId,
-    ProtoId<DamageModifierSetPrototype>? modifierSetId,
-    FixedPoint2? healthBarThreshold)
-    : ComponentState
-{
-    public readonly DamageSpecifier Damage = damage;
-    public readonly ProtoId<DamageContainerPrototype>? DamageContainerId = damageContainerId;
-=======
     ProtoId<DamageModifierSetPrototype>? modifierSetId)
     : ComponentState
 {
     public readonly DamageSpecifier Damage = damage;
->>>>>>> wizzden/master
     public readonly ProtoId<DamageModifierSetPrototype>? ModifierSetId = modifierSetId;
 }

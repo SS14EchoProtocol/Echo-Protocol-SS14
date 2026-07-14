@@ -41,10 +41,7 @@
   - Fingerprint
   - Grammar # Pronouns
   - HumanoidProfile # Age, Sex, Gender
-<<<<<<< HEAD
-=======
   - MeleeWeapon # Attack animation, damage and sound
->>>>>>> wizzden/master
   - NpcFactionMember
   - RandomPrice
   - TemperatureDamage
@@ -78,10 +75,7 @@
   - SpanishAccent
   - StutteringAccent
   eventComponents:
-<<<<<<< HEAD
-=======
   - Puller
->>>>>>> wizzden/master
   - Vocal # voice sounds
 
 # for job-specific traits etc.
@@ -115,16 +109,7 @@
 # a full clone with all traits and items, but no antag roles
 - type: cloningSettings
   id: BaseClone
-<<<<<<< HEAD
-  parent: [Body, Special]
-  blacklist:
-    components:
-    - AttachedClothing # helmets, which are part of the suit
-    - Implanter # they will spawn full again, but you already get the implant. And we can't do item slot copying yet
-    - VirtualItem
-=======
   parent: [Body, Special, Traits, BaseEquipmentBlacklist]
->>>>>>> wizzden/master
 
 # for cloning pods
 - type: cloningSettings

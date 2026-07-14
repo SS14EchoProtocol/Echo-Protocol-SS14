@@ -232,7 +232,6 @@
     - Wooden
     - RawMaterial
     - ConstructionMaterial
-<<<<<<< HEAD
   - type: Extractable
     grindableSolutionName: wood
   - type: SolutionContainerManager
@@ -252,13 +251,6 @@
     sound:
       path: /Audio/_ECHO/Entities/wood_drop.ogg
   #ECHO-Tweak-End
-=======
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Cellulose
-        Quantity: 10
->>>>>>> wizzden/master
 
 - type: entity
   parent: MaterialWoodPlank

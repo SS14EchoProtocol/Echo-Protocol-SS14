@@ -314,14 +314,10 @@ namespace Content.Client.ContextMenu.UI
 
             // remove the element
             var parent = element.ParentMenu?.ParentElement;
-<<<<<<< HEAD
 
             // ECHO-Tweak: доп проверка чтобы не роняло локалку
             element.Orphan();
 
-=======
-            element.Orphan();
->>>>>>> wizzden/master
             Elements.Remove(entity);
 
             // update any parent elements

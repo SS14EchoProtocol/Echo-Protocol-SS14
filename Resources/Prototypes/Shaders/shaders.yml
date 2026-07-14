@@ -125,11 +125,8 @@
   id: HeatBlur
   kind: source
   path: "/Textures/Shaders/heatBlur.swsl"
-<<<<<<< HEAD
-=======
   
 - type: shader
   id: NightVision
   kind: source
   path: "/Textures/Shaders/nightvision.swsl"
->>>>>>> wizzden/master

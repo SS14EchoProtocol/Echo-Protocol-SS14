@@ -4,11 +4,6 @@ using Content.Shared.Gravity;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Stacks;
-<<<<<<< HEAD
-using Robust.Shared.Collections;
-using Robust.Shared.Map;
-=======
->>>>>>> wizzden/master
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Controllers;
@@ -20,16 +15,6 @@ namespace Content.Shared.Physics.Controllers;
 
 public abstract partial class SharedConveyorController : VirtualController
 {
-<<<<<<< HEAD
-    [Dependency] protected readonly IMapManager MapManager = default!;
-    [Dependency] private   readonly IParallelManager _parallel = default!;
-    [Dependency] private   readonly CollisionWakeSystem _wake = default!;
-    [Dependency] protected readonly EntityLookupSystem Lookup = default!;
-    [Dependency] private   readonly FixtureSystem _fixtures = default!;
-    [Dependency] private   readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private   readonly SharedMoverController _mover = default!;
-    [Dependency] private   readonly SharedStackSystem _stack = default!;
-=======
     [Dependency] private IParallelManager _parallel = default!;
     [Dependency] private CollisionWakeSystem _wake = default!;
     [Dependency] protected EntityLookupSystem Lookup = default!;
@@ -37,7 +22,6 @@ public abstract partial class SharedConveyorController : VirtualController
     [Dependency] private SharedGravitySystem _gravity = default!;
     [Dependency] private SharedMoverController _mover = default!;
     [Dependency] private SharedStackSystem _stack = default!;
->>>>>>> wizzden/master
 
     protected const string ConveyorFixture = "conveyor";
 

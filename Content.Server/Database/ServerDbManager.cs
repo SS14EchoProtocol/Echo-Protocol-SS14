@@ -410,17 +410,10 @@ namespace Content.Server.Database
             "db_executing_ops",
             "Amount of active database operations. Note that some operations may be waiting for a database connection.");
 
-<<<<<<< HEAD
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IResourceManager _res = default!;
-        [Dependency] private readonly ILogManager _logMgr = default!;
-        [Dependency] private readonly ISerializationManager _serialization = default!;
-=======
         [Dependency] private IConfigurationManager _cfg = default!;
         [Dependency] private IResourceManager _res = default!;
         [Dependency] private ILogManager _logMgr = default!;
         [Dependency] private ISerializationManager _serialization = default!;
->>>>>>> wizzden/master
 
         private ServerDbBase _db = default!;
         private LoggingProvider _msLogProvider = default!;

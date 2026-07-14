@@ -263,11 +263,7 @@ public sealed partial class ExplosionSystem
             var damageThresholds = new SortedDictionary<FixedPoint2, FixedPoint2>();
             foreach (var (type, value) in explosionType.DamagePerIntensity.DamageDict)
             {
-<<<<<<< HEAD
-                if (!_damageableSystem.CanBeDamagedBy((uid, damageable), type))
-=======
                 if (!_damageableSystem.CanBeDamagedBy((uid, injurable), type))
->>>>>>> wizzden/master
                     continue;
 
                 var modifier = mod;
@@ -299,15 +295,7 @@ public sealed partial class ExplosionSystem
                 damagePerIntensity += value * Math.Max(0, modifier);
             }
 
-<<<<<<< HEAD
-            var toleranceValue = damagePerIntensity > 0
-                ? (float) ((totalDamageTarget - _damageableSystem.GetTotalDamage((uid, damageable))) / damagePerIntensity)
-                : ToleranceValues.Invulnerable;
-
-            explosionTolerance[index] = toleranceValue;
-=======
             explosionTolerance[index] = GetExplosionTolerance(uid, totalDamageTarget, damagePerIntensity, damageThresholds);
->>>>>>> wizzden/master
         }
     }
 

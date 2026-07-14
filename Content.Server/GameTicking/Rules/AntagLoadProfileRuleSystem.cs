@@ -34,11 +34,7 @@ public sealed partial class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoa
 
         if (profile?.Species is not { } speciesId || !ProtoMan.Resolve(speciesId, out var species))
         {
-<<<<<<< HEAD
-            species = _proto.Index<SpeciesPrototype>(HumanoidCharacterProfile.DefaultSpecies);
-=======
             species = ProtoMan.Index(HumanoidCharacterProfile.DefaultSpecies);
->>>>>>> wizzden/master
         }
 
         if (ent.Comp.SpeciesOverride != null

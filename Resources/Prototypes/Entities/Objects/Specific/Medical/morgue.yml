@@ -133,27 +133,6 @@
   name: ectoplasm
   description: Much less deadly in this form.
   components:
-<<<<<<< HEAD
-    - type: Sprite
-      sprite: Mobs/Ghosts/revenant.rsi
-      state: ectoplasm
-    - type: Tag
-      tags:
-        - Trash
-        - Ectoplasm
-    - type: SolutionContainerManager
-      solutions:
-        food:
-          maxVol: 50
-          reagents:
-            - ReagentId: Ash
-              Quantity: 25
-            - ReagentId: Arcryox
-              Quantity: 25
-    - type: GuideHelp
-      guides:
-      - MinorAntagonists
-=======
   - type: Sprite
     sprite: Mobs/Ghosts/revenant.rsi
     state: ectoplasm
@@ -169,4 +148,3 @@
   - type: GuideHelp
     guides:
     - MinorAntagonists
->>>>>>> wizzden/master

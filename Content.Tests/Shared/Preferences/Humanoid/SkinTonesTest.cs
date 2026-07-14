@@ -43,11 +43,7 @@ public sealed class SkinTonesTest
         {
             var unaryInput = i / 100f; // Test values like 0.0, 0.01, ..., 100.0
             var color = strategy.FromUnary(unaryInput);
-<<<<<<< HEAD
-            Assert.That(strategy.VerifySkinColor(color), $"Color {color} from unary value {unaryInput} failed verification.");
-=======
             Assert.That(strategy.VerifySkinColor(color, out var reason), $"Color {color} from unary value {unaryInput} failed verification. Reason: {reason}");
->>>>>>> wizzden/master
         }
     }
 
@@ -79,9 +75,6 @@ public sealed class SkinTonesTest
     public void TestDefaultHumanSkinToneValid()
     {
         var strategy = new HumanTonedSkinColoration();
-<<<<<<< HEAD
-        Assert.That(strategy.VerifySkinColor(strategy.ValidHumanSkinTone));
-=======
         Assert.That(strategy.VerifySkinColor(strategy.ValidHumanSkinTone, out _));
     }
 
@@ -297,7 +290,6 @@ public sealed class SkinTonesTest
                 _maxHsvDrift = currentDrift;
             }
         }
->>>>>>> wizzden/master
     }
 
     /// <summary>

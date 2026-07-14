@@ -1,10 +1,6 @@
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
-<<<<<<< HEAD
-using Content.IntegrationTests.Fixtures.Attributes;
-=======
 using Content.Server.PDA.Ringer;
->>>>>>> wizzden/master
 using Content.Server.Traitor.Uplink;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;

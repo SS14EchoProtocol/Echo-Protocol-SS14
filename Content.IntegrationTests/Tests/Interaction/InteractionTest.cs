@@ -179,12 +179,8 @@ public abstract partial class InteractionTest : GameTest
     /// </summary>
     public virtual async Task Setup()
     {
-<<<<<<< HEAD
-        Pair = await PoolManager.GetServerClient(Settings, new NUnitTestContextWrap(TestContext.CurrentContext, TestContext.Out));
-=======
         //
     }
->>>>>>> wizzden/master
 
     public override async Task DoSetup()
     {

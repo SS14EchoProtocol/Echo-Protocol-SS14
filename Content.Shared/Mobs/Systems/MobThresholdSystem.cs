@@ -13,15 +13,9 @@ namespace Content.Shared.Mobs.Systems;
 
 public sealed partial class MobThresholdSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-=======
     [Dependency] private MobStateSystem _mobStateSystem = default!;
     [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private DamageableSystem _damageable = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {

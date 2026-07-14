@@ -2,10 +2,6 @@
 using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
-<<<<<<< HEAD
-using Content.Server.Disposal.Unit;
-=======
->>>>>>> wizzden/master
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Disposal.Components;

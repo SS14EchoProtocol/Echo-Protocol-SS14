@@ -166,12 +166,6 @@ public sealed partial class ChangelingTransformSystem : EntitySystem
     {
         args.Handled = true;
 
-<<<<<<< HEAD
-        if (Exists(ent.Comp.CurrentTransformSound))
-            _audio.Stop(ent.Comp.CurrentTransformSound);
-
-=======
->>>>>>> wizzden/master
         if (args.Cancelled)
         {
             // Only stop the sound if we finish transforming successfully.

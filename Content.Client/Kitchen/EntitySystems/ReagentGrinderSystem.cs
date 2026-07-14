@@ -4,16 +4,10 @@ using Content.Shared.Kitchen.EntitySystems;
 
 namespace Content.Client.Kitchen.EntitySystems;
 
-<<<<<<< HEAD
-public sealed class ReagentGrinderSystem : SharedReagentGrinderSystem
-{
-    [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
-=======
 /// <inheritdoc />
 public sealed partial class ReagentGrinderSystem : SharedReagentGrinderSystem
 {
     [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
->>>>>>> wizzden/master
 
     public override void Initialize()
     {

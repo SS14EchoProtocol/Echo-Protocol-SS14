@@ -48,7 +48,6 @@ public sealed partial class PullerComponent : Component
     [DataField, AutoNetworkedField]
     public bool NeedsHands = true;
 
-<<<<<<< HEAD
     [DataField]
     // ECHO-Tweak start : Grab
     public ProtoId<AlertPrototype> PullingAlert = "ECHOPulling";
@@ -97,13 +96,6 @@ public sealed partial class PullerComponent : Component
 
     public int GrabbingDirection = 0;
     // ECHO-Tweak end : Grab
-=======
-    /// <summary>
-    /// The alert shown to the puller indicating that they are pulling something.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public ProtoId<AlertPrototype> PullingAlert = "Pulling";
->>>>>>> wizzden/master
 }
 
 public sealed partial class StopPullingAlertEvent : BaseAlertEvent;

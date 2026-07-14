@@ -1,19 +1,11 @@
 meta:
   format: 7
   category: Map
-<<<<<<< HEAD
-  engineVersion: 272.0.0
-  forkId: ""
-  forkVersion: ""
-  time: 03/08/2026 15:02:53
-  entityCount: 20047
-=======
   engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
   time: 05/27/2026 10:45:53
   entityCount: 20145
->>>>>>> wizzden/master
 maps:
 - 1
 grids:
@@ -10267,11 +10259,7 @@ entities:
       pos: 11.5,-30.5
       parent: 2
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -260311.42
-=======
       secondsUntilStateChange: -270776.3
->>>>>>> wizzden/master
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10642,11 +10630,7 @@ entities:
       pos: 34.5,-36.5
       parent: 2
     - type: Door
-<<<<<<< HEAD
-      secondsUntilStateChange: -35809.105
-=======
       secondsUntilStateChange: -46273.984
->>>>>>> wizzden/master
       state: Opening
     - type: DeviceLinkSource
       lastSignals:

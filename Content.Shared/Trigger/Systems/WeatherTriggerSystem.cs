@@ -21,11 +21,7 @@ public sealed partial class WeatherTriggerSystem : XOnTriggerSystem<WeatherOnTri
 
         var endTime = ent.Comp.Duration == null ? null : ent.Comp.Duration + _timing.CurTime;
 
-<<<<<<< HEAD
-        if (_prototypeManager.Resolve(ent.Comp.Weather, out var weatherPrototype))
-=======
         if (ProtoMan.Resolve(ent.Comp.Weather, out var weatherPrototype))
->>>>>>> wizzden/master
             _weather.TrySetWeather(xform.MapID, weatherPrototype, out _, endTime);
     }
 }

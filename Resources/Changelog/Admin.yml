@@ -1691,8 +1691,6 @@ Entries:
   id: 206
   time: '2026-03-08T23:41:39.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41427
-<<<<<<< HEAD
-=======
 - author: SlamBamActionman
   changes:
   - message: adduplink command now works properly, gives an uplink implant if there's
@@ -1756,6 +1754,5 @@ Entries:
   id: 214
   time: '2026-06-05T15:24:37.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/44243
->>>>>>> wizzden/master
 Name: Admin
 Order: 3

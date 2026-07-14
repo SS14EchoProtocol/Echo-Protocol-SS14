@@ -15,12 +15,7 @@ namespace Content.Shared.ParcelWrap.Systems;
 // This part handles Parcel Wrap.
 public sealed partial class ParcelWrappingSystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly INetManager _net = default!;
-=======
     [Dependency] private INetManager _net = default!;
->>>>>>> wizzden/master
 
     private static ProtoId<ItemSizePrototype> _fallbackParcelSize = "Ginormous";
 
@@ -43,11 +38,7 @@ public sealed partial class ParcelWrappingSystem
 
     private void SetFallbackParcelSize()
     {
-<<<<<<< HEAD
-        if (_proto.EnumeratePrototypes<ItemSizePrototype>().Max() is { } size)
-=======
         if (ProtoMan.EnumeratePrototypes<ItemSizePrototype>().Max() is { } size)
->>>>>>> wizzden/master
         {
             _fallbackParcelSize = size;
         }

@@ -203,15 +203,11 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: SulfurBlood
-<<<<<<< HEAD
-        Quantity: 300
-=======
         Quantity: 600
   - type: CreamPied
     sprite:
       sprite: Effects/creampie.rsi
       state: creampie_vulpkanin
->>>>>>> wizzden/master
 
 - type: entity
   parent: OrganBaseOrganic

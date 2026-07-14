@@ -7,11 +7,7 @@ namespace Content.Client.Overlays;
 
 public sealed partial class ThermalSightOverlaySystem : EquipmentHudSystem<ThermalSightComponent>
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
-=======
     [Dependency] private IOverlayManager _overlayMan = default!;
->>>>>>> wizzden/master
 
     private GasTileDangerousTemperatureOverlay _temperatureOverlay = default!;
 

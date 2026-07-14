@@ -1,12 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-<<<<<<< HEAD
-using System.Numerics;
-using Content.IntegrationTests.Fixtures;
-=======
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
->>>>>>> wizzden/master
 using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
 using Content.Shared.Cargo.Prototypes;
@@ -20,10 +15,6 @@ using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests;
 
-<<<<<<< HEAD
-[TestFixture]
-=======
->>>>>>> wizzden/master
 public sealed class CargoTest : GameTest
 {
     /// <summary>
@@ -78,13 +69,8 @@ public sealed class CargoTest : GameTest
     [Test]
     public async Task NoCargoBountyArbitrageTest()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-=======
         await Pair.CreateTestMap();
         var coordinates = Pair.TestMap!.GridCoords;
->>>>>>> wizzden/master
 
         await Server.WaitAssertion(() =>
         {
@@ -113,17 +99,7 @@ public sealed class CargoTest : GameTest
     [Test]
     public async Task NoStaticPriceAndStackPrice()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-
-        var protoManager = server.ProtoMan;
-        var compFact = server.ResolveDependency<IComponentFactory>();
-
-        await server.WaitAssertion(() =>
-=======
         await Server.WaitAssertion(() =>
->>>>>>> wizzden/master
         {
             using (Assert.EnterMultipleScope())
             {
@@ -163,13 +139,8 @@ public sealed class CargoTest : GameTest
     [Test]
     public async Task NoSliceableBountyArbitrageTest()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-=======
         await Pair.CreateTestMap();
         var coordinates = Pair.TestMap!.GridCoords;
->>>>>>> wizzden/master
 
         var bounties = SProtoMan.EnumeratePrototypes<CargoBountyPrototype>().ToList();
 
@@ -252,17 +223,9 @@ public sealed class CargoTest : GameTest
     [Test]
     public async Task StackPrice()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-        var server = pair.Server;
-        var entManager = server.ResolveDependency<IEntityManager>();
-
-        await server.WaitAssertion(() =>
-=======
         await Pair.CreateTestMap();
         var coordinates = Pair.TestMap!.GridCoords;
         await Server.WaitAssertion(() =>
->>>>>>> wizzden/master
         {
             var ent = SSpawnAtPosition(StackEnt, coordinates);
             var price = _sPricing.GetPrice(ent);
@@ -273,15 +236,7 @@ public sealed class CargoTest : GameTest
     [Test]
     public async Task MobPrice()
     {
-<<<<<<< HEAD
-        var pair = Pair;
-
-        var componentFactory = pair.Server.ResolveDependency<IComponentFactory>();
-
-        await pair.Server.WaitAssertion(() =>
-=======
         await Pair.Server.WaitAssertion(() =>
->>>>>>> wizzden/master
         {
             using (Assert.EnterMultipleScope())
             {

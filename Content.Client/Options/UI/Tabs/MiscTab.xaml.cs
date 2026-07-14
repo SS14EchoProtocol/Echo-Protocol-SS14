@@ -52,12 +52,8 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatFancyNameBackground, FancyNameBackgroundsCheckBox);
         Control.AddOptionCheckBox(CCVars.StaticStorageUI, StaticStorageUI);
-<<<<<<< HEAD
-        Control.AddOptionCheckBox(EchoCCVars.OfferModeIndicatorsPointShow, ShowOfferModeIndicatorsCheckBox); // ECHO-Tweak
-        Control.AddOptionCheckBox(EchoCCVars.EntityMenuIcons, EntityMenuIcons); // ECHO-Tweak
-=======
         Control.AddOptionCheckBox(CCVars.InterfaceChatFollowButton, ChatFollowButton);
->>>>>>> wizzden/master
+        Control.AddOptionCheckBox(EchoCCVars.EntityMenuIcons, EntityMenuIcons); // ECHO-Tweak
 
         Control.Initialize();
     }

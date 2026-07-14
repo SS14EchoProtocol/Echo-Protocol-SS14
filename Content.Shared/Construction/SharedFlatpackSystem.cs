@@ -21,21 +21,6 @@ namespace Content.Shared.Construction;
 
 public abstract partial class SharedFlatpackSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] private readonly AnchorableSystem _anchorable = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedToolSystem _tool = default!;
-    [Dependency] protected readonly MachinePartSystem MachinePart = default!;
-    [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
-    [Dependency] protected readonly SharedMaterialStorageSystem MaterialStorage = default!;
-=======
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private AnchorableSystem _anchorable = default!;
@@ -48,7 +33,6 @@ public abstract partial class SharedFlatpackSystem : EntitySystem
     [Dependency] protected MachinePartSystem MachinePart = default!;
     [Dependency] protected SharedAppearanceSystem Appearance = default!;
     [Dependency] protected SharedMaterialStorageSystem MaterialStorage = default!;
->>>>>>> wizzden/master
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -95,13 +79,8 @@ public abstract partial class SharedFlatpackSystem : EntitySystem
             return;
         }
 
-<<<<<<< HEAD
-        if (!PrototypeManager.Resolve(comp.Entity, out var proto) ||
-            !proto.TryGetComponent<FixturesComponent>(out var fixture, EntityManager.ComponentFactory))
-=======
         if (!ProtoMan.Resolve(comp.Entity, out var proto) ||
             !proto.TryComp<FixturesComponent>(out var fixture, EntityManager.ComponentFactory))
->>>>>>> wizzden/master
         {
             return;
         }
@@ -111,13 +90,8 @@ public abstract partial class SharedFlatpackSystem : EntitySystem
 
         if (!_anchorable.TileFree((grid, gridComp), buildPos, layer, mask))
         {
-            _popup.PopupPredicted(Loc.GetString("flatpack-unpack-no-room"), uid, args.User);
-            return;
-        }
-
         if (_net.IsServer)
         {
-            var spawn = Spawn(comp.Entity, _map.GridTileToLocal(grid, gridComp, buildPos));
             _adminLogger.Add(LogType.Construction,
                 LogImpact.Low,
                 $"{ToPrettyString(args.User):player} unpacked {ToPrettyString(spawn):entity} at {xform.Coordinates} from {ToPrettyString(uid):entity}");

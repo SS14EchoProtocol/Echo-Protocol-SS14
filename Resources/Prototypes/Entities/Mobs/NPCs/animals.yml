@@ -2745,8 +2745,6 @@
         Heat: -0.03
         Cold: -0.03
         Shock: -0.03
-<<<<<<< HEAD
-=======
 
 - type: entity
   parent: [SolutionWeapon, SolutionTiny]
@@ -2758,7 +2756,6 @@
       reagents:
       - ReagentId: Mechanotoxin
         Quantity: 1
->>>>>>> wizzden/master
 
 - type: entity
   parent: MobSpiderBase

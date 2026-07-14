@@ -55,11 +55,8 @@
         nodeGroupID: MVPower
   - type: Damageable
     damageModifierSet: StructuralMetallicStrong
-<<<<<<< HEAD
-=======
   - type: Injurable
     damageContainer: StructuralInorganic
->>>>>>> wizzden/master
   - type: ActiveRadio
     channels:
     - Engineering

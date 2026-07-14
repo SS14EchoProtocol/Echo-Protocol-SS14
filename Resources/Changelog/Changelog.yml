@@ -1,5 +1,4 @@
 ﻿Entries:
-<<<<<<< HEAD
 - author: TrixxedHeart
   changes:
   - message: Renamed "trash" reagent to "reprocessed material"
@@ -1060,8 +1059,6 @@
   id: 9228
   time: '2025-11-26T21:13:37.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/41541
-=======
->>>>>>> wizzden/master
 - author: Compilatron144
   changes:
   - message: Plasma got a Christmas makeover.
@@ -4033,8 +4030,6 @@
   id: 9601
   time: '2026-04-03T06:18:14.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/42399
-<<<<<<< HEAD
-=======
 - author: alexalexmax
   changes:
   - message: Added a new uplink category for objective items.
@@ -5165,4 +5160,3 @@
   id: 9740
   time: '2026-06-04T22:38:24.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/44240
->>>>>>> wizzden/master

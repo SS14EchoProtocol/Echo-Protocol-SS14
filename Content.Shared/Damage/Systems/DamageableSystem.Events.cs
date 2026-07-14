@@ -22,13 +22,7 @@ public sealed partial class DamageableSystem
         SubscribeLocalEvent<DamageableComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<DamageableComponent, ComponentHandleState>(DamageableHandleState);
         SubscribeLocalEvent<DamageableComponent, ComponentGetState>(DamageableGetState);
-<<<<<<< HEAD
-
-        _appearanceQuery = GetEntityQuery<AppearanceComponent>();
-        _damageableQuery = GetEntityQuery<DamageableComponent>();
-=======
         SubscribeLocalEvent<InjurableComponent, DamageDealtEvent>(OnDamageDealt);
->>>>>>> wizzden/master
 
         // Damage modifier CVars are updated and stored here to be queried in other systems.
         // Note that certain modifiers requires reloading the guidebook.
@@ -139,11 +133,7 @@ public sealed partial class DamageableSystem
     {
         _supportedTypesByContainer.Clear();
 
-<<<<<<< HEAD
-        foreach (var proto in _prototypeManager.EnumeratePrototypes<DamageContainerPrototype>())
-=======
         foreach (var proto in ProtoMan.EnumeratePrototypes<DamageContainerPrototype>())
->>>>>>> wizzden/master
         {
             var set = new HashSet<ProtoId<DamageTypePrototype>>();
             _supportedTypesByContainer[proto.ID] = set;
@@ -155,11 +145,7 @@ public sealed partial class DamageableSystem
 
             foreach (var groupId in proto.SupportedGroups)
             {
-<<<<<<< HEAD
-                var group = _prototypeManager.Index(groupId);
-=======
                 var group = ProtoMan.Index(groupId);
->>>>>>> wizzden/master
                 foreach (var type in group.DamageTypes)
                 {
                     set.Add(type);
@@ -173,11 +159,7 @@ public sealed partial class DamageableSystem
     /// </summary>
     private void DamageableInit(Entity<DamageableComponent> ent, ref ComponentInit _)
     {
-<<<<<<< HEAD
-        ent.Comp.Damage.GetDamagePerGroup(_prototypeManager, ent.Comp.DamagePerGroup);
-=======
         ent.Comp.Damage.GetDamagePerGroup(ProtoMan, ent.Comp.DamagePerGroup);
->>>>>>> wizzden/master
         ent.Comp.TotalDamage = ent.Comp.Damage.GetTotal();
     }
 
@@ -207,13 +189,7 @@ public sealed partial class DamageableSystem
     {
         args.State = new DamageableComponentState(
             _netMan.IsServer ? ent.Comp.Damage : ent.Comp.Damage.Clone(),
-<<<<<<< HEAD
-            ent.Comp.DamageContainerID,
-            ent.Comp.DamageModifierSetId,
-            ent.Comp.HealthBarThreshold
-=======
             ent.Comp.DamageModifierSetId
->>>>>>> wizzden/master
         );
     }
 

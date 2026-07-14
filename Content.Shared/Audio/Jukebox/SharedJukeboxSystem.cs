@@ -4,11 +4,7 @@ namespace Content.Shared.Audio.Jukebox;
 
 public abstract partial class SharedJukeboxSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
-=======
     [Dependency] protected SharedAudioSystem Audio = default!;
->>>>>>> wizzden/master
 
     /// <summary>
     /// Returns whether or not the given jukebox is currently playing a song.

@@ -12,10 +12,6 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Station;
-<<<<<<< HEAD
-using Content.Shared.Station.Components;
-=======
->>>>>>> wizzden/master
 using Content.Shared.Tools.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -30,18 +26,6 @@ namespace Content.Shared.Construction.EntitySystems;
 
 public sealed partial class AnchorableSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly PullingSystem _pulling = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedStationSystem _stationSystem = default!;
-    [Dependency] private readonly SharedToolSystem _tool = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-=======
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private PullingSystem _pulling = default!;
@@ -51,7 +35,6 @@ public sealed partial class AnchorableSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private TagSystem _tagSystem = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
->>>>>>> wizzden/master
 
     [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
 
@@ -79,23 +62,10 @@ public sealed partial class AnchorableSystem : EntitySystem
 
     private void OnAnchorOnStation(Entity<AnchorOnlyOnStationComponent> ent, ref AnchorAttemptEvent args)
     {
-<<<<<<< HEAD
-        var entityParent = Comp<TransformComponent>(ent).ParentUid;
-        var isOnStation = _stationSystem.GetStations()
-            .Select(stationEnt => _stationSystem.GetLargestGrid(stationEnt))
-            .Contains(entityParent);
-
-        if (isOnStation)
-            return;
-
-        // TODO: fix the popup
-        // _popup.PopupClient(Loc.GetString(ent.Comp.PopupMessageAnchorFail), ent, args.User);
-=======
         if (_stationSystem.IsOnStation(ent, ent.Comp.OnlyCountLargestGrid))
             return;
 
         args.FailMessage = Loc.GetString(ent.Comp.PopupMessageAnchorFail);
->>>>>>> wizzden/master
         args.Cancel();
     }
 

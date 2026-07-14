@@ -346,21 +346,13 @@ namespace Content.Server.NodeContainer.EntitySystems
 
         private IEnumerable<Node> GetCompatibleNodes(Node node)
         {
-<<<<<<< HEAD
-            var xform = xformQuery.GetComponent(node.Owner);
-=======
             var xform = Transform(node.Owner);
->>>>>>> wizzden/master
             Entity<MapGridComponent>? gridEnt = TryComp<MapGridComponent>(xform.GridUid, out var grid) ? (xform.GridUid.Value, grid) : null;
 
             if (!node.Connectable(EntityManager, xform))
                 yield break;
 
-<<<<<<< HEAD
-            foreach (var reachable in node.GetReachableNodes((node.Owner, xform), nodeQuery, xformQuery, gridEnt, EntityManager))
-=======
             foreach (var reachable in node.GetReachableNodes((node.Owner, xform), _nodeContainerQuery, _xformQuery, gridEnt, EntityManager))
->>>>>>> wizzden/master
             {
                 DebugTools.Assert(reachable != node, "GetReachableNodes() should not include self.");
 

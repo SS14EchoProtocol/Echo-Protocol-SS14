@@ -1,9 +1,6 @@
 using System.Buffers;
 using System.Diagnostics;
-<<<<<<< HEAD
-=======
 using System.Numerics.Tensors;
->>>>>>> wizzden/master
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
@@ -294,8 +291,6 @@ public partial class AtmosphereSystem
         GetTileMixture(entity, excite)?.AdjustMoles(gas, mols);
     }
 
-<<<<<<< HEAD
-=======
     /// <summary>
     /// Retrieves the pressures of all gas mixtures
     /// in the given array of <see cref="TileAtmosphere"/>s, and stores the results in the
@@ -384,7 +379,6 @@ public partial class AtmosphereSystem
         }
     }
 
->>>>>>> wizzden/master
     /// <summary>
     /// Triggers a tile's <see cref="GasMixture"/> to react.
     /// </summary>

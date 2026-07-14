@@ -5,11 +5,7 @@ namespace Content.Shared.Destructible;
 public abstract partial class SharedDestructibleSystem : EntitySystem
 {
     // TODO: I don't really like this but this is out of scope to re-do destructible triggers while refactoring damageable
-<<<<<<< HEAD
-    [Dependency] public readonly DamageableSystem Damageable = default!;
-=======
     [Dependency] public DamageableSystem Damageable = default!;
->>>>>>> wizzden/master
 
     /// <summary>
     /// Force entity to be destroyed and deleted.

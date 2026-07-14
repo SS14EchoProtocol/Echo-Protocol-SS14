@@ -161,7 +161,6 @@
   name: plasteel
   suffix: Full
   components:
-<<<<<<< HEAD
   #ECHO-Tweak-Start: ADD New sprite path + Storage sprite visuals
   - type: ContainerSprite
   - type: GenericVisualizer
@@ -172,8 +171,6 @@
           False: {sprite: _ECHO/Objects/Materials/Sheets/metal.rsi}
   #ECHO-Tweak-End
   - type: Material
-=======
->>>>>>> wizzden/master
   - type: PhysicalComposition
     materialComposition:
       Plasteel: 100

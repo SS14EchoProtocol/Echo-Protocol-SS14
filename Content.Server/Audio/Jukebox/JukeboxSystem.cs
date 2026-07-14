@@ -10,11 +10,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Audio.Jukebox;
 
-<<<<<<< HEAD
-public sealed class JukeboxSystem : SharedJukeboxSystem
-=======
 public sealed partial class JukeboxSystem : SharedJukeboxSystem
->>>>>>> wizzden/master
 {
     [Dependency] private AppearanceSystem _appearanceSystem = default!;
 
@@ -159,11 +155,7 @@ public sealed partial class JukeboxSystem : SharedJukeboxSystem
         else
         {
             if (string.IsNullOrEmpty(ent.Comp.SelectedSongId) ||
-<<<<<<< HEAD
-                !_protoManager.Resolve(ent.Comp.SelectedSongId, out var jukeboxProto))
-=======
                 !ProtoMan.Resolve(ent.Comp.SelectedSongId, out var jukeboxProto))
->>>>>>> wizzden/master
             {
                 return false;
             }

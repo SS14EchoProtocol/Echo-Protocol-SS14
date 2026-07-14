@@ -27,22 +27,13 @@ public sealed partial class AtmosphereSystem
     public override bool IsMixtureFuel(GasMixture mixture, float epsilon = Atmospherics.Epsilon)
     {
         var tmp = new float[Atmospherics.AdjustedNumberOfGases];
-<<<<<<< HEAD
-        NumericsHelpers.Multiply(mixture.Moles, GasFuelMask, tmp);
-        return NumericsHelpers.HorizontalAdd(tmp) > epsilon;
-=======
         TensorPrimitives.Multiply(mixture.Moles, GasFuelMask, tmp);
         return TensorPrimitives.Sum(tmp) > epsilon;
->>>>>>> wizzden/master
     }
 
     public override bool IsMixtureOxidizer(GasMixture mixture, float epsilon = Atmospherics.Epsilon)
     {
         var tmp = new float[Atmospherics.AdjustedNumberOfGases];
-<<<<<<< HEAD
-        NumericsHelpers.Multiply(mixture.Moles, GasOxidizerMask, tmp);
-        return NumericsHelpers.HorizontalAdd(tmp) > epsilon;
-=======
         TensorPrimitives.Multiply(mixture.Moles, GasOxidizerMask, tmp);
         return TensorPrimitives.Sum(tmp) > epsilon;
     }
@@ -59,7 +50,6 @@ public sealed partial class AtmosphereSystem
 
         // Conversion of grams to kilograms.
         return TensorPrimitives.Sum(tmp) * Atmospherics.gToKg;
->>>>>>> wizzden/master
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,11 +66,7 @@ public sealed partial class AtmosphereSystem
         // though this isnt the hottest code path so it should be fine
         // the gc can eat a little as a treat
         var tmp = new float[moles.Length];
-<<<<<<< HEAD
-        NumericsHelpers.Multiply(moles, GasMolarHeatCapacities, tmp);
-=======
         TensorPrimitives.Multiply(moles, GasMolarHeatCapacities, tmp);
->>>>>>> wizzden/master
         // Adjust heat capacity by speedup, because this is primarily what
         // determines how quickly gases heat up/cool.
         return MathF.Max(TensorPrimitives.Sum(tmp), Atmospherics.MinimumHeatCapacity);

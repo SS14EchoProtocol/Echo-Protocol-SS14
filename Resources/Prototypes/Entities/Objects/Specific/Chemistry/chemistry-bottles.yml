@@ -158,21 +158,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-aloxadone
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Aloxadone
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Aloxadone
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleAmbuzol
@@ -181,21 +171,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-ambuzol
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Ambuzol
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Ambuzol
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleAmbuzolPlus
@@ -204,21 +184,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-ambuzol-plus
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: AmbuzolPlus
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: AmbuzolPlus
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleArithrazine
@@ -240,21 +210,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-barozine
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Barozine
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Barozine
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleBicaridine
@@ -276,21 +236,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-bruizine
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Bruizine
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Bruizine
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleCognizine
@@ -299,21 +249,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-cognizine
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Cognizine
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Cognizine
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleCryoxadone
@@ -608,21 +548,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-mannitol
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Mannitol
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Mannitol
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleOculine
@@ -631,21 +561,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-oculine
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Oculine
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Oculine
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleOmnizine
@@ -667,21 +587,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-opporozidone
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Opporozidone
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: Opporozidone
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottlePhalanximine
@@ -846,21 +756,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-tranexamic-acid
-<<<<<<< HEAD
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: TranexamicAcid
-          Quantity: 30
-=======
   - type: Solution
     solution:
       reagents:
       - ReagentId: TranexamicAcid
         Quantity: 30
->>>>>>> wizzden/master
 
 - type: entity
   id: ChemistryBottleTricordrazine

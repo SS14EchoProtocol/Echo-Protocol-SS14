@@ -77,11 +77,7 @@ public sealed partial class ChangelingDevourComponent : Component
     public TimeSpan DevourConsumeTime = TimeSpan.FromSeconds(10);
 
     /// <summary>
-<<<<<<< HEAD
-    /// The Currently active devour sound in the world
-=======
     /// The currently active devour sound in the world.
->>>>>>> wizzden/master
     /// </summary>
     [DataField]
     public EntityUid? CurrentDevourSound;
@@ -92,11 +88,7 @@ public sealed partial class ChangelingDevourComponent : Component
     [DataField, AutoNetworkedField]
     public DamageSpecifier WindupDamage = new()
     {
-<<<<<<< HEAD
-        DamageDict = new ()
-=======
         DamageDict = new()
->>>>>>> wizzden/master
         {
             { "Slash", 10},
             { "Piercing", 10 },

@@ -18,18 +18,6 @@ namespace Content.Shared.Remotes.EntitySystems;
 
 public abstract partial class SharedDoorRemoteSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly SharedAirlockSystem _airlock = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedDoorSystem _doorSystem = default!;
-    [Dependency] private readonly SharedElectrocutionSystem _electrify = default!;
-    [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private readonly SharedPowerReceiverSystem _powerReceiver = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!;
-=======
     [Dependency] private SharedAirlockSystem _airlock = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedDoorSystem _doorSystem = default!;
@@ -40,7 +28,6 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private TagSystem _tagSystem = default!;
     [Dependency] protected IGameTiming Timing = default!;
->>>>>>> wizzden/master
 
 
     public override void Initialize()

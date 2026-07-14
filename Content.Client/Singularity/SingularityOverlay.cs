@@ -13,15 +13,9 @@ namespace Content.Client.Singularity
     {
         private static readonly ProtoId<ShaderPrototype> Shader = "Singularity";
 
-<<<<<<< HEAD
-        [Dependency] private readonly IEntityManager _entMan = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly IConfigurationManager _configManager = default!;
-=======
         [Dependency] private IEntityManager _entMan = default!;
         [Dependency] private IPrototypeManager _prototypeManager = default!;
         [Dependency] private IConfigurationManager _configManager = default!;
->>>>>>> wizzden/master
         private SharedTransformSystem? _xformSystem = null;
 
         /// <summary>
@@ -47,11 +41,7 @@ namespace Content.Client.Singularity
             _entMan.EventBus.SubscribeEvent<PixelToMapEvent>(EventSource.Local, this, OnProjectFromScreenToMap);
             ZIndex = 101; // Should be drawn after the placement overlay so admins placing items near the singularity can tell where they're going.
 
-<<<<<<< HEAD
-            _configManager.OnValueChanged(CCVars.ReducedMotion, (b) => { _reducedMotion = b; }, invokeImmediately: true);
-=======
             _configManager.OnValueChanged(CCVars.DisableSinguloWarp, (b) => { _reducedMotion = b; }, invokeImmediately: true);
->>>>>>> wizzden/master
         }
 
         private readonly Vector2[] _positions = new Vector2[MaxCount];

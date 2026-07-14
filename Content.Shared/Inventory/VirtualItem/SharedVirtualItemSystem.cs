@@ -22,11 +22,7 @@ namespace Content.Shared.Inventory.VirtualItem;
 /// and <see cref="InventoryUiController"/>, see the <see cref="VirtualItemComponent"/>
 /// references there for more information
 /// </remarks>
-<<<<<<< HEAD
 public abstract partial class SharedVirtualItemSystem : EntitySystem // ECHO-Tweak : Grab
-=======
-public abstract partial class SharedVirtualItemSystem : EntitySystem
->>>>>>> wizzden/master
 {
     [Dependency] private SharedContainerSystem _containerSystem = default!;
     [Dependency] private SharedItemSystem _itemSystem = default!;

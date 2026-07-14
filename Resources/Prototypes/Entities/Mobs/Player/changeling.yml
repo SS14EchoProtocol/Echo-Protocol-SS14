@@ -12,9 +12,6 @@
     - ActionChangelingStore
   - type: Store
     balance:
-<<<<<<< HEAD
-      ChangelingDNA: 50
-=======
       ChangelingDNA: 60
 
 - type: entity
@@ -108,4 +105,3 @@
     noiseMultiplier: 2
     overlayColor: "#AB0808AA"
     prioritized: false # Technically eye augments, so we want things such as NVGs to take priority if able
->>>>>>> wizzden/master

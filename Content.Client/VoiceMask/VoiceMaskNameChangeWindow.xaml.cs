@@ -83,11 +83,7 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
             SpeechVerbSelector.SelectId(id);
     }
 
-<<<<<<< HEAD
-    public void UpdateState(string name, string? verb, bool active, bool accentHide, string barkId, float barkPitch) // ECHO-Tweak : Barks
-=======
-    public void UpdateState(string name, string? verb, bool active, bool accentHide, LocId titleText)
->>>>>>> wizzden/master
+    public void UpdateState(string name, string? verb, bool active, bool accentHide, LocId titleText, string barkId, float barkPitch) // ECHO-Tweak : Barks
     {
         NameSelector.Text = name;
         _verb = verb;

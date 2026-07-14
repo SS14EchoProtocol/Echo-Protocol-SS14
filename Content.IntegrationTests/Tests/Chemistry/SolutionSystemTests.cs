@@ -1,8 +1,5 @@
 using Content.IntegrationTests.Fixtures;
-<<<<<<< HEAD
-=======
 using Content.IntegrationTests.Fixtures.Attributes;
->>>>>>> wizzden/master
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
@@ -155,8 +152,6 @@ public sealed class SolutionSystemTests : GameTest
                 Assert.That(oil, Is.EqualTo(FixedPoint2.Zero));
             });
         });
-<<<<<<< HEAD
-=======
     }
 
     [SidedDependency(Side.Server)] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
@@ -182,7 +177,6 @@ public sealed class SolutionSystemTests : GameTest
             var query = SEntMan.EntityQueryEnumerator<PuddleComponent>();
             Assert.That(query.MoveNext(out _), "A puddle should have been spawned from the solution");
         });
->>>>>>> wizzden/master
     }
 
     // Unlike TryAddSolution this adds and two solution without then splits leaving only threshold in original

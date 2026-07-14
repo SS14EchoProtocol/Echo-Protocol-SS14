@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-using Content.Server.Atmos.Components;
-=======
->>>>>>> wizzden/master
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
@@ -29,14 +25,6 @@ namespace Content.Server.Atmos.EntitySystems
     [UsedImplicitly]
     public sealed partial class GasTileOverlaySystem : SharedGasTileOverlaySystem
     {
-<<<<<<< HEAD
-        [Robust.Shared.IoC.Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Robust.Shared.IoC.Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Robust.Shared.IoC.Dependency] private readonly IMapManager _mapManager = default!;
-        [Robust.Shared.IoC.Dependency] private readonly IParallelManager _parMan = default!;
-        [Robust.Shared.IoC.Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-        [Robust.Shared.IoC.Dependency] private readonly ChunkingSystem _chunkingSys = default!;
-=======
         [Robust.Shared.IoC.Dependency] private IGameTiming _gameTiming = default!;
         [Robust.Shared.IoC.Dependency] private IPlayerManager _playerManager = default!;
         [Robust.Shared.IoC.Dependency] private IParallelManager _parMan = default!;
@@ -45,7 +33,6 @@ namespace Content.Server.Atmos.EntitySystems
 
         [Robust.Shared.IoC.Dependency] private EntityQuery<MapGridComponent> _mapGridQuery = default!;
         [Robust.Shared.IoC.Dependency] private EntityQuery<GasTileOverlayComponent> _gasTileOverlayQuery = default!;
->>>>>>> wizzden/master
 
         /// <summary>
         /// Per-tick cache of sessions.

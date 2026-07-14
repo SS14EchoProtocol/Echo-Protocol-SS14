@@ -13,11 +13,6 @@ namespace Content.Shared.Damage.Systems;
 
 public abstract partial class SharedGodmodeSystem : EntitySystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-
-=======
->>>>>>> wizzden/master
     public override void Initialize()
     {
         base.Initialize();

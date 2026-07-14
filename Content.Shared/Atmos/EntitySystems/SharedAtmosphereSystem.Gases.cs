@@ -20,9 +20,6 @@ public abstract partial class SharedAtmosphereSystem
     /// Cached array of molar heat capacities of the gases.
     /// </summary>
     public float[] GasMolarHeatCapacities => _gasMolarHeatCapacities;
-<<<<<<< HEAD
-    private float[] _gasMolarHeatCapacities = new float[Atmospherics.TotalNumberOfGases];
-=======
 
     private float[] _gasMolarHeatCapacities = new float[Atmospherics.AdjustedNumberOfGases];
 
@@ -32,7 +29,6 @@ public abstract partial class SharedAtmosphereSystem
     public float[] GasMolarMasses => _gasMolarMasses;
 
     private float[] _gasMolarMasses = new float[Atmospherics.AdjustedNumberOfGases];
->>>>>>> wizzden/master
 
     /// <summary>
     /// Mask used to determine if a gas is flammable or not.
@@ -82,11 +78,6 @@ public abstract partial class SharedAtmosphereSystem
             GasReagents[idx] = gasPrototype.Reagent;
         }
 
-<<<<<<< HEAD
-        Array.Resize(ref _gasMolarHeatCapacities, MathHelper.NextMultipleOf(Atmospherics.TotalNumberOfGases, 4));
-
-=======
->>>>>>> wizzden/master
         for (var i = 0; i < GasPrototypes.Length; i++)
         {
             /*
@@ -98,10 +89,7 @@ public abstract partial class SharedAtmosphereSystem
              TODO ATMOS: please just make this 2 separate arrays instead of invoking multiplication every time.
              */
             _gasMolarHeatCapacities[i] = GasPrototypes[i].MolarHeatCapacity / HeatScale;
-<<<<<<< HEAD
-=======
             _gasMolarMasses[i] = GasPrototypes[i].MolarMass;
->>>>>>> wizzden/master
 
             // """Mask""" built here. Used to determine if a gas is fuel/oxidizer or not decently quickly and clearly.
             GasFuelMask[i] = GasPrototypes[i].IsFuel ? 1 : 0;
@@ -123,11 +111,7 @@ public abstract partial class SharedAtmosphereSystem
     [PublicAPI]
     public void GetFlammableMoles(GasMixture mixture, float[] buffer)
     {
-<<<<<<< HEAD
-        NumericsHelpers.Multiply(mixture.Moles, GasOxidiserFuelMask, buffer);
-=======
         TensorPrimitives.Multiply(mixture.Moles, GasOxidiserFuelMask, buffer);
->>>>>>> wizzden/master
     }
 
     /// <summary>
@@ -230,11 +214,7 @@ public abstract partial class SharedAtmosphereSystem
             }
         }
 
-<<<<<<< HEAD
-        NumericsHelpers.Add(receiver.Moles, giver.Moles);
-=======
         TensorPrimitives.Add(receiver.Moles, giver.Moles, receiver.Moles);
->>>>>>> wizzden/master
     }
 
     /// <summary>

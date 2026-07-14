@@ -71,11 +71,6 @@ public sealed partial class OutfitSystem : EntitySystem
             }
         }
 
-<<<<<<< HEAD
-        if (TryComp(target, out HandsComponent? handsComponent))
-        {
-            var coords = Comp<TransformComponent>(target).Coordinates;
-=======
         var coords = Transform(target).Coordinates;
         foreach (var (slotName, storageContainers) in startingGear.Storage)
         {
@@ -105,7 +100,6 @@ public sealed partial class OutfitSystem : EntitySystem
 
         if (TryComp(target, out HandsComponent? handsComponent))
         {
->>>>>>> wizzden/master
             foreach (var prototype in startingGear.Inhand)
             {
                 var inhandEntity = Spawn(prototype, coords);

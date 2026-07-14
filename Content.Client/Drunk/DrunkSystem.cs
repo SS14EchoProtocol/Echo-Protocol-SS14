@@ -9,15 +9,9 @@ namespace Content.Client.Drunk;
 
 public sealed partial class DrunkSystem : SharedDrunkSystem
 {
-<<<<<<< HEAD
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-=======
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IOverlayManager _overlayMan = default!;
     [Dependency] private IRobustRandom _random = default!;
->>>>>>> wizzden/master
 
     private DrunkOverlay _overlay = default!;
 
