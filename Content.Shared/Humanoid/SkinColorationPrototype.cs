@@ -243,8 +243,11 @@ public sealed partial class ClampedHsvColoration : ISkinColorationStrategy
 
         return true;
     }
+
+    public Color ClosestSkinColor(Color color)
     {
         var hsv = Color.ToHsv(color);
+
         if (Hue is (var minHue, var maxHue))
             hsv.X = SkinColorationUtils.ClampHue(hsv.X, minHue, maxHue);
         if (Saturation is (var minSat, var maxSat))
