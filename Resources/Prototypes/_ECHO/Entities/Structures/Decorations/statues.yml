@@ -22,8 +22,9 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
@@ -61,8 +62,9 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
@@ -100,8 +102,9 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

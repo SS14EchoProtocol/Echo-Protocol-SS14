@@ -49,8 +49,9 @@
   - type: Icon
     sprite: _ECHO/Structures/Furniture/floor_globus.rsi
     state: floor_globus
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

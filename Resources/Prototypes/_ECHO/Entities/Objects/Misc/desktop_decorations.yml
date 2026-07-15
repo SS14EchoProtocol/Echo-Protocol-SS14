@@ -37,8 +37,9 @@
   - type: Item
     size: Small
   - type: Anchorable
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Glass
   - type: Destructible
     thresholds:

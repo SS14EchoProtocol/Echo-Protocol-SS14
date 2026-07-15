@@ -171,12 +171,8 @@
     color: lightblue
   - type: WeldingSparks # ECHO-Tweak "Wielding Sparks Animation"
     effect: EchoEffectWeldingSparksExp
-  - type: SolutionRegeneration
-    solution: Welder
-    generated:
-      reagents:
-      - ReagentId: WeldingFuel
-        Quantity: 1
+  - type: Welder
+    fuelReagent: Plasma
   - type: RequiresEyeProtection
     statusEffectTime: 5 # less harmful; sunglasses can block it
 

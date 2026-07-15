@@ -1,12 +1,12 @@
 # Барьеры
 - type: entity
   parent: BaseStructure
-  id: EchoShelterBarbedwire 
+  id: EchoShelterBarbedwire
   name: barbed wire
   description: Barbed wire. Hurts to touch, but not to look.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Decoration/shelter.rsi 
+    sprite: _ECHO/Structures/Decoration/shelter.rsi
     state: barbedwire
   - type: Physics
     bodyType: Static
@@ -22,8 +22,9 @@
         - LowImpassable
         - MidImpassable
         - BulletImpassable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallic
   - type: Destructible
     thresholds:
@@ -36,12 +37,12 @@
 
 - type: entity
   parent: BaseStructure
-  id: EchoShelterConcreteBarrier 
+  id: EchoShelterConcreteBarrier
   name: concrete barrier
   description: Not very strong, but very heavy concrete barrier.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Decoration/shelter.rsi 
+    sprite: _ECHO/Structures/Decoration/shelter.rsi
     state: concrete_barrier
   - type: Physics
     bodyType: Static
@@ -57,8 +58,9 @@
         - LowImpassable
         - MidImpassable
         - BulletImpassable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallic
   - type: Destructible
     thresholds:
@@ -71,33 +73,33 @@
 
 - type: entity
   parent: EchoShelterConcreteBarrier
-  id: EchoShelterConcreteBarrier2 
+  id: EchoShelterConcreteBarrier2
   components:
   - type: Sprite
     state: concrete_barrier-2
 
 - type: entity
   parent: EchoShelterConcreteBarrier
-  id: EchoShelterConcreteBarrier3 
+  id: EchoShelterConcreteBarrier3
   components:
   - type: Sprite
     state: concrete_barrier-3
 
 - type: entity
   parent: EchoShelterConcreteBarrier
-  id: EchoShelterConcreteBarrierAlt 
+  id: EchoShelterConcreteBarrierAlt
   components:
   - type: Sprite
     state: concrete_barrier_alt
 
 - type: entity
   parent: BaseStructure
-  id: EchoShelterRoadBarrier 
+  id: EchoShelterRoadBarrier
   name: road barrier
   description: Road barrier!
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Decoration/shelter.rsi 
+    sprite: _ECHO/Structures/Decoration/shelter.rsi
     state: road_barrier
   - type: Physics
     bodyType: Static
@@ -113,8 +115,9 @@
         - LowImpassable
         - MidImpassable
         - BulletImpassable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallic
   - type: Destructible
     thresholds:
@@ -128,12 +131,12 @@
 # Мешки с песком
 - type: entity
   parent: BaseStructure
-  id: EchoShelterSandbag 
+  id: EchoShelterSandbag
   name: sandbag
   description: Sandbag for cover and protection. Destroys on damage.
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Decoration/sandbag.rsi 
+    sprite: _ECHO/Structures/Decoration/sandbag.rsi
     state: sandbag
   - type: Physics
     bodyType: Static
@@ -149,8 +152,9 @@
         - LowImpassable
         - MidImpassable
         - BulletImpassable
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallic
   - type: Destructible
     thresholds:
@@ -166,5 +170,4 @@
     damageDivisor: 1
     trackAllDamage: true
     damageOverlay:
-      sprite: _ECHO/Structures/Decoration/sandbag.rsi 
-
+      sprite: _ECHO/Structures/Decoration/sandbag.rsi
