@@ -26,6 +26,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
+using JetBrains.Annotations;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -559,6 +560,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (prefs.Contains(role))
                 return true;
         }
+
+        return false;
     }
 
     /// <summary>
@@ -760,29 +763,12 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     {
         var getPosEv = new AntagSelectLocationEvent(ent, antag, session);
         RaiseLocalEvent(ent, ref getPosEv, true);
-        if (getPosEv.Handled)
-        {
-            var playerXform = Transform(player);
-            var pos = RobustRandom.Pick(getPosEv.Coordinates);
-            _transform.SetMapCoordinates((player, playerXform), pos);
-        }
 
-        // If we want to just do a ghost role spawner, set up data here and then return early.
-        // This could probably be an event in the future if we want to be more refined about it.
-        if (isSpawner)
-        {
-            if (!TryComp<GhostRoleAntagSpawnerComponent>(player, out var spawnerComp))
-            {
-                Log.Error($"Antag spawner {player} does not have a GhostRoleAntagSpawnerComponent.");
-                _adminLogger.Add(LogType.AntagSelection, $"Antag spawner {player} in gamerule {ToPrettyString(ent)} failed due to not having GhostRoleAntagSpawnerComponent.");
-                if (session != null)
-                {
-                    ent.Comp.AssignedSessions.Remove(session);
-                    ent.Comp.PreSelectedSessions[def].Remove(session);
-                }
+        if (!getPosEv.Handled)
+            return null;
 
-                return;
-            }
+        return RobustRandom.Pick(getPosEv.Coordinates);
+    }
 
     /// <summary>
     /// Initializes the antagonist status on the specified entity.
@@ -857,6 +843,8 @@ public record struct AntagSelectEntityEvent(Entity<AntagSelectionComponent> Game
     /// list of antag role prototypes associated with a entity. used by the <see cref="AntagMultipleRoleSpawnerComponent"/>
     public readonly AntagSpecifierPrototype Antag = Antag;
 
+    public readonly MapCoordinates Coords = Coords;
+
     public bool Handled => Entity != null;
 
     public EntityUid? Entity;
@@ -880,7 +868,7 @@ public record struct AntagSelectLocationEvent(Entity<AntagSelectionComponent> Ga
 }
 
 /// <summary>
-/// Event raised on a game rule entity after the setup logic for an antag is complete.
+/// Event raised on a game ruleR entity after the setup logic for an antag is complete.
 /// Used for applying additional more complex setup logic.
 /// </summary>
 [ByRefEvent]
