@@ -13,4 +13,6 @@ public sealed partial class SharedEntityConditionsSystem
     public bool TryCondition(EntityUid target, [ForbidLiteral] ProtoId<EntityConditionPrototype> id)
     {
         var proto = ProtoMan.Index(id);
+        return TryCondition(target, proto.Condition);
     }
+}
