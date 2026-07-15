@@ -46,6 +46,8 @@
             "directions": 4
         },
         {
+            "name": "mask"
+        },
         {
             "name": "integrity-unshaded-0"
         },
