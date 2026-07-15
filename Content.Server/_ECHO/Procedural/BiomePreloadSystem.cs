@@ -18,13 +18,13 @@ namespace Content.Server._ECHO.Procedural;
 
 public sealed class BiomePreloadSystem : EntitySystem
 {
-    [Dependency] private readonly IConsoleHost _console = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly BiomeSystem _biome = default!;
-    [Dependency] private readonly DecalSystem _decal = default!;
-    [Dependency] private readonly MapSystem _map = default!;
+    [Dependency] private IConsoleHost _console = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private AtmosphereSystem _atmos = default!;
+    [Dependency] private BiomeSystem _biome = default!;
+    [Dependency] private DecalSystem _decal = default!;
+    [Dependency] private MapSystem _map = default!;
 
     public override void Initialize()
     {

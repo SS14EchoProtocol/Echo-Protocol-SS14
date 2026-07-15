@@ -15,9 +15,9 @@ namespace Content.Client._ECHO.Pulling.Systems;
 /// </summary>
 public sealed partial class ClientPullingSystem : PullingSystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ColorFlashEffectSystem _color = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ColorFlashEffectSystem _color = default!;
 
     public override bool TryIncreaseGrabStage(Entity<PullerComponent> puller, Entity<PullableComponent> pullable)
     {

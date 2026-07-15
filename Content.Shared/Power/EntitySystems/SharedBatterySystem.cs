@@ -15,7 +15,7 @@ public abstract partial class SharedBatterySystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly INetManager _net = default!;  // ECHO-Tweak
+    [Dependency] private INetManager _net = default!;  // ECHO-Tweak
 
     public override void Initialize()
     {

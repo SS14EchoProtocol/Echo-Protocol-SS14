@@ -10,7 +10,7 @@ namespace Content.Client._ECHO.UserInterface.EntitySpawning;
 [GenerateTypedNameReferences]
 public sealed partial class EchoEntitySpawnWindow : FancyWindow
 {
-    [Dependency] private readonly IPlacementManager _placement = default!;
+    [Dependency] private IPlacementManager _placement = default!;
 
     public EntitySpawnButton? SelectedButton;
     public EntityPrototype? SelectedPrototype;

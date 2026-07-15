@@ -31,7 +31,7 @@ namespace Content.Client.Verbs.UI
     {
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private ContextMenuUIController _context = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: скрытые иконки
+        [Dependency] private IConfigurationManager _cfg = default!;    // ECHO-Tweak: скрытые иконки
 
         [UISystemDependency] private readonly CombatModeSystem _combatMode = default!;
         [UISystemDependency] private readonly VerbSystem _verbSystem = default!;

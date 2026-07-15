@@ -22,14 +22,14 @@ namespace Content.Shared._ECHO.Cpr;
 /// </summary>
 public abstract partial class SharedCprSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private DamageableSystem _damage = default!;
+    [Dependency] private SharedInteractionSystem _interactionSystem = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] protected readonly EntityManager Ent = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public const float CprInteractionRangeMultiplier = 0.25f;
     public const float CprDoAfterDelay = 0.7f;

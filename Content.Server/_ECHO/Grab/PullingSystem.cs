@@ -22,12 +22,12 @@ namespace Content.Server._ECHO.Pulling.Systems;
 /// </summary>
 public sealed partial class ServerPullingSystem : PullingSystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private TagSystem _tag = default!;
 
     private const string IgnoreTag = "IgnoreChokeSpeechBlocking";
 

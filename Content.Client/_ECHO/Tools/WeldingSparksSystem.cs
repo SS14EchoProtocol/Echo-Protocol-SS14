@@ -16,10 +16,10 @@ namespace Content.Client._ECHO.Tools;
 
 public sealed class WeldingSparksSystem : SharedWeldingSparksSystem
 {
-    [Dependency] private readonly AnimationPlayerSystem _animation = default!;
-    [Dependency] private readonly IEyeManager _eyeManager = default!;
-    [Dependency] private readonly TransformSystem _transformSystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private AnimationPlayerSystem _animation = default!;
+    [Dependency] private IEyeManager _eyeManager = default!;
+    [Dependency] private TransformSystem _transformSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const string ANIM_KEY = "WeldAnim";
 

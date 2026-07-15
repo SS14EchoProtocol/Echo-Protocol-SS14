@@ -10,9 +10,9 @@ namespace Content.Server._Utopia.ZLevels;
 [AdminCommand(AdminFlags.Server | AdminFlags.Mapping)]
 public sealed class SaveGridZNetworkCommand : LocalizedEntityCommands
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
-    [Dependency] private readonly IResourceManager _resMan = default!;
-    [Dependency] private readonly ZNetworkMappingSystem _zLoader = default!;
+    [Dependency] private IEntityManager _entities = default!;
+    [Dependency] private IResourceManager _resMan = default!;
+    [Dependency] private ZNetworkMappingSystem _zLoader = default!;
 
     public override string Command => "znetwork-savegrid";
     public override string Description => "Save all zNetwork linked grids";

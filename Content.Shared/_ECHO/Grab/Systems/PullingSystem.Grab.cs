@@ -39,18 +39,18 @@ public abstract partial class PullingSystem
 {
     private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
 
-    [Dependency] private readonly SharedCombatModeSystem _combat = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private readonly ThrownItemSystem _thrown = default!;
-    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private SharedCombatModeSystem _combat = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private SharedGravitySystem _gravity = default!;
+    [Dependency] private ThrownItemSystem _thrown = default!;
+    [Dependency] private SharedStaminaSystem _stamina = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
 
     private void InitializeGrab()
     {

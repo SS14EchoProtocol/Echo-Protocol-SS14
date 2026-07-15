@@ -13,8 +13,8 @@ namespace Content.Client._ECHO.Barks;
 [GenerateTypedNameReferences]
 public sealed partial class BarkTab : Control
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
 
     private readonly SpeechBarksSystem _barkSystem;
 

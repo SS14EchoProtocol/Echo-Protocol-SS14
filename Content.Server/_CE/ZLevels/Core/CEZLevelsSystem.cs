@@ -12,10 +12,10 @@ namespace Content.Server._CE.ZLevels.Core;
 
 public sealed partial class CEZLevelsSystem : CESharedZLevelsSystem
 {
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private MapLoaderSystem _mapLoader = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private MetaDataSystem _meta = default!;
 
     public override void Initialize()
     {

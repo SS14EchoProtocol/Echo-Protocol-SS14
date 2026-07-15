@@ -7,7 +7,7 @@ namespace Content.Server._Utopia.ZLevels.Systems;
 
 public sealed class GridThrustSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
 
     public void Apply(EntityUid grid, GridMotionCommandEvent ev)
     {

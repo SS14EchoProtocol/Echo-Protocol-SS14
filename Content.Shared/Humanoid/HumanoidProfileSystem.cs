@@ -11,7 +11,7 @@ namespace Content.Shared.Humanoid;
 public sealed partial class HumanoidProfileSystem : EntitySystem
 {
     [Dependency] private GrammarSystem _grammar = default!;
-    [Dependency] private readonly SharedSpeechBarksSystem _barks = default!;  // ECHO-Tweak : Barks
+    [Dependency] private SharedSpeechBarksSystem _barks = default!;  // ECHO-Tweak : Barks
 
     public override void Initialize()
     {

@@ -11,7 +11,7 @@ namespace Content.Shared._ECHO.Tools;
 
 public abstract class SharedWeldingSparksSystem : EntitySystem
 {
-    [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+    [Dependency] private SharedToolSystem _toolSystem = default!;
 
     public override void Initialize()
     {

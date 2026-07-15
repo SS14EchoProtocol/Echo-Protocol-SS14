@@ -7,8 +7,8 @@ namespace Content.Server._ECHO.OfferItem;
 
 public sealed class OfferItemSystem : SharedOfferItemSystem
 {
-    [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
+    [Dependency] private AlertsSystem _alertsSystem = default!;
+    [Dependency] private HandsSystem _hands = default!;
 
     private float _offerAcc = 0;
     private const float OfferAccMax = 0.5f;

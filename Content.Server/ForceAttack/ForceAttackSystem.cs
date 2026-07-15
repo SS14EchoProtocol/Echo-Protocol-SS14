@@ -17,12 +17,12 @@ namespace Content.Server.ForceAttack;
 /// </summary>
 public sealed class ForceAttackSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
-    [Dependency] private readonly NpcFactionSystem _faction = default!;
-    [Dependency] private readonly SharedCombatModeSystem _mode = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly MobStateSystem _mob = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedMeleeWeaponSystem _melee = default!;
+    [Dependency] private NpcFactionSystem _faction = default!;
+    [Dependency] private SharedCombatModeSystem _mode = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private MobStateSystem _mob = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

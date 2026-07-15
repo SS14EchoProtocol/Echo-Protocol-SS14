@@ -22,18 +22,18 @@ namespace Content.Shared._CE.ZLevels.Core.EntitySystems;
 
 public abstract partial class CESharedZLevelsSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ActionBlockerSystem _blocker = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private DamageableSystem _damage = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ActionBlockerSystem _blocker = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] protected readonly IConfigurationManager Cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
-    [Dependency] private readonly FixtureSystem _fix = default!;    // ECHO-Tweak: для улучшения системы
+    [Dependency] private FixtureSystem _fix = default!;    // ECHO-Tweak: для улучшения системы
 
     private EntityQuery<MapComponent> _mapQuery;
     private EntityQuery<CEZLevelMapComponent> _zMapQuery;

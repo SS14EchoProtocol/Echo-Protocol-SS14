@@ -12,8 +12,8 @@ public class RadialContainer : LayoutContainer
 {
     // ECHO-Tweak-start
     // Shader radial menu
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IClyde _clyde = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IClyde _clyde = default!;
     private readonly ShaderInstance _shader;
 
     private readonly float[] _angles = new float[64];

@@ -20,12 +20,12 @@ namespace Content.Server._Utopia.ZLevels;
 
 public sealed class ZNetworkMappingSystem : EntitySystem
 {
-    [Dependency] private readonly IResourceManager _resMan = default!;
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly CEZLevelsSystem _zLevels = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly SharedGridMotionLinkSystem _motionLink = default!;
+    [Dependency] private IResourceManager _resMan = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private MapLoaderSystem _mapLoader = default!;
+    [Dependency] private CEZLevelsSystem _zLevels = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private SharedGridMotionLinkSystem _motionLink = default!;
 
     #region Saving
     public bool TrySaveMap(string path, EntityUid target, [NotNullWhen(false)] out string? error)

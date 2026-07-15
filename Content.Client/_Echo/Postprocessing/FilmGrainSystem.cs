@@ -6,8 +6,8 @@ namespace Content.Client._Echo.Postprocessing;
 
 public sealed class FilmGrainSystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IOverlayManager _overlayMan = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private float _amount = 1f;
     private FilmGrainOverlay _overlay = new();

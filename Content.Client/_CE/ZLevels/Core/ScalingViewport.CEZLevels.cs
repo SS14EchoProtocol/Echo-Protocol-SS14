@@ -21,11 +21,11 @@ namespace Content.Client.Viewport;
 
 public sealed partial class ScalingViewport
 {
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly IEyeManager _eyeManager = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly ITileDefinitionManager _tile = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private IEyeManager _eyeManager = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private ITileDefinitionManager _tile = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
 
     private CEClientZLevelsSystem? _zLevels;
     private SharedMapSystem? _mapSystem;

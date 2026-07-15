@@ -8,7 +8,7 @@ namespace Content.Client._ECHO.Cpr;
 
 public sealed partial class CprSystem : SharedCprSystem
 {
-    [Dependency] private readonly AnimationPlayerSystem _animation = default!;
+    [Dependency] private AnimationPlayerSystem _animation = default!;
 
     private const string LungeKey = "cpr-lunge";
 

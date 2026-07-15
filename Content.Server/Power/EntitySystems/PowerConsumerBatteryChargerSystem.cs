@@ -5,7 +5,7 @@ namespace Content.Server.Power.EntitySystems;
 
 public sealed class PowerConsumerBatteryChargerSystem : EntitySystem
 {
-    [Dependency] private readonly BatterySystem _battery = default!;
+    [Dependency] private BatterySystem _battery = default!;
 
     public override void Update(float frameTime)
     {

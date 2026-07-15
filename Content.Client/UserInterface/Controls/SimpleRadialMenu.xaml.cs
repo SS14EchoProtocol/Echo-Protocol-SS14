@@ -22,7 +22,7 @@ public sealed partial class SimpleRadialMenu : RadialMenu
     [Dependency] private IClyde _clyde = default!;
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IInputManager _inputManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak
+    [Dependency] private IConfigurationManager _cfg = default!;    // ECHO-Tweak
 
     public SimpleRadialMenu()
     {

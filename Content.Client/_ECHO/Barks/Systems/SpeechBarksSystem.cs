@@ -13,11 +13,11 @@ namespace Content.Client._ECHO.SpeechBarks;
 
 public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     public override void Initialize()
     {

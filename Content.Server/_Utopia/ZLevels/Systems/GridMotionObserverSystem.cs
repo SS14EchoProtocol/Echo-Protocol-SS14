@@ -9,7 +9,7 @@ namespace Content.Server._Utopia.ZLevels.Systems;
 
 public sealed class GridMotionObserverSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
     private const float Epsilon = 0.0001f;
 
     public override void Update(float frameTime)

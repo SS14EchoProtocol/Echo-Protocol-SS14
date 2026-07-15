@@ -11,9 +11,9 @@ namespace Content.Shared._Utopia.ZLevels.Systems;
 
 public abstract class SharedGridMotionLinkSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     private const string GlobalGroupId = "ZZZ";
 

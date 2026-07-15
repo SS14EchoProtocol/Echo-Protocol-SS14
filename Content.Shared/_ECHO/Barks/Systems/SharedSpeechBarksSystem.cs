@@ -4,7 +4,7 @@ namespace Content.Shared.ECHO.SpeechBarks;
 
 public abstract class SharedSpeechBarksSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public const string DefaultBark = "Human1";
 

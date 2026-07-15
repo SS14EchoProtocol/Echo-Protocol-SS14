@@ -5,8 +5,8 @@ namespace Content.Server._Utopia.ZLevels.Systems;
 
 public sealed class GridMotionProxySystem : EntitySystem
 {
-    [Dependency] private readonly GridSyncSystem _sync = default!;
-    [Dependency] private readonly GridThrustSystem _thrust = default!;
+    [Dependency] private GridSyncSystem _sync = default!;
+    [Dependency] private GridThrustSystem _thrust = default!;
 
     public override void Initialize()
     {

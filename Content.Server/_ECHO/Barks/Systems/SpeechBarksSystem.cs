@@ -13,11 +13,11 @@ namespace Content.Server.ECHO.SpeechBarks;
 
 public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
     private bool _isEnabled = false;
 
     public override void Initialize()
