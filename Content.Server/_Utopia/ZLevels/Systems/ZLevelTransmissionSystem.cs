@@ -2,7 +2,6 @@ using Content.Server._Utopia.ZLevels.Pipes.Systems;
 using Content.Server._Utopia.ZLevels.Nodes;
 using Content.Server._Utopia.ZLevels.Power;
 using Content.Shared._Utopia.ZLevels.Cables.Components;
-using Content.Server.Disposal.Tube;
 using Content.Server._Utopia.ZLevels.Disposal.Components;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.NodeContainer;
@@ -14,16 +13,18 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using System.Numerics;
+using Content.Shared.Disposal.Tube;
 
 namespace Content.Server._Utopia.ZLevels.Transmission.Systems;
 
-public sealed class ZLevelTransmissionSystem : EntitySystem
+public sealed partial class ZLevelTransmissionSystem : EntitySystem
 {
-    [Dependency] private readonly CESharedZLevelsSystem _zLevels = default!;
-    [Dependency] private readonly ZPipeSystem _zPipes = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly ZCableSystem _zCables = default!;
+    [Dependency] private CESharedZLevelsSystem _zLevels = default!;
+    [Dependency] private ZPipeSystem _zPipes = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ZCableSystem _zCables = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     public override void Initialize()
     {
@@ -271,7 +272,7 @@ public sealed class ZLevelTransmissionSystem : EntitySystem
         MapGridComponent grid,
         TransformComponent xform)
     {
-        var tile = grid.TileIndicesFor(xform.Coordinates);
+        var tile = _map.TileIndicesFor(gridUid, grid, xform.Coordinates);
         var tileSize = grid.TileSize;
 
         var world =
@@ -287,7 +288,7 @@ public sealed class ZLevelTransmissionSystem : EntitySystem
         TransformComponent xform,
         float range)
     {
-        var tile = grid.TileIndicesFor(xform.Coordinates);
+        var tile = _map.TileIndicesFor(gridUid, grid, xform.Coordinates);
         var tileSize = grid.TileSize;
 
         var origin =
