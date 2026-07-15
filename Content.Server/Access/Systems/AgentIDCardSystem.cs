@@ -93,17 +93,6 @@ namespace Content.Server.Access.Systems
             _cardSystem.TryChangeFullName(ent, args.Args.NewName, idCard);
         }
 
-        private void OnVoiceMaskNameChanged(Entity<AgentIDCardComponent> ent, ref InventoryRelayedEvent<VoiceMaskNameUpdatedEvent> args)
-        {
-            if (!TryComp<IdCardComponent>(ent, out var idCard))
-                return;
-
-            if (!args.Args.VoiceMask.Comp.ChangeIDName)
-                return;
-
-            _cardSystem.TryChangeFullName(ent, args.Args.NewName, idCard);
-        }
-
         private void OnAfterInteract(EntityUid uid, AgentIDCardComponent component, AfterInteractEvent args)
         {
             if (args.Target == null || !args.CanReach || _lock.IsLocked(uid) ||
