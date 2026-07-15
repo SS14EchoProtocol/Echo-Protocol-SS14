@@ -28,8 +28,6 @@ namespace Content.Server.Doors.Systems
         [Dependency] private EntityQuery<AppearanceComponent> _appearanceQuery = default!;
         [Dependency] private EntityQuery<PointLightComponent> _pointLightQuery = default!;
 
-        private EntityQuery<AtmosAlarmableComponent> _atmosAlarmQuery;
-
         private const int UpdateInterval = 30;
         private int _accumulatedTicks;
 
