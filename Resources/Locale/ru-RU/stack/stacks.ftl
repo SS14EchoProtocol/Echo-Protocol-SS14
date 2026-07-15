@@ -262,6 +262,12 @@ stack-goliath-hide =
         [few] пластины
        *[other] пластин
     } голиафа
+stack-xenoborg-circuit =
+    { $amount ->
+        [1] кристалл
+        [few] кристалла
+       *[other] кристаллов
+    } ксеноборгов
 stack-telecrystal = телекристалл
 stack-gold-ore = золотая руда
 stack-rough-diamond = сырой алмаз
