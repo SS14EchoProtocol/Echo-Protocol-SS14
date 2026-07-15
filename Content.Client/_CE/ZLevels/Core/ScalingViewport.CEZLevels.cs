@@ -9,6 +9,7 @@ using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Content.Shared.CCVar;
 using Content.Shared.Maps;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
@@ -20,7 +21,7 @@ namespace Content.Client.Viewport;
 
 public sealed partial class ScalingViewport
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly ITileDefinitionManager _tile = default!;
@@ -72,17 +73,17 @@ public sealed partial class ScalingViewport
         var mapCoordsBottomLeft = new MapCoordinates(new Vector2(minX, minY), mapId);
         var mapCoordsTopRight = new MapCoordinates(new Vector2(maxX, maxY), mapId);
 
-        if (!_mapManager.TryFindGridAt(mapUid, mapCoordsBottomLeft.Position, out _, out var grid))
+        if (!_map.TryFindGridAt(mapUid, mapCoordsBottomLeft.Position, out var gridUid, out var grid))
             return true;
 
-        var tileBottomLeft = grid.TileIndicesFor(mapCoordsBottomLeft);
-        var tileTopRight = grid.TileIndicesFor(mapCoordsTopRight);
+        var tileBottomLeft = _map.TileIndicesFor(gridUid, grid, mapCoordsBottomLeft);
+        var tileTopRight = _map.TileIndicesFor(gridUid, grid, mapCoordsTopRight);
 
         for (var x = tileBottomLeft.X - 1; x <= tileTopRight.X + 1; x++)
         {
             for (var y = tileBottomLeft.Y - 1; y <= tileTopRight.Y + 1; y++)
             {
-                var tile = grid.GetTileRef(new Vector2i(x, y));
+                var tile = _map.GetTileRef(gridUid, grid, new Vector2i(x, y));
                 var tileDef = (ContentTileDefinition)_tile[tile.Tile.TypeId];
                 if (tileDef.Transparent || tile.Tile.IsEmpty)
                     return true;
