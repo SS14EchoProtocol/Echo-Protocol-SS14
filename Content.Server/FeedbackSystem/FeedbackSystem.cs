@@ -25,6 +25,11 @@ public sealed partial class FeedbackSystem : EntitySystem
         {
             if (_gameTicker.IsGameRuleAdded(ProtoMan.Index(feedback).RuleWhitelist))
                 validPopups.Add(feedback);
+            else
+                notValidPopups.Add(feedback);
+        }
+
+        if (validPopups.Count > 0)
             _feedbackManager.SendToAllSessions(validPopups);
 
         if (notValidPopups.Count > 0)
