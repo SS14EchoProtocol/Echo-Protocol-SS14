@@ -21,11 +21,12 @@ namespace Content.Client.Viewport;
 
 public sealed partial class ScalingViewport
 {
-    [Dependency] private MapSystem _map = default!;
+    private MapSystem _map = default!;
     [Dependency] private IEyeManager _eyeManager = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private ITileDefinitionManager _tile = default!;
     [Dependency] private IConfigurationManager _cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
+    [Dependency] private IEntitySystemManager _entSys = default!;
 
     private CEClientZLevelsSystem? _zLevels;
     private SharedMapSystem? _mapSystem;
@@ -99,6 +100,7 @@ public sealed partial class ScalingViewport
             return;
 
         _fallbackEye = _eye;
+        _map ??= _entSys.GetEntitySystem<MapSystem>();
 
         // Cache frequently accessed components/systems
         _xformQuery ??= _entityManager.GetEntityQuery<TransformComponent>();
