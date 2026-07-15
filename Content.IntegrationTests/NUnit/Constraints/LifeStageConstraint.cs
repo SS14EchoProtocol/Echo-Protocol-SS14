@@ -159,8 +159,8 @@ public static class LifeStageConstraintExtensions
         /// <code>
         ///     // Assert that the server-sided entity myEntity is Initialized.
         ///     Assert.That(myEntity, Is.Initialized(Server));
+        /// </code>
         /// </example>
->>>>>>> wizzden/master
         public LifeStageConstraint Initialized(IIntegrationInstance instance)
         {
             return expr.LifeStage(EntityLifeStage.Initialized, instance);
