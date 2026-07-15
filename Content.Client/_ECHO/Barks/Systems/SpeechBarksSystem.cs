@@ -11,7 +11,7 @@ using Robust.Shared.Random;
 
 namespace Content.Client._ECHO.SpeechBarks;
 
-public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
+public sealed partial class SpeechBarksSystem : SharedSpeechBarksSystem
 {
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IConfigurationManager _cfg = default!;

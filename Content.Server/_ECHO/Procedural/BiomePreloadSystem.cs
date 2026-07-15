@@ -16,7 +16,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._ECHO.Procedural;
 
-public sealed class BiomePreloadSystem : EntitySystem
+public sealed partial class BiomePreloadSystem : EntitySystem
 {
     [Dependency] private IConsoleHost _console = default!;
     [Dependency] private IRobustRandom _random = default!;

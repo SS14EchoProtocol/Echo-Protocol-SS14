@@ -5,7 +5,7 @@ using Robust.Shared.Configuration;
 
 namespace Content.Client._ECHO.UserInterface;
 
-public sealed class RadialMenuConfigSystem : EntitySystem
+public sealed partial class RadialMenuConfigSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
 

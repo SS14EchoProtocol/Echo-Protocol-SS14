@@ -4,7 +4,7 @@ using Content.Shared.Power.Components;
 
 namespace Content.Server.Power.EntitySystems;
 
-public sealed class SpawnOnBatteryLevelSystem : EntitySystem
+public sealed partial class SpawnOnBatteryLevelSystem : EntitySystem
 {
     [Dependency] private BatterySystem _battery = default!;
 

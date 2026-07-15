@@ -13,7 +13,7 @@ using static Robust.Client.UserInterface.Controls.LineEdit;
 
 namespace Content.Client._ECHO.UserInterface.EntitySpawning;
 
-public sealed class EchoEntitySpawningUIController : UIController
+public sealed partial class EchoEntitySpawningUIController : UIController
 {
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IPlacementManager _placement = default!;

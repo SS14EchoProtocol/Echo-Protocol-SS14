@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Echo.Postprocessing;
 
-public sealed class FilmGrainOverlay : Overlay
+public sealed partial class FilmGrainOverlay : Overlay
 {
     [Dependency] private IPrototypeManager _prototype = default!;
 

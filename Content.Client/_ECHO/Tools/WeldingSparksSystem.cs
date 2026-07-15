@@ -14,7 +14,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._ECHO.Tools;
 
-public sealed class WeldingSparksSystem : SharedWeldingSparksSystem
+public sealed partial class WeldingSparksSystem : SharedWeldingSparksSystem
 {
     [Dependency] private AnimationPlayerSystem _animation = default!;
     [Dependency] private IEyeManager _eyeManager = default!;

@@ -5,7 +5,7 @@ using Content.Shared.Hands.Components;
 
 namespace Content.Server._ECHO.OfferItem;
 
-public sealed class OfferItemSystem : SharedOfferItemSystem
+public sealed partial class OfferItemSystem : SharedOfferItemSystem
 {
     [Dependency] private AlertsSystem _alertsSystem = default!;
     [Dependency] private HandsSystem _hands = default!;

@@ -5,7 +5,7 @@ using Robust.Shared.Maths;
 
 namespace Content.Server._Utopia.ZLevels.Systems;
 
-public sealed class GridThrustSystem : EntitySystem
+public sealed partial class GridThrustSystem : EntitySystem
 {
     [Dependency] private SharedPhysicsSystem _physics = default!;
 

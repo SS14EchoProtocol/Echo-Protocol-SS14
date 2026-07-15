@@ -7,7 +7,7 @@ using Content.Shared.Verbs;
 
 namespace Content.Server.Power.EntitySystems;
 
-public sealed class VoltageTogglerSystem : EntitySystem
+public sealed partial class VoltageTogglerSystem : EntitySystem
 {
     [Dependency] private NodeGroupSystem _nodeGroupSystem = default!;
 

@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace Content.Server._Utopia.ZLevels.Systems;
 
-public sealed class GridMotionObserverSystem : EntitySystem
+public sealed partial class GridMotionObserverSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     private const float Epsilon = 0.0001f;

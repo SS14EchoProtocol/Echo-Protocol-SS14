@@ -3,7 +3,7 @@ using Content.Server._Utopia.ZLevels.Events;
 
 namespace Content.Server._Utopia.ZLevels.Systems;
 
-public sealed class GridMotionProxySystem : EntitySystem
+public sealed partial class GridMotionProxySystem : EntitySystem
 {
     [Dependency] private GridSyncSystem _sync = default!;
     [Dependency] private GridThrustSystem _thrust = default!;

@@ -11,7 +11,7 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.ECHO.SpeechBarks;
 
-public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
+public sealed partial class SpeechBarksSystem : SharedSpeechBarksSystem
 {
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IConfigurationManager _cfg = default!;

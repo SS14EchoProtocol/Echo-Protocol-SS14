@@ -4,7 +4,7 @@ using Robust.Shared.Configuration;
 
 namespace Content.Client._Echo.Postprocessing;
 
-public sealed class FilmGrainSystem : EntitySystem
+public sealed partial class FilmGrainSystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
     [Dependency] private IConfigurationManager _cfg = default!;

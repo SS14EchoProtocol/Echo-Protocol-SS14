@@ -8,7 +8,7 @@ using Robust.Shared.Map;
 namespace Content.Server._Utopia.ZLevels;
 
 [AdminCommand(AdminFlags.Server | AdminFlags.Mapping)]
-public sealed class LoadMapZNetworkCommand : LocalizedEntityCommands
+public sealed partial class LoadMapZNetworkCommand : LocalizedEntityCommands
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IResourceManager _resMan = default!;

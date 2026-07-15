@@ -15,7 +15,7 @@ namespace Content.Server.ForceAttack;
 /// <summary>
 /// This handles forcing a player-controlled mob to attack nearby enemies.
 /// </summary>
-public sealed class ForceAttackSystem : EntitySystem
+public sealed partial class ForceAttackSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedMeleeWeaponSystem _melee = default!;

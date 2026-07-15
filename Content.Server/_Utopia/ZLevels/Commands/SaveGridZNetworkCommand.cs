@@ -8,7 +8,7 @@ using Robust.Shared.ContentPack;
 namespace Content.Server._Utopia.ZLevels;
 
 [AdminCommand(AdminFlags.Server | AdminFlags.Mapping)]
-public sealed class SaveGridZNetworkCommand : LocalizedEntityCommands
+public sealed partial class SaveGridZNetworkCommand : LocalizedEntityCommands
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IResourceManager _resMan = default!;

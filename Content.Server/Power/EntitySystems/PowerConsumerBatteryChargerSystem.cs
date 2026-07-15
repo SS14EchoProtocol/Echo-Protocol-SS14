@@ -3,7 +3,7 @@ using Content.Shared.Power.Components;
 
 namespace Content.Server.Power.EntitySystems;
 
-public sealed class PowerConsumerBatteryChargerSystem : EntitySystem
+public sealed partial class PowerConsumerBatteryChargerSystem : EntitySystem
 {
     [Dependency] private BatterySystem _battery = default!;
 

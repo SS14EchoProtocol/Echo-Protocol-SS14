@@ -18,7 +18,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Utopia.ZLevels;
 
-public sealed class ZNetworkMappingSystem : EntitySystem
+public sealed partial class ZNetworkMappingSystem : EntitySystem
 {
     [Dependency] private IResourceManager _resMan = default!;
     [Dependency] private MapSystem _map = default!;

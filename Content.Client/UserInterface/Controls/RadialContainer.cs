@@ -8,7 +8,7 @@ using System.Numerics;
 namespace Content.Client.UserInterface.Controls;
 
 [Virtual]
-public class RadialContainer : LayoutContainer
+public partial class RadialContainer : LayoutContainer
 {
     // ECHO-Tweak-start
     // Shader radial menu

@@ -15,7 +15,7 @@ using Content.Shared.Atmos.Components;
 
 namespace Content.Server._Utopia.ZLevels.Pipes.Systems;
 
-public sealed class ZPipeSystem : EntitySystem
+public sealed partial class ZPipeSystem : EntitySystem
 {
     [Dependency] private AtmosphereSystem _atmosphere = default!;
 
