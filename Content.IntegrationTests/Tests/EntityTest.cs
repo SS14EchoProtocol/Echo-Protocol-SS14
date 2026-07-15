@@ -34,17 +34,6 @@ namespace Content.IntegrationTests.Tests
             Dirty = true,
         };
 
-        public override PoolSettings PoolSettings => new()
-        {
-            Connected = true,
-            Dirty = true
-        };
-
-        public static PoolSettings Disconnected => new()
-        {
-            Dirty = true,
-        };
-
         [Test]
         [PairConfig(nameof(Disconnected))]
         public async Task SpawnAndDeleteAllEntitiesOnDifferentMaps()
