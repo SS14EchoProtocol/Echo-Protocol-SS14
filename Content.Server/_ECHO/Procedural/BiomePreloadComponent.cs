@@ -1,5 +1,3 @@
-using System.Numerics;
-using Content.Server.Worldgen.Prototypes;
 using Content.Shared.Parallax.Biomes;
 using Robust.Shared.Prototypes;
 
