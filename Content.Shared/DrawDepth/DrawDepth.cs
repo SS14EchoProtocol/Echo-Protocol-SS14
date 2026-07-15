@@ -122,11 +122,6 @@ namespace Content.Shared.DrawDepth
         Gasses = DrawDepthTag.Default + 17,
 
         /// <summary>
-        ///     Visible atmos gas.
-        /// </summary>
-        Gasses = DrawDepthTag.Default + 11,
-
-        /// <summary>
         ///     Explosions, fire, melee swings. Whatever.
         /// </summary>
         Effects = DrawDepthTag.Default + 18,
