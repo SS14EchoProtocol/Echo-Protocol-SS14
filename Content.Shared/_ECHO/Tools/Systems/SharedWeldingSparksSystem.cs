@@ -9,7 +9,7 @@ using Robust.Shared.Map;
 
 namespace Content.Shared._ECHO.Tools;
 
-public abstract class SharedWeldingSparksSystem : EntitySystem
+public abstract partial class SharedWeldingSparksSystem : EntitySystem
 {
     [Dependency] private SharedToolSystem _toolSystem = default!;
 

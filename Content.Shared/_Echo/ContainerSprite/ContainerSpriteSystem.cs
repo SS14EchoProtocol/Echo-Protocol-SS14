@@ -2,7 +2,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared._Echo.ContainerSprite;
 
-public sealed class ContainerSpriteSystem : EntitySystem
+public sealed partial class ContainerSpriteSystem : EntitySystem
 {
     [Dependency] private SharedAppearanceSystem _appearance = default!;
 

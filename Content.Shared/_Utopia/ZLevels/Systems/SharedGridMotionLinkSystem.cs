@@ -9,7 +9,7 @@ using System.Numerics;
 
 namespace Content.Shared._Utopia.ZLevels.Systems;
 
-public abstract class SharedGridMotionLinkSystem : EntitySystem
+public abstract partial class SharedGridMotionLinkSystem : EntitySystem
 {
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;

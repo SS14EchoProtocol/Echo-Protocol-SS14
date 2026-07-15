@@ -18,7 +18,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CE.ZLevels.Flight;
 
-public abstract class CESharedZFlightSystem : EntitySystem
+public abstract partial class CESharedZFlightSystem : EntitySystem
 {
     [Dependency] private CESharedZLevelsSystem _zLevel = default!;
     [Dependency] private SharedAmbientSoundSystem _ambient = default!;
