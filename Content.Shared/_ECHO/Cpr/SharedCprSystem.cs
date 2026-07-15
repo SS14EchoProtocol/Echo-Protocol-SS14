@@ -27,8 +27,8 @@ public abstract partial class SharedCprSystem : EntitySystem
     [Dependency] private SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] protected readonly EntityManager Ent = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!;
+    [Dependency] protected EntityManager Ent = default!;
+    [Dependency] protected IGameTiming Timing = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
 
     public const float CprInteractionRangeMultiplier = 0.25f;

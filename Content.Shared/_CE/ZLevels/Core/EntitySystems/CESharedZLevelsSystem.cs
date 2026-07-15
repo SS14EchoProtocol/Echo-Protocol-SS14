@@ -32,7 +32,7 @@ public abstract partial class CESharedZLevelsSystem : EntitySystem
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] protected readonly IConfigurationManager Cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
+    [Dependency] protected IConfigurationManager Cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
     [Dependency] private FixtureSystem _fix = default!;    // ECHO-Tweak: для улучшения системы
 
     private EntityQuery<MapComponent> _mapQuery;
