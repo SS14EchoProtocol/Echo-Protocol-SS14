@@ -184341,28 +184341,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 3.4193826,-19.583563
-- proto: WehMedipenTiny
-  entities:
-  - uid: 29617
-    components:
-    - type: Transform
-      parent: 2
-      pos: -43.5202,-49.26273
-  - uid: 29618
-    components:
-    - type: Transform
-      parent: 2
-      pos: -42.67645,-48.41898
-  - uid: 29619
-    components:
-    - type: Transform
-      parent: 2
-      pos: -43.344418,-47.75101
-  - uid: 29620
-    components:
-    - type: Transform
-      parent: 2
-      pos: -42.46551,-49.579136
 - proto: WelderIndustrial
   entities:
   - uid: 24079
