@@ -411,10 +411,6 @@
   - type: Item
     size: Tiny
     sprite: _ECHO/Objects/Specific/Chemistry/syringe.rsi # ECHO-tweak Было: Objects/Specific/Chemistry/syringe.rsi --> Стало: _ECHO/Objects/Specific/Chemistry/syringe.rsi
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
   - type: Injector
     activeModeProtoId: SyringeDrawMode
     allowedModes:
