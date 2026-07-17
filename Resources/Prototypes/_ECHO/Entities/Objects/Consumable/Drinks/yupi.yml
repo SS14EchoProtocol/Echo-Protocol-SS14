@@ -72,13 +72,12 @@
   name: cherry yupi packet
   description: A yupi packet with cherry taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryCherry
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryCherry
+        Quantity: 5
   - type: Sprite
     state: packet-cherry
   - type: Icon

@@ -4,13 +4,12 @@
   name: apple liquer
   description: fruit, dessert alcoholic drink.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: EchoAppleLiqueur
-          Quantity: 100
+  - type: Solution
+    solution:
+      maxVol: 100
+      reagents:
+      - ReagentId: EchoAppleLiqueur
+        Quantity: 100
   - type: Sprite
     sprite: _ECHO/Objects/Consumable/Drinks/apple_liqueur_bottle.rsi
     state: icon

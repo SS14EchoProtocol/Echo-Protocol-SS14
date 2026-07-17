@@ -117,13 +117,12 @@
   id: EchoDrinkAppleLiqueurGlass
   suffix: AppleLiqueur
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoAppleLiqueur
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoAppleLiqueur
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/apple_liqueur_glass.rsi
     state: icon
