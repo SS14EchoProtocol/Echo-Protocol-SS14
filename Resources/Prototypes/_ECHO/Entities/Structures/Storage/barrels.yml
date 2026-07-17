@@ -8,13 +8,12 @@
   components:
   - type: Sprite
     state: waterbarrel
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
-        reagents:
-        - ReagentId: Water
-          Quantity: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents:
+      - ReagentId: Water
+        Quantity: 500
 
 - type: entity
   parent: BaseBarrelChem
@@ -28,13 +27,12 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 10
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 500
 
 - type: entity
   parent: BaseBarrelChem
@@ -47,10 +45,9 @@
   - type: PhysicalComposition
     materialComposition:
       Wood: 2000
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
+  - type: Solution
+    solution:
+      maxVol: 500
 
 - type: entity
   parent: BaseBarrelChem
@@ -63,13 +60,12 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 20
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 500
 
 - type: entity
   parent: BaseBarrelChem
@@ -118,13 +114,12 @@
     - map: ["enum.SolutionContainerLayers.Fill"]
       state: fill-1
       visible: false
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
-        reagents:
-        - ReagentId: Water
-          Quantity: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents:
+      - ReagentId: Water
+        Quantity: 500
 
 - type: entity
   parent: BaseBarrelChemOpen
@@ -143,13 +138,12 @@
   - type: Explosive
     explosionType: Default
     totalIntensity: 10
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 500
 
 - type: entity
   parent: BaseBarrelChemOpen
@@ -168,10 +162,9 @@
     - map: ["enum.SolutionContainerLayers.Fill"]
       state: fill-1
       visible: false
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
+  - type: Solution
+    solution:
+      maxVol: 500
 
 - type: entity
   parent: BaseBarrelChemOpen
@@ -190,13 +183,12 @@
   - type: PhysicalComposition
     materialComposition:
       Wood: 2000
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
-        reagents:
-        - ReagentId: Water
-          Quantity: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents:
+      - ReagentId: Water
+        Quantity: 500
 
 - type: entity
   parent: BaseBarrelChemOpen
@@ -215,10 +207,9 @@
     - map: ["enum.SolutionContainerLayers.Fill"]
       state: fill-1
       visible: false
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
+  - type: Solution
+    solution:
+      maxVol: 500
 
 - type: entity
   parent: [ BaseBarrelChemRadioactive, BaseBarrelChemOpen ]
@@ -234,13 +225,12 @@
     - map: ["enum.SolutionContainerLayers.Fill"]
       state: fill-1
       visible: false
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
-        reagents:
-        - ReagentId: Radium
-          Quantity: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents:
+      - ReagentId: Radium
+        Quantity: 500
 
 - type: entity
   parent: EchoBarrelChemWaterOpen
@@ -251,10 +241,10 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents: []
 
 - type: entity
   parent: EchoBarrelChemWeldingOpen
@@ -265,10 +255,10 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents: []
 
 - type: entity
   parent: EchoBarrelWoodenOpen
@@ -279,10 +269,10 @@
   - type: PhysicalComposition
     materialComposition:
       Wood: 800
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents: []
 
 - type: entity
   parent: EchoBarrelRadOpen
@@ -293,7 +283,7 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 800
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 500
+  - type: Solution
+    solution:
+      maxVol: 500
+      reagents: []
