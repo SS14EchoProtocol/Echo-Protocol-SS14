@@ -11,10 +11,9 @@
       collection: packetOpenSounds
   - type: InjectableSolution
     solution: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
+  - type: Solution
+    solution:
+      maxVol: 5
   - type: SolutionTransfer
     maxTransferAmount: 5
   - type: Sprite
@@ -34,13 +33,12 @@
   name: apple yupi packet
   description: A yupi packet with apple taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryApple
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryApple
+        Quantity: 5
   - type: Sprite
     state: packet-apple
   - type: Icon
@@ -53,13 +51,12 @@
   name: berries yupi packet
   description: A yupi packet with berries taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryBerries
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryBerries
+        Quantity: 5
   - type: Sprite
     state: packet-berries
   - type: Icon
@@ -90,13 +87,12 @@
   name: mango yupi packet
   description: A yupi packet with mango taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryMango
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryMango
+        Quantity: 5
   - type: Sprite
     state: packet-mango
   - type: Icon
@@ -109,13 +105,12 @@
   name: orange yupi packet
   description: A yupi packet with orange taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryOrange
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryOrange
+        Quantity: 5
   - type: Sprite
     state: packet-orange
   - type: Icon
@@ -128,13 +123,12 @@
   name: peach yupi packet
   description: A yupi packet with peach taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryPeach
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryPeach
+        Quantity: 5
   - type: Sprite
     state: packet-peach
   - type: Icon
@@ -147,13 +141,12 @@
   name: pineapple yupi packet
   description: A yupi packet with pineapple taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryPineapple
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryPineapple
+        Quantity: 5
   - type: Sprite
     state: packet-pineapple
   - type: Icon
@@ -166,13 +159,12 @@
   name: raspberry yupi packet
   description: A yupi packet with raspberry taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryRaspberry
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryRaspberry
+        Quantity: 5
   - type: Sprite
     state: packet-raspberry
   - type: Icon
@@ -185,13 +177,12 @@
   name: strawberry yupi packet
   description: A yupi packet with strawberry taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryStrawberry
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryStrawberry
+        Quantity: 5
   - type: Sprite
     state: packet-strawberry
   - type: Icon
@@ -204,13 +195,12 @@
   name: watermelon yupi packet
   description: A yupi packet with watermelon taste.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoYupiDryWatermelon
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoYupiDryWatermelon
+        Quantity: 5
   - type: Sprite
     state: packet-watermelon
   - type: Icon

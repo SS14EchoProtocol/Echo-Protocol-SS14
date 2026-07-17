@@ -3,13 +3,12 @@
   id: EchoDrinkSummerShadeGlass
   suffix: SummerShade
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoSummerShade
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoSummerShade
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/summershade.rsi
     state: icon
@@ -19,13 +18,12 @@
   id: EchoDrinkWinterSunGlass
   suffix: WinterSun
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoWinterSun
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoWinterSun
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/wintersun.rsi
     state: icon
@@ -35,13 +33,12 @@
   id: EchoDrinkHungoverAngelGlass
   suffix: HungoverAngel
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoHungoverAngel
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoHungoverAngel
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/hungoverangel.rsi
     state: icon
@@ -51,13 +48,12 @@
   id: EchoDrinkCitrusBalanceGlass
   suffix: CitrusBalance
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoCitrusBalance
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoCitrusBalance
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/citrucbalance.rsi
     state: icon
@@ -67,13 +63,12 @@
   id: EchoDrinkDobryiDrinkGlass
   suffix: DobryiDrink
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoDobryiDrink
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoDobryiDrink
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/dobryi.rsi
     state: icon
@@ -83,13 +78,12 @@
   id: EchoDrinkMilkEclipseGlass
   suffix: MilkEclipse
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoMilkEclipse
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoMilkEclipse
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/milkeclipse.rsi
     state: icon
@@ -99,13 +93,12 @@
   id: EchoDrinkArcticExplosionGlass
   suffix: ArcticExplosion
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoArcticExplosion
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoArcticExplosion
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/arcticexplosion.rsi
     state: icon
@@ -134,13 +127,12 @@
   id: EchoDrinkSugarKnightGlass
   suffix: SugarKnight
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoSugarKnight
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoSugarKnight
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/sugarknight.rsi
     state: icon
@@ -150,13 +142,12 @@
   id: EchoDrinkGrapeLadyGlass
   suffix: GrapeLady
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoGrapeLady
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoGrapeLady
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/grapelady.rsi
     state: icon
@@ -166,13 +157,12 @@
   id: EchoDrinkSaturdayBaronGlass
   suffix: SaturdayBaron
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoSaturdayBaron
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoSaturdayBaron
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/saturdaybaron.rsi
     state: icon
@@ -182,13 +172,12 @@
   id: EchoDrinkArcticLatteGlass
   suffix: ArcticLatte
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoArcticLatte
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoArcticLatte
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/arcticlatte.rsi
     state: icon
@@ -198,13 +187,12 @@
   id: EchoDrinkSpecialTeaOolongGlass
   suffix: SpecialTeaOolong
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoSpecialTeaOolong
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoSpecialTeaOolong
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/teaoolong.rsi
     state: icon
@@ -214,13 +202,12 @@
   id: EchoDrinkAzureBlueGlass
   suffix: AzureBlue
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoAzureBlue
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoAzureBlue
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/azureblue.rsi
     state: icon
@@ -230,13 +217,12 @@
   id: EchoDrinkPenetrationGlass
   suffix: PenetrationDrink
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoPenetrationDrink
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoPenetrationDrink
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/penetration.rsi
     state: icon
@@ -246,13 +232,12 @@
   id: EchoDrinkEclipsedEclispeGlass
   suffix: EclipsedEclispe
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoEclipsedEclispe
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoEclipsedEclispe
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/eclipsedeclipse.rsi
     state: icon
@@ -262,13 +247,12 @@
   id: EchoDrinkSpaceBushGlass
   suffix: SpaceBush
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoSpaceBush
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoSpaceBush
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/spacebush.rsi
     state: icon
@@ -278,9 +262,8 @@
   id: EchoDrinkBusinessConversationGlass
   suffix: BusinessConversation
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
+  - type: Solution
+    solution:
         maxVol: 30
         reagents:
         - ReagentId: EchoBusinessConversation
@@ -294,13 +277,12 @@
   id: EchoDrinkAppleMartiniGlass
   suffix: AppleMartini
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoAppleMartini
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoAppleMartini
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/applemartini.rsi
     state: icon
@@ -310,13 +292,12 @@
   id: EchoDrinkBacardiAppleGlass
   suffix: BacardiApple
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoBacardiApple
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoBacardiApple
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/bacardiapple.rsi
     state: icon
@@ -326,13 +307,12 @@
   id: EchoDrinkElderGuardsGlass
   suffix: ElderGuards
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: EchoElderGuards
-          Quantity: 30
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: EchoElderGuards
+        Quantity: 30
   - type: Icon
     sprite: _ECHO/Objects/Consumable/Drinks/elderguards.rsi
     state: icon

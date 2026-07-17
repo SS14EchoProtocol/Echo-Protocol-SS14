@@ -10,10 +10,9 @@
       collection: packetOpenSounds
   - type: InjectableSolution
     solution: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
+  - type: Solution
+    solution:
+      maxVol: 5
   - type: SolutionTransfer
     maxTransferAmount: 5
   - type: PhysicalComposition
@@ -29,13 +28,12 @@
   name: EchoOrangeTeapack
   description: its teapack with orange tea.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoOrangepackReg
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoOrangepackReg
+        Quantity: 5
   - type: Sprite
     sprite: _ECHO/Objects/Consumable/Drinks/orangetea.rsi
     state: teapack
@@ -54,13 +52,12 @@
   name: EchoCherryTeapack
   description: its teapack with cherry tea.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoCherrypackReg
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoCherrypackReg
+        Quantity: 5
   - type: Sprite
     sprite: _ECHO/Objects/Consumable/Drinks/cherrytea.rsi
     state: teapack
@@ -79,13 +76,12 @@
   name: EchoWatermelonTeapack
   description: its teapack with watermelon tea.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: EchoWatermelonpackReg
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: EchoWatermelonpackReg
+        Quantity: 5
   - type: Sprite
     sprite: _ECHO/Objects/Consumable/Drinks/watermelontea.rsi
     state: teapack
