@@ -36,7 +36,7 @@ namespace Content.Shared.Preferences
     {
         public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
         public static readonly ProtoId<EmoteSoundsPrototype> DefaultVoice = "MaleHuman";
-        private static readonly Regex RestrictedNameRegex = new(@"[^A-Za-z0-9 '\-]");
+        private static readonly Regex RestrictedNameRegex = new("[^A-Za-zА-Яа-яёЁ0-9' _.<>^%~ -]"); // ECHO-Tweak
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Content.Shared.Preferences
         /// <see cref="_traitPreferences"/>
         /// </summary>
         public IReadOnlySet<ProtoId<TraitPrototype>> TraitPreferences => _traitPreferences;
-        
+
         // ECHO-Tweak : Barks
         [DataField]
         public BarkData Bark = new();
