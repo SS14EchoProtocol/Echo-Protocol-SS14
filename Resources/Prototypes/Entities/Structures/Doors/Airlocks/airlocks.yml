@@ -120,7 +120,8 @@
   name: maintenance access
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/maint.rsi #ECHO-Tweak Было: Structures/Doors/Airlocks/Standard/maint.rsi -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/maint.rsi
+    snapCardinals: false #ECHO-Tweak add:     snapCardinals: false
 
 - type: entity
   parent: AirlockSecurity # if you get syndie door somehow it counts as sec

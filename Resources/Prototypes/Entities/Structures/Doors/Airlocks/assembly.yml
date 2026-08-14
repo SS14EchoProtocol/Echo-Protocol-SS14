@@ -164,7 +164,7 @@
   suffix: Maintenance
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/maint.rsi #ECHO-Tweak Было: Structures/Doors/Airlocks/Standard/maint.rsi -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/maint.rsi
     state: "assembly"
 
 - type: entity

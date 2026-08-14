@@ -71,6 +71,10 @@
   - type: AccessReader
     containerAccessProvider: board
   - type: Door
+#ECHO-Tweak-Start (изменения поскольку анимация дольше длится, чем база и нужно задать параметр)
+    closeTimeTwo: 0.4
+    openTimeTwo: 0.4
+#ECHO-Tweak-End
     crushDamage:
       types:
         Blunt: 15
