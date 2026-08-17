@@ -1,0 +1,49 @@
+- type: entity
+  id: BaseStationaryDefibrillator
+  parent: [BaseItem, PowerCellSlotMediumItem]
+  name: stationary defibrillator
+  description: .
+  abstract: true
+  components:
+    - type: Sprite
+      sprite: Objects/Specific/Medical/defib.rsi
+      layers:
+        - state: icon
+        - state: screen
+          visible: true
+          shader: unshaded
+    - type: Appearance
+    - type: Item
+      size: Normal
+    - type: Speech
+      speechVerb: Robotic
+      soundActivate:
+        path: /Audio/Items/Defib/defib_safety_on.ogg
+    - type: Defibrillator
+      zapHeal:
+        types:
+          Asphyxiation: -40
+      energyCost: 100
+    - type: DoAfter
+    - type: UseDelay
+    - type: ToggleCellDraw
+    - type: PowerCellDraw
+      useCharge: 100
+
+- type: entity
+  id: StationaryDefibrillator
+  parent: BaseStationaryDefibrillator
+  components:
+  - type: PowerCellDraw
+    drawRate: 1
+    useCharge: 0
+  - type: MultiHandedItem
+  - type: ExaminableBattery
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        locked: true
+        startingItem: PowerCellMedium
+  - type: Tag
+    tags:
+    - Defibrillator
