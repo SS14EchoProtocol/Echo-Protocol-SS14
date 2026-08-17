@@ -1,0 +1,86 @@
+- type: entity
+  id: EchoVentFanLight
+  name: свет вентиляции
+  description: ""
+  suffix: Средний, Админский
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Construction
+    graph: LightFixture
+    node: bulbLight
+  - type: Sprite
+    sprite: Structures/Wallmounts/Lighting/strobe_light.rsi
+    drawdepth: WallMountedItems
+    layers:
+    - map: ["enum.PoweredLightLayers.Base"]
+      state: base
+    - map: ["enum.PoweredLightLayers.Glow"]
+      state: glow
+      shader: unshaded
+    state: base
+  - type: PointLight
+    mask: /Resources/Textures/_ECHO/Effects/LightMasks/vent_fan.png
+    color: "#FF9900"
+    energy: 3
+    radius: 4
+    softness: 1
+    falloff: 0
+    offset: "0, 0"
+  - type: RotatingLight
+    speed: 180
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,0.35,0.2,0.5"
+        density: 190
+        mask:
+        - None
+        layer:
+        - TabletopMachineLayer
+  - type: Stealth
+  - type: StealthOnMove
+
+- type: entity
+  id: EchoVentFanLightBig
+  name: свет вентиляции
+  description: ""
+  suffix: Большой, Админский
+  parent: EchoVentFanLight
+  components:
+  - type: PointLight
+    mask: /Resources/Textures/_ECHO/Effects/LightMasks/vent_fan.png
+    color: "#FF9900"
+    energy: 4
+    radius: 5
+    softness: 1
+    falloff: 0
+
+- type: entity
+  id: EchoVentFanLightSmall
+  name: свет вентиляции
+  description: ""
+  suffix: Маленький, Админский
+  parent: EchoVentFanLight
+  components:
+  - type: PointLight
+    mask: /Resources/Textures/_ECHO/Effects/LightMasks/vent_fan.png
+    color: "#FF9900"
+    energy: 3
+    radius: 2
+    softness: 1
+    falloff: 0
