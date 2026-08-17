@@ -1,0 +1,26 @@
+- type: entity
+  parent: Airlock
+  id: EchoAirlockAstrology
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/astrology.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: Airlock
+  id: EchoAirlockMechanics
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/mechanics.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: Airlock
+  id: EchoAirlockService
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/service.rsi
+  - type: Wires
+    layoutId: AirlockService

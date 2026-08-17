@@ -169,4 +169,10 @@ public sealed partial class AirlockComponent : Component
     public float BoltedPryModifier = 3f;
 
     #endregion Graphics
+
+    // ECHO-Tweak-start
+    // Unlit lights
+    [DataField]
+    public bool ClosedUnlitVisible = false;
+    // ECHO-Tweak-end
 }

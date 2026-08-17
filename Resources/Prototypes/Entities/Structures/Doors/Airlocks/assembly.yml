@@ -87,7 +87,7 @@
   suffix: Engineering
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/engineering.rsi # ECHO-TWEAK Было: Structures/Doors/Airlocks/Standard/engineering.rs -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/engineering.rsi
     state: "assembly"
 
 - type: entity
@@ -164,7 +164,7 @@
   suffix: Maintenance
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi # ECHO-TWEAK Было: Structures/Doors/Airlocks/Standard/maint.rs -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/maint.rsi
     state: "assembly"
 
 - type: entity
@@ -183,7 +183,7 @@
   suffix: Medical
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/medical.rsi
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/medical.rsi # ECHO-TWEAK Было: Structures/Doors/Airlocks/Standard/medical.rs -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/medical.rsi
     state: "assembly"
 
 - type: entity

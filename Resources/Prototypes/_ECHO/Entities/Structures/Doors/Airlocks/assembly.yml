@@ -1,0 +1,23 @@
+- type: entity
+  parent: AirlockAssembly
+  id: EchoAirlockAssemblyAstrology
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/astrology.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: EchoAirlockAssemblyMechanics
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/mechanics.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: EchoAirlockAssemblySerivce
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/service.rsi
+    state: "assembly"
