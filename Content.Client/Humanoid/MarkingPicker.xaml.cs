@@ -52,7 +52,12 @@ public sealed partial class MarkingPicker : Control
         var i = 0;
         foreach (var (organ, organData) in _markingsModel.OrganData)
         {
-            var control = new OrganMarkingPicker(_markingsModel, organ, organData.Layers, organData.Group);
+            // ECHO-Tweak-start: marking picker whitelists
+            // var control = new OrganMarkingPicker(_markingsModel, organ, organData.Layers, organData.Group);
+            var layers = _markingsModel.LayersWhitelist == null ? organData.Layers : organData.Layers.Intersect(_markingsModel.LayersWhitelist).ToHashSet();
+            var control = new OrganMarkingPicker(_markingsModel, organ, layers, organData.Group);
+            // ECHO-Tweak-end
+
             if (control.Empty)
                 continue;
 

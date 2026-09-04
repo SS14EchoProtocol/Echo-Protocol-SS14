@@ -290,6 +290,15 @@ public sealed partial class MarkingsViewModel
 
         if (limits.Limit == 1 && layerMarkings.Count == 1)
         {
+            // ECHO-Tweak-start
+            // Сохранение цветов при смене единственного маркинга
+            var oldColors = layerMarkings[0].MarkingColors;
+            for (var i = 0; i < oldColors.Count && i < newMarking.MarkingColors.Count; i++)
+            {
+                newMarking = newMarking.WithColorAt(i, oldColors[i]);
+            }
+            // ECHO-Tweak-end
+
             layerMarkings.Clear();
             layerMarkings.Add(newMarking);
             MarkingsChanged?.Invoke(organ, layer);
@@ -491,6 +500,26 @@ public sealed partial class MarkingsViewModel
 
         MarkingsChanged?.Invoke(organ, layer);
     }
+
+    // ECHO-Tweak-start
+    // Marking selector whitelists
+
+    private HashSet<HumanoidVisualLayers>? _layersWhitelist;
+    public HashSet<HumanoidVisualLayers>? LayersWhitelist
+    {
+        get => _layersWhitelist;
+        set
+        {
+            _layersWhitelist = value;
+            EnforcementsChanged?.Invoke();
+        }
+    }
+
+    private bool IsLayerAllowed(HumanoidVisualLayers layer)
+    {
+        return _layersWhitelist == null || _layersWhitelist.Contains(layer);
+    }
+    // ECHO-Tweak-end
 }
 
 /// <summary>

@@ -218,6 +218,11 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
                 else
                     _sprite.LayerSetColor(target, layerId, Color.White);
 
+                // ECHO-Tweak-start
+                if (proto.Shader != null)
+                    Comp<SpriteComponent>(target).LayerSetShader(layerId, proto.Shader);
+                // ECHO-Tweak-end
+
                 if (displacement != null && proto.CanBeDisplaced)
                     _displacement.TryAddDisplacement(displacement, (target, target.Comp), index + i + 1, layerId, out _);
             }

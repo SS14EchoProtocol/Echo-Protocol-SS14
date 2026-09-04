@@ -1,0 +1,165 @@
+- type: markingsGroup
+  id: EchoIPC
+  onlyGroupWhitelisted: true
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 0
+      required: false
+    enum.HumanoidVisualLayers.Special:
+      limit: 0
+      required: false
+
+# Base
+- type: entity
+  parent: OrganBase
+  id: EchoOrganIPC
+  abstract: true
+  suffix: IPC
+
+- type: entity
+  parent: EchoOrganIPC
+  id: EchoOrganIPCInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _ECHO/Mobs/Species/IPC/organs.rsi
+
+- type: entity
+  parent: EchoOrganIPC
+  id: EchoOrganIPCExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _ECHO/Mobs/Species/IPC/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _ECHO/Mobs/Species/IPC/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: EchoIPC
+
+# Parts
+- type: entity
+  parent: [ OrganBaseTorso, EchoOrganIPCExternal ]
+  id: EchoTorsoIPC
+  name: "ipc torso"
+
+- type: entity
+  parent: [ OrganBaseHead, EchoOrganIPCExternal ]
+  id: EchoOrganIPCHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, EchoOrganIPCExternal ]
+  id: EchoOrganIPCArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, EchoOrganIPCExternal ]
+  id: EchoOrganIPCArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, EchoOrganIPCExternal ]
+  id: EchoOrganIPCHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, EchoOrganIPCExternal ]
+  id: EchoOrganIPCHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, EchoOrganIPCExternal ]
+  id: EchoOrganIPCLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, EchoOrganIPCExternal ]
+  id: EchoOrganIPCLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, EchoOrganIPCExternal ]
+  id: EchoOrganIPCFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, EchoOrganIPCExternal ]
+  id: EchoOrganIPCFootRight
+
+# Organs
+- type: entity
+  parent: OrganBase
+  id: EchoOrganBrainIPC
+  name: brain
+  components:
+  - type: GibbableOrgan
+  - type: Organ
+    category: Brain
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/mmi.rsi
+    layers:
+    - state: posibrain-occupied
+  - type: Item
+    heldPrefix: brain
+  - type: Input
+    context: "ghost"
+  - type: Brain
+  - type: InputMover
+  - type: Examiner
+  - type: BlockMovement
+
+- type: entity
+  parent: [ OrganBaseEyes, EchoOrganIPCInternal, EchoOrganIPCExternal ]
+  id: EchoOrganIPCEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+
+- type: entity
+  parent: [ OrganBaseTongue, EchoOrganIPCInternal ]
+  id: EchoOrganIPCTongue
+
+- type: entity
+  parent: [ OrganBaseEars, EchoOrganIPCInternal ]
+  id: EchoOrganIPCEars
+
+- type: entity
+  parent: [ OrganBaseHeart, EchoOrganIPCInternal ]
+  id: EchoOrganIPCPump
+  name: micro pump
+  description: "A micro pump, used to circulate coolant."
+  components:
+  - type: Sprite
+    state: heart-on
+  - type: Organ

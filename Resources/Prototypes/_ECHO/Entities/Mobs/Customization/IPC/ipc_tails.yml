@@ -1,0 +1,45 @@
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCTailHydra
+  bodyPart: Tail
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_prime
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_second
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_third
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_fourth
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCTailOctopus
+  bodyPart: Tail
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_octopus
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCTailFox
+  bodyPart: Tail
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fox_prime
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fox_second
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fox_third
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCTailFork
+  bodyPart: Tail
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fork_prime
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fork_second
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fork_third

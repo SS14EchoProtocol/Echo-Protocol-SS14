@@ -1,0 +1,7 @@
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCHeadTopWires
+  bodyPart: Head
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_headtops.rsi
+      state: ipc_wires

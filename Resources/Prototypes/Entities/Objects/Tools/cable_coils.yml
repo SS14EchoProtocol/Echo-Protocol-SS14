@@ -50,6 +50,19 @@
         acts: ["Destruction"]
 
 - type: entity
+  abstract: true
+  parent: SolutionCompositeSmallStackable
+  id: SolutionCompositeCable
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Iron
+        Quantity: 3
+      - ReagentId: Copper
+        Quantity: 2
+
+- type: entity
   id: CableHVStack
   parent: CableStack
   name: HV cable coil
@@ -82,6 +95,15 @@
         Quantity: 2
       - ReagentId: Carbon #steel-reinforced
         Quantity: 0.5
+  # ECHO-Tweak-start: IPC
+  - type: Healing
+    damageContainers:
+      - IPC
+    damage:
+      types:
+        Shock: -10
+        Caustic: -10
+  # ECHO-Tweak-end
 
 - type: entity
   parent: CableHVStack
@@ -127,19 +149,15 @@
   - type: CablePlacer
     cablePrototypeID: CableMV
     blockingWireType: MediumVoltage
-
-- type: entity
-  abstract: true
-  parent: SolutionCompositeSmallStackable
-  id: SolutionCompositeCable
-  components:
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Iron
-        Quantity: 3
-      - ReagentId: Copper
-        Quantity: 2
+  # ECHO-Tweak-start: IPC
+  - type: Healing
+    damageContainers:
+      - IPC
+    damage:
+      types:
+        Shock: -10
+        Caustic: -10
+  # ECHO-Tweak-end
 
 - type: entity
   parent: CableMVStack

@@ -450,7 +450,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
     /// <returns>True if the entity is on the arrivals grid. Returns false if not on arrivals, or there is no arrivals grid.</returns>
     public bool IsOnArrivals(Entity<TransformComponent?> entity)
     {
-        if (!Resolve(entity, ref entity.Comp))
+        if (!Resolve(entity, ref entity.Comp, false))   // ECHO-Tweak: prevent assertion
             return false;
 
         if (!TryGetArrivals(out var arrivals))

@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by _kote",
+    "states": [
+        {
+            "name": "fuel-0",
+            "directions": 1
+        },
+        {
+            "name": "fuel-1",
+            "directions": 1
+        },
+        {
+            "name": "fuel-2",
+            "directions": 1
+        },
+        {
+            "name": "fuel-3",
+            "directions": 1
+        },
+        {
+            "name": "fuel-4",
+            "directions": 1
+        },
+        {
+            "name": "fuel-5",
+            "directions": 1
+        },
+        {
+            "name": "fuel-6",
+            "directions": 1
+        },
+        {
+            "name": "fuel-7",
+            "directions": 1
+        },
+        {
+            "name": "fuel-8",
+            "directions": 1
+        },
+        {
+            "name": "fuel-9",
+            "directions": 1
+        },
+        {
+            "name": "fuel-10",
+            "directions": 1
+        }
+    ]
+}

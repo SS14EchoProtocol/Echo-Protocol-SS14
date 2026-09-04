@@ -146,7 +146,14 @@ public sealed class AllGamePresetsStartTest : AntagTest
             {
                 for (var count = 0; count < amount; count++)
                 {
-                    SAssertAntagInitialized(antag, players[j++]);
+                    // ECHO-Tweak-start
+                    // Добавлена проверка, прерывающая ошибки в случае, когда сущность не могла стать антагонистом
+                    if (!AntagSys.IsEntityValid(players[j].AttachedEntity!.Value, antag))
+                        continue;
+
+                    SAssertAntagInitialized(antag, players[j]);
+                    j++;
+                    // ECHO-Tweak-end
                 }
             }
         });

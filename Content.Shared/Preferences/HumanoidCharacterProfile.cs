@@ -859,6 +859,10 @@ namespace Content.Shared.Preferences
                 if (!protoManager.TryIndex(trait, out var traitProto))
                     continue;
 
+                // ECHO-Tweak: Trait species whitelists
+                if (traitProto.SpeciesWhitelist.Count > 0 && !traitProto.SpeciesWhitelist.Contains(Species))
+                    continue;
+
                 // Always valid.
                 if (traitProto.Category == null)
                 {

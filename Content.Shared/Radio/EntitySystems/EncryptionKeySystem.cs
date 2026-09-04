@@ -172,6 +172,11 @@ public sealed partial class EncryptionKeySystem : EntitySystem
             return;
         }
 
+        // ECHO-Tweak-start
+        if (!component.ExamineWhileLocked && (!component.KeysUnlocked || (TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)))
+            return;
+        // ECHO-Tweak-end
+
         if (component.Channels.Count > 0)
         {
             using (args.PushGroup(nameof(EncryptionKeyComponent)))

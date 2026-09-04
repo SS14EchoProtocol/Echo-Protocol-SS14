@@ -40,3 +40,33 @@
   description: alerts-pulling-desc
   minSeverity: 0
   maxSeverity: 3
+
+- type: alert
+  id: EchoFuel
+  icons:
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-0
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-1
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-2
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-3
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-4
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-5
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-6
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-7
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-8
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-9
+  - sprite: /Textures/_ECHO/Interface/Alerts/fuel.rsi
+    state: fuel-10
+  name: alerts-fuel-name
+  description: alerts-fuel-desc
+  minSeverity: 0
+  maxSeverity: 10

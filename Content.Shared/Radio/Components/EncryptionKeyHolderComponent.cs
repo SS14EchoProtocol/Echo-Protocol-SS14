@@ -49,4 +49,11 @@ public sealed partial class EncryptionKeyHolderComponent : Component
     /// </summary>
     [ViewVariables]
     public string? DefaultChannel;
+
+    /// <summary>
+    /// ECHO-Tweak
+    /// Whether users can examine encryption keys without being able to remove them or not
+    /// </summary>
+    [DataField]
+    public bool ExamineWhileLocked = true;
 }

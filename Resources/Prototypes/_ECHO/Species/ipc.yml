@@ -1,0 +1,23 @@
+- type: species
+  id: IPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: EchoMobIPC
+  dollPrototype: EchoAppearanceIPC
+  skinColoration: Hues
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  lastNames: IpcLast
+  naming: FirstDashLast
+  minAge: 1
+  maxAge: 55
+  oldAge: 50
+  youngAge: 25
+  sexes:
+  - Unsexed
+  defaultSoundsBySex:
+  - UnisexIPC
+  - UnisexIPC
+  - UnisexIPC
+  voices:
+  - UnisexIPC

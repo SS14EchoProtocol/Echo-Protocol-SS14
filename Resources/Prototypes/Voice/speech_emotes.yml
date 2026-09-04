@@ -298,9 +298,10 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # ECHO-Tweak
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
   chatMessages: ["chat-emote-msg-clap"]
   chatTriggers:
     - claps
@@ -315,9 +316,10 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # ECHO-Tweak
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
   chatMessages: [ "chat-emote-msg-clap-single" ]
   chatTriggers:
     - clap
@@ -334,9 +336,10 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # ECHO-Tweak
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
   chatMessages: ["chat-emote-msg-snap"]
   chatTriggers:
     - snap
@@ -385,9 +388,10 @@
   whitelist:
     components:
     - Hands
-  blacklist:
-    tags:
-    - SiliconEmotes
+  # ECHO-Tweak
+  # blacklist:
+  #   tags:
+  #   - SiliconEmotes
   chatMessages: ["chat-emote-msg-salute"]
   chatTriggers:
     - salute
@@ -412,6 +416,12 @@
   whitelist:
     components:
     - MobState
+  # ECHO-Tweak-start
+  # Custom IPC deathgasp
+  blacklist:
+    tags:
+    - SiliconEmotes
+  # ECHO-Tweak-end
   chatMessages: ["chat-emote-msg-deathgasp"]
   chatTriggers:
   - deathgasp

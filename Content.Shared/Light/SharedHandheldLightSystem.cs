@@ -90,6 +90,10 @@ public abstract partial class SharedHandheldLightSystem : EntitySystem
         if (component.ToggleActionEntity != null)
             _actionSystem.SetToggled(component.ToggleActionEntity, component.Activated);
 
+        // ECHO-Tweak: переключение и собственного экшна
+        if (component.SelfToggleActionEntity != null)
+            _actionSystem.SetToggled(component.SelfToggleActionEntity, component.Activated);
+
         _appearance.SetData(uid, ToggleableVisuals.Enabled, component.Activated, appearance);
     }
 

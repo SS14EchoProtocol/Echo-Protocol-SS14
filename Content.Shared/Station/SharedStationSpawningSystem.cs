@@ -1,11 +1,14 @@
 using System.Linq;
+using Content.Shared.Containers;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences.Loadouts;
+using Content.Shared.Radio.Components;
 using Content.Shared.Roles;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -19,6 +22,7 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
     [Dependency] private MetaDataSystem _metadata = default!;
     [Dependency] private SharedStorageSystem _storage = default!;
     [Dependency] private SharedTransformSystem _xformSystem = default!;
+    [Dependency] private SharedContainerSystem _container = default!;   // ECHO-Tweak
 
     [Dependency] private EntityQuery<HandsComponent> _handsQuery = default!;
     [Dependency] private EntityQuery<InventoryComponent> _inventoryQuery = default!;
@@ -159,6 +163,34 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
                 }
             }
         }
+
+        // ECHO-Tweak-start
+        // Parkstation port
+        if (TryComp<EncryptionKeyHolderComponent>(entity, out var keyHolderComp))
+        {
+            var earEquipString = startingGear.GetGear("ears");
+
+            if (!string.IsNullOrEmpty(earEquipString))
+            {
+                var earEntity = Spawn(earEquipString, Transform(entity).Coordinates);
+
+                if (TryComp<EncryptionKeyHolderComponent>(earEntity, out _) && // I had initially wanted this to spawn the headset, and simply move all the keys over, but the headset didn't seem to have any keys in it when spawned...
+                    TryComp<ContainerFillComponent>(earEntity, out var fillComp) &&
+                    fillComp.Containers.TryGetValue(EncryptionKeyHolderComponent.KeyContainerName, out var defaultKeys))
+                {
+                    _container.CleanContainer(keyHolderComp.KeyContainer);
+
+                    foreach (var key in defaultKeys)
+                    {
+                        var keyEntity = Spawn(key, Transform(entity).Coordinates);
+                        _container.Insert(keyEntity, keyHolderComp.KeyContainer);
+                    }
+                }
+
+                QueueDel(earEntity);
+            }
+        }
+        // ECHO-Tweak-End
 
         if (raiseEvent)
         {

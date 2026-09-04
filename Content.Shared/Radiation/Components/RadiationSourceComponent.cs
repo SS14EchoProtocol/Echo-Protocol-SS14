@@ -1,3 +1,4 @@
+using Content.Shared._ECHO.Radiation;
 using Content.Shared.Radiation.Systems;
 
 namespace Content.Shared.Radiation.Components;
@@ -6,7 +7,7 @@ namespace Content.Shared.Radiation.Components;
 ///     Irradiate all objects in range.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(SharedRadiationSystem))]
+[Access(typeof(SharedRadiationSystem), typeof(RadiationOnDamageSystem))]    // ECHO-Tweak: RadiationOnDamageSystem added
 public sealed partial class RadiationSourceComponent : Component
 {
     /// <summary>

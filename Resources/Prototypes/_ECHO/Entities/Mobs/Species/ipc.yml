@@ -1,0 +1,270 @@
+- type: entity
+  parent:
+  - EchoAppearanceIPC
+  - MobAtmosStandard
+  - MobFlammable
+  - BaseSpeciesMob
+  id: EchoMobIPC
+  name: Urist McClank
+  components:
+  # Stats
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    allowRevives: true
+  - type: Damageable
+  - type: Injurable
+    damageContainer: IPC
+  - type: Repairable # Взамен на быструю починку я урезал лечение примерно в 3 раза. Это лучше, чем DoAfter на 30 секунд при попытке вылечить себя
+    fuelCost: 3
+    selfRepairPenalty: 2
+    doAfterDelay: 2 # was 10 # was 18
+    damage:
+      types:
+        Blunt: -10
+        Slash: -10
+        Piercing: -10
+  - type: CustomSuicideDamage
+    damageType: Shock
+
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 220
+      behaviors:
+      - !type:GibBehavior { }
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.8
+      60: 0.6
+      80: 0.4
+      100: 0.3
+  - type: ZombieImmune
+  - type: IgnoreHealOnBuckle
+  - type: DamagedSiliconAccent
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: StatusEffects
+    allowed:
+      - Stun
+      - KnockedDown
+      - SlowedDown
+      - Stutter
+      - Weakness
+      - SeeingRainbows
+      - Electrocution
+      - SlurredSpeech
+      - Muted
+      - Pacified
+
+  # Visuals + sounds
+  - type: DamageVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    targetLayers:
+    - "enum.HumanoidVisualLayers.Chest"
+    - "enum.HumanoidVisualLayers.Head"
+    - "enum.HumanoidVisualLayers.LArm"
+    - "enum.HumanoidVisualLayers.LLeg"
+    - "enum.HumanoidVisualLayers.RArm"
+    - "enum.HumanoidVisualLayers.RLeg"
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#9dabb6"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Posing
+  - type: InteractionPopup
+    interactSuccessString: petting-success-ipc
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Vocal
+    emoteSounds: UnisexIPC
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  - type: Deathgasp
+    prototype: IPCDeathgasp
+  - type: TypingIndicator
+    proto: robot
+  - type: MidroundCustomization
+    actionId: EchoIPCCustomizationAction
+    allowedLayers: [ FacialHair ]
+    organs: [ Head ]
+    radialOptions:
+    - optionName: midround-customization-screen-change
+      icon:
+       sprite: _ECHO/Interface/Actions/actions_ipc.rsi
+       state: screen
+      uiKey: enum.MidroundCustomizationAppearanceUiKey.Key
+    - optionName: midround-customization-barks-change
+      icon: Interface/Actions/scream.png
+      uiKey: enum.MidroundCustomizatioBarksUiKey.Key
+    - optionName: midround-customization-flashlight-change
+      icon:
+        sprite: Objects/Tools/flashlight.rsi
+        state: flashlight
+      event: !type:TogglePointLightFollowLayerEvent
+
+  # Radio
+  - type: Wires
+    boardName: "ipc-board-name"
+    layoutId: IPC
+  - type: WiresPanel
+  - type: EncryptionKeyHolder
+    keySlots: 3
+    examineWhileLocked: false
+    keysExtractionMethod: Cutting
+  - type: ActiveRadio
+  - type: BatteryIntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+  - type: BatteryIntrinsicRadioTransmitter
+
+  # Light
+  - type: PointLightFollowLayerColor
+    enumLayer: enum.HumanoidVisualLayers.FacialHair
+    enabled: false
+  - type: HandheldLight
+    wattage: 0.5
+    toggleOnInteract: false
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: PointLight
+    enabled: false
+    color: "#ffffff"
+    mask: /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
+    autoRot: true
+    radius: 9
+    energy: 2
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        startValue: 0.1
+        endValue: 2.0
+        isLooped: true
+
+  # Slots
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        locked: true
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Lock
+    locked: true
+    lockOnClick: false
+    unlockOnClick: false
+    lockTime: 5
+    unlockTime: 5
+    breakOnAccessBreaker: false
+  - type: SlotRequiresLock
+    slotId: cell_slot
+
+  # Power
+  - type: APCBatteryDrinker
+  - type: PassiveBatteryDrain
+    drainAmount: 0.6
+  - type: ChargeLevelAlert
+  - type: ChargeMoveSpeedThresholds
+    speedModifierThresholds:
+      0.7: 1
+      0.5: 0.85
+      0.2: 0.65
+      0: 0.35
+  - type: ScreenGlitch
+  - type: ScreenGlitchOnEmp
+    chroma: 3
+    duration: 10
+    effectSpeed: 4
+    offset: 8
+    seedUpdateInterval: 0.05
+
+  # Everything else
+  - type: CanEnterCryostorage
+  - type: OfferItem
+  - type: EyeProtection
+    protectionTime: 12
+  - type: ContentEye
+    maxZoom: 1.0,1.0
+  - type: LightningTarget
+    priority: 3
+    lightningExplode: false
+  - type: Tag
+    tags:
+    - CanPilot
+    - DoorBumpOpener
+    - SiliconEmotes
+    - Unimplantable
+    - AnomalyHost
+  - type: UserInterface
+    interfaces:
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.MidroundCustomizationAppearanceUiKey.Key:
+        type: CustomizableAppearanceBoundUserInterface
+      enum.MidroundCustomizatioBarksUiKey.Key:
+        type: CustomizableBarksBoundUserInterface
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: EchoAppearanceIPC
+  name: human appearance
+  components:
+  - type: Inventory
+    templateId: ipc
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: EchoTorsoIPC
+      Head: EchoOrganIPCHead
+      ArmLeft: EchoOrganIPCArmLeft
+      ArmRight: EchoOrganIPCArmRight
+      HandRight: EchoOrganIPCHandRight
+      HandLeft: EchoOrganIPCHandLeft
+      LegLeft: EchoOrganIPCLegLeft
+      LegRight: EchoOrganIPCLegRight
+      FootLeft: EchoOrganIPCFootLeft
+      FootRight: EchoOrganIPCFootRight
+      Brain: EchoOrganBrainIPC
+      Eyes: EchoOrganIPCEyes
+      Tongue: EchoOrganIPCTongue
+      Ears: EchoOrganIPCEars
+      Heart: EchoOrganIPCPump
+  - type: HumanoidProfile
+    species: IPC

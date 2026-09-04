@@ -1,0 +1,83 @@
+- type: traitCategory
+  id: EchoIPCCharging
+  name: trait-category-ipc-charging
+  maxTraitPoints: 1
+
+- type: trait
+  id: EchoFuelCharging
+  name: trait-fuel-charging-name
+  description: trait-fuel-charging-desc
+  category: EchoIPCCharging
+  speciesWhitelist: [IPC]
+  cost: 1
+  specials:
+  - !type:AddComponentSpecial
+    components:
+    - type: FuelBattery
+      fuelSolution: bloodstream
+      reagentDrains:
+        WeldingFuel: 2
+    - type: Bloodstream
+      bloodHealedSoundThreshold: -999
+      bloodReferenceSolution:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 200
+      bloodlossDamage:
+        Burn: 0
+      bloodlossHealDamage:
+        Burn: 0
+      bloodlossThreshold: -1
+      bleedReductionAmount: 0
+      bloodRefreshAmount: 0
+    - type: InjectableSolution
+      solution: bloodstream
+
+  - !type:RemoveComponentSpecial
+    components:
+    - type: APCBatteryDrinker
+
+
+- type: trait
+  id: EchoReactorCharging
+  name: trait-reactor-charging-name
+  description: trait-reactor-charging-desc
+  category: EchoIPCCharging
+  speciesWhitelist: [IPC]
+  cost: 1
+  specials:
+  - !type:AddComponentSpecial
+    components:
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 1.5
+      baseSprintSpeed: 3
+    - type: RadiationSource
+      intensity: 0
+    - type: RadiationOnDamage
+      intensityPerDamage:
+        Blunt: .03
+        Slash: .03
+        Piercing: .02
+      maxIntensity: 2.75
+
+    # Basically remove everything battery related
+  - !type:RemoveComponentSpecial
+    components:
+    - type: PowerCellSlot
+      cellSlotId: cell_slot
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          locked: true
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellMedium
+    - type: Lock
+    - type: SlotRequiresLock
+      slotId: cell_slot
+    - type: APCBatteryDrinker
+    - type: PassiveBatteryDrain
+    - type: ChargeLevelAlert
+    - type: ChargeMoveSpeedThresholds
+      speedModifierThresholds:
+        1: 1
+    - type: LowBatterySignal

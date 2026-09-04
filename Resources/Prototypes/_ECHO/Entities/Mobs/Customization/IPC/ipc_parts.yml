@@ -1,0 +1,73 @@
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartChestCore
+  bodyPart: Chest
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_core
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartChestDefaultLines
+  bodyPart: Chest
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_prime
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_second
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_third
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_fourth
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartLArmDefaultLines
+  bodyPart: LArm
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_arm_line_prime
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_arm_line_second
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartRArmDefaultLines
+  bodyPart: RArm
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_arm_line_prime
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_arm_line_second
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartLHandDefaultLines
+  bodyPart: LHand
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_hand_line_prime
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartRHandDefaultLines
+  bodyPart: RHand
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_hand_line_prime
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartLFootDefaultLines
+  bodyPart: LFoot
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_foot_line_prime
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCPartRFootDefaultLines
+  bodyPart: RFoot
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_foot_line_prime

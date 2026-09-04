@@ -43,6 +43,15 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/_ECHO/Entities/glass_drop.ogg
+  - type: Healing
+    selfHealPenaltyMultiplier: 1.5
+    delay: 1.75
+    damageContainers:
+      - IPC
+    damage:
+      types:
+        Heat: -5
+        Cold: -5
   #ECHO-Tweak-End
 
 - type: entity
@@ -179,6 +188,13 @@
         Quantity: 4.5
       - ReagentId: Carbon
         Quantity: 0.5
+  # ECHO-Tweak-start
+  - type: Healing
+    damage:
+      types:
+        Heat: -8
+        Cold: -8
+  #ECHO-Tweak-End
 
 - type: entity
   parent: SheetRGlass
@@ -255,6 +271,13 @@
         Quantity: 10
       - ReagentId: Plasma
         Quantity: 10
+  # ECHO-Tweak-start
+  - type: Healing
+    damage:
+      types:
+        Heat: -12
+        Cold: -12
+  #ECHO-Tweak-End
 
 - type: entity
   parent: SheetPGlass
@@ -393,6 +416,13 @@
         Quantity: 10
       - ReagentId: Uranium
         Quantity: 10
+  # ECHO-Tweak-start
+  - type: Healing
+    damage:
+      types:
+        Heat: -15
+        Cold: -15
+  #ECHO-Tweak-End
 
 - type: entity
   parent: SheetUGlass
@@ -454,6 +484,13 @@
         Quantity: 4.5
       - ReagentId: Carbon
         Quantity: 0.5
+  # ECHO-Tweak-start
+  - type: Healing
+    damage:
+      types:
+        Heat: -17
+        Cold: -17
+  #ECHO-Tweak-End
 
 - type: entity
   parent: SheetRUGlass

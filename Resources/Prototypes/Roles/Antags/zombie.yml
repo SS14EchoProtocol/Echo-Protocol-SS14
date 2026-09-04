@@ -8,6 +8,12 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 1h
+  # ECHO-Tweak-start
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+    inverted: true
+  # ECHO-Tweak-end
 
 - type: antagSpecifier
   parent: RestrictedAntag
@@ -40,3 +46,10 @@
   setPreference: false
   objective: roles-antag-zombie-objective
   guides: [ Zombies ]
+  # ECHO-Tweak-start
+  requirements:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
+    inverted: true
+  # ECHO-Tweak-end

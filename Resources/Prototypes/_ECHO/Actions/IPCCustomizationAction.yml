@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseAction
+  id: EchoIPCCustomizationAction
+  name: Change screen
+  description: ebebeb
+  components:
+  - type: Action
+    useDelay: 1
+    icon: { sprite: _ECHO/Interface/Actions/actions_ipc.rsi, state: screen }
+  - type: InstantAction
+    event: !type:ToggleMidroundCustomizationMenuEvent

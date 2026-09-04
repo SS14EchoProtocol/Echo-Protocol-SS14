@@ -43,6 +43,10 @@ public sealed partial class HumanoidProfileEditor
                 continue;
             }
 
+            // ECHO-Tweak: Trait species whitelists
+            if (trait.SpeciesWhitelist.Count > 0 && !trait.SpeciesWhitelist.Contains(Profile?.Species ?? ""))
+                continue;
+
             if (!_prototypeManager.HasIndex(trait.Category))
                 continue;
 

@@ -13,4 +13,10 @@ public sealed partial class IntrinsicRadioTransmitterComponent : Component
 {
     [DataField]
     public HashSet<ProtoId<RadioChannelPrototype>> Channels = new() { SharedChatSystem.CommonChannel };
+
+    /// <summary>
+    /// ECHO-Tweak
+    /// </summary>
+    [ViewVariables]
+    public bool CanTransmit = true;
 }

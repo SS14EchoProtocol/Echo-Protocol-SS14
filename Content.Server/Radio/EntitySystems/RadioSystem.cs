@@ -40,10 +40,17 @@ public sealed partial class RadioSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<IntrinsicRadioReceiverComponent, RadioReceiveEvent>(OnIntrinsicReceive);
         SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EntitySpokeEvent>(OnIntrinsicSpeak);
+
+        InitializeEcho();   // ECHO-Tweak
     }
 
     private void OnIntrinsicSpeak(EntityUid uid, IntrinsicRadioTransmitterComponent component, EntitySpokeEvent args)
     {
+        // ECHO-Tweak-start
+        if (!component.CanTransmit)
+            return;
+        // ECHO-Tweak-end
+
         if (args.Channel != null && component.Channels.Contains(args.Channel.ID))
         {
             SendRadioMessage(uid, args.Message, args.Channel, uid);

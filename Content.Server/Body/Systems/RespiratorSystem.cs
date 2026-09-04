@@ -96,9 +96,9 @@ public sealed partial class RespiratorSystem : EntitySystem
 
             if (TryComp<AssistedRespirationComponent>(uid, out var assist)
                 // ECHO-Tweak start : Grab
-                && !(TryComp<PullableComponent>(uid, out var pullable) 
-                && TryComp<PullerComponent>(pullable.Puller, out var puller) 
-                && puller.Stage == GrabStage.Choke)) 
+                && !(TryComp<PullableComponent>(uid, out var pullable)
+                && TryComp<PullerComponent>(pullable.Puller, out var puller)
+                && puller.Stage == GrabStage.Choke))
                 // ECHO-Tweak end : Grab
             {
                 // can breathe if not dead and breathing is assisted
@@ -253,7 +253,7 @@ public sealed partial class RespiratorSystem : EntitySystem
     /// <returns>Returns true only if the gas mixture is not toxic, and it wouldn't suffocate.</returns>
     public bool CanMetabolizeInhaledAir(Entity<RespiratorComponent?> ent, GasMixture gas)
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, false)) // ECHO-Tweak: убираем ошибку
             return false;
 
         var ev = new CanMetabolizeGasEvent(gas);

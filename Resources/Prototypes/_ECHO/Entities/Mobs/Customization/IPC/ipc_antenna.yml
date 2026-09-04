@@ -1,0 +1,149 @@
+# Simple Station
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaTv
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_tv
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaTesla
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_tesla
+
+# - type: marking
+#   groupWhitelist: [EchoIPC]
+#   id: EchoIPCAntennaLightb
+#   bodyPart: Hair
+#   sprites:
+#     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+#       state: ipc_antenna_lightb
+
+# - type: marking
+#   groupWhitelist: [EchoIPC]
+#   id: EchoIPCAntennaLight
+#   bodyPart: Hair
+#   sprites:
+#     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+#       state: ipc_antenna_light
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaCyberhead
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_cyberhead
+
+# - type: marking
+#   groupWhitelist: [EchoIPC]
+#   id: EchoIPCAntennaSidelights
+#   bodyPart: Hair
+#   sprites:
+#     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+#       state: ipc_antenna_sidelights
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaAntlers
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_antlers
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaDroneeyes
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_droneeyes
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaCrowned
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_crowned
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaTowers
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_towers
+
+#Иллюми
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaDuality
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_duality
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaHoloaura
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_holo_aura
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaWireless
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_wireless_connection
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaSmallEye
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_eye
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaModule
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_module
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaFox
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_fox
+
+#Празат
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaCat
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_cat
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCAntennaTvAlt
+  bodyPart: Hair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
+      state: ipc_antenna_tvalt

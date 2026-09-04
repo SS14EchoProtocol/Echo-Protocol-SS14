@@ -36,6 +36,13 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
 
+        /// <summary>
+        /// ECHO-Tweak
+        /// Shader applied to the marking sprite
+        /// </summary>
+        [DataField]
+        public string? Shader;
+
         public Marking AsMarking()
         {
             return new Marking(ID, Sprites.Count);

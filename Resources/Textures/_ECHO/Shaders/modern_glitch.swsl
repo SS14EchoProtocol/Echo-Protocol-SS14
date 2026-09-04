@@ -1,0 +1,47 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp int SEGMENTS_COUNT;
+uniform highp float GAME_TIME;
+uniform highp float SPEED;
+uniform highp float OFFSET;     // max horizontal offset in UV units (0..1)
+uniform highp float CHROMA;     // chromatic separation amount in UV units
+uniform highp float SEED;       // optional seed to vary pattern
+
+highp float randf(highp float x) {
+	return fract(sin(x) * 43758.5453123);
+}
+
+void fragment() {
+	highp vec2 uv = UV;
+
+	// Protect against invalid segment counts
+	highp int segCount = max(1, SEGMENTS_COUNT);
+
+	// Determine which horizontal segment this fragment belongs to
+	highp float segF = floor(uv.y * float(segCount));
+
+	// Generate a pseudo-random value per-segment
+	highp float seedVal = segF * 12.9898 + SEED;
+	highp float n = randf(seedVal);
+
+	// Direction and animated shift for this segment
+	highp float dir = (n > 0.5) ? 1.0 : -1.0;
+	highp float shift = sin(GAME_TIME * SPEED * 6.0 + segF * 1.37) * OFFSET * dir;
+
+	// Apply horizontal shift per-segment
+	highp vec2 baseUV = uv + vec2(shift, 0.0);
+	baseUV = clamp(baseUV, vec2(0.0), vec2(1.0));
+
+	// Chromatic separation: sample channels with small offsets
+	highp vec2 chromaOff = vec2(CHROMA, 0.0);
+	highp vec4 sampleR = texture2D(SCREEN_TEXTURE, clamp(baseUV + chromaOff, vec2(0.0), vec2(1.0)));
+	highp vec4 sampleG = texture2D(SCREEN_TEXTURE, baseUV);
+	highp vec4 sampleB = texture2D(SCREEN_TEXTURE, clamp(baseUV - chromaOff, vec2(0.0), vec2(1.0)));
+
+	highp vec4 finalColor = vec4(sampleR.r, sampleG.g, sampleB.b, sampleG.a);
+
+	// Optional subtle brightness modulation per-segment (comment out if undesired)
+	// finalColor.rgb *= 0.9 + 0.2 * randf(seedVal + 1.0);
+
+	// Clamp to valid range
+	COLOR = clamp(finalColor, 0.0, 1.0);
+}

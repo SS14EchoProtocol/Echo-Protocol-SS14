@@ -1,3 +1,4 @@
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
@@ -69,4 +70,11 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
+
+    /// <summary>
+    /// ECHO-Tweak
+    /// Don't allow to select the trait to any species except these.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<SpeciesPrototype>> SpeciesWhitelist = new();
 }
