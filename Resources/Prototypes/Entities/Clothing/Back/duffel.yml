@@ -5,9 +5,9 @@
   description: A large duffel bag for holding extra things.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/duffel.rsi
+    sprite: _ADT/Clothing/Back/Duffels/duffel.rsi # ECHO-TWEAK Было: Clothing/Back/Duffels/duffel.rsi -> Стало: _ADT/Clothing/Back/Duffels/duffel.rsi
   - type: Storage
-    maxItemSize: Huge
+    maxItemSize: Huge 
     grid:
     - 0,0,7,4
   - type: ClothingSpeedModifier

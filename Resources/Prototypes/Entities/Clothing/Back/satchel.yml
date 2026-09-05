@@ -5,7 +5,7 @@
   description: A trendy looking satchel.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/satchel.rsi
+    sprite: _ADT/Clothing/Back/Satchels/satchel.rsi # ECHO-TWEAK Было: Clothing/Back/Satchels/satchel.rsi -> Стало: _ADT/Clothing/Back/Satchels/satchel.rsi
   - type: Storage
     grid:
     - 0,0,1,3
@@ -19,7 +19,7 @@
   description: A trend-setting satchel from a bygone era.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/leather.rsi
+    sprite: _ADT/Clothing/Back/Satchels/leather.rsi # ECHO-TWEAK Было: Clothing/Back/Satchels/leather.rsi -> Стало: _ADT/Clothing/Back/Satchels/leather.rsi
 
 - type: entity
   parent: ClothingBackpackSatchel

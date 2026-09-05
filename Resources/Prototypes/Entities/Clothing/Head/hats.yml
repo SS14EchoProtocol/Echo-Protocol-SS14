@@ -939,9 +939,9 @@
   description: "\"Women fear me. Fish fear me. Men turn their eyes away from me. As I walk no beast dares make a sound in my presence. I am alone on this barren Earth.\""
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/fishcap.rsi
+    sprite: _ADT/Clothing/Head/Hats/fishcap.rsi # ECHO-TWEAK Было: Clothing/Head/Hats/fishcap.rsi -> Стало: _ADT/Clothing/Head/Hats/fishcap.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hats/fishcap.rsi
+    sprite: _ADT/Clothing/Head/Hats/fishcap.rsi # ECHO-TWEAK Было: Clothing/Head/Hats/fishcap.rsi -> Стало: _ADT/Clothing/Head/Hats/fishcap.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -978,7 +978,7 @@
   description: Right near da beach, boyee.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/rasta.rsi
+    sprite: Clothing/Head/Hats/rasta.rsi 
   - type: Clothing
     sprite: Clothing/Head/Hats/rasta.rsi
   - type: HideLayerClothing
@@ -1504,13 +1504,13 @@
   description: You're the bestest boy.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/propellerhat.rsi
+    sprite: Clothing/Head/Hats/propellerhat.rsi 
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
     equippedPrefix: off
-    sprite: Clothing/Head/Hats/propellerhat.rsi
+    sprite: Clothing/Head/Hats/propellerhat.rs
   - type: ToggleableVisuals
     spriteLayer: enum.ToggleableVisuals.Layer
     clothingVisuals:
