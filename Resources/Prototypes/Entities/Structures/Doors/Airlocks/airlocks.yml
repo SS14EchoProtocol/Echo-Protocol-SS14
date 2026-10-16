@@ -14,7 +14,7 @@
   suffix: Engineering
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/engineering.rsi # ECHO-TWEAK Было: Structures/Doors/Airlocks/Standard/engineering.rs -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/engineering.rsi
   - type: Wires
     layoutId: AirlockEngineering
 
@@ -62,7 +62,7 @@
   suffix: Medical
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/medical.rsi
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/medical.rsi # ECHO-TWEAK Было: Structures/Doors/Airlocks/Standard/medical.rs -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/medical.rsi
   - type: Wires
     layoutId: AirlockMedical
 
@@ -120,7 +120,7 @@
   name: maintenance access
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/maint.rsi # ECHO-TWEAK Было: Structures/Doors/Airlocks/Standard/maint.rs -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockSecurity # if you get syndie door somehow it counts as sec

@@ -16,8 +16,8 @@
           "/Audio/Weapons/smash.ogg"
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
-    snapCardinals: true
+    sprite: _ECHO/Structures/Doors/Airlocks/Standard/basic.rsi # ECHO-TWEAK Было: Structures/Doors/Airlocks/Standard/basic.rsi -> Стало: _ECHO/Structures/Doors/Airlocks/Standard/basic.rsi
+    snapCardinals: false # ECH0-TWEAK Для корректной работы направлений
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -71,6 +71,8 @@
   - type: AccessReader
     containerAccessProvider: board
   - type: Door
+    closeTimeTwo: 0.59 # ECHO-Tweak For syncing w/ animation
+    openTimeTwo: 0.59 # ECHO-Tweak For syncing w/ animation
     crushDamage:
       types:
         Blunt: 15
@@ -87,6 +89,8 @@
     fuel: 5
     time: 3
   - type: Airlock
+    openUnlitVisible: true    # ECHO-Tweak: свет при закрытых и открытых шлюзах
+    closedUnlitVisible: true  # ECHO-Tweak: свет при закрытых и открытых шлюзах
   - type: NavMapDoor
   - type: DoorBolt
   - type: Appearance
@@ -180,6 +184,7 @@
       # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
       - DoorRemoteWhitelist
       # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door
+      - ForceNoFixRotations # ECHO-Tweak Для корректной работы направлений
   - type: PryUnpowered
   - type: BlockWeather
   - type: GuideHelp
@@ -187,7 +192,7 @@
     - Airlocks
     - WirePanels
     - Networking
-# ECHO-Tweak-Start 
+# ECHO-Tweak-Start
   - type: WeldingSparksAnimation # ECHO-Tweak "Wielding Sparks Animation"
     startingOffset: 0, 0.5
 # ECHO-Tweak-End
@@ -213,6 +218,9 @@
         collection: GlassSmack
   - type: Door
     occludes: false
+  - type: Airlock
+    openUnlitVisible: false # ECHO-Tweak: Стеклянным шлюзам true пока что не нужен
+    closedUnlitVisible: false # ECHO-Tweak: Стеклянным шлюзам true пока что не нужен
   - type: Occluder
     enabled: false
   - type: Sprite

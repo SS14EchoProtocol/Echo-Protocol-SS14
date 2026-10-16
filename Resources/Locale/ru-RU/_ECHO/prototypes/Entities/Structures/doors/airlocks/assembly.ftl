@@ -1,0 +1,9 @@
+ent-EchoAirlockAssemblyAstrology = { ent-AirlockAssembly }
+    .suffix = Астрология
+    .desc = { ent-AirlockAssembly.desc }
+ent-EchoAirlockAssemblyMechanics = { ent-AirlockAssembly }
+    .suffix = Механики
+    .desc = { ent-AirlockAssembly.desc }
+ent-EchoAirlockAssemblySerivce = { ent-AirlockAssembly }
+    .suffix = Сервис
+    .desc = { ent-AirlockAssembly.desc }
