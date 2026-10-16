@@ -1,0 +1,58 @@
+- type: entity
+  parent: [ BaseItemRecharger, ConstructibleMachine ]
+  id: DefibrillatorCharger
+  name: defibrillator charger
+  description: .
+  components:
+  - type: Sprite
+    sprite: _ECHO/Structures/Power/substation.rsi #пока спрайта нет вставила что попало
+    snapCardinals: true
+    layers:
+    - state: substation
+    - state: screen
+      shader: unshaded
+    - state: full
+      shader: unshaded
+  - type: ApcPowerReceiver
+    powerLoad: 1
+  - type: ItemSlots
+    slots:
+      charger_slot:
+        name: charger_slot
+        insertVerbText: defibrillator-insert-verb
+        ejectVerbText: defibrillator-eject-verb
+        whitelist:
+          tags:
+          - Defibrillator
+  - type: Charger
+    chargeRate: 40
+    slotId: charger_slot
+  - type: Construction
+    graph: DefibrillatorCharger
+    node: done
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 110
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger: !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:EmptyAllContainersBehaviour ''
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+
+- type: entity
+  parent: DefibrillatorCharger
+  id: DefibrillatorChargerFilled
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      charger_slot:
+      - StationaryDefibrillator

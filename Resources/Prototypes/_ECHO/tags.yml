@@ -9,3 +9,7 @@
 #yupi
 - type: Tag
   id: EchoYupiPack
+
+#Defibrillator
+- type: Tag
+  id: Defibrillator
