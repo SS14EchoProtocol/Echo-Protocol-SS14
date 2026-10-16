@@ -49,7 +49,7 @@ public sealed class DoAfterOverlay : Overlay
         _container = _entManager.EntitySysManager.GetEntitySystem<SharedContainerSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
         _sprite = _entManager.System<SpriteSystem>();
-        var sprite = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/progress_bar.rsi"), "icon");
+        var sprite = new SpriteSpecifier.Rsi(new("/Textures/_ECHO/Interface/Misc/progress_bar.rsi"), "icon"); //ECHO-Tweak Было: "/Textures/Interface/Misc/progress_bar.rsi" -> Стало: "/Textures/_ECHO/Interface/Misc/progress_bar.rsi"
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
 
         _unshadedShader = protoManager.Index(UnshadedShader).Instance();

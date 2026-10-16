@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "size": {
+        "x": 24,
+        "y": 7
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "taken from commit: https://github.com/AtaraxiaSpaceFoundation/Orion-Station-14/commit/6d378206c97a56b160f548579bd0cbf128d2a2d1 at Orion-Station-14",
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}

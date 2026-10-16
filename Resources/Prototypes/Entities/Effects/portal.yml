@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BasePortal
   abstract: true
   name: bluespace portal
@@ -11,7 +11,7 @@
   - type: Physics
     bodyType: Static
   - type: Sprite
-    sprite: /Textures/Effects/portal.rsi
+    sprite: /Textures/_ECHO/Effects/portal.rsi #ECHO-Tweak Было: /Textures/Effects/portal.rsi -> Стало: /Textures/_ECHO/Effects/portal.rsi
   - type: Fixtures
     fixtures:
       portalFixture:
