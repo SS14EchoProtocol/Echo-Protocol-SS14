@@ -5,9 +5,9 @@
   description: A leather waist bag meant for carrying small items.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/waistbag_leather.rsi
+    sprite: _ADT/Clothing/Belt/waistbag_leather.rsi # ECHO-TWEAK Было: Сlothing/Belt/waistbag_leather.rsi -> Стало: _ADT/Clothing/Belt/waistbag_leather.rsi 
   - type: Clothing
-    sprite: Clothing/Belt/waistbag_leather.rsi
+    sprite: _ADT/Clothing/Belt/waistbag_leather.rsi # ECHO-TWEAK Было: Сlothing/Belt/waistbag_leather.rsi -> Стало: _ADT/Clothing/Belt/waistbag_leather.rsi 
   - type: Storage
     grid:
     - 0,0,3,1

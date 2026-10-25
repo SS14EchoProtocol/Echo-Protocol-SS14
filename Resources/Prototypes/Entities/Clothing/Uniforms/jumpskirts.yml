@@ -745,7 +745,7 @@
   description: A loose worn blue shirt with a grey skirt, perfect for someone looking to relax.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     layers:
     - state: icon-jumpskirt
     - state: icon-shirt
@@ -761,7 +761,7 @@
       - state: inhand-right-shirt
         color: "#134fc1"
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING-jumpskirt
@@ -775,7 +775,7 @@
   description: A loose worn purple shirt with a grey skirt, perfect for someone looking to relax.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     layers:
     - state: icon-jumpskirt
     - state: icon-shirt
@@ -791,7 +791,7 @@
       - state: inhand-right-shirt
         color: "#9c0dff"
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING-jumpskirt
@@ -805,7 +805,7 @@
   description: A loose worn red shirt with a grey skirt, perfect for someone looking to relax.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     layers:
     - state: icon-jumpskirt
     - state: icon-shirt
@@ -821,7 +821,7 @@
       - state: inhand-right-shirt
         color: "#b30000"
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING-jumpskirt
@@ -835,7 +835,7 @@
   description: A loose worn green shirt with a grey skirt, perfect for someone looking to relax.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     layers:
     - state: icon-jumpskirt
     - state: icon-shirt
@@ -851,7 +851,7 @@
       - state: inhand-right-shirt
         color: "#00661D"
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/casual.rsi
+    sprite: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi # ECHO-TWEAK Было: Clothing/Uniforms/Jumpsuit/casual.rsi -> Стало: _ADT/Clothing/Uniforms/Jumpsuit/casual.rsi 
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING-jumpskirt
