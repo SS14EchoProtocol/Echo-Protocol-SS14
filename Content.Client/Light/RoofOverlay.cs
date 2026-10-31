@@ -25,7 +25,7 @@ public sealed partial class RoofOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.BeforeLighting;
 
-    public const int ContentZIndex = BeforeLightTargetOverlay.ContentZIndex + 1;
+    public const int ContentZIndex = BeforeLightTargetOverlay.ContentZIndex + 2;    // ECHO-Tweak: 1 -> 2
 
     public RoofOverlay(IEntityManager entManager)
     {
